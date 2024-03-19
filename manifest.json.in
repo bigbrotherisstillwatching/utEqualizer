@@ -1,0 +1,15 @@
+{
+    "name": "utequalizer.bigbrotherisstillwatching",
+    "description": "An Equalizer for Ubuntu Touch Focal",
+    "architecture": "@CLICK_ARCH@",
+    "title": "utEqualizer",
+    "hooks": {
+        "utequalizer": {
+            "apparmor": "utequalizer.apparmor",
+            "desktop":  "utequalizer.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "bbisw <140657673+bigbrotherisstillwatching@users.noreply.github.com>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
