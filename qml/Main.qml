@@ -88,7 +88,6 @@ import "colors"
 Rectangle {
     id: mainPage
     anchors.fill: parent
-//    signal stationChanged(var station)
 
     color: Colors.backgroundColor
 
@@ -124,7 +123,7 @@ Rectangle {
 
     ThemedHeader {
        id: header
-       title: i18n.tr("Settings")
+       title: i18n.tr("Equalizer")
     }
 
     Flickable {
