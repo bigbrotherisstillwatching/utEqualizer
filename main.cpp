@@ -19,6 +19,8 @@
 #include <QUrl>
 #include <QString>
 #include <QQuickView>
+#include <QtQml>
+#include "process.h"
 
 int main(int argc, char *argv[])
 {
@@ -26,6 +28,8 @@ int main(int argc, char *argv[])
     app->setApplicationName("utequalizer.bigbrotherisstillwatching");
 
     qDebug() << "Starting app from main.cpp";
+
+    qmlRegisterType<Process>( "Process", 1, 0, "Process" );
 
     QQuickView *view = new QQuickView();
     view->setSource(QUrl("qrc:/Main.qml"));
