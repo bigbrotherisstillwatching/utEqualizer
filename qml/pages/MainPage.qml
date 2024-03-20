@@ -464,13 +464,13 @@ Rectangle {
         Row {
             id: row2
             anchors.horizontalCenter: clmn1.horizontalCenter
-//            spacing: units.gu(5)
+            spacing: units.gu(5)
             Button {
                 id: chngbttn
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "media-playlist-shuffle"
-//                color: Colors.surfaceColor
+                color: Colors.surfaceColor
             }
             Qqc.Switch {
                 id: eqswitch
@@ -481,7 +481,29 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "reset"
-//                color: Colors.surfaceColor
+                color: Colors.surfaceColor
+            }
+        }
+        Row {
+            id: row3
+            anchors.horizontalCenter: clmn1.horizontalCenter
+            spacing: units.gu(15)
+            Text {
+                id: txt1
+                text: "Dark Mode"
+                anchors.left: row3.left
+//                horizontalAlignment: 
+            }
+            Qqc.Switch {
+                id: drkmdswitch
+                y: 5
+                checked: settings.darkMode
+//                SlotsLayout.position: SlotsLayout.Trailing
+
+                onClicked: {
+                    settings.darkMode = checked
+//                    l2.summary.visible = true
+                }
             }
         }
     }
