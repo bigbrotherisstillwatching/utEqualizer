@@ -113,7 +113,8 @@ Rectangle {
     Column {
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.top: header.bottom
+//        anchors.top: header.bottom
+        anchors.verticalCenter: parent
 //        anchors.centerIn: parent
 /*
             ListItem {
