@@ -114,10 +114,11 @@ Rectangle {
                     summary.wrapMode: Text.WordWrap
                 }
             }
-
+*/
             ListItem {
                 anchors.left: parent.left
                 anchors.right: parent.right
+                anchors.top: text1.bottom
                 color: Colors.surfaceColor
                 divider.colorFrom: Colors.borderColor
                 divider.colorTo: Colors.borderColor
@@ -125,25 +126,32 @@ Rectangle {
 
                 height: l2.height + (divider.visible ? divider.height : 0)
 
-                SlotsLayout {
+                ListItemLayout {
                     id: l2
-                    mainSlot: Text {
-                        anchors.verticalCenter: parent.verticalCenter
-                        text: i18n.tr("Dark mode")
-                        color: Colors.mainText
-                    }
+                    title.text: i18n.tr("Dark Mode")
+                    title.font.bold: true
+                    title.color: Colors.mainText
+                    summary.text: i18n.tr("Restart the app after changing dark mode option")
+                    summary.color: "red"
+                    summary.visible: false
+                    summary.wrapMode: Text.WordWrap
+//                    mainSlot: Text {
+//                        anchors.verticalCenter: parent.verticalCenter
+//                        text: i18n.tr("Dark mode")
+//                        color: Colors.mainText
+//                    }
                     Switch {
                         checked: settings.darkMode
                         SlotsLayout.position: SlotsLayout.Trailing
 
                         onClicked: {
                             settings.darkMode = checked
-                            l1.summary.visible = true
+                            l2.summary.visible = true
                         }
                     }
                 }
             }
-*/
+
             ListItem {
                 height: l3.height + (divider.visible ? divider.height : 0)
                 color: Colors.surfaceColor
@@ -517,42 +525,6 @@ Rectangle {
                 visible: false
                 leftPadding: units.gu(3)
                 rightPadding: units.gu(3)
-            }
-            ListItem {
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.top: text1.bottom
-                color: Colors.surfaceColor
-                divider.colorFrom: Colors.borderColor
-                divider.colorTo: Colors.borderColor
-                highlightColor: Colors.highlightColor
-
-                height: l2.height + (divider.visible ? divider.height : 0)
-
-                ListItemLayout {
-                    id: l2
-                    title.text: i18n.tr("Dark Mode")
-                    title.font.bold: true
-                    title.color: Colors.mainText
-                    summary.text: i18n.tr("Restart the app after changing dark mode option")
-                    summary.color: "red"
-                    summary.visible: false
-                    summary.wrapMode: Text.WordWrap
-//                    mainSlot: Text {
-//                        anchors.verticalCenter: parent.verticalCenter
-//                        text: i18n.tr("Dark mode")
-//                        color: Colors.mainText
-//                    }
-                    Switch {
-                        checked: settings.darkMode
-                        SlotsLayout.position: SlotsLayout.Trailing
-
-                        onClicked: {
-                            settings.darkMode = checked
-                            l2.summary.visible = true
-                        }
-                    }
-                }
             }
         }
     }
