@@ -487,16 +487,17 @@ Rectangle {
         Row {
             id: row3
             anchors.horizontalCenter: clmn1.horizontalCenter
-            spacing: units.gu(15)
+//            spacing: units.gu(15)
             Text {
                 id: txt1
                 text: "Dark Mode"
-//                anchors.left: row3.left
-//                horizontalAlignment: 
+//                  anchors.left: row3.left
+//                  horizontalAlignment:
+                color: Colors.mainText
             }
             Qqc.Switch {
                 id: drkmdswitch
-                y: 5
+                y: -5
                 checked: settings.darkMode
 //                SlotsLayout.position: SlotsLayout.Trailing
 
