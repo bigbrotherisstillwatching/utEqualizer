@@ -113,6 +113,7 @@ Rectangle {
         clip: true
 */
     Column {
+        id: clmn1
 //        anchors.left: parent.left
 //        anchors.right: parent.right
         anchors.top: header.bottom
@@ -462,8 +463,21 @@ Rectangle {
 
         Row {
             id: row2
+            anchors.horizontalCenter: clmn1.horizontalCenter
             Qqc.Switch {
                 id: eqswitch
+            }
+            Button {
+                id: rstbttn
+                height: units.gu(4)
+                width: units.gu(4)
+                iconName: "reset"
+            }
+            Button {
+                id: chngbttn
+                height: units.gu(4)
+                width: units.gu(4)
+                iconName: "media-playlist-shuffle"
             }
         }
     }
