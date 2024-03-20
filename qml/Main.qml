@@ -70,9 +70,9 @@ MainView {
             }
         }
     }
-}*/
+}
 
-/*import Lomiri.Components 1.3
+import Lomiri.Components 1.3
 import Lomiri.Components.ListItems 1.3
 import QtQuick 2.7
 import QtQuick.Layouts 1.3
@@ -121,12 +121,12 @@ Rectangle {
        property string equalizerStatus: ""
     }
 
-/*    ThemedHeader {
+    ThemedHeader {
        id: header
        title: i18n.tr("Equalizer")
-    }*/
+    }
 
-/*    PageHeader {
+    PageHeader {
         title: "Equalizer"
         StyleHints {
             foregroundColor: Colors.surfaceColor
@@ -141,9 +141,9 @@ Rectangle {
                 }
             ]
         }
-    }*/
+    }
 
-/*    Flickable {
+    Flickable {
        anchors.top: header.bottom
        anchors.left: parent.left
        anchors.right: parent.right
@@ -579,7 +579,7 @@ Rectangle {
              rightPadding: units.gu(3)
           }
        }
-    }*/
+    }
 }*/
 
 import QtQuick 2.7
