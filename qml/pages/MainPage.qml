@@ -65,20 +65,22 @@ Rectangle {
 
     PageHeader {
         id: header
-//        title: "Equalizer"
+        title: "Equalizer"
 //        title.color: Colors.mainText
 //        title.font.bold: true
         StyleHints {
             foregroundColor: Colors.mainText
-            backgroundColor: Colors.backgroundColor
-//            backgroundColor: Colors.surfaceColor
+//            backgroundColor: Colors.backgroundColor
+            backgroundColor: Colors.surfaceColor
             dividerColor: Colors.borderColor
         }
-//        contents: Rectangle {
-//            id: headerrec
+        contents: Label {
+            id: hdrlbl
 //            anchors.CenterIn: header
-//            color: Colors.backgroundColor
-//        }
+            color: Colors.mainText
+            textSize: Label.XLarge
+            text: header.title
+        }
         trailingActionBar {
             actions: [
                 Action {
