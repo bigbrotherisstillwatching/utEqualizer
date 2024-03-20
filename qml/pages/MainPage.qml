@@ -75,11 +75,13 @@ Rectangle {
             dividerColor: Colors.borderColor
         }
         contents: Rectangle {
+            id: hdrrec
             anchors.fill: parent
             color: Colors.backgroundColor
             Text {
                 id: hdrtxt
-                anchors.centerIn: parent
+//                anchors.centerIn: parent
+                anchors.left: hdrrec.left
                 text: header.title
                 color: Colors.mainText
             }
