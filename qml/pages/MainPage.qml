@@ -491,7 +491,7 @@ Rectangle {
             Text {
                 id: txt1
                 text: "Dark Mode"
-                anchors.left: row3.left
+//                anchors.left: row3.left
 //                horizontalAlignment: 
             }
             Qqc.Switch {
