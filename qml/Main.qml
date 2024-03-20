@@ -121,12 +121,29 @@ Rectangle {
        property string equalizerStatus: ""
     }
 
-    ThemedHeader {
+/*    ThemedHeader {
        id: header
        title: i18n.tr("Equalizer")
+    }*/
+
+    PageHeader {
+        title: "Equalizer"
+        StyleHints {
+            foregroundColor: Colors.surfaceColor
+            backgroundColor: Colors.backgroundColor
+            dividerColor: Colors.borderColor
+        }
+        trailingActionBar {
+            actions: [
+                Action {
+                    iconName: "close"
+                    text: "Close"
+                }
+            ]
+        }
     }
 
-    Flickable {
+/*    Flickable {
        anchors.top: header.bottom
        anchors.left: parent.left
        anchors.right: parent.right
@@ -562,5 +579,5 @@ Rectangle {
              rightPadding: units.gu(3)
           }
        }
-    }
+    }*/
 }
