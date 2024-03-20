@@ -98,6 +98,7 @@ Rectangle {
         }
     }
 
+/*
     Flickable {
         anchors.top: header.bottom
         anchors.left: parent.left
@@ -108,11 +109,12 @@ Rectangle {
         contentHeight: childrenRect.height
 
         clip: true
-
-        Column {
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.centerIn: parent
+*/
+    Column {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: header.bottom
+//        anchors.centerIn: parent
 /*
             ListItem {
                 height: l1.height + (divider.visible ? divider.height : 0)
@@ -196,261 +198,263 @@ Rectangle {
                 }
             }
 */
-            Row {
-//                anchors.horizontalCenter: parent.horizontalCenter
-//                anchors.centerIn: parent
-                spacing: 1
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide1.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide1
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls1
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "31Hz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
+        Row {
+//            anchors.horizontalCenter: parent.horizontalCenter
+//            anchors.centerIn: parent
+            spacing: 1
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide1.value
+                    color: Colors.mainText
+                    font.pointSize: 20
                 }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide2.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide2
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls2
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "63Hz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
+                Qqc.Slider {
+                    id: slide1
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls1
                 }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide3.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide3
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls3
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "125Hz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide4.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide4
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls4
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "250Hz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide5.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide5
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls5
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "500Hz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide6.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide6
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls6
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "1kHz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide7.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide7
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls7
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "2kHz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide8.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide8
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls8
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "4kHz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide9.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide9
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls9
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "8kHz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide10.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide10
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls10
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "16kHz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "31Hz"
+                    color: Colors.mainText
+                    font.pointSize: 20
                 }
             }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide2.value
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide2
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls2
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "63Hz"
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide3.value
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide3
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls3
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "125Hz"
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide4.value
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide4
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls4
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "250Hz"
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide5.value
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide5
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls5
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "500Hz"
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide6.value
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide6
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls6
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "1kHz"
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide7.value
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide7
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls7
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "2kHz"
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide8.value
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide8
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls8
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "4kHz"
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide9.value
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide9
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls9
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "8kHz"
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide10.value
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide10
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls10
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "16kHz"
+                    color: Colors.mainText
+                    font.pointSize: 20
+                }
+            }
+        }
+    }
+}
 /*
             Row {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -549,10 +553,11 @@ Rectangle {
                 rightPadding: units.gu(3)
             }
 */
+/*
         }
     }
 }
-
+*/
 /*
             ListItem {
                 anchors.left: parent.left
