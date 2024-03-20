@@ -126,7 +126,7 @@ Rectangle {
        title: i18n.tr("Equalizer")
     }*/
 
-    PageHeader {
+/*    PageHeader {
         title: "Equalizer"
         StyleHints {
             foregroundColor: Colors.surfaceColor
@@ -141,7 +141,7 @@ Rectangle {
                 }
             ]
         }
-    }
+    }*/
 
 /*    Flickable {
        anchors.top: header.bottom
