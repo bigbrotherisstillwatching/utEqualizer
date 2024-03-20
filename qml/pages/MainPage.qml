@@ -119,6 +119,7 @@ Rectangle {
         anchors.horizontalCenter: mainPage.horizontalCenter
 //        anchors.centerIn: parent
         topPadding: units.gu(3)
+        spacing: units.gu(3)
 /*
             ListItem {
                 height: l1.height + (divider.visible ? divider.height : 0)
@@ -203,6 +204,7 @@ Rectangle {
             }
 */
         Row {
+            id: row1
 //            anchors.horizontalCenter: parent.horizontalCenter
 //            anchors.centerIn: parent
             spacing: 1
@@ -455,6 +457,13 @@ Rectangle {
                     color: Colors.mainText
                     font.pointSize: 20
                 }
+            }
+        }
+
+        Row {
+            id: row2
+            Qqc.Switch {
+                id: eqswitch
             }
         }
     }
