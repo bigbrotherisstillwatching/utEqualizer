@@ -494,7 +494,7 @@ Rectangle {
 //                  anchors.left: row3.left
 //                  horizontalAlignment:
                 color: Colors.mainText
-                y: 5
+                topPadding: 5
             }
             Qqc.Switch {
                 id: drkmdswitch
