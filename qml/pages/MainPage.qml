@@ -73,16 +73,17 @@ Rectangle {
             dividerColor: Colors.borderColor
         }
         contents: Rectangle {
-            anchors.fill: parent
+            id: headerrec
+            anchors.fill: header
             color: Colors.surfaceColor
             Label {
-                anchors.left: parent.left
+                anchors.left: headerrec.left
                 text: header.title
                 color: Colors.mainText
                 font.bold: true
                 textSize: Label.Large
 //                verticalAlignment: Text.AlignVCenter
-                anchors.verticalCenter: parent
+                anchors.verticalCenter: header
             }
         }
         trailingActionBar {
