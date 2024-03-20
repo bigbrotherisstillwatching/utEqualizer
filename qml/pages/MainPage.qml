@@ -111,8 +111,8 @@ Rectangle {
         clip: true
 */
     Column {
-        anchors.left: parent.left
-        anchors.right: parent.right
+//        anchors.left: parent.left
+//        anchors.right: parent.right
         anchors.top: header.bottom
         anchors.horizontalCenter: mainPage.horizontalCenter
 //        anchors.centerIn: parent
