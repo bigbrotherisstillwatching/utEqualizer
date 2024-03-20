@@ -66,25 +66,13 @@ Rectangle {
     PageHeader {
         id: header
         title: "Equalizer"
+        title.color: Colors.mainText
+        title.font.bold: true
         StyleHints {
-//            foregroundColor: Colors.surfaceColor
-//            backgroundColor: Colors.backgroundColor
-            backgroundColor: Colors.surfaceColor
+            foregroundColor: Colors.surfaceColor
+            backgroundColor: Colors.backgroundColor
+//            backgroundColor: Colors.surfaceColor
             dividerColor: Colors.borderColor
-        }
-        contents: Rectangle {
-            id: headerrec
-//            anchors.fill: header
-            color: Colors.surfaceColor
-            Label {
-                anchors.left: headerrec.left
-                text: header.title
-                color: Colors.mainText
-                font.bold: true
-                textSize: Label.Large
-//                verticalAlignment: Text.AlignVCenter
-//                anchors.verticalCenter: header
-            }
         }
         trailingActionBar {
             actions: [
