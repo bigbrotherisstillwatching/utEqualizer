@@ -507,7 +507,7 @@ Rectangle {
                 id: text1
                 text: i18n.tr("Please turn off equalizer <u>before</u> changing audio output, closing the app or rebooting the phone!")
                 color: "red"
-                anchors.horizontalCenter: mainPage.horizontalCenter
+//                anchors.horizontalCenter: mainPage.horizontalCenter
                 topPadding: units.gu(3)
                 wrapMode: Text.WordWrap
                 width: mainPage.width
