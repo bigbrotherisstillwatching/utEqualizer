@@ -82,7 +82,7 @@ Rectangle {
                 id: hdrtxt
 //                anchors.centerIn: parent
                 anchors.left: hdrrec.left
-                anchors.verticalCenter: hdrrec
+                anchors.bottom: hdrrec.bottom
                 text: header.title
                 color: Colors.mainText
             }
