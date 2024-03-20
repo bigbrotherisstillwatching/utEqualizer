@@ -470,18 +470,18 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "media-playlist-shuffle"
-                color: Colors.surfaceColor
+//                color: Colors.surfaceColor
             }
             Qqc.Switch {
                 id: eqswitch
-                y: 7
+                y: 5
             }
             Button {
                 id: rstbttn
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "reset"
-                color: Colors.surfaceColor
+//                color: Colors.surfaceColor
             }
         }
     }
