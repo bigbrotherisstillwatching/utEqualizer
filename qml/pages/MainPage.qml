@@ -75,9 +75,11 @@ Rectangle {
             anchors.fill: parent
             color: Colors.surfaceColor
             Label {
-                anchors.centerIn: parent
+                anchors.left: parent.left
                 text: header.title
                 color: Colors.mainText
+                font.bold: true
+                textSize: Label.Large
             }
         }
         trailingActionBar {
