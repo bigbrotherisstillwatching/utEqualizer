@@ -86,8 +86,8 @@ Rectangle {
                 anchors.verticalCenter: hdrrec.verticalCenter
                 text: header.title
                 color: Colors.mainText
-                font.pointSize: 50
-                font.bold: true
+                font.pointSize: 40
+//                font.bold: true
             }
         }
         trailingActionBar {
