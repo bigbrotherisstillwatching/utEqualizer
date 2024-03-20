@@ -74,12 +74,15 @@ Rectangle {
 //            backgroundColor: Colors.surfaceColor
             dividerColor: Colors.borderColor
         }
-        contents: Label {
-            id: hdrlbl
-            anchors.centerIn: header
-            color: Colors.mainText
-            textSize: Label.XLarge
-            text: header.title
+        contents: Rectangle {
+            anchors.fill: parent
+            color: Colors.backgroundColor
+            Text {
+                id: hdrtxt
+                anchors.centerIn: parent
+                text: header.title
+                color: Colors.mainText
+            }
         }
         trailingActionBar {
             actions: [
