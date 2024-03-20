@@ -114,7 +114,7 @@ Rectangle {
                     summary.wrapMode: Text.WordWrap
                 }
             }
-*/
+
             ListItem {
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -142,7 +142,8 @@ Rectangle {
                         }
                     }
                 }
-            }*/
+            }
+*/
             ListItem {
                 height: l3.height + (divider.visible ? divider.height : 0)
                 color: Colors.surfaceColor
@@ -220,305 +221,306 @@ Rectangle {
                         font.pointSize: 20
                     }
                 }
-             Column {
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: slide3.value
-                   color: Colors.mainText
-                   font.pointSize: 20
+                Column {
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: slide3.value
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
+                    Qqc.Slider {
+                        id: slide3
+                        from: -48.0
+                        to: 24.0
+                        live: true
+                        orientation: Qt.Vertical
+                        stepSize: 0.5
+                        value: settings.equalizerControls3
+                    }
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "125Hz"
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
                 }
-                Qqc.Slider {
-                   id: slide3
-                   from: -48.0
-                   to: 24.0
-                   live: true
-                   orientation: Qt.Vertical
-                   stepSize: 0.5
-                   value: settings.equalizerControls3
+                Column {
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: slide4.value
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
+                    Qqc.Slider {
+                        id: slide4
+                        from: -48.0
+                        to: 24.0
+                        live: true
+                        orientation: Qt.Vertical
+                        stepSize: 0.5
+                        value: settings.equalizerControls4
+                    }
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "250Hz"
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
                 }
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: "125Hz"
-                   color: Colors.mainText
-                   font.pointSize: 20
+                Column {
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: slide5.value
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
+                    Qqc.Slider {
+                        id: slide5
+                        from: -48.0
+                        to: 24.0
+                        live: true
+                        orientation: Qt.Vertical
+                        stepSize: 0.5
+                        value: settings.equalizerControls5
+                    }
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "500Hz"
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
                 }
-             }
-             Column {
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: slide4.value
-                   color: Colors.mainText
-                   font.pointSize: 20
+                Column {
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: slide6.value
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
+                    Qqc.Slider {
+                        id: slide6
+                        from: -48.0
+                        to: 24.0
+                        live: true
+                        orientation: Qt.Vertical
+                        stepSize: 0.5
+                        value: settings.equalizerControls6
+                    }
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "1kHz"
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
                 }
-                Qqc.Slider {
-                   id: slide4
-                   from: -48.0
-                   to: 24.0
-                   live: true
-                   orientation: Qt.Vertical
-                   stepSize: 0.5
-                   value: settings.equalizerControls4
+                Column {
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: slide7.value
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
+                    Qqc.Slider {
+                        id: slide7
+                        from: -48.0
+                        to: 24.0
+                        live: true
+                        orientation: Qt.Vertical
+                        stepSize: 0.5
+                        value: settings.equalizerControls7
+                    }
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "2kHz"
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
                 }
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: "250Hz"
-                   color: Colors.mainText
-                   font.pointSize: 20
+                Column {
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: slide8.value
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
+                    Qqc.Slider {
+                        id: slide8
+                        from: -48.0
+                        to: 24.0
+                        live: true
+                        orientation: Qt.Vertical
+                        stepSize: 0.5
+                        value: settings.equalizerControls8
+                    }
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "4kHz"
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
                 }
-             }
-             Column {
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: slide5.value
-                   color: Colors.mainText
-                   font.pointSize: 20
+                Column {
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: slide9.value
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
+                    Qqc.Slider {
+                        id: slide9
+                        from: -48.0
+                        to: 24.0
+                        live: true
+                        orientation: Qt.Vertical
+                        stepSize: 0.5
+                        value: settings.equalizerControls9
+                    }
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "8kHz"
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
                 }
-                Qqc.Slider {
-                   id: slide5
-                   from: -48.0
-                   to: 24.0
-                   live: true
-                   orientation: Qt.Vertical
-                   stepSize: 0.5
-                   value: settings.equalizerControls5
+                Column {
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: slide10.value
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
+                    Qqc.Slider {
+                        id: slide10
+                        from: -48.0
+                        to: 24.0
+                        live: true
+                        orientation: Qt.Vertical
+                        stepSize: 0.5
+                        value: settings.equalizerControls10
+                    }
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "16kHz"
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
                 }
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: "500Hz"
-                   color: Colors.mainText
-                   font.pointSize: 20
+            }
+            Row {
+                anchors.horizontalCenter: parent.horizontalCenter
+                spacing: settingsPage.padding
+                Button {
+                    id: eqaButton
+                    text: i18n.tr("On")
+                    color: Colors.surfaceColor
+                    onClicked: {
+                        settings.equalizerControls1 = slide1.value.toFixed(1)
+                        settings.equalizerControls2 = slide2.value.toFixed(1)
+                        settings.equalizerControls3 = slide3.value.toFixed(1)
+                        settings.equalizerControls4 = slide4.value.toFixed(1)
+                        settings.equalizerControls5 = slide5.value.toFixed(1)
+                        settings.equalizerControls6 = slide6.value.toFixed(1)
+                        settings.equalizerControls7 = slide7.value.toFixed(1)
+                        settings.equalizerControls8 = slide8.value.toFixed(1)
+                        settings.equalizerControls9 = slide9.value.toFixed(1)
+                        settings.equalizerControls10 = slide10.value.toFixed(1)
+                        process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
+                        text1.visible = true
+                        settings.equalizerStatus = "green"
+                        statusrec1.color = "green"
+                    }
                 }
-             }
-             Column {
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: slide6.value
-                   color: Colors.mainText
-                   font.pointSize: 20
+                Button {
+                    id: eqdButton
+                    text: i18n.tr("Off")
+                    color: Colors.surfaceColor
+                    onClicked: {
+                        process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
+                        text1.visible = false
+                        settings.equalizerStatus = "red"
+                        statusrec1.color = "red"
+                    }
                 }
-                Qqc.Slider {
-                   id: slide6
-                   from: -48.0
-                   to: 24.0
-                   live: true
-                   orientation: Qt.Vertical
-                   stepSize: 0.5
-                   value: settings.equalizerControls6
+                Button {
+                    id: chaButton
+                    text: i18n.tr("Change")
+                    color: Colors.surfaceColor
+                    onClicked: {
+                        settings.equalizerControls1 = slide1.value.toFixed(1)
+                        settings.equalizerControls2 = slide2.value.toFixed(1)
+                        settings.equalizerControls3 = slide3.value.toFixed(1)
+                        settings.equalizerControls4 = slide4.value.toFixed(1)
+                        settings.equalizerControls5 = slide5.value.toFixed(1)
+                        settings.equalizerControls6 = slide6.value.toFixed(1)
+                        settings.equalizerControls7 = slide7.value.toFixed(1)
+                        settings.equalizerControls8 = slide8.value.toFixed(1)
+                        settings.equalizerControls9 = slide9.value.toFixed(1)
+                        settings.equalizerControls10 = slide10.value.toFixed(1)
+                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_change.sh"])
+                    }
                 }
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: "1kHz"
-                   color: Colors.mainText
-                   font.pointSize: 20
+                Button {
+                    id: resButton
+                    text: i18n.tr("Reset")
+                    color: Colors.surfaceColor
+                    onClicked: {
+                        slide1.value = 0.0
+                        slide2.value = 0.0
+                        slide3.value = 0.0
+                        slide4.value = 0.0
+                        slide5.value = 0.0
+                        slide6.value = 0.0
+                        slide7.value = 0.0
+                        slide8.value = 0.0
+                        slide9.value = 0.0
+                        slide10.value = 0.0
+                        settings.equalizerControls1 = slide1.value.toFixed(1)
+                        settings.equalizerControls2 = slide2.value.toFixed(1)
+                        settings.equalizerControls3 = slide3.value.toFixed(1)
+                        settings.equalizerControls4 = slide4.value.toFixed(1)
+                        settings.equalizerControls5 = slide5.value.toFixed(1)
+                        settings.equalizerControls6 = slide6.value.toFixed(1)
+                        settings.equalizerControls7 = slide7.value.toFixed(1)
+                        settings.equalizerControls8 = slide8.value.toFixed(1)
+                        settings.equalizerControls9 = slide9.value.toFixed(1)
+                        settings.equalizerControls10 = slide10.value.toFixed(1)
+                    }
                 }
-             }
-             Column {
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: slide7.value
-                   color: Colors.mainText
-                   font.pointSize: 20
-                }
-                Qqc.Slider {
-                   id: slide7
-                   from: -48.0
-                   to: 24.0
-                   live: true
-                   orientation: Qt.Vertical
-                   stepSize: 0.5
-                   value: settings.equalizerControls7
-                }
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: "2kHz"
-                   color: Colors.mainText
-                   font.pointSize: 20
-                }
-             }
-             Column {
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: slide8.value
-                   color: Colors.mainText
-                   font.pointSize: 20
-                }
-                Qqc.Slider {
-                   id: slide8
-                   from: -48.0
-                   to: 24.0
-                   live: true
-                   orientation: Qt.Vertical
-                   stepSize: 0.5
-                   value: settings.equalizerControls8
-                }
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: "4kHz"
-                   color: Colors.mainText
-                   font.pointSize: 20
-                }
-             }
-             Column {
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: slide9.value
-                   color: Colors.mainText
-                   font.pointSize: 20
-                }
-                Qqc.Slider {
-                   id: slide9
-                   from: -48.0
-                   to: 24.0
-                   live: true
-                   orientation: Qt.Vertical
-                   stepSize: 0.5
-                   value: settings.equalizerControls9
-                }
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: "8kHz"
-                   color: Colors.mainText
-                   font.pointSize: 20
-                }
-             }
-             Column {
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: slide10.value
-                   color: Colors.mainText
-                   font.pointSize: 20
-                }
-                Qqc.Slider {
-                   id: slide10
-                   from: -48.0
-                   to: 24.0
-                   live: true
-                   orientation: Qt.Vertical
-                   stepSize: 0.5
-                   value: settings.equalizerControls10
-                }
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: "16kHz"
-                   color: Colors.mainText
-                   font.pointSize: 20
-                }
-             }
-          }
-          Row {
-             anchors.horizontalCenter: parent.horizontalCenter
-             spacing: settingsPage.padding
-             Button {
-                id: eqaButton
-                text: i18n.tr("On")
-                color: Colors.surfaceColor
-                onClicked: {
-                   settings.equalizerControls1 = slide1.value.toFixed(1)
-                   settings.equalizerControls2 = slide2.value.toFixed(1)
-                   settings.equalizerControls3 = slide3.value.toFixed(1)
-                   settings.equalizerControls4 = slide4.value.toFixed(1)
-                   settings.equalizerControls5 = slide5.value.toFixed(1)
-                   settings.equalizerControls6 = slide6.value.toFixed(1)
-                   settings.equalizerControls7 = slide7.value.toFixed(1)
-                   settings.equalizerControls8 = slide8.value.toFixed(1)
-                   settings.equalizerControls9 = slide9.value.toFixed(1)
-                   settings.equalizerControls10 = slide10.value.toFixed(1)
-                   process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
-                   text1.visible = true
-                   settings.equalizerStatus = "green"
-                   statusrec1.color = "green"
-                }
-             }
-             Button {
-                id: eqdButton
-                text: i18n.tr("Off")
-                color: Colors.surfaceColor
-                onClicked: {
-                   process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-                   text1.visible = false
-                   settings.equalizerStatus = "red"
-                   statusrec1.color = "red"
-                }
-             }
-             Button {
-                id: chaButton
-                text: i18n.tr("Change")
-                color: Colors.surfaceColor
-                onClicked: {
-                   settings.equalizerControls1 = slide1.value.toFixed(1)
-                   settings.equalizerControls2 = slide2.value.toFixed(1)
-                   settings.equalizerControls3 = slide3.value.toFixed(1)
-                   settings.equalizerControls4 = slide4.value.toFixed(1)
-                   settings.equalizerControls5 = slide5.value.toFixed(1)
-                   settings.equalizerControls6 = slide6.value.toFixed(1)
-                   settings.equalizerControls7 = slide7.value.toFixed(1)
-                   settings.equalizerControls8 = slide8.value.toFixed(1)
-                   settings.equalizerControls9 = slide9.value.toFixed(1)
-                   settings.equalizerControls10 = slide10.value.toFixed(1)
-                   process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_change.sh"])
-                }
-             }
-             Button {
-                id: resButton
-                text: i18n.tr("Reset")
-                color: Colors.surfaceColor
-                onClicked: {
-                   slide1.value = 0.0
-                   slide2.value = 0.0
-                   slide3.value = 0.0
-                   slide4.value = 0.0
-                   slide5.value = 0.0
-                   slide6.value = 0.0
-                   slide7.value = 0.0
-                   slide8.value = 0.0
-                   slide9.value = 0.0
-                   slide10.value = 0.0
-                   settings.equalizerControls1 = slide1.value.toFixed(1)
-                   settings.equalizerControls2 = slide2.value.toFixed(1)
-                   settings.equalizerControls3 = slide3.value.toFixed(1)
-                   settings.equalizerControls4 = slide4.value.toFixed(1)
-                   settings.equalizerControls5 = slide5.value.toFixed(1)
-                   settings.equalizerControls6 = slide6.value.toFixed(1)
-                   settings.equalizerControls7 = slide7.value.toFixed(1)
-                   settings.equalizerControls8 = slide8.value.toFixed(1)
-                   settings.equalizerControls9 = slide9.value.toFixed(1)
-                   settings.equalizerControls10 = slide10.value.toFixed(1)
-                }
-             }
-          }
-          Text {
-             id: text1
-             text: i18n.tr("Please turn off equalizer <u>before</u> changing audio output, closing the app or rebooting the phone!")
-             color: "red"
-             anchors.horizontalCenter: settingsPage.horizontalCenter
-             topPadding: units.gu(3)
-             wrapMode: Text.WordWrap
-             width: settingsPage.width
-             lineHeight: 1.2
-             horizontalAlignment: Text.AlignHCenter
-             visible: false
-             leftPadding: units.gu(3)
-             rightPadding: units.gu(3)
-          }
+            }
+            Text {
+                id: text1
+                text: i18n.tr("Please turn off equalizer <u>before</u> changing audio output, closing the app or rebooting the phone!")
+                color: "red"
+                anchors.horizontalCenter: settingsPage.horizontalCenter
+                topPadding: units.gu(3)
+                wrapMode: Text.WordWrap
+                width: settingsPage.width
+                lineHeight: 1.2
+                horizontalAlignment: Text.AlignHCenter
+                visible: false
+                leftPadding: units.gu(3)
+                rightPadding: units.gu(3)
+            }
             ListItem {
                 anchors.left: parent.left
                 anchors.right: parent.right
+                anchors.top: text1.bottom
                 color: Colors.surfaceColor
                 divider.colorFrom: Colors.borderColor
                 divider.colorTo: Colors.borderColor
@@ -539,11 +541,11 @@ Rectangle {
 
                         onClicked: {
                             settings.darkMode = checked
-                            l1.summary.visible = true
+                            l2.summary.visible = true
                         }
                     }
                 }
             }
-       }
+        }
     }
 }
