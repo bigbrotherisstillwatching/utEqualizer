@@ -95,8 +95,8 @@ Rectangle {
         Column {
             anchors.left: parent.left
             anchors.right: parent.right
-
-/*            ListItem {
+/*
+            ListItem {
                 height: l1.height + (divider.visible ? divider.height : 0)
                 color: Colors.surfaceColor
                 divider.colorFrom: Colors.borderColor
@@ -113,8 +113,8 @@ Rectangle {
                     summary.visible: false
                     summary.wrapMode: Text.WordWrap
                 }
-            }*/
-
+            }
+*/
             ListItem {
                 anchors.left: parent.left
                 anchors.right: parent.right
