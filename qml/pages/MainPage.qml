@@ -510,7 +510,7 @@ Rectangle {
                 anchors.horizontalCenter: settingsPage.horizontalCenter
                 topPadding: units.gu(3)
                 wrapMode: Text.WordWrap
-                width: settingsPage.width
+                width: mainPage.width
                 lineHeight: 1.2
                 horizontalAlignment: Text.AlignHCenter
                 visible: false
