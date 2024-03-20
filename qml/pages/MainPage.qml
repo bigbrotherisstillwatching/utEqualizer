@@ -464,6 +464,14 @@ Rectangle {
         Row {
             id: row2
             anchors.horizontalCenter: clmn1.horizontalCenter
+            spacing: units.gu(5)
+            Button {
+                id: chngbttn
+                height: units.gu(4)
+                width: units.gu(4)
+                iconName: "media-playlist-shuffle"
+                color: Colors.surfaceColor
+            }
             Qqc.Switch {
                 id: eqswitch
             }
@@ -472,12 +480,7 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "reset"
-            }
-            Button {
-                id: chngbttn
-                height: units.gu(4)
-                width: units.gu(4)
-                iconName: "media-playlist-shuffle"
+                color: Colors.surfaceColor
             }
         }
     }
