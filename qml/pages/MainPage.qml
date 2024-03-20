@@ -74,7 +74,7 @@ Rectangle {
         }
         contents: Rectangle {
             id: headerrec
-            anchors.fill: header
+//            anchors.fill: header
             color: Colors.surfaceColor
             Label {
                 anchors.left: headerrec.left
@@ -83,7 +83,7 @@ Rectangle {
                 font.bold: true
                 textSize: Label.Large
 //                verticalAlignment: Text.AlignVCenter
-                anchors.verticalCenter: header
+//                anchors.verticalCenter: header
             }
         }
         trailingActionBar {
