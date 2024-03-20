@@ -474,6 +474,7 @@ Rectangle {
             }
             Qqc.Switch {
                 id: eqswitch
+                topPadding: 10
             }
             Button {
                 id: rstbttn
