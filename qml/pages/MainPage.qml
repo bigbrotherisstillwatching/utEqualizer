@@ -81,7 +81,8 @@ Rectangle {
                 color: Colors.mainText
                 font.bold: true
                 textSize: Label.Large
-                verticalAlignment: Text.AlignVCenter
+//                verticalAlignment: Text.AlignVCenter
+                anchors.verticalCenter: parent
             }
         }
         trailingActionBar {
