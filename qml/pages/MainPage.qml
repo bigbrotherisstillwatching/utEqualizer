@@ -517,6 +517,7 @@ Rectangle {
                 leftPadding: units.gu(3)
                 rightPadding: units.gu(3)
             }
+/*
             ListItem {
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -546,6 +547,7 @@ Rectangle {
                     }
                 }
             }
+*/
         }
     }
 }
