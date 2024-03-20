@@ -596,9 +596,9 @@ MainView {
    applicationName: 'utequalizer.bigbrotherisstillwatching'
    automaticOrientation: false
 
-/*   Notification {
-      notificationId: "notification"
-   }*/
+//   Notification {
+//      notificationId: "notification"
+//   }
 
    PageStack {
       id: pageStack
