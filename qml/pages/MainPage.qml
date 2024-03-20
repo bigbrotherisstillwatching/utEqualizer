@@ -76,6 +76,7 @@ Rectangle {
 //        }
         contents: Rectangle {
             id: headerrec
+            anchors.CenterIn: header
             color: Colors.backgroundColor
         }
         trailingActionBar {
