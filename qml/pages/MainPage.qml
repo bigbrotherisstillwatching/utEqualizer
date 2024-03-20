@@ -114,7 +114,7 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
 //        anchors.top: header.bottom
-        anchors.verticalCenter: parent
+        anchors.verticalCenter: mainPage.verticalCenter
 //        anchors.centerIn: parent
 /*
             ListItem {
