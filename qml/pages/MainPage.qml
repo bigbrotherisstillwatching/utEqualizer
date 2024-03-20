@@ -424,7 +424,7 @@ Rectangle {
             }
             Row {
                 anchors.horizontalCenter: parent.horizontalCenter
-                spacing: settingsPage.padding
+                spacing: mainPage.padding
                 Button {
                     id: eqaButton
                     text: i18n.tr("On")
