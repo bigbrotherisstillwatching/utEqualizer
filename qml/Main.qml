@@ -591,21 +591,17 @@ import QtQuick.Window 2.2
 //import "./notify"
 
 MainView {
-   id: root
-   objectName: 'mainView'
-   applicationName: 'utequalizer.bigbrotherisstillwatching'
-   automaticOrientation: false
+    id: root
+    objectName: 'mainView'
+    applicationName: 'utequalizer.bigbrotherisstillwatching'
+    automaticOrientation: false
 
-//   Notification {
-//      notificationId: "notification"
-//   }
+    PageStack {
+        id: pageStack
+        anchors {
+            fill: parent
+        }
+    }
 
-   PageStack {
-      id: pageStack
-      anchors {
-         fill: parent
-      }
-   }
-
-   Component.onCompleted: pageStack.push(Qt.resolvedUrl("pages/MainPage.qml"))
+    Component.onCompleted: pageStack.push(Qt.resolvedUrl("pages/MainPage.qml"))
 }
