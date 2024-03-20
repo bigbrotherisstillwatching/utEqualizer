@@ -76,7 +76,7 @@ Rectangle {
         }
         contents: Label {
             id: hdrlbl
-            anchors.CenterIn: header
+            anchors.CenterIn: parent
             color: Colors.mainText
             textSize: Label.XLarge
             text: header.title
