@@ -3,5 +3,6 @@
         <file>Main.qml</file>
         <file>colors/Colors.qml</file>
         <file>colors/qmldir</file>
+        <file>pages/MainPage.qml</file>
     </qresource>
 </RCC>
