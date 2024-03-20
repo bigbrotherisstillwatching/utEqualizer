@@ -66,8 +66,8 @@ Rectangle {
     PageHeader {
         id: header
         title: "Equalizer"
-        title.color: Colors.mainText
-        title.font.bold: true
+//        title.color: Colors.mainText
+//        title.font.bold: true
         StyleHints {
             foregroundColor: Colors.surfaceColor
             backgroundColor: Colors.backgroundColor
