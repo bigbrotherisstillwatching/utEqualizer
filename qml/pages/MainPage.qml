@@ -118,6 +118,7 @@ Rectangle {
         anchors.top: header.bottom
         anchors.horizontalCenter: mainPage.horizontalCenter
 //        anchors.centerIn: parent
+        topPadding: units.gu(3)
 /*
             ListItem {
                 height: l1.height + (divider.visible ? divider.height : 0)
