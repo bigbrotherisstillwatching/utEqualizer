@@ -36,34 +36,35 @@ Rectangle {
     property var padding: units.gu(1)
 
     Process {
-      id: process
+        id: process
     }
 
     Process {
-      id: process2
+        id: process2
     }
 
     Process {
-      id: process3
+        id: process3
     }
 
     Settings {
-       id: settings
-       property bool darkMode: true
-       property string equalizerControls1: ""
-       property string equalizerControls2: ""
-       property string equalizerControls3: ""
-       property string equalizerControls4: ""
-       property string equalizerControls5: ""
-       property string equalizerControls6: ""
-       property string equalizerControls7: ""
-       property string equalizerControls8: ""
-       property string equalizerControls9: ""
-       property string equalizerControls10: ""
-       property string equalizerStatus: ""
+        id: settings
+        property bool darkMode: true
+        property string equalizerControls1: ""
+        property string equalizerControls2: ""
+        property string equalizerControls3: ""
+        property string equalizerControls4: ""
+        property string equalizerControls5: ""
+        property string equalizerControls6: ""
+        property string equalizerControls7: ""
+        property string equalizerControls8: ""
+        property string equalizerControls9: ""
+        property string equalizerControls10: ""
+        property string equalizerStatus: ""
     }
 
     PageHeader {
+        id: header
         title: "Equalizer"
         StyleHints {
             foregroundColor: Colors.surfaceColor
@@ -80,145 +81,145 @@ Rectangle {
         }
     }
 
-/*    Flickable {
-       anchors.top: header.bottom
-       anchors.left: parent.left
-       anchors.right: parent.right
-       anchors.bottom: parent.bottom
+    Flickable {
+        anchors.top: header.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
 
-       contentWidth: parent.width
-       contentHeight: childrenRect.height
+        contentWidth: parent.width
+        contentHeight: childrenRect.height
 
-       clip: true
+        clip: true
 
-       Column {
-          anchors.left: parent.left
-          anchors.right: parent.right
+        Column {
+            anchors.left: parent.left
+            anchors.right: parent.right
 
-          ListItem {
-             height: l1.height + (divider.visible ? divider.height : 0)
-             color: Colors.surfaceColor
-             divider.colorFrom: Colors.borderColor
-             divider.colorTo: Colors.borderColor
-             highlightColor: Colors.highlightColor
+/*            ListItem {
+                height: l1.height + (divider.visible ? divider.height : 0)
+                color: Colors.surfaceColor
+                divider.colorFrom: Colors.borderColor
+                divider.colorTo: Colors.borderColor
+                highlightColor: Colors.highlightColor
 
-             ListItemLayout {
-                id: l1
-                title.text: i18n.tr("Appearance")
-                title.font.bold: true
-                title.color: Colors.mainText
-                summary.text: i18n.tr("Restart the app after changing dark mode option")
-                summary.color: "red"
-                summary.visible: false
-                summary.wrapMode: Text.WordWrap
-             }
-          }
-
-          ListItem {
-              anchors.left: parent.left
-              anchors.right: parent.right
-              color: Colors.surfaceColor
-              divider.colorFrom: Colors.borderColor
-              divider.colorTo: Colors.borderColor
-              highlightColor: Colors.highlightColor
-
-              height: l2.height + (divider.visible ? divider.height : 0)
-
-              SlotsLayout {
-                  id: l2
-                  mainSlot: Text {
-                     anchors.verticalCenter: parent.verticalCenter
-                     text: i18n.tr("Dark mode")
-                     color: Colors.mainText
-                  }
-                  Switch {
-                     checked: settings.darkMode
-                     SlotsLayout.position: SlotsLayout.Trailing
-
-                     onClicked: {
-                        settings.darkMode = checked
-                        l1.summary.visible = true
-                     }
-                  }
-              }
-          }
-          ListItem {
-             height: l3.height + (divider.visible ? divider.height : 0)
-             color: Colors.surfaceColor
-             divider.colorFrom: Colors.borderColor
-             divider.colorTo: Colors.borderColor
-             highlightColor: Colors.highlightColor
-
-             ListItemLayout {
-                id: l3
-                title.text: i18n.tr("Equalizer")
-                title.font.bold: true
-                title.color: Colors.mainText
-
-                Rectangle {
-                   id: statusrec1
-                   SlotsLayout.position: SlotsLayout.Trailing;
-                   width: units.gu(2)
-                   height: units.gu(2)
-                   color: settings.value("equalizerStatus")
-                   visible: true
-                   radius: units.gu(1)
+                ListItemLayout {
+                    id: l1
+                    title.text: i18n.tr("Appearance")
+                    title.font.bold: true
+                    title.color: Colors.mainText
+                    summary.text: i18n.tr("Restart the app after changing dark mode option")
+                    summary.color: "red"
+                    summary.visible: false
+                    summary.wrapMode: Text.WordWrap
                 }
-             }
-          }
-          Row {
-             anchors.horizontalCenter: parent.horizontalCenter
-             spacing: 1
-             Column {
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: slide1.value
-                   color: Colors.mainText
-                   font.pointSize: 20
+            }*/
+
+            ListItem {
+                anchors.left: parent.left
+                anchors.right: parent.right
+                color: Colors.surfaceColor
+                divider.colorFrom: Colors.borderColor
+                divider.colorTo: Colors.borderColor
+                highlightColor: Colors.highlightColor
+
+                height: l2.height + (divider.visible ? divider.height : 0)
+
+                SlotsLayout {
+                    id: l2
+                    mainSlot: Text {
+                        anchors.verticalCenter: parent.verticalCenter
+                        text: i18n.tr("Dark mode")
+                        color: Colors.mainText
+                    }
+                    Switch {
+                        checked: settings.darkMode
+                        SlotsLayout.position: SlotsLayout.Trailing
+
+                        onClicked: {
+                            settings.darkMode = checked
+                            l1.summary.visible = true
+                        }
+                    }
                 }
-                Qqc.Slider {
-                   id: slide1
-                   from: -48.0
-                   to: 24.0
-                   live: true
-                   orientation: Qt.Vertical
-                   stepSize: 0.5
-                   value: settings.equalizerControls1
+            }*/
+            ListItem {
+                height: l3.height + (divider.visible ? divider.height : 0)
+                color: Colors.surfaceColor
+                divider.colorFrom: Colors.borderColor
+                divider.colorTo: Colors.borderColor
+                highlightColor: Colors.highlightColor
+
+                ListItemLayout {
+                    id: l3
+                    title.text: i18n.tr("Equalizer")
+                    title.font.bold: true
+                    title.color: Colors.mainText
+
+                    Rectangle {
+                        id: statusrec1
+                        SlotsLayout.position: SlotsLayout.Trailing;
+                        width: units.gu(2)
+                        height: units.gu(2)
+                        color: settings.value("equalizerStatus")
+                        visible: true
+                        radius: units.gu(1)
+                    }
                 }
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: "31Hz"
-                   color: Colors.mainText
-                   font.pointSize: 20
+            }
+            Row {
+                anchors.horizontalCenter: parent.horizontalCenter
+                spacing: 1
+                Column {
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: slide1.value
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
+                    Qqc.Slider {
+                        id: slide1
+                        from: -48.0
+                        to: 24.0
+                        live: true
+                        orientation: Qt.Vertical
+                        stepSize: 0.5
+                        value: settings.equalizerControls1
+                    }
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "31Hz"
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
                 }
-             }
-             Column {
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: slide2.value
-                   color: Colors.mainText
-                   font.pointSize: 20
+                Column {
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: slide2.value
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
+                    Qqc.Slider {
+                        id: slide2
+                        from: -48.0
+                        to: 24.0
+                        live: true
+                        orientation: Qt.Vertical
+                        stepSize: 0.5
+                        value: settings.equalizerControls2
+                    }
+                    Label {
+                        width: parent.width
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "63Hz"
+                        color: Colors.mainText
+                        font.pointSize: 20
+                    }
                 }
-                Qqc.Slider {
-                   id: slide2
-                   from: -48.0
-                   to: 24.0
-                   live: true
-                   orientation: Qt.Vertical
-                   stepSize: 0.5
-                   value: settings.equalizerControls2
-                }
-                Label {
-                   width: parent.width
-                   horizontalAlignment: Text.AlignHCenter
-                   text: "63Hz"
-                   color: Colors.mainText
-                   font.pointSize: 20
-                }
-             }
              Column {
                 Label {
                    width: parent.width
@@ -515,6 +516,34 @@ Rectangle {
              leftPadding: units.gu(3)
              rightPadding: units.gu(3)
           }
+            ListItem {
+                anchors.left: parent.left
+                anchors.right: parent.right
+                color: Colors.surfaceColor
+                divider.colorFrom: Colors.borderColor
+                divider.colorTo: Colors.borderColor
+                highlightColor: Colors.highlightColor
+
+                height: l2.height + (divider.visible ? divider.height : 0)
+
+                SlotsLayout {
+                    id: l2
+                    mainSlot: Text {
+                        anchors.verticalCenter: parent.verticalCenter
+                        text: i18n.tr("Dark mode")
+                        color: Colors.mainText
+                    }
+                    Switch {
+                        checked: settings.darkMode
+                        SlotsLayout.position: SlotsLayout.Trailing
+
+                        onClicked: {
+                            settings.darkMode = checked
+                            l1.summary.visible = true
+                        }
+                    }
+                }
+            }
        }
-    }*/
+    }
 }
