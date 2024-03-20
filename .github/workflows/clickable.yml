@@ -18,8 +18,8 @@ jobs:
         build: [Release]
     runs-on: ubuntu-latest
     steps:
-#      - name: Checkout
-#        uses: actions/checkout@v4.1.1
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
 #        with:
 #          submodules: recursive
       - name: Install Dependencies
@@ -31,16 +31,16 @@ jobs:
 #      - name: Create folder and change to it
 #        run: mkdir ~/uminimizer
       - name: Build
-#        run: |
-#         CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable build --verbose  --arch ${{ matrix.arch }}
-        run:
-         mkdir ~/utEqualizer && cd ~/utEqualizer && clickable create --non-interactive --template cmake --title utEqualizer --description "An Equalizer for Ubuntu Touch Focal" --name utequalizer --namespace bigbrotherisstillwatching --maintainer "bbisw" --mail 140657673+bigbrotherisstillwatching@users.noreply.github.com --license gpl3 --copyright-year 2024 --arch arm64
+        run: |
+         CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable build --verbose  --arch ${{ matrix.arch }}
+#        run:
+#         mkdir ~/utEqualizer && cd ~/utEqualizer && clickable create --non-interactive --template cmake --title utEqualizer --description "An Equalizer for Ubuntu Touch Focal" --name utequalizer --namespace bigbrotherisstillwatching --maintainer "bbisw" --mail 140657673+bigbrotherisstillwatching@users.noreply.github.com --license gpl3 --copyright-year 2024 --arch arm64
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4.3.0
         if: always()
         with:
-#          name: "utEqualizer-${{ matrix.arch }}--${{ matrix.build }}--click"
-          name: "utEqualizer--click"
-          path: "~/utEqualizer"
+          name: "utEqualizer-${{ matrix.arch }}--${{ matrix.build }}--click"
+#          name: "utEqualizer--click"
+          path: "build/*/app/*.click"
           if-no-files-found: ignore
 #          retention-days: 20
