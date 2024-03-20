@@ -132,7 +132,7 @@ Rectangle {
                 }
             }
 */
-            ListItem {
+/*            ListItem {
 //                anchors.left: parent.left
 //                anchors.right: parent.right
 //                anchors.top: text1.bottom
@@ -192,9 +192,10 @@ Rectangle {
                         radius: units.gu(1)
                     }
                 }
-            }
+            }*/
             Row {
-                anchors.horizontalCenter: parent.horizontalCenter
+//                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.centerIn: parent
                 spacing: 1
                 Column {
                     Label {
@@ -447,7 +448,7 @@ Rectangle {
                     }
                 }
             }
-            Row {
+/*            Row {
                 anchors.horizontalCenter: parent.horizontalCenter
                 spacing: mainPage.padding
                 Button {
@@ -542,7 +543,7 @@ Rectangle {
                 visible: false
                 leftPadding: units.gu(3)
                 rightPadding: units.gu(3)
-            }
+            }*/
         }
     }
 }
