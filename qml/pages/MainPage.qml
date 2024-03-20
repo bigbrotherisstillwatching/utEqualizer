@@ -68,17 +68,17 @@ Rectangle {
 //        title: "Equalizer"
 //        title.color: Colors.mainText
 //        title.font.bold: true
-//        StyleHints {
-//            foregroundColor: Colors.surfaceColor
-//            backgroundColor: Colors.backgroundColor
+        StyleHints {
+            foregroundColor: Colors.mainText
+            backgroundColor: Colors.backgroundColor
 //            backgroundColor: Colors.surfaceColor
-//            dividerColor: Colors.borderColor
-//        }
-        contents: Rectangle {
-            id: headerrec
-            anchors.CenterIn: header
-            color: Colors.backgroundColor
+            dividerColor: Colors.borderColor
         }
+//        contents: Rectangle {
+//            id: headerrec
+//            anchors.CenterIn: header
+//            color: Colors.backgroundColor
+//        }
         trailingActionBar {
             actions: [
                 Action {
