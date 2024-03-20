@@ -474,7 +474,7 @@ Rectangle {
             }
             Qqc.Switch {
                 id: eqswitch
-                y: 10
+                y: 7
             }
             Button {
                 id: rstbttn
