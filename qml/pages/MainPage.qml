@@ -464,7 +464,7 @@ Rectangle {
         Row {
             id: row2
             anchors.horizontalCenter: clmn1.horizontalCenter
-            spacing: units.gu(5)
+//            spacing: units.gu(5)
             Button {
                 id: chngbttn
                 height: units.gu(4)
@@ -474,7 +474,7 @@ Rectangle {
             }
             Qqc.Switch {
                 id: eqswitch
-                topPadding: 10
+                y: 10
             }
             Button {
                 id: rstbttn
