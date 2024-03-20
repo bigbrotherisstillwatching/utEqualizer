@@ -70,13 +70,13 @@ Rectangle {
 //        title.font.bold: true
         StyleHints {
             foregroundColor: Colors.mainText
-//            backgroundColor: Colors.backgroundColor
-            backgroundColor: Colors.surfaceColor
+            backgroundColor: Colors.backgroundColor
+//            backgroundColor: Colors.surfaceColor
             dividerColor: Colors.borderColor
         }
         contents: Label {
             id: hdrlbl
-//            anchors.CenterIn: header
+            anchors.CenterIn: header
             color: Colors.mainText
             textSize: Label.XLarge
             text: header.title
