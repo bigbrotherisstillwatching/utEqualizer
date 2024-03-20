@@ -116,9 +116,9 @@ Rectangle {
             }
 */
             ListItem {
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.top: text1.bottom
+//                anchors.left: parent.left
+//                anchors.right: parent.right
+//                anchors.top: text1.bottom
                 color: Colors.surfaceColor
                 divider.colorFrom: Colors.borderColor
                 divider.colorTo: Colors.borderColor
