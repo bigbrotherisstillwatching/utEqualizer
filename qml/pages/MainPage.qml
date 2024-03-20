@@ -67,8 +67,9 @@ Rectangle {
         id: header
         title: "Equalizer"
         StyleHints {
-            foregroundColor: Colors.surfaceColor
-            backgroundColor: Colors.backgroundColor
+//            foregroundColor: Colors.surfaceColor
+//            backgroundColor: Colors.backgroundColor
+            backgroundColor: Colors.surfaceColor
             dividerColor: Colors.borderColor
         }
         contents: Rectangle {
