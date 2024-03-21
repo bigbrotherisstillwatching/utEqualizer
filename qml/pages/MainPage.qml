@@ -102,6 +102,9 @@ Rectangle {
                 StyleHints {
                     defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
                 }
+                onClicked: {
+                    Qt.quit()
+                }
             }
         }
 //        trailingActionBar {
