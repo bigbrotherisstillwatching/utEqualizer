@@ -65,8 +65,8 @@ Rectangle {
         property string equalizerControls8: ""
         property string equalizerControls9: ""
         property string equalizerControls10: ""
-//        property bool equalizerStatus: false
-        property string equalizerStatus: "false"
+        property bool equalizerStatus: false
+//        property string equalizerStatus: "false"
     }
 
     Connections {
@@ -93,7 +93,7 @@ Rectangle {
                 onClicked: {
 //                    PopupUtils.close(dialog2)
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-                    settings.equalizerStatus = "false"
+//                    settings.equalizerStatus = "false"
                     bttn3.enabled = true
 //                    eqswitch.clicked()
                 }
@@ -563,8 +563,8 @@ Rectangle {
                     if (settings.equalizerStatus === true) {
                         process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
 //                        tsttxt.text = "Off"
-//                        settings.equalizerStatus = checked
-                        settings.equalizerStatus = "false"
+                        settings.equalizerStatus = checked
+//                        settings.equalizerStatus = "false"
 //                        statusrec1.color = "red"
                     } else {
                         settings.equalizerControls1 = slide1.value.toFixed(1)
@@ -579,8 +579,8 @@ Rectangle {
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                         process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
 //                        tsttxt.text = "On"
-//                        settings.equalizerStatus = checked
-                        settings.equalizerStatus = "true"
+                        settings.equalizerStatus = checked
+//                        settings.equalizerStatus = "true"
 //                        statusrec1.color = "green"
                     }
                 }
