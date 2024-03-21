@@ -21,6 +21,7 @@ import QtQuick.Layouts 1.3
 //import QtMultimedia 5.12
 import Qt.labs.settings 1.0
 import QtQuick.Controls 2.7 as Qqc
+import QtQuick.Controls.Material 2.7 as Qqcm
 import Process 1.0
 
 //import "../net"
@@ -484,18 +485,19 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "media-playlist-shuffle"
-                color: Colors.surfaceColor2
+                color: Colors.surfaceColor
             }
             Qqc.Switch {
                 id: eqswitch
                 y: 5
+                Qqcm.Material.accent: Material.Green
             }
             Button {
                 id: rstbttn
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "reset"
-                color: Colors.surfaceColor2
+                color: Colors.surfaceColor
             }
         }
         Row {
