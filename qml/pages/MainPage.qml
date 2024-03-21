@@ -63,6 +63,13 @@ Rectangle {
         property bool equalizerStatus: true
     }
 
+    Connections {
+        target: Qt.application
+        onAboutToQuit: {
+            console.log("Goodbye!");
+        }
+    }
+
     PageHeader {
         id: header
         title: "Equalizer"
