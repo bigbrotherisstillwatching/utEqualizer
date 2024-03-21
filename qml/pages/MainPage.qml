@@ -485,11 +485,13 @@ Rectangle {
                 width: units.gu(4)
                 iconName: "media-playlist-shuffle"
                 color: Colors.surfaceColor
+                StyleHints {
+                    defaultColor: chngbttn.pressed ? "green" : Colors.surfaceColor
+                }
             }
             Qqc.Switch {
                 id: eqswitch
                 y: 5
-                color: eqswitch.checked ? "green" : "red"
             }
             Button {
                 id: rstbttn
@@ -497,6 +499,9 @@ Rectangle {
                 width: units.gu(4)
                 iconName: "reset"
                 color: Colors.surfaceColor
+                StyleHints {
+                    defaultColor: rstbttn.pressed ? "green" : Colors.surfaceColor
+                }
             }
         }
         Row {
