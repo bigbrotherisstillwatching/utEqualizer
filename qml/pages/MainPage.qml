@@ -65,7 +65,7 @@ Rectangle {
         property string equalizerControls8: ""
         property string equalizerControls9: ""
         property string equalizerControls10: ""
-        property bool equalizerStatus: false
+        property bool equalizerStatus: true
     }
 
     Connections {
