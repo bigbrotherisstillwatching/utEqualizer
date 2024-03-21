@@ -22,6 +22,7 @@ import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import QtQuick.Controls 2.7 as Qqc
 import Process 1.0
+import Lomiri.Components.Popups 1.3
 
 //import "../net"
 //import "../util"
@@ -70,9 +71,30 @@ Rectangle {
     Connections {
         target: Qt.application
         onAboutToQuit: {
-            process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-            settings.equalizerStatus = checked
             console.log("Goodbye!");
+        }
+    }
+
+    Component {
+        id: dialog
+        Dialog {
+            id: dialog2
+            title: "Save file"
+            text: "Are you sure that you want to save this file?"
+            Button {
+                text: "cancel"
+                onClicked: PopupUtils.close(dialog2)
+            }
+            Button {
+                text: "overwrite previous version"
+                color: LomiriColors.orange
+                onClicked: PopupUtils.close(dialog2)
+            }
+            Button {
+                text: "save a copy"
+                color: LomiriColors.orange
+                onClicked: PopupUtils.close(dialog2)
+            }
         }
     }
 
@@ -116,7 +138,8 @@ Rectangle {
                     defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
                 }
                 onClicked: {
-                    Qt.quit()
+//                    Qt.quit()
+                    PopupUtils.open(dialog)
                 }
             }
         }
