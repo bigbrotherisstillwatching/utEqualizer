@@ -63,6 +63,11 @@ Rectangle {
         property string equalizerStatus: ""
     }
 
+    Connections {
+        id: cnnctns
+        target: Qt.application
+    }
+
     PageHeader {
         id: header
         title: "Equalizer"
@@ -103,7 +108,7 @@ Rectangle {
                     defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
                 }
                 onClicked: {
-                    Qt.quit()
+                    Qt.quit(cnnctns)
                 }
             }
         }
