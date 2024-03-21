@@ -511,9 +511,9 @@ Rectangle {
                 checked: settings.equalizerStatus
 //                checked: settings.value("equalizerStatus")
                 onToggled: {
-                    if (settings.equalizerStatus == true) {
+                    if (settings.equalizerStatus === true) {
 //                        process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-//                        text1.visible = false
+                        tsttxt.text = Off
                         settings.equalizerStatus = checked
 //                        statusrec1.color = "red"
                     } else {
@@ -528,8 +528,8 @@ Rectangle {
 //                        settings.equalizerControls9 = slide9.value.toFixed(1)
 //                        settings.equalizerControls10 = slide10.value.toFixed(1)
 //                        process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
-//                        text1.visible = true
-                        settings.equalizerStatus = "false"
+                        tsttxt.text = On
+                        settings.equalizerStatus = checked
 //                        statusrec1.color = "green"
                     }
                 }
@@ -565,6 +565,10 @@ Rectangle {
                     settings.equalizerControls9 = slide9.value.toFixed(1)
                     settings.equalizerControls10 = slide10.value.toFixed(1)
                 }
+            }
+            Text {
+                id: tsttxt
+                text: ""
             }
         }
         Row {
