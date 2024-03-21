@@ -72,7 +72,9 @@ Rectangle {
             foregroundColor: Colors.mainText
             backgroundColor: Colors.backgroundColor
 //            backgroundColor: Colors.surfaceColor
-            dividerColor: Colors.borderColor
+//            dividerColor: Colors.borderColor
+            dividerColor: Colors.mainText
+            highlightColor: "red"
         }
         contents: Rectangle {
             id: hdrrec
