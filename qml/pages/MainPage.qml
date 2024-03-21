@@ -513,7 +513,7 @@ Rectangle {
                 onToggled: {
                     if (settings.equalizerStatus === true) {
 //                        process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-                        tsttxt.text = Off
+                        tsttxt.text = "Off"
                         settings.equalizerStatus = checked
 //                        statusrec1.color = "red"
                     } else {
@@ -528,7 +528,7 @@ Rectangle {
 //                        settings.equalizerControls9 = slide9.value.toFixed(1)
 //                        settings.equalizerControls10 = slide10.value.toFixed(1)
 //                        process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
-                        tsttxt.text = On
+                        tsttxt.text = "On"
                         settings.equalizerStatus = checked
 //                        statusrec1.color = "green"
                     }
