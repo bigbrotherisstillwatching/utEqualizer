@@ -492,9 +492,6 @@ Rectangle {
             Qqc.Switch {
                 id: eqswitch
                 y: 5
-                StyleHints {
-                    defaultColor: eqswitch.checked ? "green" : "red"
-                }
             }
             Button {
                 id: rstbttn
