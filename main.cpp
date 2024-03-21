@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
     QQuickView *view = new QQuickView();
     view->setSource(QUrl("qrc:/Main.qml"));
     view->setResizeMode(QQuickView::SizeRootObjectToView);
+    QObject::connect((QObject*)view->engine(), SIGNAL(quit()), app, SLOT(quit()));
     view->show();
 
     return app->exec();
