@@ -21,7 +21,7 @@ import QtQuick.Layouts 1.3
 //import QtMultimedia 5.12
 import Qt.labs.settings 1.0
 import QtQuick.Controls 2.7 as Qqc
-import QtQuick.Controls.Material 2.7 as Qqcm
+import QtQuick.Controls.Material 2.7
 import Process 1.0
 
 //import "../net"
@@ -490,7 +490,7 @@ Rectangle {
             Qqc.Switch {
                 id: eqswitch
                 y: 5
-                Qqcm.Material.accent: Material.Green
+                Material.accent: Material.Green
             }
             Button {
                 id: rstbttn
