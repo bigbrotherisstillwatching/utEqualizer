@@ -79,21 +79,31 @@ Rectangle {
         id: dialog
         Dialog {
             id: dialog2
-            title: "Save file"
-            text: "Are you sure that you want to save this file?"
+            title: "Quit"
+            text: "Are you sure that you want to close the app?"
             Button {
-                text: "cancel"
+                id: bttn1
+                text: "Cancel"
                 onClicked: PopupUtils.close(dialog2)
             }
             Button {
-                text: "overwrite previous version"
-                color: LomiriColors.orange
-                onClicked: PopupUtils.close(dialog2)
+                id: bttn2
+                text: "Turn off equalizer"
+                onClicked: {
+//                    PopupUtils.close(dialog2)
+                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
+                    settings.equalizerStatus = checked
+                }
             }
             Button {
-                text: "save a copy"
-                color: LomiriColors.orange
-                onClicked: PopupUtils.close(dialog2)
+                id: bttn3
+                enabled: bttn2.pressed
+                text: "OK"
+//                color: LomiriColors.orange
+                onClicked: {
+//                    PopupUtils.close(dialog2)
+                    Qt.quit()
+                }
             }
         }
     }
