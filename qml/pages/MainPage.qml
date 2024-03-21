@@ -92,12 +92,13 @@ Rectangle {
                 onClicked: {
 //                    PopupUtils.close(dialog2)
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-                    settings.equalizerStatus = checked
+                    settings.equalizerStatus = "false"
+                    bttn3.enabled = true
                 }
             }
             Button {
                 id: bttn3
-                enabled: bttn2.pressed
+                enabled: false
                 text: "OK"
 //                color: LomiriColors.orange
                 onClicked: {
