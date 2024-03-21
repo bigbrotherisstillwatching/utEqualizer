@@ -47,6 +47,10 @@ Rectangle {
         id: process3
     }
 
+    Process {
+        id: process4
+    }
+
     Settings {
         id: settings
         property bool darkMode: true
@@ -66,6 +70,8 @@ Rectangle {
     Connections {
         target: Qt.application
         onAboutToQuit: {
+            process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
+            settings.equalizerStatus = checked
             console.log("Goodbye!");
         }
     }
