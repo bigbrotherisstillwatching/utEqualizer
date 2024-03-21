@@ -91,6 +91,17 @@ Rectangle {
                 font.pointSize: 40
 //                font.bold: true
             }
+            Button {
+                id: clsbttn
+                height: units.gu(4)
+                width: units.gu(4)
+                iconName: "close"
+                anchors.right: header.right
+//                color: Colors.surfaceColor2
+                StyleHints {
+                    defaultColor: button.pressed ? "blue" : "white"
+                }
+            }
         }
 //        trailingActionBar {
 //            actions: [
@@ -100,28 +111,6 @@ Rectangle {
 //                }
 //            ]
 //        }
-        trailingActionBar: ListItemActions {
-            id: clsbttn
-            delegate: Column {
-                width: height + units.gu(2)
-                Icon {
-                    name: action.iconName
-                    width: units.gu(3)
-                    height: width
-                    color: pressed ? "blue" : "lightblue"
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
-                Label {
-                    text: action.text
-                    width: parent.width
-                    horizontalAlignment: Text.AlignHCenter
-                }
-            }
-            actions: Action {
-                iconName: "close"
-                text: "Close"
-            }
-        }
     }
 
 /*
