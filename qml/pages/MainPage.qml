@@ -487,7 +487,7 @@ Rectangle {
         Row {
             id: row3
             anchors.horizontalCenter: clmn1.horizontalCenter
-//            spacing: units.gu(15)
+            spacing: units.gu(20)
             Text {
                 id: txt1
                 text: "Dark Mode"
