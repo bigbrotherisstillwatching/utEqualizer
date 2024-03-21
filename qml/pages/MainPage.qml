@@ -101,7 +101,6 @@ Rectangle {
 //                color: Colors.surfaceColor2
                 StyleHints {
                     defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
-                    foregroundColor: "blue"
                 }
             }
         }
