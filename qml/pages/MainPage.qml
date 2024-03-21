@@ -92,7 +92,7 @@ Rectangle {
                 onClicked: {
 //                    PopupUtils.close(dialog2)
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-                    mainPage.settings.equalizerStatus = checked
+                    settings.equalizerStatus = checked
                     bttn3.enabled = true
 //                    eqswitch.checked = false
                 }
