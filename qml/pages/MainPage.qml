@@ -511,22 +511,22 @@ Rectangle {
                 checked: settings.equalizerStatus
                 onToggled: {
                     if (settings.equalizerStatus == true) {
-                        process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
+//                        process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
 //                        text1.visible = false
-                        settings.equalizerStatus = "true"
+                        settings.equalizerStatus = checked
 //                        statusrec1.color = "red"
                     } else {
-                        settings.equalizerControls1 = slide1.value.toFixed(1)
-                        settings.equalizerControls2 = slide2.value.toFixed(1)
-                        settings.equalizerControls3 = slide3.value.toFixed(1)
-                        settings.equalizerControls4 = slide4.value.toFixed(1)
-                        settings.equalizerControls5 = slide5.value.toFixed(1)
-                        settings.equalizerControls6 = slide6.value.toFixed(1)
-                        settings.equalizerControls7 = slide7.value.toFixed(1)
-                        settings.equalizerControls8 = slide8.value.toFixed(1)
-                        settings.equalizerControls9 = slide9.value.toFixed(1)
-                        settings.equalizerControls10 = slide10.value.toFixed(1)
-                        process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
+//                        settings.equalizerControls1 = slide1.value.toFixed(1)
+//                        settings.equalizerControls2 = slide2.value.toFixed(1)
+//                        settings.equalizerControls3 = slide3.value.toFixed(1)
+//                        settings.equalizerControls4 = slide4.value.toFixed(1)
+//                        settings.equalizerControls5 = slide5.value.toFixed(1)
+//                        settings.equalizerControls6 = slide6.value.toFixed(1)
+//                        settings.equalizerControls7 = slide7.value.toFixed(1)
+//                        settings.equalizerControls8 = slide8.value.toFixed(1)
+//                        settings.equalizerControls9 = slide9.value.toFixed(1)
+//                        settings.equalizerControls10 = slide10.value.toFixed(1)
+//                        process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
 //                        text1.visible = true
                         settings.equalizerStatus = "false"
 //                        statusrec1.color = "green"
