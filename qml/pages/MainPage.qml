@@ -74,8 +74,7 @@ Rectangle {
 //            backgroundColor: Colors.surfaceColor
 //            dividerColor: Colors.borderColor
             dividerColor: Colors.mainText
-            highlightColor: "red"
-            ignoreUnknownProperties: true
+//            highlightColor: "red"
         }
         contents: Rectangle {
             id: hdrrec
@@ -93,13 +92,35 @@ Rectangle {
 //                font.bold: true
             }
         }
-        trailingActionBar {
-            actions: [
-                Action {
-                    iconName: "close"
-                    text: "Close"
+//        trailingActionBar {
+//            actions: [
+//                Action {
+//                    iconName: "close"
+//                    text: "Close"
+//                }
+//            ]
+//        }
+        trailingActionBar: ListItemActions {
+            id: clsbttn
+            delegate: Column {
+                width: height + units.gu(2)
+                Icon {
+                    name: action.iconName
+                    width: units.gu(3)
+                    height: width
+                    color: pressed ? "blue" : "lightblue"
+                    anchors.horizontalCenter: parent.horizontalCenter
                 }
-            ]
+                Label {
+                    text: action.text
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                }
+            }
+            actions: Action {
+                iconName: "close"
+                text: "Close"
+            }
         }
     }
 
