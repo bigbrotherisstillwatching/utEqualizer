@@ -60,7 +60,7 @@ Rectangle {
         property string equalizerControls8: ""
         property string equalizerControls9: ""
         property string equalizerControls10: ""
-        property string equalizerStatus: ""
+        property bool equalizerStatus: true
     }
 
     PageHeader {
