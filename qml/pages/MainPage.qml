@@ -75,6 +75,7 @@ Rectangle {
 //            dividerColor: Colors.borderColor
             dividerColor: Colors.mainText
             highlightColor: "red"
+            ignoreUnknownProperties: true
         }
         contents: Rectangle {
             id: hdrrec
