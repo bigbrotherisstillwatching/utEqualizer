@@ -491,10 +491,47 @@ Rectangle {
                 StyleHints {
                     defaultColor: chngbttn.pressed ? "green" : Colors.surfaceColor
                 }
+                onClicked: {
+                    settings.equalizerControls1 = slide1.value.toFixed(1)
+                    settings.equalizerControls2 = slide2.value.toFixed(1)
+                    settings.equalizerControls3 = slide3.value.toFixed(1)
+                    settings.equalizerControls4 = slide4.value.toFixed(1)
+                    settings.equalizerControls5 = slide5.value.toFixed(1)
+                    settings.equalizerControls6 = slide6.value.toFixed(1)
+                    settings.equalizerControls7 = slide7.value.toFixed(1)
+                    settings.equalizerControls8 = slide8.value.toFixed(1)
+                    settings.equalizerControls9 = slide9.value.toFixed(1)
+                    settings.equalizerControls10 = slide10.value.toFixed(1)
+                    process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_change.sh"])
+                }
             }
             Qqc.Switch {
                 id: eqswitch
                 y: 5
+                checked: settings.equalizerStatus
+                onToggled: {
+                    if (settings.equalizerStatus == true) {
+                        process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
+//                        text1.visible = false
+                        settings.equalizerStatus = "true"
+//                        statusrec1.color = "red"
+                    } else {
+                        settings.equalizerControls1 = slide1.value.toFixed(1)
+                        settings.equalizerControls2 = slide2.value.toFixed(1)
+                        settings.equalizerControls3 = slide3.value.toFixed(1)
+                        settings.equalizerControls4 = slide4.value.toFixed(1)
+                        settings.equalizerControls5 = slide5.value.toFixed(1)
+                        settings.equalizerControls6 = slide6.value.toFixed(1)
+                        settings.equalizerControls7 = slide7.value.toFixed(1)
+                        settings.equalizerControls8 = slide8.value.toFixed(1)
+                        settings.equalizerControls9 = slide9.value.toFixed(1)
+                        settings.equalizerControls10 = slide10.value.toFixed(1)
+                        process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
+//                        text1.visible = true
+                        settings.equalizerStatus = "false"
+//                        statusrec1.color = "green"
+                    }
+                }
             }
             Button {
                 id: rstbttn
@@ -504,6 +541,28 @@ Rectangle {
 //                color: Colors.surfaceColor
                 StyleHints {
                     defaultColor: rstbttn.pressed ? "green" : Colors.surfaceColor
+                }
+                onClicked: {
+                    slide1.value = 0.0
+                    slide2.value = 0.0
+                    slide3.value = 0.0
+                    slide4.value = 0.0
+                    slide5.value = 0.0
+                    slide6.value = 0.0
+                    slide7.value = 0.0
+                    slide8.value = 0.0
+                    slide9.value = 0.0
+                    slide10.value = 0.0
+                    settings.equalizerControls1 = slide1.value.toFixed(1)
+                    settings.equalizerControls2 = slide2.value.toFixed(1)
+                    settings.equalizerControls3 = slide3.value.toFixed(1)
+                    settings.equalizerControls4 = slide4.value.toFixed(1)
+                    settings.equalizerControls5 = slide5.value.toFixed(1)
+                    settings.equalizerControls6 = slide6.value.toFixed(1)
+                    settings.equalizerControls7 = slide7.value.toFixed(1)
+                    settings.equalizerControls8 = slide8.value.toFixed(1)
+                    settings.equalizerControls9 = slide9.value.toFixed(1)
+                    settings.equalizerControls10 = slide10.value.toFixed(1)
                 }
             }
         }
