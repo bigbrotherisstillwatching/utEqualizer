@@ -494,11 +494,11 @@ Rectangle {
 //                  anchors.left: row3.left
 //                  horizontalAlignment:
                 color: Colors.mainText
-                topPadding: 5
+//                topPadding: 5
             }
             Qqc.Switch {
                 id: drkmdswitch
-//                y: -5
+                y: -15
                 checked: settings.darkMode
 //                SlotsLayout.position: SlotsLayout.Trailing
 
