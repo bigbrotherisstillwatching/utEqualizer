@@ -484,9 +484,9 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "media-playlist-shuffle"
-                color: Colors.surfaceColor
+//                color: Colors.surfaceColor
                 StyleHints {
-                    defaultColor: chngbttn.pressed ? "red" : Colors.surfaceColor
+                    defaultColor: chngbttn.pressed ? "green" : Colors.surfaceColor
                 }
             }
             Qqc.Switch {
@@ -498,9 +498,9 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "reset"
-                color: Colors.surfaceColor
+//                color: Colors.surfaceColor
                 StyleHints {
-                    defaultColor: rstbttn.pressed ? "red" : Colors.surfaceColor
+                    defaultColor: rstbttn.pressed ? "green" : Colors.surfaceColor
                 }
             }
         }
