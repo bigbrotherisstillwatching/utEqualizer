@@ -97,9 +97,11 @@ Rectangle {
                 width: units.gu(4)
                 iconName: "close"
                 anchors.right: hdrrec.right
+                y: 10
 //                color: Colors.surfaceColor2
                 StyleHints {
-                    defaultColor: clsbttn.pressed ? "blue" : "white"
+                    defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
+                    foregroundColor: Colors.mainText
                 }
             }
         }
