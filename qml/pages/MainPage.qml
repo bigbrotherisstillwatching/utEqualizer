@@ -470,7 +470,7 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "media-playlist-shuffle"
-                color: Colors.surfaceColor
+                color: Colors.surfaceColor2
             }
             Qqc.Switch {
                 id: eqswitch
@@ -481,7 +481,7 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "reset"
-                color: Colors.surfaceColor
+                color: Colors.surfaceColor2
             }
         }
         Row {
