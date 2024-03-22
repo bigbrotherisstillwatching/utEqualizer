@@ -545,9 +545,24 @@ Rectangle {
 
                 onClicked: {
                     settings.darkMode = checked
-//                    txt3.text = i18n.tr("Restart the app after changing dark mode option")
+                    txt2.text = i18n.tr("Restart the app after changing dark mode option")
                 }
             }
+        }
+        Text {
+             id: txt2
+//             text: i18n.tr("Please turn off equalizer <u>before</u> changing audio output, closing the app or rebooting the phone!")
+             text: ""
+             color: "red"
+             anchors.horizontalCenter: clmn1.horizontalCenter
+//             topPadding: units.gu(3)
+             wrapMode: Text.WordWrap
+             width: mainPage.width
+             lineHeight: 1.2
+             horizontalAlignment: Text.AlignHCenter
+//             visible: false
+             leftPadding: units.gu(3)
+             rightPadding: units.gu(3)
         }
     }
 }
