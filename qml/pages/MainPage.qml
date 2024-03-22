@@ -53,6 +53,10 @@ Rectangle {
         id: process5
     }
 
+    Process {
+        id: process6
+    }
+
     Settings {
         id: settings
         property bool darkMode: true
@@ -67,6 +71,7 @@ Rectangle {
         property string equalizerControls9: ""
         property string equalizerControls10: ""
         property bool equalizerStatus: false
+        property string properlyClosed: ""
     }
 
     Connections {
@@ -74,12 +79,26 @@ Rectangle {
         onAboutToQuit: {
             if (settings.equalizerStatus === true) {
 //                console.log("Goodbye!");
-                console.log("EQ is still active");
-            } else {
-                console.log("EQ is inactive");
+//                console.log("EQ is still active");
+                settings.properlyClosed = "No"
+//                settings.equalizerStatus = checked
+                settings.sync()
+//            } else if (settings.equalizerStatus === false) {
+//                console.log("EQ is inactive");
+//                settings.properlyClosed = "Yes"
             }
+//            settings.equalizerStatus = unchecked
+//            settings.sync()
+            console.log("Goodbye!");
         }
     }
+
+//    Component.onCompleted: {
+//        if (settings.equalizerStatus === true) {
+//        process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
+//            eqswitch.checked = false
+//        }
+//    }
 
     Component {
         id: dialog
