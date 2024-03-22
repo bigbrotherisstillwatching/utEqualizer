@@ -79,6 +79,11 @@ Rectangle {
     Component {
         id: dialog
 
+        Settings {
+            id: settings2
+            property bool equalizerStatus: true
+        }
+
         Dialog {
             id: dialog2
             title: "Quit"
@@ -94,10 +99,11 @@ Rectangle {
                 onClicked: {
 //                    PopupUtils.close(dialog2)
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-//                    settings.equalizerStatus = "Test"
+                    settings2.equalizerStatus = checked
                     bttn3.enabled = true
 //                    eqswitch.clicked()
                     eqswitch.checked = false
+                    bttn1.enabled = false
                 }
             }
             Button {
