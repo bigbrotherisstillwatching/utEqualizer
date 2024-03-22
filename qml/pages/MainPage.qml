@@ -75,43 +75,41 @@ Rectangle {
             console.log("Goodbye!");
         }
     }
-/*
+
     Component {
         id: dialog
-*/
-    Dialog {
-        id: dialog2
-        title: "Quit"
-        text: "Are you sure that you want to close the app?"
-        Button {
-            id: bttn1
-            text: "Cancel"
-            onClicked: PopupUtils.close(dialog2)
-        }
-        Button {
-            id: bttn2
-            text: "Turn off equalizer"
-            onClicked: {
-//                PopupUtils.close(dialog2)
-                process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-                settings.equalizerStatus = checked
-                bttn3.enabled = true
-//                eqswitch.clicked()
+
+        Dialog {
+            id: dialog2
+            title: "Quit"
+            text: "Are you sure that you want to close the app?"
+            Button {
+                id: bttn1
+                text: "Cancel"
+                onClicked: PopupUtils.close(dialog2)
+            }
+            Button {
+                id: bttn2
+                text: "Turn off equalizer"
+                onClicked: {
+//                    PopupUtils.close(dialog2)
+                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
+                    settings.equalizerStatus = "Test"
+                    bttn3.enabled = true
+//                    eqswitch.clicked()
+                }
+            }
+            Button {
+                id: bttn3
+                enabled: false
+                text: "OK"
+//                color: LomiriColors.orange
+                onClicked: {
+//                    PopupUtils.close(dialog2)
+                    Qt.quit()
+                }
             }
         }
-        Button {
-            id: bttn3
-            enabled: false
-            text: "OK"
-//            color: LomiriColors.orange
-            onClicked: {
-//                PopupUtils.close(dialog2)
-                Qt.quit()
-            }
-        }
-/*
-    }
-*/
     }
 
     PageHeader {
