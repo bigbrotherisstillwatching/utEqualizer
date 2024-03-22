@@ -650,35 +650,35 @@ Rectangle {
 
                 onClicked: {
                     settings.darkMode = checked
-                    txt3.text = i18n.tr("Restart the app after changing dark mode option")
+//                    txt3.text = i18n.tr("Restart the app after changing dark mode option")
                 }
             }
         }
-        Row {
-            id: row4
-            anchors.horizontalCenter: clmn1.horizontalCenter
-            spacing: units.gu(2)
-            Icon {
-                id: inficn
-                name: "info"
-                width: units.gu(2)
-                height: width
-            }
-            Text {
-                id: txt3
+//        Row {
+//            id: row4
+//            anchors.horizontalCenter: clmn1.horizontalCenter
+//            spacing: units.gu(2)
+//            Icon {
+//                id: inficn
+//                name: "info"
+//                width: units.gu(2)
+//                height: width
+//            }
+//            Text {
+//                id: txt3
 //                anchors.top: mymeta.top
 //                anchors.topMargin: 20
-                horizontalAlignment: TextEdit.AlignHCenter
-                width: clmn1.width - inficn.width
-                wrapMode: TextEdit.Wrap
+//                horizontalAlignment: TextEdit.AlignHCenter
+//                width: clmn1.width - inficn.width
+//                wrapMode: TextEdit.Wrap
 //                font.pointSize: 25
-                color: "red"
+//                color: "red"
 //                maximumLineCount: 3
 //                style: ActionBarStyle {
 //                    backgroundColor: "transparent"
 //                }
-            }
-        }
+//            }
+//        }
     }
 }
 /*
