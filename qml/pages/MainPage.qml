@@ -466,7 +466,8 @@ Rectangle {
                 id: chngbttn
                 height: units.gu(4)
                 width: units.gu(4)
-                iconName: "media-playlist-shuffle"
+//                iconName: "media-playlist-shuffle"
+                iconSource: "assets/change.svg"
                 StyleHints {
                     defaultColor: chngbttn.pressed ? "32517F" : Colors.surfaceColor
                 }
@@ -517,7 +518,8 @@ Rectangle {
                 id: rstbttn
                 height: units.gu(4)
                 width: units.gu(4)
-                iconName: "reset"
+//                iconName: "reset"
+                iconSource: "assets/resetzero.svg"
                 StyleHints {
                     defaultColor: rstbttn.pressed ? "#32517F" : Colors.surfaceColor
                 }
