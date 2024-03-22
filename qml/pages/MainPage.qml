@@ -32,7 +32,7 @@ Rectangle {
     color: Colors.backgroundColor
 
     property var padding: units.gu(1)
-    property bool eqsts: settings.equalizerStatus
+    property alias eqsts: settings.equalizerStatus
 
     Process {
         id: process
@@ -75,8 +75,8 @@ Rectangle {
         property string equalizerControls8: ""
         property string equalizerControls9: ""
         property string equalizerControls10: ""
-        property bool equalizerStatus: false
-//        property string properlyClosed: ""
+//        property bool equalizerStatus: false
+        property bool equalizerStatus
     }
 
     Connections {
@@ -478,7 +478,8 @@ Rectangle {
                 onClicked: {
                     if (settings.equalizerStatus === true) {
                         process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-                        settings.equalizerStatus = checked
+//                        settings.equalizerStatus = checked
+                        eqsts = checked
                     } else if (settings.equalizerStatus === false) {
                         settings.equalizerControls1 = slide1.value.toFixed(1)
                         settings.equalizerControls2 = slide2.value.toFixed(1)
@@ -491,7 +492,8 @@ Rectangle {
                         settings.equalizerControls9 = slide9.value.toFixed(1)
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                         process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
-                        settings.equalizerStatus = checked
+//                        settings.equalizerStatus = checked
+                        eqsts = checked
                     }
                 }
             }
