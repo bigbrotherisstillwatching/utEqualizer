@@ -650,7 +650,32 @@ Rectangle {
 
                 onClicked: {
                     settings.darkMode = checked
-//                    l2.summary.visible = true
+                    txtar.text = i18n.tr("Restart the app after changing dark mode option")
+                }
+            }
+        }
+        Row {
+            id: row4
+            anchors.horizontalCenter: clmn1.horizontalCenter
+            spacing: units.gu(2)
+            Icon {
+                id: inficn
+                name "info"
+                width: units.gu(2)
+                height: width
+            }
+            TextArea {
+                id: txtar
+//                anchors.top: mymeta.top
+//                anchors.topMargin: 20
+                horizontalAlignment: TextEdit.AlignHCenter
+                width: clmn1.width - inficn.width
+                wrapMode: TextEdit.Wrap
+//                font.pointSize: 25
+                color: "red"
+                maximumLineCount: 3
+                style: ActionBarStyle {
+                    backgroundColor: "transparent"
                 }
             }
         }
