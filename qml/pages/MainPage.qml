@@ -32,6 +32,7 @@ Rectangle {
     color: Colors.backgroundColor
 
     property var padding: units.gu(1)
+    property alias eqsts: settings.equalizerStatus
 
     Process {
         id: process
@@ -106,7 +107,8 @@ Rectangle {
 //        eqswitch.checked = false
 //        process7.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
 //        }
-        settings.equalizerStatus = checked
+//        settings.equalizerStatus = checked
+        eqsts = checked
     }
 
     Component {
