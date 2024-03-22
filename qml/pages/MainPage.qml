@@ -494,6 +494,7 @@ Rectangle {
                         process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
 //                        settings.equalizerStatus = checked
                         eqsts = checked
+                        txt2.text = i18n.tr("Please turn off equalizer <u>before</u> changing audio output.")
                     }
                 }
             }
