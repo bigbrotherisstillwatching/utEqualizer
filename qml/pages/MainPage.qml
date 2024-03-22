@@ -114,16 +114,6 @@ Rectangle {
     Component {
         id: dialog
 
-        Component.onCompleted: {
-            if (eqsts === true) {
-                bttn2.enabled = true
-                bttn3.enabled = false
-            } else if (eqsts === false) {
-                bttn2.enabled = false 
-                bttn3.enabled = true
-            }
-        }
-
         Dialog {
             id: dialog2
             title: "Quit"
