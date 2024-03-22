@@ -32,7 +32,7 @@ Rectangle {
     color: Colors.backgroundColor
 
     property var padding: units.gu(1)
-//    property alias eqsts: settings.equalizerStatus
+    property bool eqsts: settings.equalizerStatus
 
     Process {
         id: process
@@ -77,7 +77,6 @@ Rectangle {
         property string equalizerControls10: ""
         property bool equalizerStatus: false
 //        property string properlyClosed: ""
-        property alias eqsts: settings.equalizerStatus
     }
 
     Connections {
