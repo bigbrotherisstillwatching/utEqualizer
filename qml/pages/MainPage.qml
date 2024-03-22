@@ -79,12 +79,12 @@ Rectangle {
         onAboutToQuit: {
             if (settings.equalizerStatus === true) {
 //                console.log("Goodbye!");
-//                console.log("EQ is still active");
-                settings.properlyClosed = "No"
+                console.log("EQ is still active");
+//                settings.properlyClosed = "No"
 //                settings.equalizerStatus = checked
-                settings.sync()
-//            } else if (settings.equalizerStatus === false) {
-//                console.log("EQ is inactive");
+//                settings.sync()
+            } else if (settings.equalizerStatus === false) {
+                console.log("EQ is inactive");
 //                settings.properlyClosed = "Yes"
             }
 //            settings.equalizerStatus = unchecked
@@ -93,12 +93,15 @@ Rectangle {
         }
     }
 
-//    Component.onCompleted: {
-//        if (settings.equalizerStatus === true) {
-//        process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
+    Component.onCompleted: {
+        if (settings.properlyClosed === Yes) {
+            ;
+        } else {
+            process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
+            settings.properlyClosed = "No"
 //            eqswitch.checked = false
-//        }
-//    }
+        }
+    }
 
     Component {
         id: dialog
@@ -121,6 +124,7 @@ Rectangle {
                     eqswitch.checked = false
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     bttn1.enabled = false
+                    settings.properlyClosed = "Yes"
                 }
             }
             Button {
