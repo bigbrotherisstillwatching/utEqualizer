@@ -560,7 +560,7 @@ Rectangle {
              anchors.horizontalCenter: clmn1.horizontalCenter
 //             topPadding: units.gu(3)
              wrapMode: Text.WordWrap
-             width: mainPage.width
+             width: clmn1.width
              lineHeight: 1.2
              horizontalAlignment: Text.AlignHCenter
 //             visible: false
