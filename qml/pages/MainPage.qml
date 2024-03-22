@@ -129,7 +129,7 @@ Rectangle {
                 onClicked: {
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
                     bttn3.enabled = true
-                    eqswitch.checked = false
+//                    eqswitch.checked = false
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     bttn1.enabled = false
 //                    settings.properlyClosed = "Yes"
