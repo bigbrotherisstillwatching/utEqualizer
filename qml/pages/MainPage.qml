@@ -18,14 +18,11 @@ import Lomiri.Components 1.3
 import Lomiri.Components.ListItems 1.3
 import QtQuick 2.7
 import QtQuick.Layouts 1.3
-//import QtMultimedia 5.12
 import Qt.labs.settings 1.0
 import QtQuick.Controls 2.7 as Qqc
 import Process 1.0
 import Lomiri.Components.Popups 1.3
 
-//import "../net"
-//import "../util"
 import "../colors"
 
 Rectangle {
@@ -70,7 +67,6 @@ Rectangle {
         property string equalizerControls9: ""
         property string equalizerControls10: ""
         property bool equalizerStatus: false
-//        property string equalizerStatus: "false"
     }
 
     Connections {
@@ -96,11 +92,8 @@ Rectangle {
                 id: bttn2
                 text: "Turn off equalizer"
                 onClicked: {
-//                    PopupUtils.close(dialog2)
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-//                    settings.equalizerStatus = checked
                     bttn3.enabled = true
-//                    eqswitch.clicked()
                     eqswitch.checked = false
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     bttn1.enabled = false
@@ -110,9 +103,7 @@ Rectangle {
                 id: bttn3
                 enabled: false
                 text: "OK"
-//                color: LomiriColors.orange
                 onClicked: {
-//                    PopupUtils.close(dialog2)
                     Qt.quit()
                 }
             }
@@ -122,15 +113,10 @@ Rectangle {
     PageHeader {
         id: header
         title: "Equalizer"
-//        title.color: Colors.mainText
-//        title.font.bold: true
         StyleHints {
             foregroundColor: Colors.mainText
             backgroundColor: Colors.backgroundColor
-//            backgroundColor: Colors.surfaceColor
-//            dividerColor: Colors.borderColor
             dividerColor: Colors.mainText
-//            highlightColor: "red"
         }
         contents: Rectangle {
             id: hdrrec
@@ -138,14 +124,11 @@ Rectangle {
             color: Colors.backgroundColor
             Text {
                 id: hdrtxt
-//                anchors.centerIn: parent
                 anchors.left: hdrrec.left
-//                anchors.bottom: hdrrec.bottom
                 anchors.verticalCenter: hdrrec.verticalCenter
                 text: header.title
                 color: Colors.mainText
                 font.pointSize: 40
-//                font.bold: true
             }
             Button {
                 id: clsbttn
@@ -154,134 +137,25 @@ Rectangle {
                 iconName: "close"
                 anchors.right: hdrrec.right
                 y: 20
-//                color: Colors.surfaceColor2
                 StyleHints {
                     defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
                 }
                 onClicked: {
-//                    Qt.quit()
                     PopupUtils.open(dialog)
                 }
             }
         }
-//        trailingActionBar {
-//            actions: [
-//                Action {
-//                    iconName: "close"
-//                    text: "Close"
-//                }
-//            ]
-//        }
     }
 
-/*
-    Flickable {
-        anchors.top: header.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-
-        contentWidth: parent.width
-        contentHeight: childrenRect.height
-
-        clip: true
-*/
     Column {
         id: clmn1
-//        anchors.left: parent.left
-//        anchors.right: parent.right
         anchors.top: header.bottom
         anchors.horizontalCenter: mainPage.horizontalCenter
-//        anchors.centerIn: parent
         topPadding: units.gu(3)
         spacing: units.gu(3)
-/*
-            ListItem {
-                height: l1.height + (divider.visible ? divider.height : 0)
-                color: Colors.surfaceColor
-                divider.colorFrom: Colors.borderColor
-                divider.colorTo: Colors.borderColor
-                highlightColor: Colors.highlightColor
 
-                ListItemLayout {
-                    id: l1
-                    title.text: i18n.tr("Appearance")
-                    title.font.bold: true
-                    title.color: Colors.mainText
-                    summary.text: i18n.tr("Restart the app after changing dark mode option")
-                    summary.color: "red"
-                    summary.visible: false
-                    summary.wrapMode: Text.WordWrap
-                }
-            }
-*/
-/*
-            ListItem {
-//                anchors.left: parent.left
-//                anchors.right: parent.right
-//                anchors.top: text1.bottom
-                color: Colors.surfaceColor
-                divider.colorFrom: Colors.borderColor
-                divider.colorTo: Colors.borderColor
-                highlightColor: Colors.highlightColor
-
-                height: l2.height + (divider.visible ? divider.height : 0)
-
-                ListItemLayout {
-                    id: l2
-                    title.text: i18n.tr("Dark Mode")
-                    title.font.bold: true
-                    title.color: Colors.mainText
-                    summary.text: i18n.tr("Restart the app after changing dark mode option")
-                    summary.color: "red"
-                    summary.visible: false
-                    summary.wrapMode: Text.WordWrap
-//                    mainSlot: Text {
-//                        anchors.verticalCenter: parent.verticalCenter
-//                        text: i18n.tr("Dark mode")
-//                        color: Colors.mainText
-//                    }
-                    Switch {
-                        checked: settings.darkMode
-                        SlotsLayout.position: SlotsLayout.Trailing
-
-                        onClicked: {
-                            settings.darkMode = checked
-                            l2.summary.visible = true
-                        }
-                    }
-                }
-            }
-
-            ListItem {
-                height: l3.height + (divider.visible ? divider.height : 0)
-                color: Colors.surfaceColor
-                divider.colorFrom: Colors.borderColor
-                divider.colorTo: Colors.borderColor
-                highlightColor: Colors.highlightColor
-
-                ListItemLayout {
-                    id: l3
-                    title.text: i18n.tr("Equalizer")
-                    title.font.bold: true
-                    title.color: Colors.mainText
-
-                    Rectangle {
-                        id: statusrec1
-                        SlotsLayout.position: SlotsLayout.Trailing;
-                        width: units.gu(2)
-                        height: units.gu(2)
-                        color: settings.value("equalizerStatus")
-                        visible: true
-                        radius: units.gu(1)
-                    }
-                }
-            }
-*/
         Row {
             id: row1
-//            anchors.horizontalCenter: parent.horizontalCenter
-//            anchors.centerIn: parent
             spacing: 1
             Column {
                 Label {
@@ -544,7 +418,6 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "media-playlist-shuffle"
-//                color: Colors.surfaceColor
                 StyleHints {
                     defaultColor: chngbttn.pressed ? "green" : Colors.surfaceColor
                 }
@@ -566,14 +439,10 @@ Rectangle {
                 id: eqswitch
                 y: 5
                 checked: settings.equalizerStatus
-//                checked: settings.value("equalizerStatus")
                 onToggled: {
                     if (settings.equalizerStatus === true) {
                         process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-//                        tsttxt.text = "Off"
                         settings.equalizerStatus = checked
-//                        settings.equalizerStatus = "false"
-//                        statusrec1.color = "red"
                     } else {
                         settings.equalizerControls1 = slide1.value.toFixed(1)
                         settings.equalizerControls2 = slide2.value.toFixed(1)
@@ -586,10 +455,7 @@ Rectangle {
                         settings.equalizerControls9 = slide9.value.toFixed(1)
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                         process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
-//                        tsttxt.text = "On"
                         settings.equalizerStatus = checked
-//                        settings.equalizerStatus = "true"
-//                        statusrec1.color = "green"
                     }
                 }
             }
@@ -598,7 +464,6 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 iconName: "reset"
-//                color: Colors.surfaceColor
                 StyleHints {
                     defaultColor: rstbttn.pressed ? "green" : Colors.surfaceColor
                 }
@@ -625,10 +490,6 @@ Rectangle {
                     settings.equalizerControls10 = slide10.value.toFixed(1)
                 }
             }
-//            Text {
-//                id: tsttxt
-//                text: ""
-//            }
         }
         Row {
             id: row3
@@ -637,16 +498,12 @@ Rectangle {
             Text {
                 id: txt1
                 text: "Dark Mode"
-//                  anchors.left: row3.left
-//                  horizontalAlignment:
                 color: Colors.mainText
-//                topPadding: 5
             }
             Qqc.Switch {
                 id: drkmdswitch
                 y: -15
                 checked: settings.darkMode
-//                SlotsLayout.position: SlotsLayout.Trailing
 
                 onClicked: {
                     settings.darkMode = checked
@@ -654,164 +511,5 @@ Rectangle {
                 }
             }
         }
-//        Row {
-//            id: row4
-//            anchors.horizontalCenter: clmn1.horizontalCenter
-//            spacing: units.gu(2)
-//            Icon {
-//                id: inficn
-//                name: "info"
-//                width: units.gu(2)
-//                height: width
-//            }
-//            Text {
-//                id: txt3
-//                anchors.top: mymeta.top
-//                anchors.topMargin: 20
-//                horizontalAlignment: TextEdit.AlignHCenter
-//                width: clmn1.width - inficn.width
-//                wrapMode: TextEdit.Wrap
-//                font.pointSize: 25
-//                color: "red"
-//                maximumLineCount: 3
-//                style: ActionBarStyle {
-//                    backgroundColor: "transparent"
-//                }
-//            }
-//        }
     }
 }
-/*
-            Row {
-                anchors.horizontalCenter: parent.horizontalCenter
-                spacing: mainPage.padding
-                Button {
-                    id: eqaButton
-                    text: i18n.tr("On")
-                    color: Colors.surfaceColor
-                    onClicked: {
-                        settings.equalizerControls1 = slide1.value.toFixed(1)
-                        settings.equalizerControls2 = slide2.value.toFixed(1)
-                        settings.equalizerControls3 = slide3.value.toFixed(1)
-                        settings.equalizerControls4 = slide4.value.toFixed(1)
-                        settings.equalizerControls5 = slide5.value.toFixed(1)
-                        settings.equalizerControls6 = slide6.value.toFixed(1)
-                        settings.equalizerControls7 = slide7.value.toFixed(1)
-                        settings.equalizerControls8 = slide8.value.toFixed(1)
-                        settings.equalizerControls9 = slide9.value.toFixed(1)
-                        settings.equalizerControls10 = slide10.value.toFixed(1)
-                        process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
-                        text1.visible = true
-                        settings.equalizerStatus = "green"
-                        statusrec1.color = "green"
-                    }
-                }
-                Button {
-                    id: eqdButton
-                    text: i18n.tr("Off")
-                    color: Colors.surfaceColor
-                    onClicked: {
-                        process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-                        text1.visible = false
-                        settings.equalizerStatus = "red"
-                        statusrec1.color = "red"
-                    }
-                }
-                Button {
-                    id: chaButton
-                    text: i18n.tr("Change")
-                    color: Colors.surfaceColor
-                    onClicked: {
-                        settings.equalizerControls1 = slide1.value.toFixed(1)
-                        settings.equalizerControls2 = slide2.value.toFixed(1)
-                        settings.equalizerControls3 = slide3.value.toFixed(1)
-                        settings.equalizerControls4 = slide4.value.toFixed(1)
-                        settings.equalizerControls5 = slide5.value.toFixed(1)
-                        settings.equalizerControls6 = slide6.value.toFixed(1)
-                        settings.equalizerControls7 = slide7.value.toFixed(1)
-                        settings.equalizerControls8 = slide8.value.toFixed(1)
-                        settings.equalizerControls9 = slide9.value.toFixed(1)
-                        settings.equalizerControls10 = slide10.value.toFixed(1)
-                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_change.sh"])
-                    }
-                }
-                Button {
-                    id: resButton
-                    text: i18n.tr("Reset")
-                    color: Colors.surfaceColor
-                    onClicked: {
-                        slide1.value = 0.0
-                        slide2.value = 0.0
-                        slide3.value = 0.0
-                        slide4.value = 0.0
-                        slide5.value = 0.0
-                        slide6.value = 0.0
-                        slide7.value = 0.0
-                        slide8.value = 0.0
-                        slide9.value = 0.0
-                        slide10.value = 0.0
-                        settings.equalizerControls1 = slide1.value.toFixed(1)
-                        settings.equalizerControls2 = slide2.value.toFixed(1)
-                        settings.equalizerControls3 = slide3.value.toFixed(1)
-                        settings.equalizerControls4 = slide4.value.toFixed(1)
-                        settings.equalizerControls5 = slide5.value.toFixed(1)
-                        settings.equalizerControls6 = slide6.value.toFixed(1)
-                        settings.equalizerControls7 = slide7.value.toFixed(1)
-                        settings.equalizerControls8 = slide8.value.toFixed(1)
-                        settings.equalizerControls9 = slide9.value.toFixed(1)
-                        settings.equalizerControls10 = slide10.value.toFixed(1)
-                    }
-                }
-            }
-            Text {
-                id: text1
-                text: i18n.tr("Please turn off equalizer <u>before</u> changing audio output, closing the app or rebooting the phone!")
-                color: "red"
-//                anchors.horizontalCenter: mainPage.horizontalCenter
-                topPadding: units.gu(3)
-                bottomPadding: units.gu(3)
-                wrapMode: Text.WordWrap
-                width: mainPage.width
-                lineHeight: 1.2
-                horizontalAlignment: Text.AlignHCenter
-                visible: false
-                leftPadding: units.gu(3)
-                rightPadding: units.gu(3)
-            }
-*/
-/*
-        }
-    }
-}
-*/
-/*
-            ListItem {
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.top: text1.bottom
-                color: Colors.surfaceColor
-                divider.colorFrom: Colors.borderColor
-                divider.colorTo: Colors.borderColor
-                highlightColor: Colors.highlightColor
-
-                height: l2.height + (divider.visible ? divider.height : 0)
-
-                SlotsLayout {
-                    id: l2
-                    mainSlot: Text {
-                        anchors.verticalCenter: parent.verticalCenter
-                        text: i18n.tr("Dark mode")
-                        color: Colors.mainText
-                    }
-                    Switch {
-                        checked: settings.darkMode
-                        SlotsLayout.position: SlotsLayout.Trailing
-
-                        onClicked: {
-                            settings.darkMode = checked
-                            l2.summary.visible = true
-                        }
-                    }
-                }
-            }
-*/
