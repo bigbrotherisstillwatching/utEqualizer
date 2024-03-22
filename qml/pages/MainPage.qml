@@ -23,6 +23,7 @@ import Qt.labs.settings 1.0
 import QtQuick.Controls 2.7 as Qqc
 import Process 1.0
 import Lomiri.Components.Popups 1.3
+import Lomiri.Components.Styles 1.3
 
 //import "../net"
 //import "../util"
