@@ -61,14 +61,6 @@ Rectangle {
         id: process7
     }
 
-    Process {
-        id: process8
-    }
-
-    Process {
-        id: process9
-    }
-
     Settings {
         id: settings
         property bool darkMode: true
@@ -109,13 +101,12 @@ Rectangle {
 //        if (settings.properlyClosed === Yes) {
 //            ;
 //        } else {
-        process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
+//        process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
 //            settings.properlyClosed = "No"
-        eqswitch.checked = false
-        eqswitch.checked = true
-        eqswitch.checked = false
-        process7.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
+//        eqswitch.checked = false
+//        process7.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
 //        }
+        settings.equalizerStatus = checked
     }
 
     Component {
@@ -486,7 +477,6 @@ Rectangle {
                     if (settings.equalizerStatus === true) {
                         process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
                         settings.equalizerStatus = checked
-//                        process8.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     } else if (settings.equalizerStatus === false) {
                         settings.equalizerControls1 = slide1.value.toFixed(1)
                         settings.equalizerControls2 = slide2.value.toFixed(1)
@@ -500,7 +490,6 @@ Rectangle {
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                         process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
                         settings.equalizerStatus = checked
-//                        process9.start("/bin/bash",["-c", "sed -i '13s/false/true/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     }
                 }
             }
