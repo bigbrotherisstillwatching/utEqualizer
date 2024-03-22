@@ -57,6 +57,10 @@ Rectangle {
         id: process6
     }
 
+    Process {
+        id: process7
+    }
+
     Settings {
         id: settings
         property bool darkMode: true
@@ -71,7 +75,7 @@ Rectangle {
         property string equalizerControls9: ""
         property string equalizerControls10: ""
         property bool equalizerStatus: false
-        property string properlyClosed: ""
+//        property string properlyClosed: ""
     }
 
     Connections {
@@ -94,13 +98,14 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        if (settings.properlyClosed === Yes) {
-            ;
-        } else {
-            process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-            settings.properlyClosed = "No"
-//            eqswitch.checked = false
-        }
+//        if (settings.properlyClosed === Yes) {
+//            ;
+//        } else {
+        process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
+//            settings.properlyClosed = "No"
+        eqswitch.checked = false
+        process7.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
+//        }
     }
 
     Component {
@@ -124,7 +129,7 @@ Rectangle {
                     eqswitch.checked = false
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     bttn1.enabled = false
-                    settings.properlyClosed = "Yes"
+//                    settings.properlyClosed = "Yes"
                 }
             }
             Button {
