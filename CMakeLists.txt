@@ -51,7 +51,7 @@ install(FILES scripts/equalizer_start.sh DESTINATION scripts PERMISSIONS OWNER_R
 install(FILES scripts/equalizer_stop.sh DESTINATION scripts PERMISSIONS OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
 install(FILES scripts/equalizer_change.sh DESTINATION scripts PERMISSIONS OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
 
-qt5_add_resources(QT_RESOURCES qml/qml.qrc)install(FILES assets/logo.png DESTINATION assets)
+qt5_add_resources(QT_RESOURCES qml/qml.qrc)
 qt5_add_resources(QT_RESOURCES assets/assets.qrc)
 add_executable(${PROJECT_NAME} main.cpp process.cpp ${QT_RESOURCES})
 set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
