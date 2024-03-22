@@ -104,7 +104,7 @@ Rectangle {
 //        } else {
         process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
 //            settings.properlyClosed = "No"
-//        eqswitch.checked = false
+        eqswitch.checked = false
 //        process7.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
 //        }
 //        settings.equalizerStatus = checked
