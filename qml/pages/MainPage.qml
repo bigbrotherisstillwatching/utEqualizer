@@ -116,16 +116,16 @@ Rectangle {
 
         Dialog {
             id: dialog2
-            title: "Quit"
-            text: "Are you sure that you want to close the app?"
+            title: i18n.tr("Quit")
+            text: i18n.tr("Are you sure that you want to close the app?")
             Button {
                 id: bttn1
-                text: "Cancel"
+                text: i18n.tr("Cancel")
                 onClicked: PopupUtils.close(dialog2)
             }
             Button {
                 id: bttn2
-                text: "Turn off equalizer"
+                text: i18n.tr("Turn off equalizer")
                 onClicked: {
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
                     bttn3.enabled = true
@@ -138,7 +138,7 @@ Rectangle {
             Button {
                 id: bttn3
                 enabled: false
-                text: "OK"
+                text: i18n.tr("OK")
                 onClicked: {
                     Qt.quit()
                 }
@@ -148,7 +148,7 @@ Rectangle {
 
     PageHeader {
         id: header
-        title: "Equalizer"
+        title: "utEqualizer"
         StyleHints {
             foregroundColor: Colors.mainText
             backgroundColor: Colors.backgroundColor
@@ -538,7 +538,7 @@ Rectangle {
             spacing: units.gu(25)
             Text {
                 id: txt1
-                text: "Dark Mode"
+                text: i18n.tr("Dark Mode")
                 color: Colors.mainText
             }
             Qqc.Switch {
