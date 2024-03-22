@@ -480,6 +480,7 @@ Rectangle {
                         process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
 //                        settings.equalizerStatus = checked
                         eqsts = checked
+                        txt2.visible = false
                     } else if (settings.equalizerStatus === false) {
                         settings.equalizerControls1 = slide1.value.toFixed(1)
                         settings.equalizerControls2 = slide2.value.toFixed(1)
@@ -546,7 +547,7 @@ Rectangle {
 
                 onClicked: {
                     settings.darkMode = checked
-                    txt2.text = i18n.tr("Restart the app after changing dark mode option")
+                    txt2.text = i18n.tr("Restart the app after changing dark mode option.")
                 }
             }
         }
