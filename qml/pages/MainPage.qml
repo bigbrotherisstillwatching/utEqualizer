@@ -52,6 +52,10 @@ Rectangle {
         id: process4
     }
 
+    Process {
+        id: process5
+    }
+
     Settings {
         id: settings
         property bool darkMode: true
@@ -98,6 +102,7 @@ Rectangle {
                     bttn3.enabled = true
 //                    eqswitch.clicked()
                     eqswitch.checked = false
+                    process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     bttn1.enabled = false
                 }
             }
