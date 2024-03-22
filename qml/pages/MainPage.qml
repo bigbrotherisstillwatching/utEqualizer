@@ -480,7 +480,7 @@ Rectangle {
                 id: eqswitch
                 y: 5
 //                checked: settings.equalizerStatus
-                onToggled: {
+                onClicked: {
                     if (settings.equalizerStatus === true) {
                         process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
 //                        settings.equalizerStatus = checked
