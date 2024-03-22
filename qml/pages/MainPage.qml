@@ -117,7 +117,7 @@ Rectangle {
 
         Dialog {
             id: dialog2
-            title: i18n.tr("Quit")
+            title: i18n.tr("<font color=\"black\">Quit</font>")
             text: i18n.tr("Are you sure that you want to close the app?")
             style: ActionBarStyle {
                backgroundColor: Colors.surfaceColor
