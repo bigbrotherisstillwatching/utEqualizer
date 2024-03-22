@@ -468,7 +468,7 @@ Rectangle {
                 width: units.gu(4)
                 iconName: "media-playlist-shuffle"
                 StyleHints {
-                    defaultColor: chngbttn.pressed ? "green" : Colors.surfaceColor
+                    defaultColor: chngbttn.pressed ? "32517F" : Colors.surfaceColor
                 }
                 onClicked: {
                     settings.equalizerControls1 = slide1.value.toFixed(1)
@@ -519,7 +519,7 @@ Rectangle {
                 width: units.gu(4)
                 iconName: "reset"
                 StyleHints {
-                    defaultColor: rstbttn.pressed ? "green" : Colors.surfaceColor
+                    defaultColor: rstbttn.pressed ? "#32517F" : Colors.surfaceColor
                 }
                 onClicked: {
                     slide1.value = 0.0
