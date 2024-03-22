@@ -118,6 +118,9 @@ Rectangle {
             id: dialog2
             title: i18n.tr("Quit")
             text: i18n.tr("Are you sure that you want to close the app?")
+            style: ActionBarStyle {
+               backgroundColor: Colors.surfaceColor
+            }
             Button {
                 id: bttn1
                 text: i18n.tr("Cancel")
