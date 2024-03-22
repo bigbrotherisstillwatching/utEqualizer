@@ -23,7 +23,6 @@ import Qt.labs.settings 1.0
 import QtQuick.Controls 2.7 as Qqc
 import Process 1.0
 import Lomiri.Components.Popups 1.3
-import Lomiri.Components.Styles 1.3
 
 //import "../net"
 //import "../util"
@@ -651,7 +650,7 @@ Rectangle {
 
                 onClicked: {
                     settings.darkMode = checked
-                    txtar.text = i18n.tr("Restart the app after changing dark mode option")
+                    txt3.text = i18n.tr("Restart the app after changing dark mode option")
                 }
             }
         }
@@ -665,8 +664,8 @@ Rectangle {
                 width: units.gu(2)
                 height: width
             }
-            TextArea {
-                id: txtar
+            Text {
+                id: txt3
 //                anchors.top: mymeta.top
 //                anchors.topMargin: 20
                 horizontalAlignment: TextEdit.AlignHCenter
@@ -674,10 +673,10 @@ Rectangle {
                 wrapMode: TextEdit.Wrap
 //                font.pointSize: 25
                 color: "red"
-                maximumLineCount: 3
-                style: ActionBarStyle {
-                    backgroundColor: "transparent"
-                }
+//                maximumLineCount: 3
+//                style: ActionBarStyle {
+//                    backgroundColor: "transparent"
+//                }
             }
         }
     }
