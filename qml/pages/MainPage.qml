@@ -136,9 +136,9 @@ Rectangle {
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     bttn1.enabled = false
 //                    settings.properlyClosed = "Yes"
-                    StyleHints {
-                        defaultColor: bttn2.pressed ? Colors.surfaceColor : "yellow"
-                    }
+                }
+                StyleHints {
+                    defaultColor: bttn2.pressed ? Colors.surfaceColor : "yellow"
                 }
             }
             Button {
