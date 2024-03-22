@@ -76,7 +76,6 @@ Rectangle {
     Connections {
         target: Qt.application
         onAboutToQuit: {
-            PopupUtils.open(dialog)
             console.log("Goodbye!");
         }
     }
