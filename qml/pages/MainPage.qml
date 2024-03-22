@@ -61,6 +61,14 @@ Rectangle {
         id: process7
     }
 
+    Process {
+        id: process8
+    }
+
+    Process {
+        id: process9
+    }
+
     Settings {
         id: settings
         property bool darkMode: true
@@ -475,8 +483,9 @@ Rectangle {
                 onToggled: {
                     if (settings.equalizerStatus === true) {
                         process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-                        settings.equalizerStatus = checked
-                    } else {
+//                        settings.equalizerStatus = checked
+                        process8.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
+                    } else if (settings.equalizerStatus === false) {
                         settings.equalizerControls1 = slide1.value.toFixed(1)
                         settings.equalizerControls2 = slide2.value.toFixed(1)
                         settings.equalizerControls3 = slide3.value.toFixed(1)
@@ -488,7 +497,8 @@ Rectangle {
                         settings.equalizerControls9 = slide9.value.toFixed(1)
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                         process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
-                        settings.equalizerStatus = checked
+//                        settings.equalizerStatus = checked
+                        process9.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     }
                 }
             }
