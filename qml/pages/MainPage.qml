@@ -153,7 +153,7 @@ Rectangle {
                 }
                 onClicked: {
 //                    Qt.quit()
-                    PopupUtils.open(dialog2)
+                    PopupUtils.open(dialog)
                 }
             }
         }
