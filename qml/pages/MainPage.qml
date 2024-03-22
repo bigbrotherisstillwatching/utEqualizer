@@ -77,7 +77,7 @@ Rectangle {
         property string equalizerControls10: ""
         property bool equalizerStatus: false
 //        property string properlyClosed: ""
-        property alias eqsts: equalizerStatus
+        property alias eqsts: settings.equalizerStatus
     }
 
     Connections {
