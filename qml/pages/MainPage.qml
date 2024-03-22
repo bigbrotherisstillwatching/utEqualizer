@@ -72,7 +72,12 @@ Rectangle {
     Connections {
         target: Qt.application
         onAboutToQuit: {
-            console.log("Goodbye!");
+            if (settings.equalizerStatus === true) {
+//                console.log("Goodbye!");
+                console.log("EQ is still active");
+            } else {
+                console.log("EQ is inactive");
+            }
         }
     }
 
