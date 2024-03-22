@@ -108,7 +108,7 @@ Rectangle {
 //        process7.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
 //        }
 //        settings.equalizerStatus = checked
-        eqsts = checked
+        eqsts = false
     }
 
     Component {
