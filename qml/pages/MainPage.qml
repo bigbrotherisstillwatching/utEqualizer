@@ -32,7 +32,7 @@ Rectangle {
     color: Colors.backgroundColor
 
     property var padding: units.gu(1)
-//    property bool eqsts: settings.equalizerStatus
+    property bool eqsts: settings.equalizerStatus
 
     Process {
         id: process
