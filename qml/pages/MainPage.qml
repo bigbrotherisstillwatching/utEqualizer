@@ -660,7 +660,7 @@ Rectangle {
             spacing: units.gu(2)
             Icon {
                 id: inficn
-                name "info"
+                name: "info"
                 width: units.gu(2)
                 height: width
             }
