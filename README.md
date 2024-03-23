@@ -1,8 +1,6 @@
 # utEqualizer
 
-An Equalizer for Ubuntu Touch Focal
-
-## Still in progress...don't download!!!
+An equalizer for Ubuntu Touch Focal
 
 ## License
 
@@ -19,3 +17,10 @@ for more details.
 
 You should have received a copy of the GNU General Public License along with
 this program. If not, see <http://www.gnu.org/licenses/>.
+
+<b>The caps plugin for the equalizer is published under the GNU Public License (version 3) by Tim Goetze. More information at http://quitte.de/dsp/caps.html.</b>
+
+## Keep in mind that !!!
+  
+-it is an unconfined app with full access to the system    
+-only for arm64

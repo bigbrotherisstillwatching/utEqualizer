@@ -17,7 +17,43 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Hello World!"
+#: ../qml/pages/MainPage.qml:105
+msgid "<font color=\"white\">Quit</font>"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:106
+msgid "<font color=\"white\">Are you sure that you want to close the app?</font>"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:112
+msgid "Cancel"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:120
+msgid "Turn off equalizer"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:134
+msgid "OK"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:491
+msgid "Please turn off equalizer <u>before</u> changing audio output."
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:533
+msgid "Dark Mode"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:543
+msgid "Restart the app for the dark mode to take effect."
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:561
+msgid ""
+"The caps plugin for the equalizer is published under the GNU Public "
+"License (version 3) by Tim Goetze. More information "
+"at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>."
 msgstr ""
 
 msgid "utEqualizer"

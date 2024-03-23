@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/assets">
-        <file>logo.svg</file>
+        <file>logo.png</file>
+        <file>change.svg</file>
+        <file>resetzero.svg</file>
     </qresource>
 </RCC>
