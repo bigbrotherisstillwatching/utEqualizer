@@ -1,6 +1,6 @@
 # utEqualizer
 
-An Equalizer for Ubuntu Touch Focal
+An equalizer for Ubuntu Touch Focal
 
 ## License
 
