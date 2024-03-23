@@ -2,8 +2,6 @@
 
 An Equalizer for Ubuntu Touch Focal
 
-## Still in progress...don't download!!!
-
 ## License
 
 Copyright (C) 2024  bbisw
