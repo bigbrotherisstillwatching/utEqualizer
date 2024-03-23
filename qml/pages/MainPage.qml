@@ -540,7 +540,7 @@ Rectangle {
 
                 onClicked: {
                     settings.darkMode = checked
-                    txt2.text = i18n.tr("Restart the app after changing dark mode option.")
+                    txt2.text = i18n.tr("Restart the app for the dark mode to take effect.")
                 }
             }
         }
