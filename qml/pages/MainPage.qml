@@ -530,7 +530,7 @@ Rectangle {
             spacing: units.gu(25)
             Text {
                 id: txt1
-                text: i18n.tr("Dark Mode")
+                text: i18n.tr("Dark mode")
                 color: Colors.mainText
             }
             Qqc.Switch {
