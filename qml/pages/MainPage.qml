@@ -76,7 +76,6 @@ Rectangle {
         property string equalizerControls8: ""
         property string equalizerControls9: ""
         property string equalizerControls10: ""
-//        property bool equalizerStatus: false
         property bool equalizerStatus
     }
 
@@ -84,31 +83,17 @@ Rectangle {
         target: Qt.application
         onAboutToQuit: {
             if (settings.equalizerStatus === true) {
-//                console.log("Goodbye!");
                 console.log("EQ is still active");
-//                settings.properlyClosed = "No"
-//                settings.equalizerStatus = checked
-//                settings.sync()
             } else if (settings.equalizerStatus === false) {
                 console.log("EQ is inactive");
-//                settings.properlyClosed = "Yes"
             }
-//            settings.equalizerStatus = unchecked
-//            settings.sync()
             console.log("Goodbye!");
         }
     }
 
     Component.onCompleted: {
-//        if (settings.properlyClosed === Yes) {
-//            ;
-//        } else {
         process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-//            settings.properlyClosed = "No"
         eqswitch.checked = false
-//        process7.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
-//        }
-//        settings.equalizerStatus = checked
         eqsts = false
     }
 
@@ -136,10 +121,8 @@ Rectangle {
                 onClicked: {
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
                     bttn3.enabled = true
-//                    eqswitch.checked = false
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     bttn1.enabled = false
-//                    settings.properlyClosed = "Yes"
                 }
                 StyleHints {
                     defaultColor: bttn2.pressed ? Colors.surfaceColor : "yellow"
@@ -466,7 +449,6 @@ Rectangle {
                 id: chngbttn
                 height: units.gu(4)
                 width: units.gu(4)
-//                iconName: "media-playlist-shuffle"
                 iconSource: "../../assets/change.svg"
                 StyleHints {
                     defaultColor: chngbttn.pressed ? "32517F" : Colors.surfaceColor
@@ -488,11 +470,9 @@ Rectangle {
             Qqc.Switch {
                 id: eqswitch
                 y: 5
-//                checked: settings.equalizerStatus
                 onClicked: {
                     if (settings.equalizerStatus === true) {
                         process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_stop.sh"])
-//                        settings.equalizerStatus = checked
                         eqsts = checked
                         txt2.text = ""
                     } else if (settings.equalizerStatus === false) {
@@ -507,9 +487,7 @@ Rectangle {
                         settings.equalizerControls9 = slide9.value.toFixed(1)
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                         process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
-//                        settings.equalizerStatus = checked
                         eqsts = checked
-//                        txt2.visible = true
                         txt2.text = i18n.tr("Please turn off equalizer <u>before</u> changing audio output.")
                     }
                 }
@@ -518,7 +496,6 @@ Rectangle {
                 id: rstbttn
                 height: units.gu(4)
                 width: units.gu(4)
-//                iconName: "reset"
                 iconSource: "../../assets/resetzero.svg"
                 StyleHints {
                     defaultColor: rstbttn.pressed ? "#32517F" : Colors.surfaceColor
@@ -563,30 +540,25 @@ Rectangle {
 
                 onClicked: {
                     settings.darkMode = checked
-//                    txt2.visible = true
                     txt2.text = i18n.tr("Restart the app after changing dark mode option.")
                 }
             }
         }
         Text {
              id: txt2
-//             text: i18n.tr("Please turn off equalizer <u>before</u> changing audio output, closing the app or rebooting the phone!")
              text: ""
              color: "red"
              anchors.horizontalCenter: clmn1.horizontalCenter
-//             topPadding: units.gu(3)
              wrapMode: Text.WordWrap
              width: clmn1.width
              lineHeight: 1.2
              horizontalAlignment: Text.AlignHCenter
-//             visible: false
              leftPadding: units.gu(3)
              rightPadding: units.gu(3)
         }
         Text {
             id: txt3
             text: i18n.tr("The caps plugin for the equalizer is published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
-//            font.pointSize: 25
             color: Colors.mainText
             anchors.horizontalCenter: clmn1.horizontalCenter
             topPadding: units.gu(10) - txt2.height
