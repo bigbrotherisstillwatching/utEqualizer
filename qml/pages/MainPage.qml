@@ -131,7 +131,7 @@ Rectangle {
             Button {
                 id: bttn3
                 enabled: false
-                text: i18n.tr("OK")
+                text: i18n.tr("Ok")
                 onClicked: {
                     Qt.quit()
                 }
@@ -488,7 +488,7 @@ Rectangle {
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                         process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
                         eqsts = checked
-                        txt2.text = i18n.tr("Please turn off equalizer <u>before</u> changing audio output.")
+                        txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
                     }
                 }
             }
@@ -530,7 +530,7 @@ Rectangle {
             spacing: units.gu(25)
             Text {
                 id: txt1
-                text: i18n.tr("Dark Mode")
+                text: i18n.tr("Dark mode")
                 color: Colors.mainText
             }
             Qqc.Switch {
@@ -540,7 +540,7 @@ Rectangle {
 
                 onClicked: {
                     settings.darkMode = checked
-                    txt2.text = i18n.tr("Restart the app for the dark mode to take effect.")
+                    txt2.text = i18n.tr("Please restart the app for the dark mode to take effect.")
                 }
             }
         }
@@ -558,7 +558,7 @@ Rectangle {
         }
         Text {
             id: txt3
-            text: i18n.tr("The caps plugin for the equalizer is published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
+            text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
             color: Colors.mainText
             anchors.horizontalCenter: clmn1.horizontalCenter
             topPadding: units.gu(10) - txt2.height

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: utequalizer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-17 02:22+0000\n"
-"PO-Revision-Date: 2024-03-23 10:18+0000\n"
+"PO-Revision-Date: 2024-03-24 13:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -38,26 +38,26 @@ msgid "Turn off equalizer"
 msgstr "Equalizer ausschalten"
 
 #: ../qml/pages/MainPage.qml:134
-msgid "OK"
-msgstr "OK"
+msgid "Ok"
+msgstr "Ok"
 
 #: ../qml/pages/MainPage.qml:491
-msgid "Please turn off equalizer <u>before</u> changing audio output."
+msgid "Please turn the equalizer off and on again after changing audio output."
 msgstr ""
-"Bitte schalten Sie den Equalizer aus, <u>bevor</u> Sie den Audioausgang "
-"ändern."
+"Bitte schalten Sie den Equalizer aus und wieder an, nachdem der Audioausgang "
+"geändert wurde."
 
 #: ../qml/pages/MainPage.qml:533
-msgid "Dark Mode"
+msgid "Dark mode"
 msgstr "Dunkler Modus"
 
 #: ../qml/pages/MainPage.qml:543
-msgid "Restart the app for the dark mode to take effect."
-msgstr "Starten Sie die App neu, um den dunklen Modus anzuwenden."
+msgid "Please restart the app for the dark mode to take effect."
+msgstr "Bitte starten Sie die App neu, um den dunklen Modus anzuwenden."
 
 #: ../qml/pages/MainPage.qml:561
 msgid ""
-"The caps plugin for the equalizer is published under the GNU Public License "
+"The caps plugin for the equalizer was published under the GNU Public License "
 "(version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/"
 "dsp/caps.html\">quitte.de</a>."
 msgstr ""

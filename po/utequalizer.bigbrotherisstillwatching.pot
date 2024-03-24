@@ -34,24 +34,24 @@ msgid "Turn off equalizer"
 msgstr ""
 
 #: ../qml/pages/MainPage.qml:134
-msgid "OK"
+msgid "Ok"
 msgstr ""
 
 #: ../qml/pages/MainPage.qml:491
-msgid "Please turn off equalizer <u>before</u> changing audio output."
+msgid "Please turn the equalizer off and on again after changing audio output."
 msgstr ""
 
 #: ../qml/pages/MainPage.qml:533
-msgid "Dark Mode"
+msgid "Dark mode"
 msgstr ""
 
 #: ../qml/pages/MainPage.qml:543
-msgid "Restart the app for the dark mode to take effect."
+msgid "Please restart the app for the dark mode to take effect."
 msgstr ""
 
 #: ../qml/pages/MainPage.qml:561
 msgid ""
-"The caps plugin for the equalizer is published under the GNU Public "
+"The caps plugin for the equalizer was published under the GNU Public "
 "License (version 3) by Tim Goetze. More information "
 "at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>."
 msgstr ""
