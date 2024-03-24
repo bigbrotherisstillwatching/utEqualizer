@@ -558,7 +558,7 @@ Rectangle {
         }
         Text {
             id: txt3
-            text: i18n.tr("The caps plugin for the equalizer is published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
+            text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
             color: Colors.mainText
             anchors.horizontalCenter: clmn1.horizontalCenter
             topPadding: units.gu(10) - txt2.height
