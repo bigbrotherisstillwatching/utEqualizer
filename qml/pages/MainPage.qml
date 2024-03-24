@@ -131,7 +131,7 @@ Rectangle {
             Button {
                 id: bttn3
                 enabled: false
-                text: i18n.tr("OK")
+                text: i18n.tr("Ok")
                 onClicked: {
                     Qt.quit()
                 }
@@ -488,7 +488,7 @@ Rectangle {
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                         process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.0/scripts/equalizer_start.sh"])
                         eqsts = checked
-                        txt2.text = i18n.tr("Please turn equalizer off and on again after changing audio output.")
+                        txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
                     }
                 }
             }
