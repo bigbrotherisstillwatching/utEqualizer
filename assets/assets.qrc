@@ -3,5 +3,6 @@
         <file>logo.png</file>
         <file>change.svg</file>
         <file>resetzero.svg</file>
+        <file>load.svg</file>
     </qresource>
 </RCC>
