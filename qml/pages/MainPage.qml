@@ -569,6 +569,19 @@ Rectangle {
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
         }*/
+        Text {
+            id: txt4
+            text: i18n.tr("Presets")
+            color: Colors.mainText
+            anchors.horizontalCenter: clmn1.horizontalCenter
+            topPadding: txt2.height
+//            wrapMode: Text.WordWrap
+            width: clmn1.width
+//            lineHeight: 1.2
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: true
+//            onLinkActivated: Qt.openUrlExternally(link)
+        }*/
     }
     Text {
         id: txt3
