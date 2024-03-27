@@ -607,7 +607,7 @@ Rectangle {
                             iconSource: "../../assets/load.svg"
 //                            anchors.right: hdrrec.right
 //                            y: 20
-                            SlotsLayout.position: SlotsLayout.Trailing+1
+                            SlotsLayout.position: SlotsLayout.Last
                             StyleHints {
                                 defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
                             }
