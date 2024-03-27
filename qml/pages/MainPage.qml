@@ -582,8 +582,8 @@ Rectangle {
                         }
                         Button {
                             id: bttn4
-                            height: units.gu(3)
-                            width: units.gu(3)
+                            height: units.gu(4)
+                            width: units.gu(4)
                             iconName: "save"
 //                            anchors.right: hdrrec.right
 //                            y: 20
@@ -602,8 +602,8 @@ Rectangle {
                         }
                         Button {
                             id: bttn5
-                            height: units.gu(3)
-                            width: units.gu(3)
+                            height: units.gu(4)
+                            width: units.gu(4)
                             iconSource: "../../assets/load.svg"
 //                            anchors.right: hdrrec.right
 //                            y: 20
