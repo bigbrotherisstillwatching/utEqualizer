@@ -594,6 +594,18 @@ Rectangle {
                 id: rdbttn2
                 checkable: true
             }
+            Qqc.RadioButton {
+                id: rdbttn3
+                checkable: true
+            }
+            Qqc.RadioButton {
+                id: rdbttn4
+                checkable: true
+            }
+            Qqc.RadioButton {
+                id: rdbttn5
+                checkable: true
+            }
         }
     }
     Text {
