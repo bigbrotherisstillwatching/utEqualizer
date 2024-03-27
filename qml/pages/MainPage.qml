@@ -574,7 +574,7 @@ Rectangle {
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
         }*/
-        Text {
+/*        Text {
             id: txt4
             text: i18n.tr("Presets")
             color: Colors.mainText
@@ -586,7 +586,19 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
 //            onLinkActivated: Qt.openUrlExternally(link)
+        }*/
+
+        ComboButton {
+            text: i18n.tr("Presets")
+//            expandedHeight: units.gu(1)
+            ListView {
+                model: 5
+                delegate: Standard {
+                    text: "Item #" + modelData
+                }
+            }
         }
+
 /*        Row {
             id: row4
             anchors.horizontalCenter: clmn1.horizontalCenter
@@ -658,7 +670,7 @@ Rectangle {
             }
         }*/
     }
-    Qqc.RadioButton {
+/*    Qqc.RadioButton {
         id: rdbttn1
         checkable: true
         checked: settings.preset1
@@ -731,7 +743,7 @@ Rectangle {
             settings.preset4 = "false"
             settings.preset5 = "true"
         }
-    }
+    }*/
     Text {
         id: txt3
         text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
