@@ -582,6 +582,19 @@ Rectangle {
             font.bold: true
 //            onLinkActivated: Qt.openUrlExternally(link)
         }
+        Row {
+            id: row4
+            anchors.horizontalCenter: clmn1.horizontalCenter
+            spacing: units.gu(2)
+            Qqc.RadioButton {
+                id: rdbttn1
+                checkable: true
+            }
+            Qqc.RadioButton {
+                id: rdbttn2
+                checkable: true
+            }
+        }
     }
     Text {
         id: txt3
