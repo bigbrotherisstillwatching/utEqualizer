@@ -77,11 +77,11 @@ Rectangle {
         property string equalizerControls9: ""
         property string equalizerControls10: ""
         property bool equalizerStatus
-        property string preset1
-        property string preset2
-        property string preset3
-        property string preset4
-        property string preset5
+//        property string preset1
+//        property string preset2
+//        property string preset3
+//        property string preset4
+//        property string preset5
     }
 
     Connections {
