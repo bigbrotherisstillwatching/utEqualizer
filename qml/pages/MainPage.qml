@@ -556,7 +556,7 @@ Rectangle {
              leftPadding: units.gu(3)
              rightPadding: units.gu(3)
         }
-        Text {
+/*        Text {
             id: txt3
             text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
             color: Colors.mainText
@@ -568,6 +568,20 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
-         }
+        }*/
+    }
+    Text {
+        id: txt3
+        text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
+        color: Colors.mainText
+        anchors.horizontalCenter: mainPage.horizontalCenter
+//        topPadding: units.gu(10) - txt2.height
+        wrapMode: Text.WordWrap
+        width: mainPage.width
+        lineHeight: 1.2
+        horizontalAlignment: Text.AlignHCenter
+        font.bold: true
+        onLinkActivated: Qt.openUrlExternally(link)
+        anchors.bottom: mainPage.bottom
     }
 }
