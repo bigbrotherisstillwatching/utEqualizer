@@ -580,7 +580,6 @@ Rectangle {
                             text: modelData
                             color: Colors.mainText
                         }
-
                         Button {
                             id: bttn4
                             height: units.gu(3)
@@ -589,6 +588,26 @@ Rectangle {
 //                            anchors.right: hdrrec.right
 //                            y: 20
                             SlotsLayout.position: SlotsLayout.Trailing
+                            StyleHints {
+                                defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
+                            }
+//                            onClicked: {
+//                                PopupUtils.open(dialog)
+//                            }
+                            
+//                            Label {
+//                                text: modelData
+//                                color: Colors.mainText
+//                            }
+                        }
+                        Button {
+                            id: bttn5
+                            height: units.gu(3)
+                            width: units.gu(3)
+                            iconSource: "../../assets/load.svg"
+//                            anchors.right: hdrrec.right
+//                            y: 20
+                            SlotsLayout.position: SlotsLayout.Trailing+1
                             StyleHints {
                                 defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
                             }
