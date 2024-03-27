@@ -581,7 +581,7 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
 //            onLinkActivated: Qt.openUrlExternally(link)
-        }*/
+        }
     }
     Text {
         id: txt3
