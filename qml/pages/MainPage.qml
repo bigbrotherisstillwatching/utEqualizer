@@ -568,7 +568,7 @@ Rectangle {
                 id: lstvw1
                 model: [i18n.tr("Preset 1"), i18n.tr("Preset 2"), i18n.tr("Preset 3"), i18n.tr("Preset 4"), i18n.tr("Preset 5")]
                 delegate: ListItem {
-//                    height: layout.height + (divider.visible ? divider.height : 0)
+                    height: layout.height + (divider.visible ? divider.height : 0)
                     color: Colors.surfaceColor
                     divider.colorFrom: Colors.borderColor
                     divider.colorTo: Colors.borderColor
@@ -576,7 +576,12 @@ Rectangle {
 
                     SlotsLayout {
                         id: layout
-                        mainSlot: Button {
+                        mainSlot: Label {
+                            text: modelData
+                            color: Colors.mainText
+                        }
+
+                        Button {
                             id: bttn4
                             height: units.gu(3)
                             width: units.gu(3)
@@ -591,10 +596,10 @@ Rectangle {
 //                                PopupUtils.open(dialog)
 //                            }
                             
-/*                            Label {
-                                text: name
-                                color: Colors.mainText
-                            }*/
+//                            Label {
+//                                text: modelData
+//                                color: Colors.mainText
+                            }
                         }
                     }
                 }
