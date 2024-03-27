@@ -574,7 +574,7 @@ Rectangle {
             text: i18n.tr("Presets")
             color: Colors.mainText
             anchors.horizontalCenter: clmn1.horizontalCenter
-            topPadding: txt2.height
+            topPadding: units.gu(1) - txt2.height
 //            wrapMode: Text.WordWrap
             width: clmn1.width
 //            lineHeight: 1.2
