@@ -604,7 +604,7 @@ Rectangle {
 
 //                    onClicked: mainPage.setLastStation(JSON.parse(JSON.stringify(favouriteModel.get(index))))
 
-                    leadingActions: ListItemActions {
+/*                    leadingActions: ListItemActions {
                         delegate: Rectangle {
                             id: actRec
                             width: height
@@ -633,7 +633,7 @@ Rectangle {
                                 }
                             }
                         ]
-                    }
+                    }*/
                     trailingActions: ListItemActions {
                         delegate: Rectangle {
                             id: actRec2
