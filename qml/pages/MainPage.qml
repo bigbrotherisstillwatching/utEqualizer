@@ -587,7 +587,7 @@ Rectangle {
             font.bold: true
 //            onLinkActivated: Qt.openUrlExternally(link)
         }
-        Row {
+/*        Row {
             id: row4
             anchors.horizontalCenter: clmn1.horizontalCenter
             spacing: units.gu(2)
@@ -656,6 +656,71 @@ Rectangle {
                     settings.preset5 = "true"
                 }
             }
+        }*/
+    }
+    Qqc.RadioButton {
+        id: rdbttn1
+        checkable: true
+        checked: settings.preset1
+        onClicked: {
+            rdbttn1.checked = true
+            settings.preset1 = "true"
+            settings.preset2 = "false"
+            settings.preset3 = "false"
+            settings.preset4 = "false"
+            settings.preset5 = "false"
+        }
+    }
+    Qqc.RadioButton {
+        id: rdbttn2
+        checkable: true
+        checked: settings.preset2
+        onClicked: {
+            rdbttn2.checked = true
+            settings.preset1 = "false"
+            settings.preset2 = "true"
+            settings.preset3 = "false"
+            settings.preset4 = "false"
+            settings.preset5 = "false"
+        }
+    }
+    Qqc.RadioButton {
+        id: rdbttn3
+        checkable: true
+        checked: settings.preset3
+        onClicked: {
+            rdbttn3.checked = true
+            settings.preset1 = "false"
+            settings.preset2 = "false"
+            settings.preset3 = "true"
+            settings.preset4 = "false"
+            settings.preset5 = "false"
+        }
+    }
+    Qqc.RadioButton {
+        id: rdbttn4
+        checkable: true
+        checked: settings.preset4
+        onClicked: {
+            rdbttn4.checked = true
+            settings.preset1 = "false"
+            settings.preset2 = "false"
+            settings.preset3 = "false"
+            settings.preset4 = "true"
+            settings.preset5 = "false"
+        }
+    }
+    Qqc.RadioButton {
+        id: rdbttn5
+        checkable: true
+        checked: settings.preset5
+        onClicked: {
+            rdbttn5.checked = true
+            settings.preset1 = "false"
+            settings.preset2 = "false"
+            settings.preset3 = "false"
+            settings.preset4 = "false"
+            settings.preset5 = "true"
         }
     }
     Text {
