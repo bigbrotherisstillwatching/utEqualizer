@@ -561,36 +561,8 @@ Rectangle {
              leftPadding: units.gu(3)
              rightPadding: units.gu(3)
         }
-/*        Text {
-            id: txt3
-            text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
-            color: Colors.mainText
-            anchors.horizontalCenter: clmn1.horizontalCenter
-            topPadding: units.gu(10) - txt2.height
-            wrapMode: Text.WordWrap
-            width: clmn1.width
-            lineHeight: 1.2
-            horizontalAlignment: Text.AlignHCenter
-            font.bold: true
-            onLinkActivated: Qt.openUrlExternally(link)
-        }*/
-/*        Text {
-            id: txt4
-            text: i18n.tr("Presets")
-            color: Colors.mainText
-            anchors.horizontalCenter: clmn1.horizontalCenter
-            topPadding: units.gu(5) - txt2.height
-//            wrapMode: Text.WordWrap
-            width: clmn1.width
-//            lineHeight: 1.2
-            horizontalAlignment: Text.AlignHCenter
-            font.bold: true
-//            onLinkActivated: Qt.openUrlExternally(link)
-        }*/
-
         ComboButton {
             text: i18n.tr("Presets")
-//            expandedHeight: units.gu(1)
             anchors.horizontalCenter: clmn1.horizontalCenter
             ListView {
                 id: lstvw1
@@ -602,240 +574,33 @@ Rectangle {
                     divider.colorTo: Colors.borderColor
                     highlightColor: Colors.highlightColor
 
-//                    onClicked: mainPage.setLastStation(JSON.parse(JSON.stringify(favouriteModel.get(index))))
-
-/*                    leadingActions: ListItemActions {
-                        delegate: Rectangle {
-                            id: actRec
-                            width: height
-                            color: pressed ? Colors.highlightColor : Colors.surfaceColor
-                            Label {
-                                anchors.centerIn: actRec
-                                color: Colors.mainText
-                                text: action.text
-                                width: parent.width
-                                horizontalAlignment: Text.AlignHCenter
-                                textSize: Label.XSmall
-                                wrapMode: Text.WordWrap
-                            }
-                        }
-                        actions: [
-                            Action {
-                                text: i18n.tr("Delete")
-                                onTriggered: {
-                                    if (favouriteModel.get(index).stationID === lastStation.stationID) {
-                                        lastStation.favourite = !lastStation.favourite
-                                        favIcon.iconName = lastStation.favourite ? "starred" : "non-starred"
-                                    } else if (favouriteModel.get(index).stationID != lastStation.stationID) {
-                                        favIcon.iconName = lastStation.favourite ? "starred" : "non-starred"
-                                    }
-                                    Functions.removeFavourite(stationID)
-                                }
-                            }
-                        ]
-                    }*/
-                    trailingActions: ListItemActions {
-                        delegate: Rectangle {
-                            id: actRec2
-                            width: height
-                            color: pressed ? Colors.highlightColor : Colors.surfaceColor
-/*                            Label {
-                                anchors.centerIn: actRec2
-                                color: Colors.mainText
-                                text: action.text
-                                width: parent.width
-                                horizontalAlignment: Text.AlignHCenter
-                                textSize: Label.XSmall
-                                wrapMode: Text.WordWrap
-                            }*/
-/*                            Icon {
-                                id: icn1
-                                name: "save"
-                                anchors.centerIn: actRec2
-                                height: units.gu(2)
-                                width: height
-                            }*/
-                        }
-                        actions: [
-                            Action {
-//                                text: i18n.tr("Show name")
-                                iconName: "save"
-//                                onTriggered: {
-//                                    txt.text = favouriteModel.get(index).name
-//                                }
-                            },
-                            Action {
-//                                text: i18n.tr("Save name")
-                                iconSource: "../../assets/load.svg"
-//                                onTriggered: {
-//                                    Functions.changeName(favouriteModel.get(index).stationID, txt.text)
-//                                }
-                            }
-                        ]
-                    }
                     SlotsLayout {
                         id: layout
-                        mainSlot: Label {
-                            text: name
-                            color: Colors.mainText
-                        }
-                        Image {
-                            source: image
-                            SlotsLayout.position: SlotsLayout.Leading;
-                            width: units.gu(4)
-                            height: units.gu(4)
-                            asynchronous: true
+                        mainSlot: Button {
+                            id: bttn4
+                            height: units.gu(3)
+                            width: units.gu(3)
+                            iconName: "save"
+//                            anchors.right: hdrrec.right
+//                            y: 20
+                            SlotsLayout.position: SlotsLayout.Trailing
+                            StyleHints {
+                                defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
+                            }
+//                            onClicked: {
+//                                PopupUtils.open(dialog)
+//                            }
+                            
+/*                            Label {
+                                text: name
+                                color: Colors.mainText
+                            }*/
                         }
                     }
                 }
             }
         }
-
-/*        Row {
-            id: row4
-            anchors.horizontalCenter: clmn1.horizontalCenter
-            spacing: units.gu(2)
-            Qqc.RadioButton {
-                id: rdbttn1
-                checkable: true
-                checked: settings.preset1
-                onClicked: {
-                    rdbttn1.checked = true
-                    settings.preset1 = "true"
-                    settings.preset2 = "false"
-                    settings.preset3 = "false"
-                    settings.preset4 = "false"
-                    settings.preset5 = "false"
-                }
-            }
-            Qqc.RadioButton {
-                id: rdbttn2
-                checkable: true
-                checked: settings.preset2
-                onClicked: {
-                    rdbttn2.checked = true
-                    settings.preset1 = "false"
-                    settings.preset2 = "true"
-                    settings.preset3 = "false"
-                    settings.preset4 = "false"
-                    settings.preset5 = "false"
-                }
-            }
-            Qqc.RadioButton {
-                id: rdbttn3
-                checkable: true
-                checked: settings.preset3
-                onClicked: {
-                    rdbttn3.checked = true
-                    settings.preset1 = "false"
-                    settings.preset2 = "false"
-                    settings.preset3 = "true"
-                    settings.preset4 = "false"
-                    settings.preset5 = "false"
-                }
-            }
-            Qqc.RadioButton {
-                id: rdbttn4
-                checkable: true
-                checked: settings.preset4
-                onClicked: {
-                    rdbttn4.checked = true
-                    settings.preset1 = "false"
-                    settings.preset2 = "false"
-                    settings.preset3 = "false"
-                    settings.preset4 = "true"
-                    settings.preset5 = "false"
-                }
-            }
-            Qqc.RadioButton {
-                id: rdbttn5
-                checkable: true
-                checked: settings.preset5
-                onClicked: {
-                    rdbttn5.checked = true
-                    settings.preset1 = "false"
-                    settings.preset2 = "false"
-                    settings.preset3 = "false"
-                    settings.preset4 = "false"
-                    settings.preset5 = "true"
-                }
-            }
-        }*/
     }
-/*    Qqc.RadioButton {
-        id: rdbttn1
-        checkable: true
-        checked: settings.preset1
-        anchors.top: clmn1.bottom
-        onClicked: {
-            rdbttn1.checked = true
-            settings.preset1 = "true"
-            settings.preset2 = "false"
-            settings.preset3 = "false"
-            settings.preset4 = "false"
-            settings.preset5 = "false"
-        }
-    }
-    Qqc.RadioButton {
-        id: rdbttn2
-        checkable: true
-        checked: settings.preset2
-        anchors.left: rdbttn1.right
-        anchors.top: clmn1.bottom
-        onClicked: {
-            rdbttn2.checked = true
-            settings.preset1 = "false"
-            settings.preset2 = "true"
-            settings.preset3 = "false"
-            settings.preset4 = "false"
-            settings.preset5 = "false"
-        }
-    }
-    Qqc.RadioButton {
-        id: rdbttn3
-        checkable: true
-        checked: settings.preset3
-        anchors.left: rdbttn2.right
-        anchors.top: clmn1.bottom
-        onClicked: {
-            rdbttn3.checked = true
-            settings.preset1 = "false"
-            settings.preset2 = "false"
-            settings.preset3 = "true"
-            settings.preset4 = "false"
-            settings.preset5 = "false"
-        }
-    }
-    Qqc.RadioButton {
-        id: rdbttn4
-        checkable: true
-        checked: settings.preset4
-        anchors.left: rdbttn3.right
-        anchors.top: clmn1.bottom
-        onClicked: {
-            rdbttn4.checked = true
-            settings.preset1 = "false"
-            settings.preset2 = "false"
-            settings.preset3 = "false"
-            settings.preset4 = "true"
-            settings.preset5 = "false"
-        }
-    }
-    Qqc.RadioButton {
-        id: rdbttn5
-        checkable: true
-        checked: settings.preset5
-        anchors.left: rdbttn4.right
-        anchors.top: clmn1.bottom
-        onClicked: {
-            rdbttn5.checked = true
-            settings.preset1 = "false"
-            settings.preset2 = "false"
-            settings.preset3 = "false"
-            settings.preset4 = "false"
-            settings.preset5 = "true"
-        }
-    }*/
     Text {
         id: txt3
         text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
