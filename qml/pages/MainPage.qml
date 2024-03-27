@@ -583,5 +583,6 @@ Rectangle {
         font.bold: true
         onLinkActivated: Qt.openUrlExternally(link)
         anchors.bottom: mainPage.bottom
+        bottomPadding: units.gu(1)
     }
 }
