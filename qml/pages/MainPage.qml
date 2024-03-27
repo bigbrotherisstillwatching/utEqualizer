@@ -77,11 +77,11 @@ Rectangle {
         property string equalizerControls9: ""
         property string equalizerControls10: ""
         property bool equalizerStatus
-        property bool preset1
-        property bool preset2
-        property bool preset3
-        property bool preset4
-        property bool preset5
+        property string preset1: ""
+        property string preset2: ""
+        property string preset3: ""
+        property string preset4: ""
+        property string preset5: ""
     }
 
     Connections {
@@ -596,11 +596,11 @@ Rectangle {
                 checkable: true
                 checked: settings.preset1
                 onClicked: {
-                    settings.preset1 = checked
-                    settings.preset2 = unchecked
-                    settings.preset3 = unchecked
-                    settings.preset4 = unchecked
-                    settings.preset5 = unchecked
+                    settings.preset1 = "true"
+                    settings.preset2 = "false"
+                    settings.preset3 = "false"
+                    settings.preset4 = "false"
+                    settings.preset5 = "false"
                 }
             }
             Qqc.RadioButton {
@@ -608,11 +608,11 @@ Rectangle {
                 checkable: true
                 checked: settings.preset2
                 onClicked: {
-                    settings.preset1 = unchecked
-                    settings.preset2 = checked
-                    settings.preset3 = unchecked
-                    settings.preset4 = unchecked
-                    settings.preset5 = unchecked
+                    settings.preset1 = "false"
+                    settings.preset2 = "true"
+                    settings.preset3 = "false"
+                    settings.preset4 = "false"
+                    settings.preset5 = "false"
                 }
             }
             Qqc.RadioButton {
@@ -620,11 +620,11 @@ Rectangle {
                 checkable: true
                 checked: settings.preset3
                 onClicked: {
-                    settings.preset1 = unchecked
-                    settings.preset2 = unchecked
-                    settings.preset3 = checked
-                    settings.preset4 = unchecked
-                    settings.preset5 = unchecked
+                    settings.preset1 = "false"
+                    settings.preset2 = "false"
+                    settings.preset3 = "true"
+                    settings.preset4 = "false"
+                    settings.preset5 = "false"
                 }
             }
             Qqc.RadioButton {
@@ -632,11 +632,11 @@ Rectangle {
                 checkable: true
                 checked: settings.preset4
                 onClicked: {
-                    settings.preset1 = unchecked
-                    settings.preset2 = unchecked
-                    settings.preset3 = unchecked
-                    settings.preset4 = checked
-                    settings.preset5 = unchecked
+                    settings.preset1 = "false"
+                    settings.preset2 = "false"
+                    settings.preset3 = "false"
+                    settings.preset4 = "true"
+                    settings.preset5 = "false"
                 }
             }
             Qqc.RadioButton {
@@ -644,11 +644,11 @@ Rectangle {
                 checkable: true
                 checked: settings.preset5
                 onClicked: {
-                    settings.preset1 = unchecked
-                    settings.preset2 = unchecked
-                    settings.preset3 = unchecked
-                    settings.preset4 = unchecked
-                    settings.preset5 = checked
+                    settings.preset1 = "false"
+                    settings.preset2 = "false"
+                    settings.preset3 = "false"
+                    settings.preset4 = "false"
+                    settings.preset5 = "true"
                 }
             }
         }
