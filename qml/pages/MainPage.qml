@@ -594,7 +594,7 @@ Rectangle {
             Qqc.RadioButton {
                 id: rdbttn1
                 checkable: true
-                checked: "settings.preset1"
+                checked: settings.preset1
                 onClicked: {
                     rdbttn1.checked = true
                     settings.preset1 = "true"
@@ -607,7 +607,7 @@ Rectangle {
             Qqc.RadioButton {
                 id: rdbttn2
                 checkable: true
-                checked: "settings.preset2"
+                checked: settings.preset2
                 onClicked: {
                     rdbttn2.checked = true
                     settings.preset1 = "false"
@@ -620,7 +620,7 @@ Rectangle {
             Qqc.RadioButton {
                 id: rdbttn3
                 checkable: true
-                checked: "settings.preset3"
+                checked: settings.preset3
                 onClicked: {
                     rdbttn3.checked = true
                     settings.preset1 = "false"
@@ -633,7 +633,7 @@ Rectangle {
             Qqc.RadioButton {
                 id: rdbttn4
                 checkable: true
-                checked: "settings.preset4"
+                checked: settings.preset4
                 onClicked: {
                     rdbttn4.checked = true
                     settings.preset1 = "false"
@@ -646,7 +646,7 @@ Rectangle {
             Qqc.RadioButton {
                 id: rdbttn5
                 checkable: true
-                checked: "settings.preset5"
+                checked: settings.preset5
                 onClicked: {
                     rdbttn5.checked = true
                     settings.preset1 = "false"
