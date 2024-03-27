@@ -77,6 +77,11 @@ Rectangle {
         property string equalizerControls9: ""
         property string equalizerControls10: ""
         property bool equalizerStatus
+        property bool preset1
+        property bool preset2
+        property bool preset3
+        property bool preset4
+        property bool preset5
     }
 
     Connections {
@@ -589,22 +594,62 @@ Rectangle {
             Qqc.RadioButton {
                 id: rdbttn1
                 checkable: true
+                checked: settings.preset1
+                onClicked: {
+                    settings.preset1 = checked
+                    settings.preset2 = unchecked
+                    settings.preset3 = unchecked
+                    settings.preset4 = unchecked
+                    settings.preset5 = unchecked
+                }
             }
             Qqc.RadioButton {
                 id: rdbttn2
                 checkable: true
+                checked: settings.preset2
+                onClicked: {
+                    settings.preset1 = unchecked
+                    settings.preset2 = checked
+                    settings.preset3 = unchecked
+                    settings.preset4 = unchecked
+                    settings.preset5 = unchecked
+                }
             }
             Qqc.RadioButton {
                 id: rdbttn3
                 checkable: true
+                checked: settings.preset3
+                onClicked: {
+                    settings.preset1 = unchecked
+                    settings.preset2 = unchecked
+                    settings.preset3 = checked
+                    settings.preset4 = unchecked
+                    settings.preset5 = unchecked
+                }
             }
             Qqc.RadioButton {
                 id: rdbttn4
                 checkable: true
+                checked: settings.preset4
+                onClicked: {
+                    settings.preset1 = unchecked
+                    settings.preset2 = unchecked
+                    settings.preset3 = unchecked
+                    settings.preset4 = checked
+                    settings.preset5 = unchecked
+                }
             }
             Qqc.RadioButton {
                 id: rdbttn5
                 checkable: true
+                checked: settings.preset5
+                onClicked: {
+                    settings.preset1 = unchecked
+                    settings.preset2 = unchecked
+                    settings.preset3 = unchecked
+                    settings.preset4 = unchecked
+                    settings.preset5 = checked
+                }
             }
         }
     }
