@@ -596,6 +596,7 @@ Rectangle {
                 checkable: true
                 checked: settings.preset1
                 onClicked: {
+                    rdbttn1.checked = true
                     settings.preset1 = "true"
                     settings.preset2 = "false"
                     settings.preset3 = "false"
@@ -608,6 +609,7 @@ Rectangle {
                 checkable: true
                 checked: settings.preset2
                 onClicked: {
+                    rdbttn2.checked = true
                     settings.preset1 = "false"
                     settings.preset2 = "true"
                     settings.preset3 = "false"
@@ -620,6 +622,7 @@ Rectangle {
                 checkable: true
                 checked: settings.preset3
                 onClicked: {
+                    rdbttn3.checked = true
                     settings.preset1 = "false"
                     settings.preset2 = "false"
                     settings.preset3 = "true"
@@ -632,6 +635,7 @@ Rectangle {
                 checkable: true
                 checked: settings.preset4
                 onClicked: {
+                    rdbttn4.checked = true
                     settings.preset1 = "false"
                     settings.preset2 = "false"
                     settings.preset3 = "false"
@@ -644,6 +648,7 @@ Rectangle {
                 checkable: true
                 checked: settings.preset5
                 onClicked: {
+                    rdbttn5.checked = true
                     settings.preset1 = "false"
                     settings.preset2 = "false"
                     settings.preset3 = "false"
