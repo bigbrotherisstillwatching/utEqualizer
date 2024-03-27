@@ -599,7 +599,7 @@ Rectangle {
 //                            Label {
 //                                text: modelData
 //                                color: Colors.mainText
-                            }
+//                            }
                         }
                     }
                 }
