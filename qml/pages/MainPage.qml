@@ -593,9 +593,91 @@ Rectangle {
 //            expandedHeight: units.gu(1)
             anchors.horizontalCenter: clmn1.horizontalCenter
             ListView {
-                model: 5
-                delegate: Standard {
-                    text: "Item #" + modelData
+                id: lstvw1
+                model: [i18n.tr("Preset 1"), i18n.tr("Preset 2"), i18n.tr("Preset 3"), i18n.tr("Preset 4"), i18n.tr("Preset 5")]
+                delegate: ListItem {
+//                    height: layout.height + (divider.visible ? divider.height : 0)
+                    color: Colors.surfaceColor
+                    divider.colorFrom: Colors.borderColor
+                    divider.colorTo: Colors.borderColor
+                    highlightColor: Colors.highlightColor
+
+//                    onClicked: mainPage.setLastStation(JSON.parse(JSON.stringify(favouriteModel.get(index))))
+
+                    leadingActions: ListItemActions {
+                        delegate: Rectangle {
+                            id: actRec
+                            width: height
+                            color: pressed ? Colors.highlightColor : Colors.surfaceColor
+                            Label {
+                                anchors.centerIn: actRec
+                                color: Colors.mainText
+                                text: action.text
+                                width: parent.width
+                                horizontalAlignment: Text.AlignHCenter
+                                textSize: Label.XSmall
+                                wrapMode: Text.WordWrap
+                            }
+                        }
+                        actions: [
+                            Action {
+                                text: i18n.tr("Delete")
+                                onTriggered: {
+                                    if (favouriteModel.get(index).stationID === lastStation.stationID) {
+                                        lastStation.favourite = !lastStation.favourite
+                                        favIcon.iconName = lastStation.favourite ? "starred" : "non-starred"
+                                    } else if (favouriteModel.get(index).stationID != lastStation.stationID) {
+                                        favIcon.iconName = lastStation.favourite ? "starred" : "non-starred"
+                                    }
+                                    Functions.removeFavourite(stationID)
+                                }
+                            }
+                        ]
+                    }
+                    trailingActions: ListItemActions {
+                        delegate: Rectangle {
+                            id: actRec2
+                            width: height
+                            color: pressed ? Colors.highlightColor : Colors.surfaceColor
+                            Label {
+                                anchors.centerIn: actRec2
+                                color: Colors.mainText
+                                text: action.text
+                                width: parent.width
+                                horizontalAlignment: Text.AlignHCenter
+                                textSize: Label.XSmall
+                                wrapMode: Text.WordWrap
+                            }
+                        }
+                        actions: [
+                            Action {
+                                text: i18n.tr("Show name")
+                                onTriggered: {
+                                    txt.text = favouriteModel.get(index).name
+                                }
+                            },
+                            Action {
+                                text: i18n.tr("Save name")
+                                onTriggered: {
+                                    Functions.changeName(favouriteModel.get(index).stationID, txt.text)
+                                }
+                            }
+                        ]
+                    }
+                    SlotsLayout {
+                        id: layout
+                        mainSlot: Label {
+                            text: name
+                            color: Colors.mainText
+                        }
+                        Image {
+                            source: image
+                            SlotsLayout.position: SlotsLayout.Leading;
+                            width: units.gu(4)
+                            height: units.gu(4)
+                            asynchronous: true
+                        }
+                    }
                 }
             }
         }
