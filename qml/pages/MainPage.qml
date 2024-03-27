@@ -639,7 +639,7 @@ Rectangle {
                             id: actRec2
                             width: height
                             color: pressed ? Colors.highlightColor : Colors.surfaceColor
-                            Label {
+/*                            Label {
                                 anchors.centerIn: actRec2
                                 color: Colors.mainText
                                 text: action.text
@@ -647,20 +647,29 @@ Rectangle {
                                 horizontalAlignment: Text.AlignHCenter
                                 textSize: Label.XSmall
                                 wrapMode: Text.WordWrap
-                            }
+                            }*/
+/*                            Icon {
+                                id: icn1
+                                name: "save"
+                                anchors.centerIn: actRec2
+                                height: units.gu(2)
+                                width: height
+                            }*/
                         }
                         actions: [
                             Action {
-                                text: i18n.tr("Show name")
-                                onTriggered: {
-                                    txt.text = favouriteModel.get(index).name
-                                }
+//                                text: i18n.tr("Show name")
+                                iconName: "save"
+//                                onTriggered: {
+//                                    txt.text = favouriteModel.get(index).name
+//                                }
                             },
                             Action {
-                                text: i18n.tr("Save name")
-                                onTriggered: {
-                                    Functions.changeName(favouriteModel.get(index).stationID, txt.text)
-                                }
+//                                text: i18n.tr("Save name")
+                                iconSource: "../../assets/load.svg"
+//                                onTriggered: {
+//                                    Functions.changeName(favouriteModel.get(index).stationID, txt.text)
+//                                }
                             }
                         ]
                     }
