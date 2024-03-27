@@ -591,6 +591,7 @@ Rectangle {
         ComboButton {
             text: i18n.tr("Presets")
 //            expandedHeight: units.gu(1)
+            anchors.horizontalCenter: clmn1.horizontalCenter
             ListView {
                 model: 5
                 delegate: Standard {
