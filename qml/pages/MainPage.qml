@@ -642,7 +642,7 @@ Rectangle {
         }*/
         ListItem {
 //            height: l3.height + (divider.visible ? divider.height : 0)
-            height: bttn4.height + units.gu(1)
+            height: units.gu(6)
             color: Colors.surfaceColor2
             divider.colorFrom: Colors.mainText
             divider.colorTo: Colors.mainText
