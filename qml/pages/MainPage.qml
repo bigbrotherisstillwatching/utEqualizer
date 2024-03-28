@@ -579,9 +579,9 @@ Rectangle {
             id: cmbbttn
             text: i18n.tr("Presets")
             anchors.horizontalCenter: clmn1.horizontalCenter
+            height: layout.height
             style: ActionBarStyle {
                 backgroundColor: "transparent"
-                height: layout.height
             }
             ListView {
                 id: lstvw1
