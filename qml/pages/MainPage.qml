@@ -578,7 +578,7 @@ Rectangle {
         ComboButton {
             text: i18n.tr("Presets")
             anchors.horizontalCenter: clmn1.horizontalCenter
-            ComboButtonStyle {
+            style: ComboButtonStyle {
                 defaultColor: Colors.surfaceColor
             }
             ListView {
