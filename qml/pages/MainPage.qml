@@ -566,81 +566,19 @@ Rectangle {
 /*        ComboButton {
             id: cmbbttn
             text: i18n.tr("Presets")
-            anchors.horizontalCenter: clmn1.horizontalCenter
-            ListView {
-                id: lstvw1
-                model: [i18n.tr("Preset 1"), i18n.tr("Preset 2"), i18n.tr("Preset 3"), i18n.tr("Preset 4"), i18n.tr("Preset 5")]
-                delegate: ListItem {
-                    height: layout.height + (divider.visible ? divider.height : 0)
-                    color: Colors.surfaceColor2
-                    divider.colorFrom: Colors.mainText
-                    divider.colorTo: Colors.mainText
-                    highlightColor: "#32517F"
-
-                    SlotsLayout {
-                        id: layout
-                        mainSlot: Label {
-                            text: modelData
-                            color: Colors.mainText
-                        }
-                        Button {
-                            id: bttn4
-                            height: units.gu(4)
-                            width: units.gu(4)
-                            iconName: "save"
-//                            anchors.right: hdrrec.right
-//                            y: 20
-                            SlotsLayout.position: SlotsLayout.Trailing
-                            StyleHints {
-                                defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
-                            }
-//                            onClicked: {
-//                                PopupUtils.open(dialog)
-//                            }
-                            
-//                            Label {
-//                                text: modelData
-//                                color: Colors.mainText
-//                            }
-                        }
-                        Button {
-                            id: bttn5
-                            height: units.gu(4)
-                            width: units.gu(4)
-                            iconSource: "../../assets/load.svg"
-//                            iconName: "reset"
-//                            anchors.right: hdrrec.right
-//                            y: 20
-                            SlotsLayout.position: SlotsLayout.Last
-                            StyleHints {
-                                defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
-                            }
-//                            onClicked: {
-//                                PopupUtils.open(dialog)
-//                            }
-                            
-//                            Label {
-//                                text: modelData
-//                                color: Colors.mainText
-//                            }
-                        }
-                    }
-                }
-            }
-        }*/
+            anchors.horizontalCenter: clmn1.horizontalCenter*/
         ListView {
             id: lstvw1
             model: [i18n.tr("Preset 1"), i18n.tr("Preset 2"), i18n.tr("Preset 3"), i18n.tr("Preset 4"), i18n.tr("Preset 5")]
             delegate: ListItem {
-                id: lstitm1
-                height: bttn4.height + units.gu(1)
+                height: layout.height + (divider.visible ? divider.height : 0)
                 color: Colors.surfaceColor2
                 divider.colorFrom: Colors.mainText
                 divider.colorTo: Colors.mainText
                 highlightColor: "#32517F"
 
                 SlotsLayout {
-                    id: sltslay3
+                    id: layout
                     mainSlot: Label {
                         text: modelData
                         color: Colors.mainText
@@ -650,24 +588,46 @@ Rectangle {
                         height: units.gu(4)
                         width: units.gu(4)
                         iconName: "save"
+//                            anchors.right: hdrrec.right
+//                            y: 20
                         SlotsLayout.position: SlotsLayout.Trailing
                         StyleHints {
-                            defaultColor: bttn4.pressed ? "#32517F" : Colors.surfaceColor
+                            defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
                         }
+//                            onClicked: {
+//                                PopupUtils.open(dialog)
+//                            }
+                            
+//                            Label {
+//                                text: modelData
+//                                color: Colors.mainText
+//                            }
                     }
                     Button {
                         id: bttn5
                         height: units.gu(4)
                         width: units.gu(4)
                         iconSource: "../../assets/load.svg"
+//                            iconName: "reset"
+//                            anchors.right: hdrrec.right
+//                            y: 20
                         SlotsLayout.position: SlotsLayout.Last
                         StyleHints {
-                            defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
+                            defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
                         }
+//                            onClicked: {
+//                                PopupUtils.open(dialog)
+//                            }
+                            
+//                            Label {
+//                                text: modelData
+//                                color: Colors.mainText
+//                            }
                     }
                 }
             }
         }
+//        }
     }
     Text {
         id: txt3
