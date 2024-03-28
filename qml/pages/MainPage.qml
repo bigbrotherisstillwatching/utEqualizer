@@ -564,8 +564,8 @@ Rectangle {
         Rectangle {
              id: plchldrrec
 //             text: ""
-             color: "red"
-             visible: false
+             color: "transparent"
+//             visible: false
              anchors.horizontalCenter: clmn1.horizontalCenter
 //             wrapMode: Text.WordWrap
              width: clmn1.width
