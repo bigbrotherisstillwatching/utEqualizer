@@ -576,7 +576,7 @@ Rectangle {
 //             rightPadding: units.gu(3)
         }
         ComboButton {
-            text: i18n.tr("Presets")
+            text: i18n.tr("     Presets")
             anchors.horizontalCenter: clmn1.horizontalCenter
             ListView {
                 id: lstvw1
