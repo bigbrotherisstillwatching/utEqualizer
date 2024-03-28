@@ -576,10 +576,11 @@ Rectangle {
 //             rightPadding: units.gu(3)
         }
         ComboButton {
+            id: cmbbttn
             text: i18n.tr("Presets")
             anchors.horizontalCenter: clmn1.horizontalCenter
-            style: ComboButtonStyle {
-                defaultColor: Colors.surfaceColor
+            StyleHints {
+                defaultColor: cmbbttn.pressed ? Colors.surfaceColor : #32517F
             }
             ListView {
                 id: lstvw1
