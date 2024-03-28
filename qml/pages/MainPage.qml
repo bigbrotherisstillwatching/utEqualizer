@@ -551,7 +551,7 @@ Rectangle {
         }
         Text {
              id: txt2
-             text: "                                                                                            "
+             text: ""
              color: "red"
              anchors.horizontalCenter: clmn1.horizontalCenter
              wrapMode: Text.WordWrap
@@ -560,6 +560,20 @@ Rectangle {
              horizontalAlignment: Text.AlignHCenter
              leftPadding: units.gu(3)
              rightPadding: units.gu(3)
+        }
+        Rectangle {
+             id: plchldrrec
+             text: ""
+             color: "red"
+             visible: false
+             anchors.horizontalCenter: clmn1.horizontalCenter
+//             wrapMode: Text.WordWrap
+             width: clmn1.width
+             height: units.gu(5) - txt2.height
+//             lineHeight: 1.2
+//             horizontalAlignment: Text.AlignHCenter
+//             leftPadding: units.gu(3)
+//             rightPadding: units.gu(3)
         }
         ComboButton {
             text: i18n.tr("Presets")
