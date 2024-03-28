@@ -564,7 +564,7 @@ Rectangle {
         ComboButton {
             text: i18n.tr("Presets")
             anchors.horizontalCenter: clmn1.horizontalCenter
-            y: units.gu(8) - txt2.height
+            topPadding: units.gu(3) - txt2.height
             ListView {
                 id: lstvw1
                 model: [i18n.tr("Preset 1"), i18n.tr("Preset 2"), i18n.tr("Preset 3"), i18n.tr("Preset 4"), i18n.tr("Preset 5")]
