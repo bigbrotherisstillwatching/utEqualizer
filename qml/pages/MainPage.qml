@@ -581,6 +581,7 @@ Rectangle {
             anchors.horizontalCenter: clmn1.horizontalCenter
             style: ActionBarStyle {
                 backgroundColor: "transparent"
+                height: layout.height
             }
             ListView {
                 id: lstvw1
