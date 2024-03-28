@@ -672,10 +672,31 @@ Rectangle {
 //                    y: 20
                     SlotsLayout.position: SlotsLayout.Trailing
                     StyleHints {
-                        defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
+                        defaultColor: clsbttn.pressed ? "#32517F" : Colors.surfaceColor
                     }
 //                    onClicked: {
 //                          PopupUtils.open(dialog)
+//                    }
+                            
+//                    Label {
+//                        text: modelData
+//                        color: Colors.mainText
+//                    }
+                }
+                Button {
+                    id: bttn5
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    iconSource: "../../assets/load.svg"
+//                     iconName: "reset"
+//                     anchors.right: hdrrec.right
+//                     y: 20
+                    SlotsLayout.position: SlotsLayout.Last
+                    StyleHints {
+                        defaultColor: clsbttn.pressed ? "#32517F" : Colors.surfaceColor
+                    }
+//                    onClicked: {
+//                        PopupUtils.open(dialog)
 //                    }
                             
 //                    Label {
