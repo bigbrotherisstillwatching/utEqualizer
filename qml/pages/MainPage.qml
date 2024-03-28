@@ -605,7 +605,7 @@ Rectangle {
                             height: units.gu(4)
                             width: units.gu(4)
 //                            iconSource: "../../assets/load.svg"
-                            iconName: "save"
+                            iconName: "reset"
 //                            anchors.right: hdrrec.right
 //                            y: 20
                             SlotsLayout.position: SlotsLayout.Last
