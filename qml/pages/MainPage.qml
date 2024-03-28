@@ -641,8 +641,9 @@ Rectangle {
             }
         }*/
         ListItem {
+            id: lstitm1
 //            height: l3.height + (divider.visible ? divider.height : 0)
-            height: units.gu(6)
+            height: bttn4.height + units.gu(1)
             color: Colors.surfaceColor2
             divider.colorFrom: Colors.mainText
             divider.colorTo: Colors.mainText
@@ -653,6 +654,7 @@ Rectangle {
                 title.text: i18n.tr("Preset 1")
 //                title.font.bold: true
                 title.color: Colors.mainText
+                title.anchors.verticalCenter: lstitm1.verticalCenter
 
 /*                Rectangle {
                     id: statusrec1
@@ -672,7 +674,7 @@ Rectangle {
 //                    y: 20
                     SlotsLayout.position: SlotsLayout.Trailing
                     StyleHints {
-                        defaultColor: clsbttn.pressed ? "#32517F" : Colors.surfaceColor
+                        defaultColor: bttn4.pressed ? "#32517F" : Colors.surfaceColor
                     }
 //                    onClicked: {
 //                          PopupUtils.open(dialog)
@@ -693,7 +695,7 @@ Rectangle {
 //                     y: 20
                     SlotsLayout.position: SlotsLayout.Last
                     StyleHints {
-                        defaultColor: clsbttn.pressed ? "#32517F" : Colors.surfaceColor
+                        defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
                     }
 //                    onClicked: {
 //                        PopupUtils.open(dialog)
