@@ -579,6 +579,7 @@ Rectangle {
             id: cmbbttn
             text: i18n.tr("Presets")
             anchors.horizontalCenter: clmn1.horizontalCenter
+            height: units.gu(4)
             style: ComboButtonStyle {
                 defaultColor: Colors.surfaceColor
             }
