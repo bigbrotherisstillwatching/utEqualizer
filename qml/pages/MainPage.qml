@@ -604,7 +604,8 @@ Rectangle {
                             id: bttn5
                             height: units.gu(4)
                             width: units.gu(4)
-                            iconSource: "../../assets/load.svg"
+//                            iconSource: "../../assets/load.svg"
+                            iconName: "save"
 //                            anchors.right: hdrrec.right
 //                            y: 20
                             SlotsLayout.position: SlotsLayout.Last
