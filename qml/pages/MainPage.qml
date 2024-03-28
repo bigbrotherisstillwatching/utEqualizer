@@ -576,8 +576,11 @@ Rectangle {
 //             rightPadding: units.gu(3)
         }
         ComboButton {
-            text: i18n.tr("     Presets")
+            text: i18n.tr("Presets")
             anchors.horizontalCenter: clmn1.horizontalCenter
+            ComboButtonStyle {
+                defaultColor: Colors.surfaceColor
+            }
             ListView {
                 id: lstvw1
                 model: [i18n.tr("Preset 1"), i18n.tr("Preset 2"), i18n.tr("Preset 3"), i18n.tr("Preset 4"), i18n.tr("Preset 5")]
