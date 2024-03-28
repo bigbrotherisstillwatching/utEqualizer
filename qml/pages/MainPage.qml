@@ -563,71 +563,6 @@ Rectangle {
              width: clmn1.width
              height: units.gu(5) - txt2.height
         }
-/*        ComboButton {
-            id: cmbbttn
-            text: i18n.tr("Presets")
-            anchors.horizontalCenter: clmn1.horizontalCenter
-            ListView {
-                id: lstvw1
-                model: [i18n.tr("Preset 1"), i18n.tr("Preset 2"), i18n.tr("Preset 3"), i18n.tr("Preset 4"), i18n.tr("Preset 5")]
-                delegate: ListItem {
-                    height: layout.height + (divider.visible ? divider.height : 0)
-                    color: Colors.surfaceColor2
-                    divider.colorFrom: Colors.mainText
-                    divider.colorTo: Colors.mainText
-                    highlightColor: "#32517F"
-
-                    SlotsLayout {
-                        id: layout
-                        mainSlot: Label {
-                            text: modelData
-                            color: Colors.mainText
-                        }
-                        Button {
-                            id: bttn4
-                            height: units.gu(4)
-                            width: units.gu(4)
-                            iconName: "save"
-//                            anchors.right: hdrrec.right
-//                            y: 20
-                            SlotsLayout.position: SlotsLayout.Trailing
-                            StyleHints {
-                                defaultColor: bttn4.pressed ? "#32517F" : Colors.surfaceColor
-                            }
-//                            onClicked: {
-//                                PopupUtils.open(dialog)
-//                            }
-                            
-//                            Label {
-//                                text: modelData
-//                                color: Colors.mainText
-//                            }
-                        }
-                        Button {
-                            id: bttn5
-                            height: units.gu(4)
-                            width: units.gu(4)
-                            iconSource: "../../assets/load.svg"
-//                            iconName: "reset"
-//                            anchors.right: hdrrec.right
-//                            y: 20
-                            SlotsLayout.position: SlotsLayout.Last
-                            StyleHints {
-                                defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
-                            }
-//                            onClicked: {
-//                                PopupUtils.open(dialog)
-//                            }
-                            
-//                            Label {
-//                                text: modelData
-//                                color: Colors.mainText
-//                            }
-                        }
-                    }
-                }
-            }
-        }*/
     }
 
     Column {
@@ -640,7 +575,6 @@ Rectangle {
         ListItem {
             id: lstitm1
             height: lstitmlay1.height + (divider.visible ? divider.height : 0)
-//        height: bttn4.height + units.gu(1)
             color: Colors.surfaceColor2
             divider.colorFrom: Colors.mainText
             divider.colorTo: Colors.mainText
@@ -650,32 +584,13 @@ Rectangle {
                 id: lstitmlay1
                 height: bttn4.height + units.gu(1)
                 title.text: i18n.tr("Preset 1")
-//                title.font.bold: true
                 title.color: Colors.mainText
-//                title.y: -20
 
-/*                Rectangle {
-                    id: statusrec1
-                    SlotsLayout.position: SlotsLayout.Trailing;
-                    width: units.gu(2)
-                    height: units.gu(2)
-                    color: settings.value("equalizerStatus")
-                    visible: true
-                    radius: units.gu(1)
-                }*/
-/*                Text {
-                    id: prst1txt
-                    text: i18n.tr("Preset 1")
-                    SlotsLayout.position: SlotsLayout.Leading
-                    horizontalAlignment: Text.AlignHCenter
-                }*/
                 Button {
                     id: bttn4
                     height: units.gu(4)
                     width: units.gu(4)
                     iconName: "save"
-//                    anchors.right: hdrrec.right
-//                    y: 20
                     SlotsLayout.position: SlotsLayout.Trailing
                     StyleHints {
                         defaultColor: bttn4.pressed ? "#32517F" : Colors.surfaceColor
@@ -683,20 +598,12 @@ Rectangle {
 //                    onClicked: {
 //                          PopupUtils.open(dialog)
 //                    }
-                            
-//                    Label {
-//                        text: modelData
-//                        color: Colors.mainText
-//                    }
                 }
                 Button {
                     id: bttn5
                     height: units.gu(4)
                     width: units.gu(4)
                     iconSource: "../../assets/load.svg"
-//                     iconName: "reset"
-//                     anchors.right: hdrrec.right
-//                     y: 20
                     SlotsLayout.position: SlotsLayout.Last
                     StyleHints {
                         defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
@@ -704,18 +611,12 @@ Rectangle {
 //                    onClicked: {
 //                        PopupUtils.open(dialog)
 //                    }
-                            
-//                    Label {
-//                        text: modelData
-//                        color: Colors.mainText
-//                    }
                 }
             }
         }
         ListItem {
             id: lstitm2
             height: lstitmlay2.height + (divider.visible ? divider.height : 0)
-//        height: bttn4.height + units.gu(1)
             color: Colors.surfaceColor2
             divider.colorFrom: Colors.mainText
             divider.colorTo: Colors.mainText
@@ -725,32 +626,13 @@ Rectangle {
                 id: lstitmlay2
                 height: bttn6.height + units.gu(1)
                 title.text: i18n.tr("Preset 2")
-//                title.font.bold: true
                 title.color: Colors.mainText
-//                title.y: -20
 
-/*                Rectangle {
-                    id: statusrec1
-                    SlotsLayout.position: SlotsLayout.Trailing;
-                    width: units.gu(2)
-                    height: units.gu(2)
-                    color: settings.value("equalizerStatus")
-                    visible: true
-                    radius: units.gu(1)
-                }*/
-/*                Text {
-                    id: prst1txt
-                    text: i18n.tr("Preset 1")
-                    SlotsLayout.position: SlotsLayout.Leading
-                    horizontalAlignment: Text.AlignHCenter
-                }*/
                 Button {
                     id: bttn6
                     height: units.gu(4)
                     width: units.gu(4)
                     iconName: "save"
-//                    anchors.right: hdrrec.right
-//                    y: 20
                     SlotsLayout.position: SlotsLayout.Trailing
                     StyleHints {
                         defaultColor: bttn6.pressed ? "#32517F" : Colors.surfaceColor
@@ -758,20 +640,12 @@ Rectangle {
 //                    onClicked: {
 //                          PopupUtils.open(dialog)
 //                    }
-                            
-//                    Label {
-//                        text: modelData
-//                        color: Colors.mainText
-//                    }
                 }
                 Button {
                     id: bttn7
                     height: units.gu(4)
                     width: units.gu(4)
                     iconSource: "../../assets/load.svg"
-//                     iconName: "reset"
-//                     anchors.right: hdrrec.right
-//                     y: 20
                     SlotsLayout.position: SlotsLayout.Last
                     StyleHints {
                         defaultColor: bttn7.pressed ? "#32517F" : Colors.surfaceColor
@@ -779,10 +653,131 @@ Rectangle {
 //                    onClicked: {
 //                        PopupUtils.open(dialog)
 //                    }
-                            
-//                    Label {
-//                        text: modelData
-//                        color: Colors.mainText
+                }
+            }
+        }
+        ListItem {
+            id: lstitm3
+            height: lstitmlay3.height + (divider.visible ? divider.height : 0)
+            color: Colors.surfaceColor2
+            divider.colorFrom: Colors.mainText
+            divider.colorTo: Colors.mainText
+            highlightColor: "#32517F"
+
+            ListItemLayout {
+                id: lstitmlay3
+                height: bttn8.height + units.gu(1)
+                title.text: i18n.tr("Preset 3")
+                title.color: Colors.mainText
+
+                Button {
+                    id: bttn8
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    iconName: "save"
+                    SlotsLayout.position: SlotsLayout.Trailing
+                    StyleHints {
+                        defaultColor: bttn8.pressed ? "#32517F" : Colors.surfaceColor
+                    }
+//                    onClicked: {
+//                          PopupUtils.open(dialog)
+//                    }
+                }
+                Button {
+                    id: bttn9
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    iconSource: "../../assets/load.svg"
+                    SlotsLayout.position: SlotsLayout.Last
+                    StyleHints {
+                        defaultColor: bttn9.pressed ? "#32517F" : Colors.surfaceColor
+                    }
+//                    onClicked: {
+//                        PopupUtils.open(dialog)
+//                    }
+                }
+            }
+        }
+        ListItem {
+            id: lstitm4
+            height: lstitmlay4.height + (divider.visible ? divider.height : 0)
+            color: Colors.surfaceColor2
+            divider.colorFrom: Colors.mainText
+            divider.colorTo: Colors.mainText
+            highlightColor: "#32517F"
+
+            ListItemLayout {
+                id: lstitmlay4
+                height: bttn6.height + units.gu(1)
+                title.text: i18n.tr("Preset 4")
+                title.color: Colors.mainText
+
+                Button {
+                    id: bttn10
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    iconName: "save"
+                    SlotsLayout.position: SlotsLayout.Trailing
+                    StyleHints {
+                        defaultColor: bttn10.pressed ? "#32517F" : Colors.surfaceColor
+                    }
+//                    onClicked: {
+//                          PopupUtils.open(dialog)
+//                    }
+                }
+                Button {
+                    id: bttn11
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    iconSource: "../../assets/load.svg"
+                    SlotsLayout.position: SlotsLayout.Last
+                    StyleHints {
+                        defaultColor: bttn11.pressed ? "#32517F" : Colors.surfaceColor
+                    }
+//                    onClicked: {
+//                        PopupUtils.open(dialog)
+//                    }
+                }
+            }
+        }
+        ListItem {
+            id: lstitm5
+            height: lstitmlay5.height + (divider.visible ? divider.height : 0)
+            color: Colors.surfaceColor2
+            divider.colorFrom: Colors.mainText
+            divider.colorTo: Colors.mainText
+            highlightColor: "#32517F"
+
+            ListItemLayout {
+                id: lstitmlay5
+                height: bttn12.height + units.gu(1)
+                title.text: i18n.tr("Preset 5")
+                title.color: Colors.mainText
+
+                Button {
+                    id: bttn12
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    iconName: "save"
+                    SlotsLayout.position: SlotsLayout.Trailing
+                    StyleHints {
+                        defaultColor: bttn12.pressed ? "#32517F" : Colors.surfaceColor
+                    }
+//                    onClicked: {
+//                          PopupUtils.open(dialog)
+//                    }
+                }
+                Button {
+                    id: bttn13
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    iconSource: "../../assets/load.svg"
+                    SlotsLayout.position: SlotsLayout.Last
+                    StyleHints {
+                        defaultColor: bttn13.pressed ? "#32517F" : Colors.surfaceColor
+                    }
+//                    onClicked: {
+//                        PopupUtils.open(dialog)
 //                    }
                 }
             }
