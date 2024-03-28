@@ -633,7 +633,7 @@ Rectangle {
     ListItem {
         id: lstitm1
         height: lstitmlay1.height + (divider.visible ? divider.height : 0)
-        height: bttn4.height + units.gu(1)
+//        height: bttn4.height + units.gu(1)
         color: Colors.surfaceColor2
         divider.colorFrom: Colors.mainText
         divider.colorTo: Colors.mainText
