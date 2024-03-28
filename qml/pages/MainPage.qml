@@ -712,6 +712,81 @@ Rectangle {
                 }
             }
         }
+        ListItem {
+            id: lstitm2
+            height: lstitmlay2.height + (divider.visible ? divider.height : 0)
+//        height: bttn4.height + units.gu(1)
+            color: Colors.surfaceColor2
+            divider.colorFrom: Colors.mainText
+            divider.colorTo: Colors.mainText
+            highlightColor: "#32517F"
+
+            ListItemLayout {
+                id: lstitmlay2
+                height: bttn6.height + units.gu(1)
+                title.text: i18n.tr("Preset 2")
+//                title.font.bold: true
+                title.color: Colors.mainText
+//                title.y: -20
+
+/*                Rectangle {
+                    id: statusrec1
+                    SlotsLayout.position: SlotsLayout.Trailing;
+                    width: units.gu(2)
+                    height: units.gu(2)
+                    color: settings.value("equalizerStatus")
+                    visible: true
+                    radius: units.gu(1)
+                }*/
+/*                Text {
+                    id: prst1txt
+                    text: i18n.tr("Preset 1")
+                    SlotsLayout.position: SlotsLayout.Leading
+                    horizontalAlignment: Text.AlignHCenter
+                }*/
+                Button {
+                    id: bttn6
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    iconName: "save"
+//                    anchors.right: hdrrec.right
+//                    y: 20
+                    SlotsLayout.position: SlotsLayout.Trailing
+                    StyleHints {
+                        defaultColor: bttn6.pressed ? "#32517F" : Colors.surfaceColor
+                    }
+//                    onClicked: {
+//                          PopupUtils.open(dialog)
+//                    }
+                            
+//                    Label {
+//                        text: modelData
+//                        color: Colors.mainText
+//                    }
+                }
+                Button {
+                    id: bttn7
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    iconSource: "../../assets/load.svg"
+//                     iconName: "reset"
+//                     anchors.right: hdrrec.right
+//                     y: 20
+                    SlotsLayout.position: SlotsLayout.Last
+                    StyleHints {
+                        defaultColor: bttn7.pressed ? "#32517F" : Colors.surfaceColor
+                    }
+//                    onClicked: {
+//                        PopupUtils.open(dialog)
+//                    }
+                            
+//                    Label {
+//                        text: modelData
+//                        color: Colors.mainText
+//                    }
+                }
+            }
+        }
     }
 
     Text {
