@@ -175,7 +175,7 @@ Rectangle {
                 anchors.right: hdrrec.right
                 y: 20
                 StyleHints {
-                    defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
+                    defaultColor: clsbttn.pressed ? Colors.surfaceColor : "red"
                 }
                 onClicked: {
                     PopupUtils.open(dialog)
