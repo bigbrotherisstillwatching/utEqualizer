@@ -579,6 +579,9 @@ Rectangle {
             id: cmbbttn
             text: i18n.tr("Presets")
             anchors.horizontalCenter: clmn1.horizontalCenter
+            style: ComboButtonStyle {
+                defaultColor: Colors.surfaceColor
+            }
             ListView {
                 id: lstvw1
                 model: [i18n.tr("Preset 1"), i18n.tr("Preset 2"), i18n.tr("Preset 3"), i18n.tr("Preset 4"), i18n.tr("Preset 5")]
