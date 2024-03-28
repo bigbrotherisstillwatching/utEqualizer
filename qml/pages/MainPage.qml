@@ -110,7 +110,7 @@ Rectangle {
             title: i18n.tr("<font color=\"white\">Quit</font>")
             text: i18n.tr("<font color=\"white\">Are you sure that you want to close the app?</font>")
             style: ActionBarStyle {
-               backgroundColor: Colors.surfaceColor
+               backgroundColor: Colors.surfaceColor2
             }
             Button {
                 id: bttn1
@@ -569,10 +569,10 @@ Rectangle {
                 model: [i18n.tr("Preset 1"), i18n.tr("Preset 2"), i18n.tr("Preset 3"), i18n.tr("Preset 4"), i18n.tr("Preset 5")]
                 delegate: ListItem {
                     height: layout.height + (divider.visible ? divider.height : 0)
-                    color: Colors.surfaceColor
-                    divider.colorFrom: Colors.borderColor
-                    divider.colorTo: Colors.borderColor
-                    highlightColor: Colors.highlightColor
+                    color: Colors.surfaceColor2
+                    divider.colorFrom: Colors.mainText
+                    divider.colorTo: Colors.mainText
+                    highlightColor: "#32517F"
 
                     SlotsLayout {
                         id: layout
