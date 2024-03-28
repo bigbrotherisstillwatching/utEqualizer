@@ -651,10 +651,10 @@ Rectangle {
 
             ListItemLayout {
                 id: l3
-                title.text: i18n.tr("Preset 1")
+//                title.text: i18n.tr("Preset 1")
 //                title.font.bold: true
-                title.color: Colors.mainText
-                title.y: -20
+//                title.color: Colors.mainText
+//                title.y: -20
 
 /*                Rectangle {
                     id: statusrec1
@@ -665,6 +665,12 @@ Rectangle {
                     visible: true
                     radius: units.gu(1)
                 }*/
+                Text {
+                    id: prst1txt
+                    text: i18n.tr("Preset 1")
+                    SlotsLayout.position: SlotsLayout.Leading
+                    horizontalAlignment: Text.AlignHCenter
+                }
                 Button {
                     id: bttn4
                     height: units.gu(4)
