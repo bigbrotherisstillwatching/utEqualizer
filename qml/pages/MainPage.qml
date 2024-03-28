@@ -651,7 +651,7 @@ Rectangle {
 
             ListItemLayout {
                 id: l3
-                anchors.verticalCenter: parent
+                anchors.verticalCenter: lstitm1.verticalCenter
 //                title.text: i18n.tr("Preset 1")
 //                title.font.bold: true
 //                title.color: Colors.mainText
