@@ -575,14 +575,10 @@ Rectangle {
 //             leftPadding: units.gu(3)
 //             rightPadding: units.gu(3)
         }
-        ComboButton {
+/*        ComboButton {
             id: cmbbttn
             text: i18n.tr("Presets")
             anchors.horizontalCenter: clmn1.horizontalCenter
-//            height: units.gu(3)
-//            style: ActionBarStyle {
-//                backgroundColor: "transparent"
-//            }
             ListView {
                 id: lstvw1
                 model: [i18n.tr("Preset 1"), i18n.tr("Preset 2"), i18n.tr("Preset 3"), i18n.tr("Preset 4"), i18n.tr("Preset 5")]
@@ -641,6 +637,51 @@ Rectangle {
 //                            }
                         }
                     }
+                }
+            }
+        }*/
+        ListItem {
+//            height: l3.height + (divider.visible ? divider.height : 0)
+            height: bttn4.height + units.gu(1)
+            color: Colors.surfaceColor2
+            divider.colorFrom: Colors.mainText
+            divider.colorTo: Colors.mainText
+            highlightColor: "#32517F"
+
+            ListItemLayout {
+                id: l3
+                title.text: i18n.tr("Preset 1")
+//                title.font.bold: true
+                title.color: Colors.mainText
+
+/*                Rectangle {
+                    id: statusrec1
+                    SlotsLayout.position: SlotsLayout.Trailing;
+                    width: units.gu(2)
+                    height: units.gu(2)
+                    color: settings.value("equalizerStatus")
+                    visible: true
+                    radius: units.gu(1)
+                }*/
+                Button {
+                    id: bttn4
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    iconName: "save"
+//                    anchors.right: hdrrec.right
+//                    y: 20
+                    SlotsLayout.position: SlotsLayout.Trailing
+                    StyleHints {
+                        defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
+                    }
+//                    onClicked: {
+//                          PopupUtils.open(dialog)
+//                    }
+                            
+//                    Label {
+//                        text: modelData
+//                        color: Colors.mainText
+//                    }
                 }
             }
         }
