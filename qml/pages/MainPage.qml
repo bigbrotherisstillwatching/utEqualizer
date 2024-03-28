@@ -654,7 +654,7 @@ Rectangle {
                 title.text: i18n.tr("Preset 1")
 //                title.font.bold: true
                 title.color: Colors.mainText
-                title.anchors.verticalCenter: lstitm1.verticalCenter
+                title.y: -20
 
 /*                Rectangle {
                     id: statusrec1
