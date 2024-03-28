@@ -563,7 +563,7 @@ Rectangle {
         }
         Rectangle {
              id: plchldrrec
-             text: ""
+//             text: ""
              color: "red"
              visible: false
              anchors.horizontalCenter: clmn1.horizontalCenter
