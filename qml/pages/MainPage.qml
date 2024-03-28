@@ -580,7 +580,7 @@ Rectangle {
             text: i18n.tr("Presets")
             anchors.horizontalCenter: clmn1.horizontalCenter
             StyleHints {
-                defaultColor: cmbbttn.pressed ? Colors.surfaceColor : #32517F
+                defaultColor: cmbbttn.pressed ? Colors.surfaceColor : #32517F;
             }
             ListView {
                 id: lstvw1
