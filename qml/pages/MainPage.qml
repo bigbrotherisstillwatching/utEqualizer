@@ -592,7 +592,7 @@ Rectangle {
 //                            y: 20
                         SlotsLayout.position: SlotsLayout.Trailing
                         StyleHints {
-                            defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
+                            defaultColor: bttn4.pressed ? "#32517F" : Colors.surfaceColor
                         }
 //                            onClicked: {
 //                                PopupUtils.open(dialog)
@@ -613,7 +613,7 @@ Rectangle {
 //                            y: 20
                         SlotsLayout.position: SlotsLayout.Last
                         StyleHints {
-                            defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
+                            defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
                         }
 //                            onClicked: {
 //                                PopupUtils.open(dialog)
