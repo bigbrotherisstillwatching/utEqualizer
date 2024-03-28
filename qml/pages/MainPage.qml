@@ -77,11 +77,6 @@ Rectangle {
         property string equalizerControls9: ""
         property string equalizerControls10: ""
         property bool equalizerStatus
-//        property string preset1
-//        property string preset2
-//        property string preset3
-//        property string preset4
-//        property string preset5
     }
 
     Connections {
@@ -563,17 +558,10 @@ Rectangle {
         }
         Rectangle {
              id: plchldrrec
-//             text: ""
              color: "transparent"
-//             visible: false
              anchors.horizontalCenter: clmn1.horizontalCenter
-//             wrapMode: Text.WordWrap
              width: clmn1.width
              height: units.gu(5) - txt2.height
-//             lineHeight: 1.2
-//             horizontalAlignment: Text.AlignHCenter
-//             leftPadding: units.gu(3)
-//             rightPadding: units.gu(3)
         }
 /*        ComboButton {
             id: cmbbttn
@@ -645,7 +633,6 @@ Rectangle {
             model: [i18n.tr("Preset 1"), i18n.tr("Preset 2"), i18n.tr("Preset 3"), i18n.tr("Preset 4"), i18n.tr("Preset 5")]
             delegate: ListItem {
                 id: lstitm1
-//            height: l3.height + (divider.visible ? divider.height : 0)
                 height: bttn4.height + units.gu(1)
                 color: Colors.surfaceColor2
                 divider.colorFrom: Colors.mainText
@@ -658,54 +645,25 @@ Rectangle {
                         text: modelData
                         color: Colors.mainText
                     }
-/*                Text {
-                    id: prst1txt
-                    text: i18n.tr("Preset 1")
-                    SlotsLayout.position: SlotsLayout.Leading
-                    horizontalAlignment: Text.AlignHCenter
-                    color: Colors.mainText
-                    anchors.top: lstitm1.top
-                }*/
                     Button {
                         id: bttn4
                         height: units.gu(4)
                         width: units.gu(4)
                         iconName: "save"
-//                    anchors.right: hdrrec.right
-//                    y: 20
                         SlotsLayout.position: SlotsLayout.Trailing
                         StyleHints {
                             defaultColor: bttn4.pressed ? "#32517F" : Colors.surfaceColor
                         }
-//                    onClicked: {
-//                          PopupUtils.open(dialog)
-//                    }
-                            
-//                    Label {
-//                        text: modelData
-//                        color: Colors.mainText
-//                    }
                     }
                     Button {
                         id: bttn5
                         height: units.gu(4)
                         width: units.gu(4)
                         iconSource: "../../assets/load.svg"
-//                     iconName: "reset"
-//                     anchors.right: hdrrec.right
-//                     y: 20
                         SlotsLayout.position: SlotsLayout.Last
                         StyleHints {
                             defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
                         }
-//                    onClicked: {
-//                        PopupUtils.open(dialog)
-//                    }
-                            
-//                    Label {
-//                        text: modelData
-//                        color: Colors.mainText
-//                    }
                     }
                 }
             }
