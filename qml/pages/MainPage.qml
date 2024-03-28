@@ -175,7 +175,7 @@ Rectangle {
                 anchors.right: hdrrec.right
                 y: 20
                 StyleHints {
-                    defaultColor: clsbttn.pressed ? Colors.surfaceColor : "red"
+                    defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
                 }
                 onClicked: {
                     PopupUtils.open(dialog)
@@ -564,6 +564,7 @@ Rectangle {
         ComboButton {
             text: i18n.tr("Presets")
             anchors.horizontalCenter: clmn1.horizontalCenter
+            topMargin: units.gu(3) - txt2.height
             ListView {
                 id: lstvw1
                 model: [i18n.tr("Preset 1"), i18n.tr("Preset 2"), i18n.tr("Preset 3"), i18n.tr("Preset 4"), i18n.tr("Preset 5")]
