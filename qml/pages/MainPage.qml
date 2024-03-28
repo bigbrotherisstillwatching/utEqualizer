@@ -110,8 +110,7 @@ Rectangle {
             title: i18n.tr("<font color=\"white\">Quit</font>")
             text: i18n.tr("<font color=\"white\">Are you sure that you want to close the app?</font>")
             style: ActionBarStyle {
-//                backgroundColor: Colors.surfaceColor2
-                backgroundColor: "#32517F"
+                backgroundColor: Colors.surfaceColor2
             }
             Button {
                 id: bttn1
