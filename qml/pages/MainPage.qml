@@ -627,24 +627,31 @@ Rectangle {
                     }
                 }
             }
-        }
-    }*/
+        }*/
+    }
 
-    ListItem {
-        id: lstitm1
-        height: lstitmlay1.height + (divider.visible ? divider.height : 0)
+    Column {
+        id: clmn2
+        anchors.left: mainPage.left
+        anchors.right: mainPage.right
+        anchors.top: clmn1.bottom
+        anchors.bottom: txt3.top
+
+        ListItem {
+            id: lstitm1
+            height: lstitmlay1.height + (divider.visible ? divider.height : 0)
 //        height: bttn4.height + units.gu(1)
-        color: Colors.surfaceColor2
-        divider.colorFrom: Colors.mainText
-        divider.colorTo: Colors.mainText
-        highlightColor: "#32517F"
+            color: Colors.surfaceColor2
+            divider.colorFrom: Colors.mainText
+            divider.colorTo: Colors.mainText
+            highlightColor: "#32517F"
 
-        ListItemLayout {
-            id: lstitmlay1
-            height: bttn4.height + units.gu(1)
-            title.text: i18n.tr("Preset 1")
+            ListItemLayout {
+                id: lstitmlay1
+                height: bttn4.height + units.gu(1)
+                title.text: i18n.tr("Preset 1")
 //                title.font.bold: true
-            title.color: Colors.mainText
+                title.color: Colors.mainText
 //                title.y: -20
 
 /*                Rectangle {
