@@ -579,7 +579,7 @@ Rectangle {
             id: cmbbttn
             text: i18n.tr("Presets")
             anchors.horizontalCenter: clmn1.horizontalCenter
-            height: layout.height
+            height: units.gu(3)
             style: ActionBarStyle {
                 backgroundColor: "transparent"
             }
