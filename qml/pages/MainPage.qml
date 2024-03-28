@@ -651,7 +651,7 @@ Rectangle {
 
             ListItemLayout {
                 id: l3
-                anchors.verticalCenter: lstitm1.verticalCenter
+//                anchors.verticalCenter: lstitm1.verticalCenter
 //                title.text: i18n.tr("Preset 1")
 //                title.font.bold: true
 //                title.color: Colors.mainText
@@ -672,6 +672,7 @@ Rectangle {
                     SlotsLayout.position: SlotsLayout.Leading
                     horizontalAlignment: Text.AlignHCenter
                     color: Colors.mainText
+                    anchors.top: lstitm1.top
                 }
                 Button {
                     id: bttn4
