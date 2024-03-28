@@ -604,8 +604,8 @@ Rectangle {
                             id: bttn5
                             height: units.gu(4)
                             width: units.gu(4)
-//                            iconSource: "../../assets/load.svg"
-                            iconName: "reset"
+                            iconSource: "../../assets/load.svg"
+//                            iconName: "reset"
 //                            anchors.right: hdrrec.right
 //                            y: 20
                             SlotsLayout.position: SlotsLayout.Last
