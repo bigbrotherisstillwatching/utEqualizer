@@ -575,7 +575,8 @@ Rectangle {
         ListItem {
             id: lstitm1
             height: lstitmlay1.height + (divider.visible ? divider.height : 0)
-            color: Colors.surfaceColor2
+//            color: Colors.surfaceColor2
+            color: Colors.backgroundColor
             divider.colorFrom: Colors.mainText
             divider.colorTo: Colors.mainText
             highlightColor: "#32517F"
@@ -617,7 +618,8 @@ Rectangle {
         ListItem {
             id: lstitm2
             height: lstitmlay2.height + (divider.visible ? divider.height : 0)
-            color: Colors.surfaceColor2
+//            color: Colors.surfaceColor2
+            color: Colors.backgroundColor
             divider.colorFrom: Colors.mainText
             divider.colorTo: Colors.mainText
             highlightColor: "#32517F"
@@ -659,7 +661,8 @@ Rectangle {
         ListItem {
             id: lstitm3
             height: lstitmlay3.height + (divider.visible ? divider.height : 0)
-            color: Colors.surfaceColor2
+//            color: Colors.surfaceColor2
+            color: Colors.backgroundColor
             divider.colorFrom: Colors.mainText
             divider.colorTo: Colors.mainText
             highlightColor: "#32517F"
@@ -701,7 +704,8 @@ Rectangle {
         ListItem {
             id: lstitm4
             height: lstitmlay4.height + (divider.visible ? divider.height : 0)
-            color: Colors.surfaceColor2
+//            color: Colors.surfaceColor2
+            color: Colors.backgroundColor
             divider.colorFrom: Colors.mainText
             divider.colorTo: Colors.mainText
             highlightColor: "#32517F"
@@ -743,9 +747,12 @@ Rectangle {
         ListItem {
             id: lstitm5
             height: lstitmlay5.height + (divider.visible ? divider.height : 0)
-            color: Colors.surfaceColor2
-            divider.colorFrom: Colors.mainText
-            divider.colorTo: Colors.mainText
+//            color: Colors.surfaceColor2
+            color: Colors.backgroundColor
+//            divider.colorFrom: Colors.mainText
+//            divider.colorTo: Colors.mainText
+            divider.colorFrom: "transparent"
+            divider.colorTo: "transparent"
             highlightColor: "#32517F"
 
             ListItemLayout {
