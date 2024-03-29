@@ -679,6 +679,7 @@ Rectangle {
                         slide8.value = settings.preset1equalizerControls8
                         slide9.value = settings.preset1equalizerControls9
                         slide10.value = settings.preset1equalizerControls10
+                        ldsts1.visible = true
                     }
                 }
                 Icon {
@@ -687,7 +688,7 @@ Rectangle {
                     SlotsLayout.position: SlotsLayout.Leading
                     height: units.gu(4)
                     width: units.gu(4)
-                    visible: true
+                    visible: false
                 }
             }
         }
