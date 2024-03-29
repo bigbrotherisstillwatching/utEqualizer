@@ -127,6 +127,11 @@ Rectangle {
         property string preset5equalizerControls8: ""
         property string preset5equalizerControls9: ""
         property string preset5equalizerControls10: ""
+        property string icldsts1: ""
+        property string icldsts2: ""
+        property string icldsts3: ""
+        property string icldsts4: ""
+        property string icldsts5: ""
     }
 
     Connections {
@@ -255,6 +260,18 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls1
+                    onMoved: {
+                        ldsts1.visible = false
+                        ldsts2.visible = false
+                        ldsts3.visible = false
+                        ldsts4.visible = false
+                        ldsts5.visible = false
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
+                    }
                 }
                 Label {
                     width: parent.width
@@ -280,6 +297,18 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls2
+                    onMoved: {
+                        ldsts1.visible = false
+                        ldsts2.visible = false
+                        ldsts3.visible = false
+                        ldsts4.visible = false
+                        ldsts5.visible = false
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
+                    }
                 }
                 Label {
                     width: parent.width
@@ -305,6 +334,18 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls3
+                    onMoved: {
+                        ldsts1.visible = false
+                        ldsts2.visible = false
+                        ldsts3.visible = false
+                        ldsts4.visible = false
+                        ldsts5.visible = false
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
+                    }
                 }
                 Label {
                     width: parent.width
@@ -330,6 +371,18 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls4
+                    onMoved: {
+                        ldsts1.visible = false
+                        ldsts2.visible = false
+                        ldsts3.visible = false
+                        ldsts4.visible = false
+                        ldsts5.visible = false
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
+                    }
                 }
                 Label {
                     width: parent.width
@@ -355,6 +408,18 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls5
+                    onMoved: {
+                        ldsts1.visible = false
+                        ldsts2.visible = false
+                        ldsts3.visible = false
+                        ldsts4.visible = false
+                        ldsts5.visible = false
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
+                    }
                 }
                 Label {
                     width: parent.width
@@ -380,6 +445,18 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls6
+                    onMoved: {
+                        ldsts1.visible = false
+                        ldsts2.visible = false
+                        ldsts3.visible = false
+                        ldsts4.visible = false
+                        ldsts5.visible = false
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
+                    }
                 }
                 Label {
                     width: parent.width
@@ -405,6 +482,18 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls7
+                    onMoved: {
+                        ldsts1.visible = false
+                        ldsts2.visible = false
+                        ldsts3.visible = false
+                        ldsts4.visible = false
+                        ldsts5.visible = false
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
+                    }
                 }
                 Label {
                     width: parent.width
@@ -430,6 +519,18 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls8
+                    onMoved: {
+                        ldsts1.visible = false
+                        ldsts2.visible = false
+                        ldsts3.visible = false
+                        ldsts4.visible = false
+                        ldsts5.visible = false
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
+                    }
                 }
                 Label {
                     width: parent.width
@@ -455,6 +556,18 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls9
+                    onMoved: {
+                        ldsts1.visible = false
+                        ldsts2.visible = false
+                        ldsts3.visible = false
+                        ldsts4.visible = false
+                        ldsts5.visible = false
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
+                    }
                 }
                 Label {
                     width: parent.width
@@ -480,6 +593,18 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls10
+                    onMoved: {
+                        ldsts1.visible = false
+                        ldsts2.visible = false
+                        ldsts3.visible = false
+                        ldsts4.visible = false
+                        ldsts5.visible = false
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
+                    }
                 }
                 Label {
                     width: parent.width
@@ -680,6 +805,11 @@ Rectangle {
                         slide9.value = settings.preset1equalizerControls9
                         slide10.value = settings.preset1equalizerControls10
                         ldsts1.visible = true
+                        settings.icldsts1 = "true"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
                     }
                 }
                 Icon {
@@ -688,7 +818,7 @@ Rectangle {
                     SlotsLayout.position: SlotsLayout.Leading
                     height: units.gu(4)
                     width: units.gu(4)
-                    visible: false
+                    visible: settings.icldsts1
                 }
             }
         }
@@ -716,9 +846,18 @@ Rectangle {
                     StyleHints {
                         defaultColor: bttn6.pressed ? "#32517F" : Colors.surfaceColor
                     }
-//                    onClicked: {
-//                          PopupUtils.open(dialog)
-//                    }
+                    onClicked: {
+                        settings.preset2equalizerControls1 = slide1.value.toFixed(1)
+                        settings.preset2equalizerControls2 = slide2.value.toFixed(1)
+                        settings.preset2equalizerControls3 = slide3.value.toFixed(1)
+                        settings.preset2equalizerControls4 = slide4.value.toFixed(1)
+                        settings.preset2equalizerControls5 = slide5.value.toFixed(1)
+                        settings.preset2equalizerControls6 = slide6.value.toFixed(1)
+                        settings.preset2equalizerControls7 = slide7.value.toFixed(1)
+                        settings.preset2equalizerControls8 = slide8.value.toFixed(1)
+                        settings.preset2equalizerControls9 = slide9.value.toFixed(1)
+                        settings.preset2equalizerControls10 = slide10.value.toFixed(1)
+                    }
                 }
                 Button {
                     id: bttn7
@@ -729,9 +868,32 @@ Rectangle {
                     StyleHints {
                         defaultColor: bttn7.pressed ? "#32517F" : Colors.surfaceColor
                     }
-//                    onClicked: {
-//                        PopupUtils.open(dialog)
-//                    }
+                    onClicked: {
+                        slide1.value = settings.preset2equalizerControls1
+                        slide2.value = settings.preset2equalizerControls2
+                        slide3.value = settings.preset2equalizerControls3
+                        slide4.value = settings.preset2equalizerControls4
+                        slide5.value = settings.preset2equalizerControls5
+                        slide6.value = settings.preset2equalizerControls6
+                        slide7.value = settings.preset2equalizerControls7
+                        slide8.value = settings.preset2equalizerControls8
+                        slide9.value = settings.preset2equalizerControls9
+                        slide10.value = settings.preset2equalizerControls10
+                        ldsts2.visible = true
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "true"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
+                    }
+                }
+                Icon {
+                    id: ldsts2
+                    name: "ok"
+                    SlotsLayout.position: SlotsLayout.Leading
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    visible: settings.icldsts2
                 }
             }
         }
@@ -759,9 +921,18 @@ Rectangle {
                     StyleHints {
                         defaultColor: bttn8.pressed ? "#32517F" : Colors.surfaceColor
                     }
-//                    onClicked: {
-//                          PopupUtils.open(dialog)
-//                    }
+                    onClicked: {
+                        settings.preset3equalizerControls1 = slide1.value.toFixed(1)
+                        settings.preset3equalizerControls2 = slide2.value.toFixed(1)
+                        settings.preset3equalizerControls3 = slide3.value.toFixed(1)
+                        settings.preset3equalizerControls4 = slide4.value.toFixed(1)
+                        settings.preset3equalizerControls5 = slide5.value.toFixed(1)
+                        settings.preset3equalizerControls6 = slide6.value.toFixed(1)
+                        settings.preset3equalizerControls7 = slide7.value.toFixed(1)
+                        settings.preset3equalizerControls8 = slide8.value.toFixed(1)
+                        settings.preset3equalizerControls9 = slide9.value.toFixed(1)
+                        settings.preset3equalizerControls10 = slide10.value.toFixed(1)
+                    }
                 }
                 Button {
                     id: bttn9
@@ -772,9 +943,32 @@ Rectangle {
                     StyleHints {
                         defaultColor: bttn9.pressed ? "#32517F" : Colors.surfaceColor
                     }
-//                    onClicked: {
-//                        PopupUtils.open(dialog)
-//                    }
+                    onClicked: {
+                        slide1.value = settings.preset3equalizerControls1
+                        slide2.value = settings.preset3equalizerControls2
+                        slide3.value = settings.preset3equalizerControls3
+                        slide4.value = settings.preset3equalizerControls4
+                        slide5.value = settings.preset3equalizerControls5
+                        slide6.value = settings.preset3equalizerControls6
+                        slide7.value = settings.preset3equalizerControls7
+                        slide8.value = settings.preset3equalizerControls8
+                        slide9.value = settings.preset3equalizerControls9
+                        slide10.value = settings.preset3equalizerControls10
+                        ldsts3.visible = true
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "true"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "false"
+                    }
+                }
+                Icon {
+                    id: ldsts3
+                    name: "ok"
+                    SlotsLayout.position: SlotsLayout.Leading
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    visible: settings.icldsts3
                 }
             }
         }
@@ -802,9 +996,18 @@ Rectangle {
                     StyleHints {
                         defaultColor: bttn10.pressed ? "#32517F" : Colors.surfaceColor
                     }
-//                    onClicked: {
-//                          PopupUtils.open(dialog)
-//                    }
+                    onClicked: {
+                        settings.preset4equalizerControls1 = slide1.value.toFixed(1)
+                        settings.preset4equalizerControls2 = slide2.value.toFixed(1)
+                        settings.preset4equalizerControls3 = slide3.value.toFixed(1)
+                        settings.preset4equalizerControls4 = slide4.value.toFixed(1)
+                        settings.preset4equalizerControls5 = slide5.value.toFixed(1)
+                        settings.preset4equalizerControls6 = slide6.value.toFixed(1)
+                        settings.preset4equalizerControls7 = slide7.value.toFixed(1)
+                        settings.preset4equalizerControls8 = slide8.value.toFixed(1)
+                        settings.preset4equalizerControls9 = slide9.value.toFixed(1)
+                        settings.preset4equalizerControls10 = slide10.value.toFixed(1)
+                    }
                 }
                 Button {
                     id: bttn11
@@ -815,9 +1018,32 @@ Rectangle {
                     StyleHints {
                         defaultColor: bttn11.pressed ? "#32517F" : Colors.surfaceColor
                     }
-//                    onClicked: {
-//                        PopupUtils.open(dialog)
-//                    }
+                    onClicked: {
+                        slide1.value = settings.preset4equalizerControls1
+                        slide2.value = settings.preset4equalizerControls2
+                        slide3.value = settings.preset4equalizerControls3
+                        slide4.value = settings.preset4equalizerControls4
+                        slide5.value = settings.preset4equalizerControls5
+                        slide6.value = settings.preset4equalizerControls6
+                        slide7.value = settings.preset4equalizerControls7
+                        slide8.value = settings.preset4equalizerControls8
+                        slide9.value = settings.preset4equalizerControls9
+                        slide10.value = settings.preset4equalizerControls10
+                        ldsts4.visible = true
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "true"
+                        settings.icldsts5 = "false"
+                    }
+                }
+                Icon {
+                    id: ldsts4
+                    name: "ok"
+                    SlotsLayout.position: SlotsLayout.Leading
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    visible: settings.icldsts4
                 }
             }
         }
@@ -847,9 +1073,18 @@ Rectangle {
                     StyleHints {
                         defaultColor: bttn12.pressed ? "#32517F" : Colors.surfaceColor
                     }
-//                    onClicked: {
-//                          PopupUtils.open(dialog)
-//                    }
+                    onClicked: {
+                        settings.preset5equalizerControls1 = slide1.value.toFixed(1)
+                        settings.preset5equalizerControls2 = slide2.value.toFixed(1)
+                        settings.preset5equalizerControls3 = slide3.value.toFixed(1)
+                        settings.preset5equalizerControls4 = slide4.value.toFixed(1)
+                        settings.preset5equalizerControls5 = slide5.value.toFixed(1)
+                        settings.preset5equalizerControls6 = slide6.value.toFixed(1)
+                        settings.preset5equalizerControls7 = slide7.value.toFixed(1)
+                        settings.preset5equalizerControls8 = slide8.value.toFixed(1)
+                        settings.preset5equalizerControls9 = slide9.value.toFixed(1)
+                        settings.preset5equalizerControls10 = slide10.value.toFixed(1)
+                    }
                 }
                 Button {
                     id: bttn13
@@ -860,9 +1095,32 @@ Rectangle {
                     StyleHints {
                         defaultColor: bttn13.pressed ? "#32517F" : Colors.surfaceColor
                     }
-//                    onClicked: {
-//                        PopupUtils.open(dialog)
-//                    }
+                    onClicked: {
+                        slide1.value = settings.preset5equalizerControls1
+                        slide2.value = settings.preset5equalizerControls2
+                        slide3.value = settings.preset5equalizerControls3
+                        slide4.value = settings.preset5equalizerControls4
+                        slide5.value = settings.preset5equalizerControls5
+                        slide6.value = settings.preset5equalizerControls6
+                        slide7.value = settings.preset5equalizerControls7
+                        slide8.value = settings.preset5equalizerControls8
+                        slide9.value = settings.preset5equalizerControls9
+                        slide10.value = settings.preset5equalizerControls10
+                        ldsts5.visible = true
+                        settings.icldsts1 = "false"
+                        settings.icldsts2 = "false"
+                        settings.icldsts3 = "false"
+                        settings.icldsts4 = "false"
+                        settings.icldsts5 = "true"
+                    }
+                }
+                Icon {
+                    id: ldsts5
+                    name: "ok"
+                    SlotsLayout.position: SlotsLayout.Leading
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    visible: settings.icldsts5
                 }
             }
         }
