@@ -77,6 +77,56 @@ Rectangle {
         property string equalizerControls9: ""
         property string equalizerControls10: ""
         property bool equalizerStatus
+        property string preset1equalizerControls1: ""
+        property string preset1equalizerControls2: ""
+        property string preset1equalizerControls3: ""
+        property string preset1equalizerControls4: ""
+        property string preset1equalizerControls5: ""
+        property string preset1equalizerControls6: ""
+        property string preset1equalizerControls7: ""
+        property string preset1equalizerControls8: ""
+        property string preset1equalizerControls9: ""
+        property string preset1equalizerControls10: ""
+        property string preset2equalizerControls1: ""
+        property string preset2equalizerControls2: ""
+        property string preset2equalizerControls3: ""
+        property string preset2equalizerControls4: ""
+        property string preset2equalizerControls5: ""
+        property string preset2equalizerControls6: ""
+        property string preset2equalizerControls7: ""
+        property string preset2equalizerControls8: ""
+        property string preset2equalizerControls9: ""
+        property string preset2equalizerControls10: ""
+        property string preset3equalizerControls1: ""
+        property string preset3equalizerControls2: ""
+        property string preset3equalizerControls3: ""
+        property string preset3equalizerControls4: ""
+        property string preset3equalizerControls5: ""
+        property string preset3equalizerControls6: ""
+        property string preset3equalizerControls7: ""
+        property string preset3equalizerControls8: ""
+        property string preset3equalizerControls9: ""
+        property string preset3equalizerControls10: ""
+        property string preset4equalizerControls1: ""
+        property string preset4equalizerControls2: ""
+        property string preset4equalizerControls3: ""
+        property string preset4equalizerControls4: ""
+        property string preset4equalizerControls5: ""
+        property string preset4equalizerControls6: ""
+        property string preset4equalizerControls7: ""
+        property string preset4equalizerControls8: ""
+        property string preset4equalizerControls9: ""
+        property string preset4equalizerControls10: ""
+        property string preset5equalizerControls1: ""
+        property string preset5equalizerControls2: ""
+        property string preset5equalizerControls3: ""
+        property string preset5equalizerControls4: ""
+        property string preset5equalizerControls5: ""
+        property string preset5equalizerControls6: ""
+        property string preset5equalizerControls7: ""
+        property string preset5equalizerControls8: ""
+        property string preset5equalizerControls9: ""
+        property string preset5equalizerControls10: ""
     }
 
     Connections {
@@ -596,9 +646,18 @@ Rectangle {
                     StyleHints {
                         defaultColor: bttn4.pressed ? "#32517F" : Colors.surfaceColor
                     }
-//                    onClicked: {
-//                          PopupUtils.open(dialog)
-//                    }
+                    onClicked: {
+                        settings.preset1equalizerControls1 = slide1.value.toFixed(1)
+                        settings.preset1equalizerControls2 = slide2.value.toFixed(1)
+                        settings.preset1equalizerControls3 = slide3.value.toFixed(1)
+                        settings.preset1equalizerControls4 = slide4.value.toFixed(1)
+                        settings.preset1equalizerControls5 = slide5.value.toFixed(1)
+                        settings.preset1equalizerControls6 = slide6.value.toFixed(1)
+                        settings.preset1equalizerControls7 = slide7.value.toFixed(1)
+                        settings.preset1equalizerControls8 = slide8.value.toFixed(1)
+                        settings.preset1equalizerControls9 = slide9.value.toFixed(1)
+                        settings.preset1equalizerControls10 = slide10.value.toFixed(1)
+                    }
                 }
                 Button {
                     id: bttn5
@@ -609,9 +668,26 @@ Rectangle {
                     StyleHints {
                         defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
                     }
-//                    onClicked: {
-//                        PopupUtils.open(dialog)
-//                    }
+                    onClicked: {
+                        slide1.value = settings.preset1equalizerControls1
+                        slide2.value = settings.preset1equalizerControls2
+                        slide3.value = settings.preset1equalizerControls3
+                        slide4.value = settings.preset1equalizerControls4
+                        slide5.value = settings.preset1equalizerControls5
+                        slide6.value = settings.preset1equalizerControls6
+                        slide7.value = settings.preset1equalizerControls7
+                        slide8.value = settings.preset1equalizerControls8
+                        slide9.value = settings.preset1equalizerControls9
+                        slide10.value = settings.preset1equalizerControls10
+                    }
+                }
+                Icon {
+                    id: ldsts1
+                    name: "ok"
+                    SlotsLayout.position: SlotsLayout.Trailing-1
+                    height: units.gu(4)
+                    width: units.gu(4)
+                    visible: true
                 }
             }
         }
