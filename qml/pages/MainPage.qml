@@ -822,7 +822,7 @@ Rectangle {
                     SlotsLayout.position: SlotsLayout.Leading
                     height: units.gu(4)
                     width: units.gu(4)
-                    visible: settings.icldsts1
+                    visible: settings.value("settings.icldsts1")
                 }
             }
         }
@@ -901,7 +901,7 @@ Rectangle {
                     SlotsLayout.position: SlotsLayout.Leading
                     height: units.gu(4)
                     width: units.gu(4)
-                    visible: settings.icldsts2
+                    visible: settings.value("settings.icldsts2")
                 }
             }
         }
@@ -980,7 +980,7 @@ Rectangle {
                     SlotsLayout.position: SlotsLayout.Leading
                     height: units.gu(4)
                     width: units.gu(4)
-                    visible: settings.icldsts3
+                    visible: settings.value("settings.icldsts3")
                 }
             }
         }
@@ -1059,7 +1059,7 @@ Rectangle {
                     SlotsLayout.position: SlotsLayout.Leading
                     height: units.gu(4)
                     width: units.gu(4)
-                    visible: settings.icldsts4
+                    visible: settings.value("settings.icldsts4")
                 }
             }
         }
@@ -1140,7 +1140,7 @@ Rectangle {
                     SlotsLayout.position: SlotsLayout.Leading
                     height: units.gu(4)
                     width: units.gu(4)
-                    visible: settings.icldsts5
+                    visible: settings.value("settings.icldsts5")
                 }
             }
         }
