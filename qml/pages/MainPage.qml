@@ -34,6 +34,7 @@ Rectangle {
 
     property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
+    property alias drkMd: settings.darkMode
 
     Process {
         id: process
@@ -65,7 +66,8 @@ Rectangle {
 
     Settings {
         id: settings
-        property bool darkMode: true
+//        property bool darkMode: true
+        property bool darkMode
         property string equalizerControls1: ""
         property string equalizerControls2: ""
         property string equalizerControls3: ""
@@ -714,7 +716,8 @@ Rectangle {
                 checked: settings.darkMode
 
                 onClicked: {
-                    settings.darkMode = checked
+//                    settings.darkMode = checked
+                    drkMd = checked
                     txt2.text = i18n.tr("Please restart the app for the dark mode to take effect.")
                 }
             }
