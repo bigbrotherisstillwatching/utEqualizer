@@ -129,11 +129,11 @@ Rectangle {
         property string preset5equalizerControls8: ""
         property string preset5equalizerControls9: ""
         property string preset5equalizerControls10: ""
-        property string icldsts1: ""
-        property string icldsts2: ""
-        property string icldsts3: ""
-        property string icldsts4: ""
-        property string icldsts5: ""
+        property bool icldsts1: false
+        property bool icldsts2: false
+        property bool icldsts3: false
+        property bool icldsts4: false
+        property bool icldsts5: false
     }
 
     Connections {
@@ -812,11 +812,11 @@ Rectangle {
                         ldsts3.visible = false
                         ldsts4.visible = false
                         ldsts5.visible = false
-                        settings.icldsts1 = "true"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
+                        settings.icldsts1 = true
+                        settings.icldsts2 = false
+                        settings.icldsts3 = false
+                        settings.icldsts4 = false
+                        settings.icldsts5 = false
                     }
                 }
                 Icon {
@@ -891,11 +891,11 @@ Rectangle {
                         ldsts3.visible = false
                         ldsts4.visible = false
                         ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "true"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
+                        settings.icldsts1 = false
+                        settings.icldsts2 = true
+                        settings.icldsts3 = false
+                        settings.icldsts4 = false
+                        settings.icldsts5 = false
                     }
                 }
                 Icon {
@@ -970,11 +970,11 @@ Rectangle {
                         ldsts3.visible = true
                         ldsts4.visible = false
                         ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "true"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
+                        settings.icldsts1 = false
+                        settings.icldsts2 = false
+                        settings.icldsts3 = true
+                        settings.icldsts4 = false
+                        settings.icldsts5 = false
                     }
                 }
                 Icon {
@@ -1049,11 +1049,11 @@ Rectangle {
                         ldsts3.visible = false
                         ldsts4.visible = true
                         ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "true"
-                        settings.icldsts5 = "false"
+                        settings.icldsts1 = false
+                        settings.icldsts2 = false
+                        settings.icldsts3 = false
+                        settings.icldsts4 = true
+                        settings.icldsts5 = false
                     }
                 }
                 Icon {
@@ -1130,11 +1130,11 @@ Rectangle {
                         ldsts3.visible = false
                         ldsts4.visible = false
                         ldsts5.visible = true
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "true"
+                        settings.icldsts1 = false
+                        settings.icldsts2 = false
+                        settings.icldsts3 = false
+                        settings.icldsts4 = false
+                        settings.icldsts5 = true
                     }
                 }
                 Icon {
