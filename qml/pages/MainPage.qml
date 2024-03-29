@@ -805,6 +805,10 @@ Rectangle {
                         slide9.value = settings.preset1equalizerControls9
                         slide10.value = settings.preset1equalizerControls10
                         ldsts1.visible = true
+                        ldsts2.visible = false
+                        ldsts3.visible = false
+                        ldsts4.visible = false
+                        ldsts5.visible = false
                         settings.icldsts1 = "true"
                         settings.icldsts2 = "false"
                         settings.icldsts3 = "false"
@@ -879,7 +883,11 @@ Rectangle {
                         slide8.value = settings.preset2equalizerControls8
                         slide9.value = settings.preset2equalizerControls9
                         slide10.value = settings.preset2equalizerControls10
+                        ldsts1.visible = false
                         ldsts2.visible = true
+                        ldsts3.visible = false
+                        ldsts4.visible = false
+                        ldsts5.visible = false
                         settings.icldsts1 = "false"
                         settings.icldsts2 = "true"
                         settings.icldsts3 = "false"
@@ -954,7 +962,11 @@ Rectangle {
                         slide8.value = settings.preset3equalizerControls8
                         slide9.value = settings.preset3equalizerControls9
                         slide10.value = settings.preset3equalizerControls10
+                        ldsts1.visible = false
+                        ldsts2.visible = false
                         ldsts3.visible = true
+                        ldsts4.visible = false
+                        ldsts5.visible = false
                         settings.icldsts1 = "false"
                         settings.icldsts2 = "false"
                         settings.icldsts3 = "true"
@@ -1029,7 +1041,11 @@ Rectangle {
                         slide8.value = settings.preset4equalizerControls8
                         slide9.value = settings.preset4equalizerControls9
                         slide10.value = settings.preset4equalizerControls10
+                        ldsts1.visible = false
+                        ldsts2.visible = false
+                        ldsts3.visible = false
                         ldsts4.visible = true
+                        ldsts5.visible = false
                         settings.icldsts1 = "false"
                         settings.icldsts2 = "false"
                         settings.icldsts3 = "false"
@@ -1106,6 +1122,10 @@ Rectangle {
                         slide8.value = settings.preset5equalizerControls8
                         slide9.value = settings.preset5equalizerControls9
                         slide10.value = settings.preset5equalizerControls10
+                        ldsts1.visible = false
+                        ldsts2.visible = false
+                        ldsts3.visible = false
+                        ldsts4.visible = false
                         ldsts5.visible = true
                         settings.icldsts1 = "false"
                         settings.icldsts2 = "false"
