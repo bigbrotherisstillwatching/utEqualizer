@@ -268,11 +268,11 @@ Rectangle {
                         ldsts3.visible = false
                         ldsts4.visible = false
                         ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
+                        settings.icldsts1 = false
+                        settings.icldsts2 = false
+                        settings.icldsts3 = false
+                        settings.icldsts4 = false
+                        settings.icldsts5 = false
                     }
                 }
                 Label {
