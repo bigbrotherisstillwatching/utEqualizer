@@ -684,7 +684,7 @@ Rectangle {
                 Icon {
                     id: ldsts1
                     name: "ok"
-                    SlotsLayout.position: SlotsLayout.Trailing-1
+                    SlotsLayout.position: SlotsLayout.Leading
                     height: units.gu(4)
                     width: units.gu(4)
                     visible: true
