@@ -641,14 +641,20 @@ Rectangle {
 //                title.text: i18n.tr("Preset 1")
 //                title.color: Colors.mainText
 
-                TextInput {
-                    id: txtinpt1
+                TextField {
+                    id: txtfld1
                     SlotsLayout.position: SlotsLayout.Leading
                     color: Colors.mainText
                     text: settings.preset1name
+                    placeholderText: i18n.tr("Preset 1")
+                    hasClearButton: true
+                    Layout.preferredWidth: units.gu(3)
+                    style: ActionBarStyle {
+                        backgroundColor: "transparent"
+                    }
                     onAccepted: {
-                        settings.preset1name = txtinpt1.text
-                        txtinpt1.text = settings.preset1name
+                        settings.preset1name = txtfld1.text
+                        txtfld1.text = settings.preset1name
                     }
                 }
 
