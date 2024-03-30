@@ -659,7 +659,7 @@ Rectangle {
                     height: bttn4.height + units.gu(1)
                     width: units.gu(3)
                     color: "transparent"
-                    SlotsLayout.position: SlotsLayout.Leading+1
+                    SlotsLayout.position: SlotsLayout.Trailing-1
                 }
 
                 Button {
