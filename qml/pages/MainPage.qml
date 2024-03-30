@@ -202,6 +202,7 @@ Rectangle {
     PageHeader {
         id: header
         title: "utEqualizer"
+        z: 1
         StyleHints {
             foregroundColor: Colors.mainText
             backgroundColor: Colors.backgroundColor
@@ -259,6 +260,7 @@ Rectangle {
             Row {
                 id: row1
                 spacing: 1
+                anchors.horizontalCenter: clmn1.horizontalCenter
                 Column {
                     Label {
                         width: parent.width
