@@ -640,7 +640,6 @@ Rectangle {
                 height: bttn4.height + units.gu(1)
 //                title.text: i18n.tr("Preset 1")
 //                title.color: Colors.mainText
-                SlotsLayout.padding.leading: units.gu(10)
 
                 TextField {
                     id: txtfld1
@@ -649,6 +648,7 @@ Rectangle {
                     text: settings.preset1name
                     placeholderText: i18n.tr("Preset 1")
                     hasClearButton: true
+                    SlotsLayout.padding.leading: units.gu(10)
 //                    style: ActionBarStyle {
 //                        backgroundColor: "transparent"
 //                    }
