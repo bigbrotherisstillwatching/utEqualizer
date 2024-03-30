@@ -248,12 +248,13 @@ Rectangle {
 
         Column {
             id: clmn1
-            anchors.top: flick1.top
-            anchors.left: flick1.left
-            anchors.right: flick1.right
-            anchors.horizontalCenter: flick1.horizontalCenter
+//            anchors.top: flick1.top
+//            anchors.left: flick1.left
+//            anchors.right: flick1.right
+//            anchors.horizontalCenter: flick1.horizontalCenter
             topPadding: units.gu(3)
             spacing: units.gu(3)
+            width: flick1.width
 
             Row {
                 id: row1
@@ -637,10 +638,11 @@ Rectangle {
 
         Column {
             id: clmn2
-            anchors.left: flick1.left
-            anchors.right: flick1.right
-            anchors.top: clmn1.bottom
-            anchors.bottom: txt3.top
+//            anchors.left: flick1.left
+//            anchors.right: flick1.right
+//            anchors.top: clmn1.bottom
+//            anchors.bottom: txt3.top
+            width: flick1.width
 
             ListItem {
                 id: lstitm1
@@ -1040,7 +1042,7 @@ Rectangle {
             id: txt3
             text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
             color: Colors.mainText
-            anchors.horizontalCenter: flick1.horizontalCenter
+//            anchors.horizontalCenter: flick1.horizontalCenter
 //            topPadding: units.gu(10) - txt2.height
             wrapMode: Text.WordWrap
             width: flick1.width
@@ -1048,7 +1050,7 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
-            anchors.bottom: flick1.bottom
+//            anchors.bottom: flick1.bottom
             bottomPadding: units.gu(3)
         }
     }
