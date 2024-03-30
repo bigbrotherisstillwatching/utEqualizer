@@ -129,11 +129,7 @@ Rectangle {
         property string preset5equalizerControls8: ""
         property string preset5equalizerControls9: ""
         property string preset5equalizerControls10: ""
-        property bool icldsts1: false
-        property bool icldsts2: false
-        property bool icldsts3: false
-        property bool icldsts4: false
-        property bool icldsts5: false
+        property string preset1name: ""
     }
 
     Connections {
@@ -262,18 +258,6 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls1
-                    onMoved: {
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = false
-                        settings.icldsts2 = false
-                        settings.icldsts3 = false
-                        settings.icldsts4 = false
-                        settings.icldsts5 = false
-                    }
                 }
                 Label {
                     width: parent.width
@@ -299,18 +283,6 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls2
-                    onMoved: {
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
-                    }
                 }
                 Label {
                     width: parent.width
@@ -336,18 +308,6 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls3
-                    onMoved: {
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
-                    }
                 }
                 Label {
                     width: parent.width
@@ -373,18 +333,6 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls4
-                    onMoved: {
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
-                    }
                 }
                 Label {
                     width: parent.width
@@ -410,18 +358,6 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls5
-                    onMoved: {
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
-                    }
                 }
                 Label {
                     width: parent.width
@@ -447,18 +383,6 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls6
-                    onMoved: {
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
-                    }
                 }
                 Label {
                     width: parent.width
@@ -484,18 +408,6 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls7
-                    onMoved: {
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
-                    }
                 }
                 Label {
                     width: parent.width
@@ -521,18 +433,6 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls8
-                    onMoved: {
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
-                    }
                 }
                 Label {
                     width: parent.width
@@ -558,18 +458,6 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls9
-                    onMoved: {
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
-                    }
                 }
                 Label {
                     width: parent.width
@@ -595,18 +483,6 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls10
-                    onMoved: {
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = "false"
-                        settings.icldsts2 = "false"
-                        settings.icldsts3 = "false"
-                        settings.icldsts4 = "false"
-                        settings.icldsts5 = "false"
-                    }
                 }
                 Label {
                     width: parent.width
@@ -762,8 +638,21 @@ Rectangle {
             ListItemLayout {
                 id: lstitmlay1
                 height: bttn4.height + units.gu(1)
-                title.text: i18n.tr("Preset 1")
-                title.color: Colors.mainText
+//                title.text: i18n.tr("Preset 1")
+//                title.color: Colors.mainText
+
+                TextField {
+                    id: txtfld1
+                    SlotsLayout.position: SlotsLayout.Leading
+                    color: Colors.mainText
+                    hasClearButton: true
+                    placeholderText: i18n.tr("Enter name")
+                    text: settings.preset1name
+                    onAccepted: {
+                        settings.preset1name = txtfld1.text
+                        txtfld1.text = settings.preset1name
+                    }
+                }
 
                 Button {
                     id: bttn4
@@ -807,25 +696,7 @@ Rectangle {
                         slide8.value = settings.preset1equalizerControls8
                         slide9.value = settings.preset1equalizerControls9
                         slide10.value = settings.preset1equalizerControls10
-                        ldsts1.visible = true
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = true
-                        settings.icldsts2 = false
-                        settings.icldsts3 = false
-                        settings.icldsts4 = false
-                        settings.icldsts5 = false
                     }
-                }
-                Icon {
-                    id: ldsts1
-                    name: "ok"
-                    SlotsLayout.position: SlotsLayout.Leading
-                    height: units.gu(4)
-                    width: units.gu(4)
-                    visible: settings.icldsts1
                 }
             }
         }
@@ -886,25 +757,7 @@ Rectangle {
                         slide8.value = settings.preset2equalizerControls8
                         slide9.value = settings.preset2equalizerControls9
                         slide10.value = settings.preset2equalizerControls10
-                        ldsts1.visible = false
-                        ldsts2.visible = true
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = false
-                        settings.icldsts2 = true
-                        settings.icldsts3 = false
-                        settings.icldsts4 = false
-                        settings.icldsts5 = false
                     }
-                }
-                Icon {
-                    id: ldsts2
-                    name: "ok"
-                    SlotsLayout.position: SlotsLayout.Leading
-                    height: units.gu(4)
-                    width: units.gu(4)
-                    visible: settings.icldsts2
                 }
             }
         }
@@ -965,25 +818,7 @@ Rectangle {
                         slide8.value = settings.preset3equalizerControls8
                         slide9.value = settings.preset3equalizerControls9
                         slide10.value = settings.preset3equalizerControls10
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = true
-                        ldsts4.visible = false
-                        ldsts5.visible = false
-                        settings.icldsts1 = false
-                        settings.icldsts2 = false
-                        settings.icldsts3 = true
-                        settings.icldsts4 = false
-                        settings.icldsts5 = false
                     }
-                }
-                Icon {
-                    id: ldsts3
-                    name: "ok"
-                    SlotsLayout.position: SlotsLayout.Leading
-                    height: units.gu(4)
-                    width: units.gu(4)
-                    visible: settings.icldsts3
                 }
             }
         }
@@ -1044,25 +879,7 @@ Rectangle {
                         slide8.value = settings.preset4equalizerControls8
                         slide9.value = settings.preset4equalizerControls9
                         slide10.value = settings.preset4equalizerControls10
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = true
-                        ldsts5.visible = false
-                        settings.icldsts1 = false
-                        settings.icldsts2 = false
-                        settings.icldsts3 = false
-                        settings.icldsts4 = true
-                        settings.icldsts5 = false
                     }
-                }
-                Icon {
-                    id: ldsts4
-                    name: "ok"
-                    SlotsLayout.position: SlotsLayout.Leading
-                    height: units.gu(4)
-                    width: units.gu(4)
-                    visible: settings.icldsts4
                 }
             }
         }
@@ -1125,25 +942,7 @@ Rectangle {
                         slide8.value = settings.preset5equalizerControls8
                         slide9.value = settings.preset5equalizerControls9
                         slide10.value = settings.preset5equalizerControls10
-                        ldsts1.visible = false
-                        ldsts2.visible = false
-                        ldsts3.visible = false
-                        ldsts4.visible = false
-                        ldsts5.visible = true
-                        settings.icldsts1 = false
-                        settings.icldsts2 = false
-                        settings.icldsts3 = false
-                        settings.icldsts4 = false
-                        settings.icldsts5 = true
                     }
-                }
-                Icon {
-                    id: ldsts5
-                    name: "ok"
-                    SlotsLayout.position: SlotsLayout.Leading
-                    height: units.gu(4)
-                    width: units.gu(4)
-                    visible: settings.icldsts5
                 }
             }
         }
