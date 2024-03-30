@@ -648,7 +648,7 @@ Rectangle {
                     text: settings.preset1name
                     placeholderText: i18n.tr("Preset 1")
                     hasClearButton: true
-                    Layout.preferredWidth: units.gu(5)
+                    Layout.preferredWidth: units.gu(40)
 //                    style: ActionBarStyle {
 //                        backgroundColor: "transparent"
 //                    }
