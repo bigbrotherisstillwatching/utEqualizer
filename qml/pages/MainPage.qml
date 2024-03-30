@@ -646,12 +646,20 @@ Rectangle {
                     SlotsLayout.position: SlotsLayout.Leading
                     color: Colors.mainText
                     hasClearButton: true
-                    placeholderText: i18n.tr("Enter name")
+                    placeholderText: i18n.tr("Preset 1")
                     text: settings.preset1name
                     onAccepted: {
                         settings.preset1name = txtfld1.text
                         txtfld1.text = settings.preset1name
                     }
+                }
+
+                Rectangle {
+                    id: plchldrrec2
+                    height: bttn4.height + units.gu(1)
+                    width: units.gu(3)
+                    color: "transparent"
+                    SlotsLayout.position: SlotsLayout.Leading+1
                 }
 
                 Button {
