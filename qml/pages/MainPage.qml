@@ -648,10 +648,10 @@ Rectangle {
                     text: settings.preset1name
                     placeholderText: i18n.tr("Preset 1")
                     hasClearButton: true
-                    Layout.preferredWidth: units.gu(3)
-                    style: ActionBarStyle {
-                        backgroundColor: "transparent"
-                    }
+                    Layout.preferredWidth: units.gu(5)
+//                    style: ActionBarStyle {
+//                        backgroundColor: "transparent"
+//                    }
                     onAccepted: {
                         settings.preset1name = txtfld1.text
                         txtfld1.text = settings.preset1name
