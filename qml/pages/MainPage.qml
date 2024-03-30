@@ -641,25 +641,15 @@ Rectangle {
 //                title.text: i18n.tr("Preset 1")
 //                title.color: Colors.mainText
 
-                TextField {
-                    id: txtfld1
+                TextInput {
+                    id: txtinpt1
                     SlotsLayout.position: SlotsLayout.Leading
                     color: Colors.mainText
-                    hasClearButton: true
-                    placeholderText: i18n.tr("Preset 1")
                     text: settings.preset1name
                     onAccepted: {
-                        settings.preset1name = txtfld1.text
-                        txtfld1.text = settings.preset1name
+                        settings.preset1name = txtinpt1.text
+                        txtinpt1.text = settings.preset1name
                     }
-                }
-
-                Rectangle {
-                    id: plchldrrec2
-                    height: bttn4.height + units.gu(1)
-                    width: units.gu(3)
-                    color: "transparent"
-                    SlotsLayout.position: SlotsLayout.Trailing-1
                 }
 
                 Button {
