@@ -1053,7 +1053,9 @@ Rectangle {
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
 //            anchors.bottom: flick1.bottom
-            bottomPadding: units.gu(3)
+            anchors.top: clmn2.bottom
+//            bottomPadding: units.gu(3)
+            topPadding: units.gu(3)
         }
     }
 }
