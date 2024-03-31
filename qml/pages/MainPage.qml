@@ -660,8 +660,8 @@ Rectangle {
                     height: bttn4.height + units.gu(1)
 //                    title.text: i18n.tr("Preset 1")
 //                    title.color: Colors.mainText
-
-                    TextField {
+                    
+                    mainSlot: TextField {
                         id: txtfld1
                         SlotsLayout.position: SlotsLayout.Leading
                         color: Colors.mainText
