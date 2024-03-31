@@ -665,6 +665,7 @@ Rectangle {
                     mainSlot: TextField {
                         id: txtfld1
 //                        SlotsLayout.position: SlotsLayout.Leading
+                        activeFocusOnPress: false
                         color: Colors.mainText
                         text: settings.preset1name
                         placeholderText: i18n.tr("Preset 1")
