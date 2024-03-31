@@ -655,7 +655,8 @@ Rectangle {
                 divider.colorTo: Colors.mainText
                 highlightColor: "#32517F"
 
-                ListItemLayout {
+//                ListItemLayout {
+                SlotsLayout {
                     id: lstitmlay1
                     height: bttn4.height + units.gu(1)
 //                    title.text: i18n.tr("Preset 1")
@@ -663,12 +664,12 @@ Rectangle {
                     
                     mainSlot: TextField {
                         id: txtfld1
-                        SlotsLayout.position: SlotsLayout.Leading
+//                        SlotsLayout.position: SlotsLayout.Leading
                         color: Colors.mainText
                         text: settings.preset1name
                         placeholderText: i18n.tr("Preset 1")
                         hasClearButton: false
-                        SlotsLayout.padding.trailing: units.gu(11) + 10
+//                        SlotsLayout.padding.trailing: units.gu(11) + 10
                         style: ActionBarStyle {
                             backgroundColor: "transparent"
                         }
