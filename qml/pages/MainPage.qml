@@ -689,7 +689,7 @@ Rectangle {
                                 event.accepted = true;
                             }
                         }*/
-                        KeyNavigation.right: nextItemInFocusChain(false)
+                        KeyNavigation.right: nextItemInFocusChain(true)
                         KeyNavigation.priority: KeyNavigation.AfterItem
                     }
 
