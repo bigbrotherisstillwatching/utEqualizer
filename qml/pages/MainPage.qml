@@ -653,7 +653,7 @@ Rectangle {
                 color: Colors.backgroundColor
                 divider.colorFrom: Colors.mainText
                 divider.colorTo: Colors.mainText
-                highlightColor: "#32517F"
+//                highlightColor: "#32517F"
 
 //                ListItemLayout {
                 SlotsLayout {
@@ -677,9 +677,12 @@ Rectangle {
                             settings.preset1name = txtfld1.text
                             txtfld1.text = settings.preset1name
                         }
-                        Keys.onTabPressed: console.log("tab pressed")
-//                        Keys.onLeftPressed: console.log("left pressed")
-//                        Keys.onRightPressed: console.log("right pressed")
+                        Keys.onPressed: {
+                            if (event.key == Qt.Key_Left) {
+//                                console.log("move left");
+                                event.accepted = true;
+                            }
+                        }
                     }
 
 /*                    Qqc.TextField {
