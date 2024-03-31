@@ -690,7 +690,7 @@ Rectangle {
                             }
                         }*/
                         KeyNavigation.right: nextItemInFocusChain(false)
-                        KeyNavigation.priority: KeyNavigation.BeforeItem
+                        KeyNavigation.priority: KeyNavigation.AfterItem
                     }
 
 /*                    Qqc.TextField {
