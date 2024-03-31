@@ -677,7 +677,7 @@ Rectangle {
                             settings.preset1name = txtfld1.text
                             txtfld1.text = settings.preset1name
                         }
-                        Keys.onPressed: {
+/*                        Keys.onPressed: {
                             if (event.key == Qt.Key_Left) {
 //                                console.log("move left");
                                 event.accepted = true;
@@ -688,7 +688,8 @@ Rectangle {
 //                                console.log("move right");
                                 event.accepted = true;
                             }
-                        }
+                        }*/
+                        KeyNavigation.right: txtfld1
                     }
 
 /*                    Qqc.TextField {
