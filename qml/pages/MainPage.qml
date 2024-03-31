@@ -661,30 +661,7 @@ Rectangle {
 //                    title.text: i18n.tr("Preset 1")
 //                    title.color: Colors.mainText
 
-                    TextArea {
-                        id: txtfld1
-//                        anchors.top: mymeta.top
-//                        anchors.topMargin: 20
-//                        horizontalAlignment: TextEdit.AlignHCenter
-//                        width: playerTitles.width
-//                        wrapMode: TextEdit.Wrap
-                        SlotsLayout.position: SlotsLayout.Leading
-                        text: settings.preset1name
-                        placeholderText: i18n.tr("Preset 1")
-//                        font.pointSize: 25
-                        color: Colors.mainText
-                        maximumLineCount: 1
-                        SlotsLayout.padding.trailing: units.gu(11) + 10
-                        style: ActionBarStyle {
-                            backgroundColor: "transparent"
-                        }
-                        onAccepted: {
-                            settings.preset1name = txtfld1.text
-                            txtfld1.text = settings.preset1name
-                        }
-                    }
-
-/*                    TextField {
+                    TextField {
                         id: txtfld1
                         SlotsLayout.position: SlotsLayout.Leading
                         color: Colors.mainText
@@ -699,7 +676,7 @@ Rectangle {
                             settings.preset1name = txtfld1.text
                             txtfld1.text = settings.preset1name
                         }
-                    }*/
+                    }
 
 /*                    Qqc.TextField {
                         id: txtfld1
