@@ -669,9 +669,9 @@ Rectangle {
                         placeholderText: i18n.tr("Preset 1")
 //                        hasClearButton: true
                         SlotsLayout.padding.trailing: units.gu(11) + 10
-                        style: ActionBarStyle {
-                            backgroundColor: "transparent"
-                        }
+//                        style: ActionBarStyle {
+//                            backgroundColor: "transparent"
+//                        }
                         onAccepted: {
                             settings.preset1name = txtfld1.text
                             txtfld1.text = settings.preset1name
