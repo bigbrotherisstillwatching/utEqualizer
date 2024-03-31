@@ -642,7 +642,7 @@ Rectangle {
             id: clmn2
 //            anchors.left: flick1.left
 //            anchors.right: flick1.right
-//            anchors.top: clmn1.bottom
+            anchors.top: clmn1.bottom
 //            anchors.bottom: txt3.top
             width: flick1.width
 
