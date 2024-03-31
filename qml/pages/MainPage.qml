@@ -677,6 +677,9 @@ Rectangle {
                             settings.preset1name = txtfld1.text
                             txtfld1.text = settings.preset1name
                         }
+                        Keys.onTabPressed: console.log("tab pressed")
+                        Keys.onLeftPressed: console.log("left pressed")
+                        Keys.onRightPressed: console.log("right pressed")
                     }
 
 /*                    Qqc.TextField {
