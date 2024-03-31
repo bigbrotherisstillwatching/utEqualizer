@@ -677,12 +677,12 @@ Rectangle {
                             settings.preset1name = txtfld1.text
                             txtfld1.text = settings.preset1name
                         }
-                        Keys.onPressed: {
+/*                        Keys.onPressed: {
                             if (event.key == Qt.Key_Left) {
 //                                console.log("move left");
                                 event.accepted = true;
                             }
-                        }
+                        }*/
                     }
 
 /*                    Qqc.TextField {
@@ -724,6 +724,18 @@ Rectangle {
                             settings.preset1equalizerControls8 = slide8.value.toFixed(1)
                             settings.preset1equalizerControls9 = slide9.value.toFixed(1)
                             settings.preset1equalizerControls10 = slide10.value.toFixed(1)
+                        }
+                        Keys.onPressed: {
+                            if (event.key == Qt.Key_Left) {
+//                                console.log("move left");
+                                event.accepted = false;
+                            }
+                        }
+                        Keys.onPressed: {
+                            if (event.key == Qt.Key_Right) {
+//                                console.log("move right");
+                                event.accepted = false;
+                            }
                         }
                     }
                     Button {
