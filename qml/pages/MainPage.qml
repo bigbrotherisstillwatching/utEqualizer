@@ -689,7 +689,8 @@ Rectangle {
                                 event.accepted = true;
                             }
                         }*/
-                        KeyNavigation.tab: txtfld2
+                        KeyNavigation.right: nextItemInFocusChain(false)
+                        KeyNavigation.priority: KeyNavigation.BeforeItem
                     }
 
 /*                    Qqc.TextField {
