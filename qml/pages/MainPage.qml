@@ -667,11 +667,11 @@ Rectangle {
                         color: Colors.mainText
                         text: settings.preset1name
                         placeholderText: i18n.tr("Preset 1")
-//                        hasClearButton: true
+                        hasClearButton: false
                         SlotsLayout.padding.trailing: units.gu(11) + 10
-//                        style: ActionBarStyle {
-//                            backgroundColor: "transparent"
-//                        }
+                        style: ActionBarStyle {
+                            backgroundColor: "transparent"
+                        }
                         onAccepted: {
                             settings.preset1name = txtfld1.text
                             txtfld1.text = settings.preset1name
@@ -764,7 +764,7 @@ Rectangle {
                         color: Colors.mainText
                         text: settings.preset2name
                         placeholderText: i18n.tr("Preset 2")
-                        hasClearButton: true
+                        hasClearButton: false
                         SlotsLayout.padding.trailing: units.gu(11) + 10
                         style: ActionBarStyle {
                             backgroundColor: "transparent"
@@ -842,7 +842,7 @@ Rectangle {
                         color: Colors.mainText
                         text: settings.preset3name
                         placeholderText: i18n.tr("Preset 3")
-                        hasClearButton: true
+                        hasClearButton: false
                         SlotsLayout.padding.trailing: units.gu(11) + 10
                         style: ActionBarStyle {
                             backgroundColor: "transparent"
@@ -920,7 +920,7 @@ Rectangle {
                         color: Colors.mainText
                         text: settings.preset4name
                         placeholderText: i18n.tr("Preset 4")
-                        hasClearButton: true
+                        hasClearButton: false
                         SlotsLayout.padding.trailing: units.gu(11) + 10
                         style: ActionBarStyle {
                             backgroundColor: "transparent"
@@ -1000,7 +1000,7 @@ Rectangle {
                         color: Colors.mainText
                         text: settings.preset5name
                         placeholderText: i18n.tr("Preset 5")
-                        hasClearButton: true
+                        hasClearButton: false
                         SlotsLayout.padding.trailing: units.gu(11) + 10
                         style: ActionBarStyle {
                             backgroundColor: "transparent"
