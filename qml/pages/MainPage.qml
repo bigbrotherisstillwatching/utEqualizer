@@ -689,9 +689,9 @@ Rectangle {
 //                        style: ActionBarStyle {
 //                            backgroundColor: "transparent"
 //                        }
-                        background: Rectangle {
-                            color: Colors.backgroundColor
-                        }
+//                        background: Rectangle {
+//                            color: Colors.backgroundColor
+//                        }
                         onAccepted: {
                             settings.preset1name = txtfld1.text
                             txtfld1.text = settings.preset1name
