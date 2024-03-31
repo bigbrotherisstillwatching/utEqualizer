@@ -689,7 +689,7 @@ Rectangle {
                                 event.accepted = true;
                             }
                         }*/
-//                        KeyNavigation.right: txtfld1
+                        KeyNavigation.right: txtfld2
                     }
 
 /*                    Qqc.TextField {
