@@ -728,10 +728,10 @@ Rectangle {
                         Keys.onPressed: {
                             if (event.key == Qt.Key_Left) {
 //                                console.log("move left");
-                                event.accepted = false;
+                                event.accepted = true;
                             } else if (event.key == Qt.Key_Right) {
 //                                console.log("move right");
-                                event.accepted = false;
+                                event.accepted = true;
                             }
                         }
                     }
