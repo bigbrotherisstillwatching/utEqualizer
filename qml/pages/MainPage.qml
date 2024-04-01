@@ -1018,7 +1018,7 @@ Rectangle {
             placeholderText: i18n.tr("Preset 1")
             hasClearButton: false
             anchors.top: clmn1.bottom
-            anchors.left: flick1.left
+            anchors.left: parent
             anchors.leftMargin: units.gu(1)
             width: flick1.width / 2
 //            style: ActionBarStyle {
@@ -1040,7 +1040,7 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
-            anchors.bottom: flick1.bottom
+            anchors.bottom: parent.bottom
             topPadding: units.gu(3)
         }
     }
