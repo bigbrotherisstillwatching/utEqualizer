@@ -1022,9 +1022,9 @@ Rectangle {
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(1)
             width: flick1.width / 2
-//            style: ActionBarStyle {
-//                backgroundColor: "transparent"
-//            }
+            style: ActionBarStyle {
+                backgroundColor: "transparent"
+            }
             onAccepted: {
                 settings.preset1name = txtfld1.text
                 txtfld1.text = settings.preset1name
