@@ -239,7 +239,7 @@ Rectangle {
     Flickable {
         id: flick1
         anchors.top: header.bottom
-        contentHeight: clmn1.height + clmn2.height + txt3.height + units.gu(50)
+        contentHeight: clmn1.height + txtfld1.height + txt3.height + units.gu(50)
         contentWidth: mainPage.width
         width: mainPage.width
         height: mainPage.height - header.height
@@ -1019,6 +1019,7 @@ Rectangle {
             hasClearButton: false
             anchors.top: clmn1.bottom
             anchors.left: flick1.left
+            anchors.leftMargin: units.gu(1)
             width: flick1.width / 2
 //            style: ActionBarStyle {
 //                backgroundColor: "transparent"
@@ -1039,7 +1040,7 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
-            anchors.top: clmn2.bottom
+            anchors.bottom: flick1.bottom
             topPadding: units.gu(3)
         }
     }
