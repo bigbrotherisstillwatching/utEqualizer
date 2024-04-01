@@ -1000,7 +1000,7 @@ Rectangle {
 //             highlightColor: Colors.highlightColor
              anchors.top: txtfld5.bottom
              anchors.left: parent.left
-             anchors.left: parent.right
+             anchors.right: parent.right
 //             anchors.leftMargin: units.gu(2)
              anchors.topMargin: units.gu(2)
              width: flick1.width
