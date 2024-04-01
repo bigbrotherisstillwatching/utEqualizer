@@ -66,7 +66,6 @@ Rectangle {
 
     Settings {
         id: settings
-//        property bool darkMode: true
         property bool darkMode
         property string equalizerControls1: ""
         property string equalizerControls2: ""
@@ -249,10 +248,6 @@ Rectangle {
 
         Column {
             id: clmn1
-//            anchors.top: flick1.top
-//            anchors.left: flick1.left
-//            anchors.right: flick1.right
-//            anchors.horizontalCenter: flick1.horizontalCenter
             topPadding: units.gu(3)
             spacing: units.gu(3)
             width: flick1.width
@@ -611,7 +606,6 @@ Rectangle {
                     checked: settings.darkMode
 
                     onClicked: {
-//                        settings.darkMode = checked
                         drkMd = checked
                         txt2.text = i18n.tr("Please restart the app for the dark mode to take effect.")
                     }
@@ -638,38 +632,28 @@ Rectangle {
             }
         }
 
-        Column {
+/*        Column {
             id: clmn2
-//            anchors.left: flick1.left
-//            anchors.right: flick1.right
             anchors.top: clmn1.bottom
-//            anchors.bottom: txt3.top
             width: flick1.width
 
             ListItem {
                 id: lstitm1
                 height: lstitmlay1.height + (divider.visible ? divider.height : 0)
-//                color: Colors.surfaceColor2
                 color: Colors.backgroundColor
                 divider.colorFrom: Colors.mainText
                 divider.colorTo: Colors.mainText
-//                highlightColor: "#32517F"
 
-//                ListItemLayout {
                 SlotsLayout {
                     id: lstitmlay1
                     height: bttn4.height + units.gu(1)
-//                    title.text: i18n.tr("Preset 1")
-//                    title.color: Colors.mainText
                     
                     mainSlot: TextField {
                         id: txtfld1
-//                        SlotsLayout.position: SlotsLayout.Leading
                         color: Colors.mainText
                         text: settings.preset1name
                         placeholderText: i18n.tr("Preset 1")
                         hasClearButton: false
-//                        SlotsLayout.padding.trailing: units.gu(11) + 10
                         style: ActionBarStyle {
                             backgroundColor: "transparent"
                         }
@@ -677,38 +661,7 @@ Rectangle {
                             settings.preset1name = txtfld1.text
                             txtfld1.text = settings.preset1name
                         }
-/*                        Keys.onPressed: {
-                            if (event.key == Qt.Key_Left) {
-//                                console.log("move left");
-                                event.accepted = true;
-                            } else if (event.key == Qt.Key_Right) {
-//                                console.log("move right");
-                                event.accepted = true;
-                            } else if (event.key == Qt.Key_Tab) {
-//                                console.log("move right");
-                                event.accepted = true;
-                            }
-                        }*/
                     }
-
-/*                    Qqc.TextField {
-                        id: txtfld1
-                        SlotsLayout.position: SlotsLayout.Leading
-                        color: Colors.mainText
-                        text: settings.preset1name
-                        placeholderText: i18n.tr("Preset 1")
-                        SlotsLayout.padding.trailing: units.gu(11) + 10
-//                        style: ActionBarStyle {
-//                            backgroundColor: "transparent"
-//                        }
-                        background: Rectangle {
-                            color: Colors.backgroundColor
-                        }
-                        onAccepted: {
-                            settings.preset1name = txtfld1.text
-                            txtfld1.text = settings.preset1name
-                        }
-                    }*/
 
                     Button {
                         id: bttn4
@@ -759,7 +712,6 @@ Rectangle {
             ListItem {
                 id: lstitm2
                 height: lstitmlay2.height + (divider.visible ? divider.height : 0)
-//                color: Colors.surfaceColor2
                 color: Colors.backgroundColor
                 divider.colorFrom: Colors.mainText
                 divider.colorTo: Colors.mainText
@@ -768,8 +720,6 @@ Rectangle {
                 ListItemLayout {
                     id: lstitmlay2
                     height: bttn6.height + units.gu(1)
-//                    title.text: i18n.tr("Preset 2")
-//                    title.color: Colors.mainText
 
                     TextField {
                         id: txtfld2
@@ -837,7 +787,6 @@ Rectangle {
             ListItem {
                 id: lstitm3
                 height: lstitmlay3.height + (divider.visible ? divider.height : 0)
-//                color: Colors.surfaceColor2
                 color: Colors.backgroundColor
                 divider.colorFrom: Colors.mainText
                 divider.colorTo: Colors.mainText
@@ -846,8 +795,6 @@ Rectangle {
                 ListItemLayout {
                     id: lstitmlay3
                     height: bttn8.height + units.gu(1)
-//                    title.text: i18n.tr("Preset 3")
-//                    title.color: Colors.mainText
 
                     TextField {
                         id: txtfld3
@@ -915,7 +862,6 @@ Rectangle {
             ListItem {
                 id: lstitm4
                 height: lstitmlay4.height + (divider.visible ? divider.height : 0)
-//                color: Colors.surfaceColor2
                 color: Colors.backgroundColor
                 divider.colorFrom: Colors.mainText
                 divider.colorTo: Colors.mainText
@@ -924,8 +870,6 @@ Rectangle {
                 ListItemLayout {
                     id: lstitmlay4
                     height: bttn6.height + units.gu(1)
-//                    title.text: i18n.tr("Preset 4")
-//                    title.color: Colors.mainText
 
                     TextField {
                         id: txtfld4
@@ -993,10 +937,7 @@ Rectangle {
             ListItem {
                 id: lstitm5
                 height: lstitmlay5.height + (divider.visible ? divider.height : 0)
-//                color: Colors.surfaceColor2
                 color: Colors.backgroundColor
-//                divider.colorFrom: Colors.mainText
-//                divider.colorTo: Colors.mainText
                 divider.colorFrom: "transparent"
                 divider.colorTo: "transparent"
                 highlightColor: "#32517F"
@@ -1004,8 +945,6 @@ Rectangle {
                 ListItemLayout {
                     id: lstitmlay5
                     height: bttn12.height + units.gu(1)
-//                    title.text: i18n.tr("Preset 5")
-//                    title.color: Colors.mainText
 
                     TextField {
                         id: txtfld5
@@ -1070,23 +1009,37 @@ Rectangle {
                     }
                 }
             }
+        }*/
+
+        TextField {
+            id: txtfld1
+            color: Colors.mainText
+            text: settings.preset1name
+            placeholderText: i18n.tr("Preset 1")
+            hasClearButton: false
+            anchors.top: clmn1.bottom
+            anchors.left: flick1.left
+            width: flick1.width / 2
+//            style: ActionBarStyle {
+//                backgroundColor: "transparent"
+//            }
+            onAccepted: {
+                settings.preset1name = txtfld1.text
+                txtfld1.text = settings.preset1name
+            }
         }
 
         Text {
             id: txt3
             text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
             color: Colors.mainText
-//            anchors.horizontalCenter: flick1.horizontalCenter
-//            topPadding: units.gu(10) - txt2.height
             wrapMode: Text.WordWrap
             width: flick1.width
             lineHeight: 1.2
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
-//            anchors.bottom: flick1.bottom
             anchors.top: clmn2.bottom
-//            bottomPadding: units.gu(3)
             topPadding: units.gu(3)
         }
     }
