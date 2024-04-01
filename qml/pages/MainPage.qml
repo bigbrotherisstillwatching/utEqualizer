@@ -993,25 +993,35 @@ Rectangle {
         }
 
         ListItem {
-             height: lstitmlay1.height + (divider.visible ? divider.height : 0)
-             color: Colors.backgroundColor
-             divider.colorFrom: Colors.mainText
-             divider.colorTo: Colors.mainText
-//             highlightColor: Colors.highlightColor
-             anchors.top: txtfld5.bottom
-             anchors.left: parent.left
-             anchors.right: parent.right
-//             anchors.leftMargin: units.gu(2)
-             anchors.topMargin: units.gu(2)
-             width: flick1.width
+            height: lstitmlay1.height + (divider.visible ? divider.height : 0)
+            color: Colors.backgroundColor
+            divider.colorFrom: Colors.mainText
+            divider.colorTo: Colors.mainText
+//            highlightColor: Colors.highlightColor
+            anchors.top: txtfld5.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+//            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(2)
+            width: flick1.width
 
-             ListItemLayout {
-                 id: lstitmlay1
-                 title.text: i18n.tr("Help")
-                 title.font.bold: false
-                 title.color: Colors.mainText
-                 title.font.pointSize: 40
-             }
+            ListItemLayout {
+                id: lstitmlay1
+/*                title.text: i18n.tr("Help")
+                title.font.bold: false
+                title.color: Colors.mainText
+                title.font.pointSize: 40*/
+
+                Text {
+                    id: hlptxt
+//                    anchors.left: hdrrec.left
+//                    anchors.verticalCenter: hdrrec.verticalCenter
+                    SlotsLayout.position: SlotsLayout.Leading
+                    text: i18n.tr("Help")
+                    color: Colors.mainText
+                    font.pointSize: 40
+                }
+            }
         }
 
         Text {
