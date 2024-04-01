@@ -1031,6 +1031,33 @@ Rectangle {
             }
         }
 
+        Button {
+            id: bttn5
+            height: units.gu(4)
+            width: units.gu(4)
+            anchors.top: clmn1.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
+            iconSource: "../../assets/load.svg"
+//            SlotsLayout.position: SlotsLayout.Last
+            StyleHints {
+                defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
+            }
+            onClicked: {
+                slide1.value = settings.preset1equalizerControls1
+                slide2.value = settings.preset1equalizerControls2
+                slide3.value = settings.preset1equalizerControls3
+                slide4.value = settings.preset1equalizerControls4
+                slide5.value = settings.preset1equalizerControls5
+                slide6.value = settings.preset1equalizerControls6
+                slide7.value = settings.preset1equalizerControls7
+                slide8.value = settings.preset1equalizerControls8
+                slide9.value = settings.preset1equalizerControls9
+                slide10.value = settings.preset1equalizerControls10
+            }
+        }
+
         Text {
             id: txt3
             text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
