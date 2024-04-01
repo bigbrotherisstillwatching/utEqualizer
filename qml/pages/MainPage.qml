@@ -1088,7 +1088,7 @@ Rectangle {
         TextField {
             id: txtfld2
             color: Colors.mainText
-            text: settings.preset1name
+            text: settings.preset2name
             placeholderText: i18n.tr("Preset 2")
             hasClearButton: false
             anchors.top: txtfld1.bottom
