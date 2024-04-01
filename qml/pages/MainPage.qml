@@ -1019,7 +1019,8 @@ Rectangle {
             hasClearButton: false
             anchors.top: clmn1.bottom
             anchors.left: parent.left
-            anchors.leftMargin: units.gu(1)
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
             width: flick1.width / 2
 //            style: ActionBarStyle {
 //                backgroundColor: "transparent"
