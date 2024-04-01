@@ -992,6 +992,28 @@ Rectangle {
             }
         }
 
+        ListItem {
+             height: lstitmlay1.height + (divider.visible ? divider.height : 0)
+             color: Colors.backgroundColor
+             divider.colorFrom: Colors.mainText
+             divider.colorTo: Colors.mainText
+//             highlightColor: Colors.highlightColor
+             anchors.top: txtfld5.bottom
+             anchors.left: parent.left
+             anchors.left: parent.right
+//             anchors.leftMargin: units.gu(2)
+             anchors.topMargin: units.gu(2)
+             width: flick1.width
+
+             ListItemLayout {
+                 id: lstitmlay1
+                 title.text: i18n.tr("Help")
+                 title.font.bold: false
+                 title.color: Colors.mainText
+                 title.font.pointSize: 40
+             }
+        }
+
         Text {
             id: txt3
             text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
