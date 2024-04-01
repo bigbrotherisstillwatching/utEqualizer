@@ -1018,7 +1018,7 @@ Rectangle {
             placeholderText: i18n.tr("Preset 1")
             hasClearButton: false
             anchors.top: clmn1.bottom
-            anchors.left: parent
+            anchors.left: parent.left
             anchors.leftMargin: units.gu(1)
             width: flick1.width / 2
 //            style: ActionBarStyle {
