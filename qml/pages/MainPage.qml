@@ -1159,6 +1159,228 @@ Rectangle {
             }
         }
 
+        TextField {
+            id: txtfld3
+            color: Colors.mainText
+            text: settings.preset3name
+            placeholderText: i18n.tr("Preset 3")
+            hasClearButton: false
+            anchors.top: txtfld2.bottom
+            anchors.left: parent.left
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
+            width: flick1.width / 2
+            style: ActionBarStyle {
+                backgroundColor: "transparent"
+            }
+            onAccepted: {
+                settings.preset3name = txtfld3.text
+                txtfld3.text = settings.preset3name
+            }
+        }
+
+        Button {
+            id: bttn9
+            height: units.gu(4)
+            width: units.gu(4)
+            anchors.top: bttn7.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
+            iconSource: "../../assets/load.svg"
+//            SlotsLayout.position: SlotsLayout.Last
+            StyleHints {
+                defaultColor: bttn9.pressed ? "#32517F" : Colors.surfaceColor
+            }
+            onClicked: {
+                slide1.value = settings.preset3equalizerControls1
+                slide2.value = settings.preset3equalizerControls2
+                slide3.value = settings.preset3equalizerControls3
+                slide4.value = settings.preset3equalizerControls4
+                slide5.value = settings.preset3equalizerControls5
+                slide6.value = settings.preset3equalizerControls6
+                slide7.value = settings.preset3equalizerControls7
+                slide8.value = settings.preset3equalizerControls8
+                slide9.value = settings.preset3equalizerControls9
+                slide10.value = settings.preset3equalizerControls10
+            }
+        }
+
+        Button {
+            id: bttn8
+            height: units.gu(4)
+            width: units.gu(4)
+            anchors.top: bttn6.bottom
+            anchors.right: bttn9.left
+            anchors.rightMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
+            iconName: "save"
+//            SlotsLayout.position: SlotsLayout.Trailing
+            StyleHints {
+                defaultColor: bttn8.pressed ? "#32517F" : Colors.surfaceColor
+            }
+            onClicked: {
+                settings.preset3equalizerControls1 = slide1.value.toFixed(1)
+                settings.preset3equalizerControls2 = slide2.value.toFixed(1)
+                settings.preset3equalizerControls3 = slide3.value.toFixed(1)
+                settings.preset3equalizerControls4 = slide4.value.toFixed(1)
+                settings.preset3equalizerControls5 = slide5.value.toFixed(1)
+                settings.preset3equalizerControls6 = slide6.value.toFixed(1)
+                settings.preset3equalizerControls7 = slide7.value.toFixed(1)
+                settings.preset3equalizerControls8 = slide8.value.toFixed(1)
+                settings.preset3equalizerControls9 = slide9.value.toFixed(1)
+                settings.preset3equalizerControls10 = slide10.value.toFixed(1)
+            }
+        }
+
+        TextField {
+            id: txtfld4
+            color: Colors.mainText
+            text: settings.preset4name
+            placeholderText: i18n.tr("Preset 4")
+            hasClearButton: false
+            anchors.top: txtfld3.bottom
+            anchors.left: parent.left
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
+            width: flick1.width / 2
+            style: ActionBarStyle {
+                backgroundColor: "transparent"
+            }
+            onAccepted: {
+                settings.preset4name = txtfld4.text
+                txtfld4.text = settings.preset4name
+            }
+        }
+
+        Button {
+            id: bttn11
+            height: units.gu(4)
+            width: units.gu(4)
+            anchors.top: bttn9.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
+            iconSource: "../../assets/load.svg"
+//            SlotsLayout.position: SlotsLayout.Last
+            StyleHints {
+                defaultColor: bttn11.pressed ? "#32517F" : Colors.surfaceColor
+            }
+            onClicked: {
+                slide1.value = settings.preset4equalizerControls1
+                slide2.value = settings.preset4equalizerControls2
+                slide3.value = settings.preset4equalizerControls3
+                slide4.value = settings.preset4equalizerControls4
+                slide5.value = settings.preset4equalizerControls5
+                slide6.value = settings.preset4equalizerControls6
+                slide7.value = settings.preset4equalizerControls7
+                slide8.value = settings.preset4equalizerControls8
+                slide9.value = settings.preset4equalizerControls9
+                slide10.value = settings.preset4equalizerControls10
+            }
+        }
+
+        Button {
+            id: bttn10
+            height: units.gu(4)
+            width: units.gu(4)
+            anchors.top: bttn8.bottom
+            anchors.right: bttn11.left
+            anchors.rightMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
+            iconName: "save"
+//            SlotsLayout.position: SlotsLayout.Trailing
+            StyleHints {
+                defaultColor: bttn10.pressed ? "#32517F" : Colors.surfaceColor
+            }
+            onClicked: {
+                settings.preset4equalizerControls1 = slide1.value.toFixed(1)
+                settings.preset4equalizerControls2 = slide2.value.toFixed(1)
+                settings.preset4equalizerControls3 = slide3.value.toFixed(1)
+                settings.preset4equalizerControls4 = slide4.value.toFixed(1)
+                settings.preset4equalizerControls5 = slide5.value.toFixed(1)
+                settings.preset4equalizerControls6 = slide6.value.toFixed(1)
+                settings.preset4equalizerControls7 = slide7.value.toFixed(1)
+                settings.preset4equalizerControls8 = slide8.value.toFixed(1)
+                settings.preset4equalizerControls9 = slide9.value.toFixed(1)
+                settings.preset4equalizerControls10 = slide10.value.toFixed(1)
+            }
+        }
+
+        TextField {
+            id: txtfld5
+            color: Colors.mainText
+            text: settings.preset5name
+            placeholderText: i18n.tr("Preset 5")
+            hasClearButton: false
+            anchors.top: txtfld4.bottom
+            anchors.left: parent.left
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
+            width: flick1.width / 2
+            style: ActionBarStyle {
+                backgroundColor: "transparent"
+            }
+            onAccepted: {
+                settings.preset5name = txtfld5.text
+                txtfld5.text = settings.preset5name
+            }
+        }
+
+        Button {
+            id: bttn13
+            height: units.gu(4)
+            width: units.gu(4)
+            anchors.top: bttn11.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
+            iconSource: "../../assets/load.svg"
+//            SlotsLayout.position: SlotsLayout.Last
+            StyleHints {
+                defaultColor: bttn13.pressed ? "#32517F" : Colors.surfaceColor
+            }
+            onClicked: {
+                slide1.value = settings.preset5equalizerControls1
+                slide2.value = settings.preset5equalizerControls2
+                slide3.value = settings.preset5equalizerControls3
+                slide4.value = settings.preset5equalizerControls4
+                slide5.value = settings.preset5equalizerControls5
+                slide6.value = settings.preset5equalizerControls6
+                slide7.value = settings.preset5equalizerControls7
+                slide8.value = settings.preset5equalizerControls8
+                slide9.value = settings.preset5equalizerControls9
+                slide10.value = settings.preset5equalizerControls10
+            }
+        }
+
+        Button {
+            id: bttn12
+            height: units.gu(4)
+            width: units.gu(4)
+            anchors.top: bttn10.bottom
+            anchors.right: bttn13.left
+            anchors.rightMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
+            iconName: "save"
+//            SlotsLayout.position: SlotsLayout.Trailing
+            StyleHints {
+                defaultColor: bttn12.pressed ? "#32517F" : Colors.surfaceColor
+            }
+            onClicked: {
+                settings.preset5equalizerControls1 = slide1.value.toFixed(1)
+                settings.preset5equalizerControls2 = slide2.value.toFixed(1)
+                settings.preset5equalizerControls3 = slide3.value.toFixed(1)
+                settings.preset5equalizerControls4 = slide4.value.toFixed(1)
+                settings.preset5equalizerControls5 = slide5.value.toFixed(1)
+                settings.preset5equalizerControls6 = slide6.value.toFixed(1)
+                settings.preset5equalizerControls7 = slide7.value.toFixed(1)
+                settings.preset5equalizerControls8 = slide8.value.toFixed(1)
+                settings.preset5equalizerControls9 = slide9.value.toFixed(1)
+                settings.preset5equalizerControls10 = slide10.value.toFixed(1)
+            }
+        }
+
         Text {
             id: txt3
             text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
