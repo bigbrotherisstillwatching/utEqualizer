@@ -1063,7 +1063,7 @@ Rectangle {
             height: units.gu(4)
             width: units.gu(4)
             anchors.top: clmn1.bottom
-            anchors.right: bttn5.right
+            anchors.right: bttn5.left
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(1)
             iconName: "save"
