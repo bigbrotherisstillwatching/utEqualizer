@@ -1047,7 +1047,7 @@ Rectangle {
 
         Text {
             id: txt4
-            text: i18n.tr("Change equalizer, when it's already activated. hjdfhfj hvdh dekfk jkdjjljlfjl dkjdkj djkvgjgdjk dkvgjkvjkdj djgjk jd dglgk dlgdlldlf dflfkl dfklf fkfkdlfkdlfkf fkf k fkdflklf fkdf dlfklfklfkl")
+            text: i18n.tr("Change equalizer, when it's already activated. hjdfhfj hvdh dekfk jkdjjljlfjl dkjdkj djkvgjgdjk dkvgjkvjkdj djgjk jd dglgk dlgdlldlf dflfkl dfklf fkfkdlfkdlfkf fkf k")
             color: Colors.mainText
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn1.right
@@ -1058,7 +1058,34 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             lineHeight: 1.2
             wrapMode: Text.WordWrap
-            maximumLineCount: 4
+            maximumLineCount: 3
+        }
+
+        Icon {
+            id: hlpicn2
+            source: "../../assets/resetzero.svg"
+            width: units.gu(4)
+            height: units.gu(4)
+            anchors.top: lstitm1.bottom
+            anchors.left: parent.left
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(12)
+        }
+
+        Text {
+            id: txt5
+            text: i18n.tr("Reset all bars to 0. hjdfhfj hvdh dekfk jkdjjljlfjl dkjdkj djkvgjgdjk dkvgjkvjkdj djgjk jd dglgk dlgdlldlf dflfkl dfklf fkfkdlfkdlfkf fkf k gkgk gdfkggkh gfkgkg hghh")
+            color: Colors.mainText
+            anchors.top: lstitm1.bottom
+            anchors.left: hlpicn2.right
+            anchors.right: parent.right
+            anchors.leftMargin: units.gu(2)
+            anchors.rightMargin: units.gu(2)
+            anchors.topMargin: units.gu(13)
+            horizontalAlignment: Text.AlignHCenter
+            lineHeight: 1.2
+            wrapMode: Text.WordWrap
+            maximumLineCount: 3
         }
 
         Text {
