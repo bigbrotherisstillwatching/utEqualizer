@@ -239,7 +239,7 @@ Rectangle {
     Flickable {
         id: flick1
         anchors.top: header.bottom
-        contentHeight: clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + units.gu(60)
+        contentHeight: clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + units.gu(70)
         contentWidth: mainPage.width
         width: mainPage.width
         height: mainPage.height - header.height
@@ -1007,25 +1007,17 @@ Rectangle {
             color: Colors.backgroundColor
             divider.colorFrom: Colors.mainText
             divider.colorTo: Colors.mainText
-//            highlightColor: Colors.highlightColor
             anchors.top: txtfld5.bottom
             anchors.left: parent.left
             anchors.right: parent.right
-//            anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
             width: flick1.width
 
             ListItemLayout {
                 id: lstitmlay1
-/*                title.text: i18n.tr("Help")
-                title.font.bold: false
-                title.color: Colors.mainText
-                title.font.pointSize: 40*/
 
                 Text {
                     id: hlptxt
-//                    anchors.left: hdrrec.left
-//                    anchors.verticalCenter: hdrrec.verticalCenter
                     SlotsLayout.position: SlotsLayout.Leading
                     text: i18n.tr("Help")
                     color: Colors.mainText
@@ -1047,7 +1039,7 @@ Rectangle {
 
         Text {
             id: txt4
-            text: i18n.tr("Change equalizer, when it's already activated. hjdfhfj hvdh dekfk jkdjjljlfjl dkjdkj djkvgjgdjk dkvgjkvjkdj djgjk jd dglgk dlgdlldlf dflfkl dfklf fkfkdlfkdlfkf fkf k")
+            text: i18n.tr("Change equalizer, when it's already activated.")
             color: Colors.mainText
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn1.right
@@ -1074,7 +1066,7 @@ Rectangle {
 
         Text {
             id: txt5
-            text: i18n.tr("Reset all bars to 0. hjdfhfj hvdh dekfk jkdjjljlfjl dkjdkj djkvgjgdjk dkvgjkvjkdj djgjk jd dglgk dlgdlldlf dflfkl dfklf fkfkdlfkdlfkf fkf k gkgk gdfkggkh gfkgkg hghh")
+            text: i18n.tr("Reset all bars to 0.")
             color: Colors.mainText
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn2.right
@@ -1112,7 +1104,7 @@ Rectangle {
 
         Text {
             id: txt6
-            text: i18n.tr("Save and load presets. You can also give them a name. Take over settings by clicking the change button or by activating the equalizerhjdfhfj hvdh dekfk sb fbsdbbjkdj")
+            text: i18n.tr("Save and load a preset. You can also give them a name. Take over the settings by clicking the change button or by activating the equalizer.")
             color: Colors.mainText
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn4.right
@@ -1123,7 +1115,7 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             lineHeight: 1.2
             wrapMode: Text.WordWrap
-            maximumLineCount: 5
+            maximumLineCount: 10
         }
 
         Text {
