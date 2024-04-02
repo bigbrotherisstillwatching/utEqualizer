@@ -1047,7 +1047,7 @@ Rectangle {
 
         Text {
             id: txt4
-            text: i18n.tr("Change equalizer, when it's already activated.")
+            text: i18n.tr("Change equalizer, when it's already activated. hjdfhfj hvdh dekfk jkdjjljlfjl dkjdkj djkvgjgdjk dkvgjkvjkdj djgjk jd dglgk dlgdlldlf dflfkl dfklf fkfkdlfkdlfkf fkf k fkdflklf fkdf dlfklfklfkl")
             color: Colors.mainText
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn1.right
