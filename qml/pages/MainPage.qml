@@ -1037,5 +1037,15 @@ Rectangle {
             anchors.bottom: parent.bottom
             topPadding: units.gu(3)
         }
+
+        MouseArea {
+            anchors.fill: parent
+ 
+            onClicked: {
+                console.log("base mouse area pressed")
+                focus = true
+            }
+        }
+
     }
 }
