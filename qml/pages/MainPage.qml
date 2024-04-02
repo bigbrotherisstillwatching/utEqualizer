@@ -247,6 +247,7 @@ Rectangle {
         flickableDirection: Flickable.VerticalFlick
 
         MouseArea {
+            id: ma1
             anchors.fill: parent
  
             onClicked: {
@@ -658,6 +659,7 @@ Rectangle {
             onAccepted: {
                 settings.preset1name = txtfld1.text
                 txtfld1.text = settings.preset1name
+                ma1.focus = true
             }
         }
 
