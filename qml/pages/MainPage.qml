@@ -1045,7 +1045,7 @@ Rectangle {
 
         Text {
             id: txt4
-            text: i18n.tr("Change equalizer, when it's already activated.")
+            text: i18n.tr("Apply equalizer changes, when it's already activated.")
             color: Colors.mainText
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn1.right
@@ -1072,7 +1072,7 @@ Rectangle {
 
         Text {
             id: txt5
-            text: i18n.tr("Reset all bars to 0.")
+            text: i18n.tr("Reset all bars to 0.0.")
             color: Colors.mainText
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn2.right
