@@ -1110,7 +1110,7 @@ Rectangle {
 
         Text {
             id: txt6
-            text: i18n.tr("Save and load a preset. You can also give them a name. Take over the settings by clicking the change button or by activating the equalizer.")
+            text: i18n.tr("Save and load a preset. You can also give them a name. Apply the settings by clicking the change button or by activating the equalizer.")
             color: Colors.mainText
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn4.right
