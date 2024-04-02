@@ -1054,7 +1054,7 @@ Rectangle {
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
+            anchors.topMargin: units.gu(3)
             horizontalAlignment: Text.AlignHCenter
             lineHeight: 1.2
             wrapMode: Text.WordWrap
