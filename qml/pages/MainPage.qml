@@ -250,7 +250,7 @@ Rectangle {
             anchors.fill: parent
  
             onClicked: {
-                console.log("base mouse area pressed")
+//                console.log("base mouse area pressed")
                 focus = true
             }
         }
@@ -1002,6 +1002,7 @@ Rectangle {
         }
 
         ListItem {
+            id: lstitm1
             height: lstitmlay1.height + (divider.visible ? divider.height : 0)
             color: Colors.backgroundColor
             divider.colorFrom: Colors.mainText
@@ -1033,6 +1034,33 @@ Rectangle {
             }
         }
 
+        Icon {
+            id: hlpicn1
+            source: "../../assets/change.svg"
+            width: units.gu(4)
+            height: units.gu(4)
+            anchors.top: lstitm1.bottom
+            anchors.left: parent.left
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(2)
+        }
+
+        Text {
+            id: txt4
+            text: i18n.tr("Change equalizer, when it's already activated.")
+            color: Colors.mainText
+            anchors.top: lstitm1.bottom
+            anchors.left: hlpicn1.right
+            anchors.right: parent.right
+            anchors.leftMargin: units.gu(2)
+            anchors.rightMargin: units.gu(2)
+            anchors.topMargin: units.gu(2)
+            horizontalAlignment: Text.AlignHCenter
+            lineHeight: 1.2
+            wrapMode: Text.WordWrap
+            maximumLineCount: 4
+        }
+
         Text {
             id: txt3
             text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
@@ -1044,7 +1072,7 @@ Rectangle {
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
             anchors.bottom: parent.bottom
-            topPadding: units.gu(3)
+            bottomPadding: units.gu(2)
         }
     }
 }
