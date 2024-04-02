@@ -246,6 +246,15 @@ Rectangle {
         anchors.horizontalCenter: mainPage.horizontalCenter
         flickableDirection: Flickable.VerticalFlick
 
+        MouseArea {
+            anchors.fill: parent
+ 
+            onClicked: {
+                console.log("base mouse area pressed")
+                focus = true
+            }
+        }
+
         Column {
             id: clmn1
             topPadding: units.gu(3)
@@ -1037,15 +1046,5 @@ Rectangle {
             anchors.bottom: parent.bottom
             topPadding: units.gu(3)
         }
-
-        MouseArea {
-            anchors.fill: parent
- 
-            onClicked: {
-                console.log("base mouse area pressed")
-                focus = true
-            }
-        }
-
     }
 }
