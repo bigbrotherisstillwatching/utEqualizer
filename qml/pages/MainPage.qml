@@ -732,6 +732,7 @@ Rectangle {
             onAccepted: {
                 settings.preset2name = txtfld2.text
                 txtfld2.text = settings.preset2name
+                ma1.focus = true
             }
         }
 
@@ -804,6 +805,7 @@ Rectangle {
             onAccepted: {
                 settings.preset3name = txtfld3.text
                 txtfld3.text = settings.preset3name
+                ma1.focus = true
             }
         }
 
@@ -876,6 +878,7 @@ Rectangle {
             onAccepted: {
                 settings.preset4name = txtfld4.text
                 txtfld4.text = settings.preset4name
+                ma1.focus = true
             }
         }
 
@@ -948,6 +951,7 @@ Rectangle {
             onAccepted: {
                 settings.preset5name = txtfld5.text
                 txtfld5.text = settings.preset5name
+                ma1.focus = true
             }
         }
 
