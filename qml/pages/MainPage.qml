@@ -1107,7 +1107,7 @@ Rectangle {
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn3.right
             anchors.leftMargin: units.gu(2)
-            anchors.topMargin: units.gu(18)
+            anchors.topMargin: units.gu(24)
         }
 
         Text {
@@ -1119,7 +1119,7 @@ Rectangle {
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(19)
+            anchors.topMargin: units.gu(25)
             horizontalAlignment: Text.AlignHCenter
             lineHeight: 1.2
             wrapMode: Text.WordWrap
