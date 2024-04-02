@@ -239,7 +239,7 @@ Rectangle {
     Flickable {
         id: flick1
         anchors.top: header.bottom
-        contentHeight: clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + units.gu(50)
+        contentHeight: clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + units.gu(60)
         contentWidth: mainPage.width
         width: mainPage.width
         height: mainPage.height - header.height
@@ -1086,6 +1086,44 @@ Rectangle {
             lineHeight: 1.2
             wrapMode: Text.WordWrap
             maximumLineCount: 3
+        }
+
+        Icon {
+            id: hlpicn3
+            name: "save"
+            width: units.gu(4)
+            height: units.gu(4)
+            anchors.top: lstitm1.bottom
+            anchors.left: parent.left
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(18)
+        }
+
+        Icon {
+            id: hlpicn4
+            source: "../../assets/load.svg"
+            width: units.gu(4)
+            height: units.gu(4)
+            anchors.top: lstitm1.bottom
+            anchors.left: hlpicn3.right
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(18)
+        }
+
+        Text {
+            id: txt6
+            text: i18n.tr("Save and load presets. You can also give them a name. Take over settings by clicking the change button or by activating the equalizerhjdfhfj hvdh dekfk sb fbsdbbjkdj")
+            color: Colors.mainText
+            anchors.top: lstitm1.bottom
+            anchors.left: hlpicn4.right
+            anchors.right: parent.right
+            anchors.leftMargin: units.gu(2)
+            anchors.rightMargin: units.gu(2)
+            anchors.topMargin: units.gu(19)
+            horizontalAlignment: Text.AlignHCenter
+            lineHeight: 1.2
+            wrapMode: Text.WordWrap
+            maximumLineCount: 5
         }
 
         Text {
