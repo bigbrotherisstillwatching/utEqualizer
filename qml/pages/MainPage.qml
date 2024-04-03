@@ -1126,7 +1126,7 @@ Rectangle {
 
         Text {
             id: txt6
-            text: i18n.tr("Made with <p style="color:red;font-size:50px;">&#10084;</p> by bbisw")
+            text: i18n.tr("Made with <font size=\"1\" color=\"red\">&#10084;</font> by bbisw")
             color: Colors.mainText
             wrapMode: Text.WordWrap
             width: flick1.width
