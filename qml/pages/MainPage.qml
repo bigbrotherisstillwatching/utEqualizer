@@ -1125,7 +1125,7 @@ Rectangle {
         }
 
         Text {
-            id: txt6
+            id: txt7
             text: i18n.tr("Made with <font size=\"1\" color=\"red\">&#10084;</font> by bbisw")
             color: Colors.mainText
             wrapMode: Text.WordWrap
