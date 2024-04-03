@@ -1134,7 +1134,7 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             font.bold: false
 //            onLinkActivated: Qt.openUrlExternally(link)
-            anchors.bottom: text3.top
+            anchors.bottom: txt3.top
             bottomPadding: units.gu(2)
         }
 
