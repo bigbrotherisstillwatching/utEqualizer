@@ -1126,7 +1126,7 @@ Rectangle {
 
         Text {
             id: txt7
-            text: i18n.tr("Made with") + "<img src=\"../../assets/heart.png\">" + i18n.tr("by bbisw")
+            text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
             color: Colors.mainText
             wrapMode: Text.WordWrap
             width: flick1.width
