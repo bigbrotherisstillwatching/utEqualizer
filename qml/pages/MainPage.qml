@@ -1053,7 +1053,8 @@ Rectangle {
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
-            horizontalAlignment: Text.AlignHCenter
+//            horizontalAlignment: Text.AlignHCenter
+            horizontalAlignment: Text.AlignLeft
             lineHeight: 1.2
             wrapMode: Text.WordWrap
             maximumLineCount: 3
@@ -1080,7 +1081,7 @@ Rectangle {
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(13)
-            horizontalAlignment: Text.AlignHCenter
+            horizontalAlignment: Text.AlignLeft
             lineHeight: 1.2
             wrapMode: Text.WordWrap
             maximumLineCount: 3
@@ -1118,7 +1119,7 @@ Rectangle {
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(24)
-            horizontalAlignment: Text.AlignHCenter
+            horizontalAlignment: Text.AlignLeft
             lineHeight: 1.2
             wrapMode: Text.WordWrap
             maximumLineCount: 10
