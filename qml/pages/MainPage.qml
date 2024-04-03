@@ -148,7 +148,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.1/scripts/equalizer_stop.sh"])
+        process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_stop.sh"])
         eqswitch.checked = false
         eqsts = false
     }
@@ -175,7 +175,7 @@ Rectangle {
                 id: bttn2
                 text: i18n.tr("Turn off equalizer")
                 onClicked: {
-                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.1/scripts/equalizer_stop.sh"])
+                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_stop.sh"])
                     bttn3.enabled = true
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     bttn1.enabled = false
@@ -540,7 +540,7 @@ Rectangle {
                         settings.equalizerControls8 = slide8.value.toFixed(1)
                         settings.equalizerControls9 = slide9.value.toFixed(1)
                         settings.equalizerControls10 = slide10.value.toFixed(1)
-                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.1/scripts/equalizer_change.sh"])
+                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_change.sh"])
                     }
                 }
                 Qqc.Switch {
@@ -548,7 +548,7 @@ Rectangle {
                     y: 5
                     onClicked: {
                         if (settings.equalizerStatus === true) {
-                            process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.1/scripts/equalizer_stop.sh"])
+                            process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_stop.sh"])
                             eqsts = checked
                             txt2.text = ""
                         } else if (settings.equalizerStatus === false) {
@@ -562,7 +562,7 @@ Rectangle {
                             settings.equalizerControls8 = slide8.value.toFixed(1)
                             settings.equalizerControls9 = slide9.value.toFixed(1)
                             settings.equalizerControls10 = slide10.value.toFixed(1)
-                            process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.1/scripts/equalizer_start.sh"])
+                            process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_start.sh"])
                             eqsts = checked
                             txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
                         }
