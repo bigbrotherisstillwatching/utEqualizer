@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: utequalizer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-17 02:22+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../qml/pages/MainPage.qml:161
+msgid "<font color=\"white\">Quit</font>"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:162
+msgid "<font color=\"white\">Are you sure that you want to close the app?</font>"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:168
+msgid "Cancel"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:176
+msgid "Turn off equalizer"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:190
+msgid "Ok"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:567
+msgid "Please turn the equalizer off and on again after changing audio output."
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:609
+msgid "Dark mode"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:619
+msgid "Please restart the app for the dark mode to take effect."
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:648
+msgid "Preset 1"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:721
+msgid "Preset 2"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:794
+msgid "Preset 3"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:867
+msgid "Preset 4"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:940
+msgid "Preset 5"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:1027
+msgid "Help"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:1047
+msgid "Apply equalizer changes, when it's already activated."
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:1074
+msgid "Reset all bars to 0.0."
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:1112
+msgid ""
+"Save and load a preset. You can also give them a name. "
+"Apply the settings by clicking the change button or by activating the equalizer."
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:1128
+msgid "Made with "
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:1128
+msgid " by bbisw"
+msgstr ""
+
+#: ../qml/pages/MainPage.qml:1141
+msgid ""
+"The caps plugin for the equalizer was published under the GNU Public "
+"License (version 3) by Tim Goetze. More information "
+"at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>."
+msgstr ""
+
+msgid "utEqualizer"
+msgstr ""
