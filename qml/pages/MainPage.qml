@@ -1125,6 +1125,20 @@ Rectangle {
         }
 
         Text {
+            id: txt6
+            text: i18n.tr("Made with <p style="color:red;font-size:50px;">&#10084;</p> by bbisw")
+            color: Colors.mainText
+            wrapMode: Text.WordWrap
+            width: flick1.width
+            lineHeight: 1.2
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: false
+//            onLinkActivated: Qt.openUrlExternally(link)
+            anchors.bottom: text3.top
+            bottomPadding: units.gu(2)
+        }
+
+        Text {
             id: txt3
             text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
             color: Colors.mainText
