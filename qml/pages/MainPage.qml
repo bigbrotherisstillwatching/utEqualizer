@@ -251,7 +251,6 @@ Rectangle {
             anchors.fill: parent
  
             onClicked: {
-//                console.log("base mouse area pressed")
                 focus = true
             }
         }
@@ -1053,7 +1052,6 @@ Rectangle {
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
-//            horizontalAlignment: Text.AlignHCenter
             horizontalAlignment: Text.AlignLeft
             lineHeight: 1.2
             wrapMode: Text.WordWrap
@@ -1134,7 +1132,6 @@ Rectangle {
             lineHeight: 1.2
             horizontalAlignment: Text.AlignHCenter
             font.bold: false
-//            onLinkActivated: Qt.openUrlExternally(link)
             anchors.bottom: txt3.top
             bottomPadding: units.gu(2)
         }
