@@ -648,7 +648,7 @@ Rectangle {
             anchors.top: clmn1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
-            anchors.topMargin: units.gu(1)
+            anchors.topMargin: units.gu(2)
         }
         Qqc.Switch {
             id: drkmdswitch
@@ -657,7 +657,7 @@ Rectangle {
             anchors.top: clmn1.bottom
             anchors.right: parent.right
             anchors.rightMargin: units.gu(1)
-//            anchors.topMargin: units.gu(1)
+            anchors.topMargin: units.gu(1)
 
             onClicked: {
                 drkMd = checked
