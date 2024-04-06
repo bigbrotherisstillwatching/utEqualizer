@@ -652,7 +652,7 @@ Rectangle {
         }
         Qqc.Switch {
             id: drkmdswitch
-//            y: -15
+            y: -15
             checked: settings.darkMode
             anchors.top: clmn1.bottom
             anchors.right: parent.right
@@ -674,7 +674,7 @@ Rectangle {
             anchors.top: txt1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
-            anchors.topMargin: units.gu(1)
+            anchors.topMargin: units.gu(2)
             width: flick1.width / 2
             style: ActionBarStyle {
                 backgroundColor: "transparent"
@@ -693,7 +693,7 @@ Rectangle {
             anchors.top: txt1.bottom
             anchors.right: parent.right
             anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(1)
+            anchors.topMargin: units.gu(2)
             iconSource: "../../assets/load.svg"
             StyleHints {
                 defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
@@ -719,7 +719,7 @@ Rectangle {
             anchors.top: txt1.bottom
             anchors.right: bttn5.left
             anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(1)
+            anchors.topMargin: units.gu(2)
             iconName: "save"
             StyleHints {
                 defaultColor: bttn4.pressed ? "#32517F" : Colors.surfaceColor
