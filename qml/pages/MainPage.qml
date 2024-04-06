@@ -1073,7 +1073,7 @@ Rectangle {
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn1.right
             anchors.right: parent.right
-            anchors.leftMargin: units.gu(2)
+            anchors.leftMargin: units.gu(6)
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
             horizontalAlignment: Text.AlignLeft
@@ -1100,7 +1100,7 @@ Rectangle {
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn2.right
             anchors.right: parent.right
-            anchors.leftMargin: units.gu(2)
+            anchors.leftMargin: units.gu(6)
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(13)
             horizontalAlignment: Text.AlignLeft
