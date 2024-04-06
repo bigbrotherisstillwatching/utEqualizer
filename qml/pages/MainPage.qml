@@ -600,7 +600,7 @@ Rectangle {
                     }
                 }
             }
-            Row {
+/*            Row {
                 id: row3
                 anchors.horizontalCenter: clmn1.horizontalCenter
                 spacing: units.gu(25)
@@ -619,7 +619,7 @@ Rectangle {
                         txt2.text = i18n.tr("Please restart the app for the dark mode to take effect.")
                     }
                 }
-            }
+            }*/
             Text {
                  id: txt2
                  text: ""
@@ -641,13 +641,37 @@ Rectangle {
             }
         }
 
+        Text {
+            id: txt1
+            text: i18n.tr("Dark mode")
+            color: Colors.mainText
+            anchors.top: clmn1.bottom
+            anchors.left: parent.left
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
+        }
+        Qqc.Switch {
+            id: drkmdswitch
+            y: -15
+            checked: settings.darkMode
+            anchors.top: clmn1.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
+
+            onClicked: {
+                drkMd = checked
+                txt2.text = i18n.tr("Please restart the app for the dark mode to take effect.")
+            }
+        }
+
         TextField {
             id: txtfld1
             color: Colors.mainText
             text: settings.preset1name
             placeholderText: i18n.tr("Preset 1")
             hasClearButton: false
-            anchors.top: clmn1.bottom
+            anchors.top: txt1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(1)
