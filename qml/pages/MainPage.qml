@@ -657,7 +657,7 @@ Rectangle {
             anchors.top: clmn1.bottom
             anchors.right: parent.right
             anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(1)
+//            anchors.topMargin: units.gu(1)
 
             onClicked: {
                 drkMd = checked
@@ -674,7 +674,7 @@ Rectangle {
             anchors.top: txt1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
+            anchors.topMargin: units.gu(3)
             width: flick1.width / 2
             style: ActionBarStyle {
                 backgroundColor: "transparent"
@@ -693,7 +693,7 @@ Rectangle {
             anchors.top: txt1.bottom
             anchors.right: parent.right
             anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
+            anchors.topMargin: units.gu(3)
             iconSource: "../../assets/load.svg"
             StyleHints {
                 defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
@@ -719,7 +719,7 @@ Rectangle {
             anchors.top: txt1.bottom
             anchors.right: bttn5.left
             anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
+            anchors.topMargin: units.gu(3)
             iconName: "save"
             StyleHints {
                 defaultColor: bttn4.pressed ? "#32517F" : Colors.surfaceColor
