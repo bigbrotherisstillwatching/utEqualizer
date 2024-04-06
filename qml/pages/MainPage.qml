@@ -652,7 +652,7 @@ Rectangle {
         }
         Qqc.Switch {
             id: drkmdswitch
-            y: -15
+//            y: -15
             checked: settings.darkMode
             anchors.top: clmn1.bottom
             anchors.right: parent.right
@@ -690,7 +690,7 @@ Rectangle {
             id: bttn5
             height: units.gu(4)
             width: units.gu(4)
-            anchors.top: clmn1.bottom
+            anchors.top: txt1.bottom
             anchors.right: parent.right
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(1)
@@ -716,7 +716,7 @@ Rectangle {
             id: bttn4
             height: units.gu(4)
             width: units.gu(4)
-            anchors.top: clmn1.bottom
+            anchors.top: txt1.bottom
             anchors.right: bttn5.left
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(1)
