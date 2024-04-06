@@ -656,7 +656,7 @@ Rectangle {
             checked: settings.darkMode
             anchors.top: clmn1.bottom
             anchors.right: parent.right
-            anchors.rightMargin: units.gu(2)
+            anchors.rightMargin: units.gu(1)
 //            anchors.topMargin: units.gu(1)
 
             onClicked: {
