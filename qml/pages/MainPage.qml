@@ -170,7 +170,7 @@ Rectangle {
         process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_stop.sh"])
         eqswitch.checked = false
         eqsts = false
-        process8.start("/bin/bash",["-c", "/home/phablet/Downloads/vumeter/pulse-vumeter-main/pulse-vumeter-main/pulse-vumeter"])
+        process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/bin/pulse-vumeter"])
     }
 
     Component {
