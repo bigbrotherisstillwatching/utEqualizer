@@ -541,7 +541,7 @@ Rectangle {
                 id: prgrssbr
                 maximumValue: 1.00
                 minimumValue: 0.00
-                anchors.top: clmn1.bottom
+//                anchors.top: clmn1.bottom
 //                anchors.horizontalCenter: clmn1.horizontalCenter
             }
 
