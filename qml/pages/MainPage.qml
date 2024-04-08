@@ -64,6 +64,22 @@ Rectangle {
         id: process7
     }
 
+    Process {
+        id: process8
+
+        property real output
+
+        onStarted: print("Started")
+        onFinished: print("Closed")
+
+        onErrorOccurred: console.log("Error Occurred: ", error)
+
+        onReadyReadStandardOutput: {
+            output = process8.readAll()
+            prgrssbr.value = output
+        }
+    }
+
     Settings {
         id: settings
         property bool darkMode
@@ -144,6 +160,8 @@ Rectangle {
                 console.log("EQ is inactive");
             }
             console.log("Goodbye!");
+            // use py.close() or py.kill(0 or py.terminate() to kill the process
+            process8.terminate()
         }
     }
 
@@ -151,6 +169,7 @@ Rectangle {
         process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_stop.sh"])
         eqswitch.checked = false
         eqsts = false
+        process8.start("/bin/bash",["-c", "/home/phablet/Downloads/vumeter/pulse-vumeter-main/pulse-vumeter-main/pulse-vumeter"])
     }
 
     Component {
@@ -639,6 +658,18 @@ Rectangle {
                  width: clmn1.width
                  height: units.gu(5) - txt2.height
             }
+        }
+
+        ProgressBar {
+            id: prgrssbr
+            maximumValue: 1.00
+            minimumValue: 0.00
+            anchors.top: clmn1.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(2)
+//            width: flick1.width / 2
         }
 
         Text {
