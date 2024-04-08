@@ -661,7 +661,7 @@ Rectangle {
             }
         }
 
-        ProgressBar {
+        Qqc.ProgressBar {
             id: prgrssbr
             maximumValue: 1.00
             minimumValue: 0.00
