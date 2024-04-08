@@ -36,7 +36,6 @@ Rectangle {
     property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
     property alias drkMd: settings.darkMode
-//    property string command: "/home/phablet/Downloads/vumeter/pulse-vumeter-main/pulse-vumeter-main/pulse-vumeter"
 
     Process {
         id: process
@@ -71,7 +70,7 @@ Rectangle {
 
         property real output
 
-        onStarted: print("Started")
+        onStarted: print("pulse-vumeter started")
         onFinished: print("Closed")
 
         onErrorOccurred: console.log("Error Occurred: ", error)
@@ -161,8 +160,8 @@ Rectangle {
             } else if (settings.equalizerStatus === false) {
                 console.log("EQ is inactive");
             }
+            process8.kill()
             console.log("Goodbye!");
-            process8.terminate()
         }
     }
 
@@ -541,7 +540,6 @@ Rectangle {
                 id: prgrssbr
                 maximumValue: 1.00
                 minimumValue: 0.00
-//                anchors.top: clmn1.bottom
                 anchors.horizontalCenter: clmn1.horizontalCenter
             }
 
@@ -628,26 +626,6 @@ Rectangle {
                     }
                 }
             }
-/*            Row {
-                id: row3
-                anchors.horizontalCenter: clmn1.horizontalCenter
-                spacing: units.gu(25)
-                Text {
-                    id: txt1
-                    text: i18n.tr("Dark mode")
-                    color: Colors.mainText
-                }
-                Qqc.Switch {
-                    id: drkmdswitch
-                    y: -15
-                    checked: settings.darkMode
-
-                    onClicked: {
-                        drkMd = checked
-                        txt2.text = i18n.tr("Please restart the app for the dark mode to take effect.")
-                    }
-                }
-            }*/
             Text {
                  id: txt2
                  text: ""
@@ -668,14 +646,6 @@ Rectangle {
                  height: units.gu(5) - txt2.height
             }
         }
-
-/*        ProgressBar {
-            id: prgrssbr
-            maximumValue: 1.00
-            minimumValue: 0.00
-            anchors.top: clmn1.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
-        }*/
 
         Text {
             id: txt1
