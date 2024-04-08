@@ -663,8 +663,10 @@ Rectangle {
 
         Qqc.ProgressBar {
             id: prgrssbr
-            maximumValue: 1.00
-            minimumValue: 0.00
+//            maximumValue: 1.00
+//            minimumValue: 0.00
+            from: 0.00
+            to: 1.00
             anchors.top: clmn1.bottom
             anchors.left: parent.left
             anchors.right: parent.right
