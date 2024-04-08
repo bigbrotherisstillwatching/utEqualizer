@@ -9,7 +9,7 @@
             "desktop":  "utequalizer.desktop"
         }
     },
-    "version": "1.0.2",
+    "version": "1.0.3",
     "maintainer": "bbisw <140657673+bigbrotherisstillwatching@users.noreply.github.com>",
     "framework" : "@CLICK_FRAMEWORK@"
 }
