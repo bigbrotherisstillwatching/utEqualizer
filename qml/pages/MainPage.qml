@@ -23,7 +23,7 @@ import QtQuick.Controls 2.7 as Qqc
 import Process 1.0
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Styles 1.3
-import Process2 1.0
+//import Process2 1.0
 
 import "../colors"
 
@@ -36,7 +36,7 @@ Rectangle {
     property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
     property alias drkMd: settings.darkMode
-    property string command: "/home/phablet/Downloads/vumeter/pulse-vumeter-main/pulse-vumeter-main/pulse-vumeter"
+//    property string command: "/home/phablet/Downloads/vumeter/pulse-vumeter-main/pulse-vumeter-main/pulse-vumeter"
 
     Process {
         id: process
@@ -66,8 +66,8 @@ Rectangle {
         id: process7
     }
 
-    Process2 {
-        id: py
+    Process {
+        id: process8
 
         property real output
 
@@ -162,7 +162,7 @@ Rectangle {
                 console.log("EQ is inactive");
             }
             console.log("Goodbye!");
-            py.close()
+            process8.close()
         }
     }
 
@@ -170,8 +170,7 @@ Rectangle {
         process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_stop.sh"])
         eqswitch.checked = false
         eqsts = false
-        py.start("bash")
-        py.write(command)
+        process8.start("/bin/bash",["-c", "/home/phablet/Downloads/vumeter/pulse-vumeter-main/pulse-vumeter-main/pulse-vumeter"])
     }
 
     Component {
