@@ -23,6 +23,7 @@ import QtQuick.Controls 2.7 as Qqc
 import Process 1.0
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Styles 1.3
+import Process2 1.0
 
 import "../colors"
 
@@ -35,6 +36,7 @@ Rectangle {
     property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
     property alias drkMd: settings.darkMode
+    property string command: "/home/phablet/Downloads/vumeter/pulse-vumeter-main/pulse-vumeter-main/pulse-vumeter"
 
     Process {
         id: process
@@ -62,6 +64,22 @@ Rectangle {
 
     Process {
         id: process7
+    }
+
+    Process2 {
+        id: py
+
+        property real output
+
+        onStarted: print("Started")
+        onFinished: print("Closed")
+
+        onErrorOccurred: console.log("Error Occurred: ", error)
+
+        onReadyReadStandardOutput: {
+            output = py.readAll()
+            prgrssbr.value += output
+        }
     }
 
     Settings {
@@ -144,6 +162,7 @@ Rectangle {
                 console.log("EQ is inactive");
             }
             console.log("Goodbye!");
+            py.close()
         }
     }
 
@@ -151,6 +170,8 @@ Rectangle {
         process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_stop.sh"])
         eqswitch.checked = false
         eqsts = false
+        py.start("bash")
+        py.write(command)
     }
 
     Component {
@@ -639,6 +660,17 @@ Rectangle {
                  width: clmn1.width
                  height: units.gu(5) - txt2.height
             }
+        }
+
+        ProgressBar {
+            id: prgrssbr
+            maximumValue: 1.00
+            minimumValue: 0.00
+            anchors.top: clmn1.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(2)
         }
 
         Text {
