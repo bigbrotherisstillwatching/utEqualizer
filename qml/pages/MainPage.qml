@@ -78,7 +78,7 @@ Rectangle {
 
         onReadyReadStandardOutput: {
             output = process8.readAll()
-            prgrssbr.value += output
+            prgrssbr.value = output
         }
     }
 
@@ -670,7 +670,7 @@ Rectangle {
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            width: flick1.width
+//            width: flick1.width
         }
 
         Text {
