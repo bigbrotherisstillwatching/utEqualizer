@@ -21,7 +21,7 @@
 #include <QQuickView>
 #include <QtQml>
 #include "process.h"
-#include "cmd.h"
+//#include "cmd.h"
 
 int main(int argc, char *argv[])
 {
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     qDebug() << "Starting app from main.cpp";
 
     qmlRegisterType<Process>( "Process", 1, 0, "Process" );
-    qmlRegisterType<Process2>( "Process2", 1, 0, "Process2" );
+//    qmlRegisterType<Process2>( "Process2", 1, 0, "Process2" );
 
     QQuickView *view = new QQuickView();
     view->setSource(QUrl("qrc:/Main.qml"));
