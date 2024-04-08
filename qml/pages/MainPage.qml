@@ -537,6 +537,14 @@ Rectangle {
                 }
             }
 
+            ProgressBar {
+                id: prgrssbr
+                maximumValue: 1.00
+                minimumValue: 0.00
+                anchors.top: clmn1.bottom
+                anchors.horizontalCenter: clmn1.horizontalCenter
+            }
+
             Row {
                 id: row2
                 anchors.horizontalCenter: clmn1.horizontalCenter
@@ -661,20 +669,13 @@ Rectangle {
             }
         }
 
-        ProgressBar {
+/*        ProgressBar {
             id: prgrssbr
             maximumValue: 1.00
             minimumValue: 0.00
-//            from: 0.00
-//            to: 1.00
             anchors.top: clmn1.bottom
-//            anchors.left: parent.left
-//            anchors.right: parent.right
-            anchors.leftMargin: units.gu(2)
-//            anchors.topMargin: units.gu(2)
             anchors.horizontalCenter: parent.horizontalCenter
-//            width: flick1.width
-        }
+        }*/
 
         Text {
             id: txt1
