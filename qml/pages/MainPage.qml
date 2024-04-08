@@ -542,7 +542,7 @@ Rectangle {
                 maximumValue: 1.00
                 minimumValue: 0.00
 //                anchors.top: clmn1.bottom
-//                anchors.horizontalCenter: clmn1.horizontalCenter
+                anchors.horizontalCenter: clmn1.horizontalCenter
             }
 
             Row {
