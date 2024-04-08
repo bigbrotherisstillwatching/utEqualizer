@@ -162,7 +162,7 @@ Rectangle {
                 console.log("EQ is inactive");
             }
             console.log("Goodbye!");
-            process8.close()
+            process8.terminate()
         }
     }
 
@@ -670,6 +670,7 @@ Rectangle {
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
+            width: flick1.width
         }
 
         Text {
