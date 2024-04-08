@@ -668,10 +668,10 @@ Rectangle {
 //            from: 0.00
 //            to: 1.00
             anchors.top: clmn1.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
+//            anchors.left: parent.left
+//            anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
+//            anchors.topMargin: units.gu(2)
             anchors.horizontalCenter: parent.horizontalCenter
 //            width: flick1.width
         }
