@@ -77,7 +77,7 @@ Rectangle {
         onErrorOccurred: console.log("Error Occurred: ", error)
 
         onReadyReadStandardOutput: {
-            output = py.readAll()
+            output = process8.readAll()
             prgrssbr.value += output
         }
     }
