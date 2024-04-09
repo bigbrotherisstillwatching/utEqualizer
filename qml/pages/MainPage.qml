@@ -536,11 +536,25 @@ Rectangle {
                 }
             }
 
-            ProgressBar {
+            Qqc.ProgressBar {
                 id: prgrssbr
                 maximumValue: 1.00
                 minimumValue: 0.00
                 anchors.horizontalCenter: clmn1.horizontalCenter
+                style: Qqc.ProgressBarStyle {
+                    background: Rectangle {
+                        radius: 2
+                        color: "lightgray"
+                        border.color: "gray"
+                        border.width: 1
+                        implicitWidth: 200
+                        implicitHeight: 24
+                    }
+                    progress: Rectangle {
+                        color: "lightsteelblue"
+                        border.color: "steelblue"
+                    }
+                }
             }
 
             Row {
