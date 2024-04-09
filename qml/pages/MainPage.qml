@@ -23,7 +23,7 @@ import QtQuick.Controls 2.7 as Qqc
 import Process 1.0
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Styles 1.3
-import QtQuick.Controls.Styles 1.4 as QqcStls
+import QtQuick.Controls.Styles 2.7 as QqcStls
 
 import "../colors"
 
