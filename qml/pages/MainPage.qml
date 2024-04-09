@@ -258,7 +258,7 @@ Rectangle {
     Flickable {
         id: flick1
         anchors.top: header.bottom
-        contentHeight: clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + units.gu(70)
+        contentHeight: clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + units.gu(80)
         contentWidth: mainPage.width
         width: mainPage.width
         height: mainPage.height - header.height
@@ -1176,8 +1176,23 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
+            anchors.bottom: txt8.top
+            bottomPadding: units.gu(2)
+        }
+
+        Text {
+            id: txt8
+            text: i18n.tr("The pulse-vumeter binary was compiled from the source code found at <a href=\"https://github.com/Luciousdev/pulse-vumeter\">github.com</a>.")
+            color: Colors.mainText
+            wrapMode: Text.WordWrap
+            width: flick1.width
+            lineHeight: 1.2
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: true
+            onLinkActivated: Qt.openUrlExternally(link)
             anchors.bottom: parent.bottom
             bottomPadding: units.gu(2)
         }
+
     }
 }
