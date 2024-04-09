@@ -257,7 +257,7 @@ Rectangle {
     Flickable {
         id: flick1
         anchors.top: header.bottom
-        contentHeight: clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + units.gu(80)
+        contentHeight: clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + units.gu(90)
         contentWidth: mainPage.width
         width: mainPage.width
         height: mainPage.height - header.height
@@ -1138,7 +1138,7 @@ Rectangle {
 
         Text {
             id: txt6
-            text: i18n.tr("Save and load a preset. You can also give them a name. Apply the settings by clicking the change button or by activating the equalizer.")
+            text: i18n.tr("Save and load a preset. You can also give them a name (please don't forget to confirm with the return key). Apply the loaded equalizer settings by clicking the change button or by activating the equalizer.")
             color: Colors.mainText
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn4.right
