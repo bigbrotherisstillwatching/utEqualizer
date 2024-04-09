@@ -1177,6 +1177,12 @@ Rectangle {
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
             anchors.bottom: txt8.top
+//            anchors.top: lstitm1.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.leftMargin: units.gu(2)
+            anchors.rightMargin: units.gu(2)
+//            anchors.topMargin: units.gu(24)
             bottomPadding: units.gu(2)
         }
 
@@ -1191,6 +1197,10 @@ Rectangle {
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
             anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.leftMargin: units.gu(2)
+            anchors.rightMargin: units.gu(2)
             bottomPadding: units.gu(2)
         }
 
