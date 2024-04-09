@@ -553,7 +553,7 @@ Rectangle {
                     width: units.gu(4)
                     iconSource: "../../assets/change.svg"
                     StyleHints {
-                        defaultColor: chngbttn.pressed ? "32517F" : Colors.surfaceColor
+                        defaultColor: chngbttn.pressed ? "#32517F" : Colors.surfaceColor
                     }
                     onClicked: {
                         settings.equalizerControls1 = slide1.value.toFixed(1)
