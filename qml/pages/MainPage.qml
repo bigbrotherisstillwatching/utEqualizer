@@ -23,7 +23,6 @@ import QtQuick.Controls 2.7 as Qqc
 import Process 1.0
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Styles 1.3
-import QtQuick.Controls.Styles 2.7 as QqcStls
 
 import "../colors"
 
@@ -536,25 +535,11 @@ Rectangle {
                 }
             }
 
-            Qqc.ProgressBar {
+            ProgressBar {
                 id: prgrssbr
                 maximumValue: 1.00
                 minimumValue: 0.00
                 anchors.horizontalCenter: clmn1.horizontalCenter
-                style: QqcStls.ProgressBarStyle {
-                    background: Rectangle {
-                        radius: 2
-                        color: "lightgray"
-                        border.color: "gray"
-                        border.width: 1
-                        implicitWidth: 200
-                        implicitHeight: 24
-                    }
-                    progress: Rectangle {
-                        color: "lightsteelblue"
-                        border.color: "steelblue"
-                    }
-                }
             }
 
             Row {
