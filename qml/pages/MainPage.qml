@@ -334,11 +334,12 @@ Rectangle {
                             anchors.fill: slide1hndl
                             horizontalOffset: 3
                             verticalOffset: 3
-                            radius: 0
-                            samples: 1
+                            radius: 6
+                            samples: 13
                             color: "black"
                             source: slide1hndl
                             spread: 0
+                            cached: true
                         }
                     }
                     Label {
