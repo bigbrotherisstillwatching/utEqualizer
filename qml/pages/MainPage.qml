@@ -183,15 +183,15 @@ Rectangle {
             }
             Button {
                 id: bttn1
-                text: i18n.tr("Cancel")
+                text: bttn1.pressed ? i18n.tr("<font color=\"white\">Cancel</font>") : i18n.tr("<font color=\"black\">Cancel</font>")
                 onClicked: PopupUtils.close(dialog2)
                 StyleHints {
-                    defaultColor: bttn1.pressed ? "#292929" : "red"
+                    defaultColor: bttn1.pressed ? "#32517F" : "red"
                 }
             }
             Button {
                 id: bttn2
-                text: i18n.tr("Turn off equalizer")
+                text: bttn2.pressed ? i18n.tr("<font color=\"white\">Turn off equalizer</font>") : i18n.tr("<font color=\"black\">Turn off equalizer</font>")
                 onClicked: {
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
                     bttn3.enabled = true
@@ -199,7 +199,7 @@ Rectangle {
                     bttn1.enabled = false
                 }
                 StyleHints {
-                    defaultColor: bttn2.pressed ? "#292929" : "yellow"
+                    defaultColor: bttn2.pressed ? "#32517F" : "yellow"
                 }
             }
             Button {
@@ -210,7 +210,7 @@ Rectangle {
                     Qt.quit()
                 }
                 StyleHints {
-                    defaultColor: bttn3.pressed ? "#292929" : "green"
+                    defaultColor: bttn3.pressed ? "#32517F" : "green"
                 }
             }
         }
@@ -241,7 +241,7 @@ Rectangle {
                 id: clsbttn
                 height: units.gu(4)
                 width: units.gu(4)
-                iconName: "close"
+                iconSource: clsbttn.pressed ? "../../assets/close_pressed.svg" : (settings.darkMode ? "../../assets/close_darkmode.svg" : "../../assets/close_lightmode.svg")
                 anchors.right: hdrrec.right
                 y: 20
                 StyleHints {
