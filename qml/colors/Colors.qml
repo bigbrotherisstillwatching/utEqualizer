@@ -10,7 +10,7 @@ Item {
    }
 
    property color backgroundColor: settings.darkMode ? "#121212" : "white"
-   property color surfaceColor: settings.darkMode ? "#292929" : "white"
+   property color surfaceColor: settings.darkMode ? "#292929" : "#e2e2e2"
    property color surfaceColor2:  settings.darkMode ? "#3b3b3b" : "white"
    property color borderColor: settings.darkMode ? "#121212" : "#e3e3e3"
    property color highlightColor: settings.darkMode ? "#313131" : "gray"
