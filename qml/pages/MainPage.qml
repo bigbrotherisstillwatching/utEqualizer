@@ -323,8 +323,8 @@ Rectangle {
                             implicitHeight: 52
                             radius: 26
                             color: slide1.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-                            border.color: "#f1f1f1"
-                            border.width: 2
+                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            border.width: 4
                         }
                     }
                     Label {
