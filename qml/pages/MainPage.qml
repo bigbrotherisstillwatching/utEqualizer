@@ -330,6 +330,16 @@ Rectangle {
 //                            border.color: settings.darkMode ? "#808080" : "#e2e2e2"
                             border.width: 0
                         }
+                        DropShadow {
+                            anchors.fill: slide1hndl
+                            horizontalOffset: 3
+                            verticalOffset: 3
+                            radius: 0
+                            samples: 1
+                            color: "black"
+                            source: slide1hndl
+                            spread: 0
+                        }
                     }
                     Label {
                         width: parent.width
@@ -337,16 +347,6 @@ Rectangle {
                         text: "31Hz"
                         color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
-                    }
-                    DropShadow {
-                        anchors.fill: slide1hndl
-                        horizontalOffset: 3
-                        verticalOffset: 3
-                        radius: 0
-                        samples: 1
-                        color: "black"
-                        source: slide1hndl
-                        spread: 0
                     }
                 }
                 Column {
