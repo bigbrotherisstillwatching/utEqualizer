@@ -179,14 +179,14 @@ Rectangle {
             title: i18n.tr("<font color=\"white\">Quit</font>")
             text: i18n.tr("<font color=\"white\">Are you sure that you want to close the app?</font>")
             style: ActionBarStyle {
-                backgroundColor: Colors.surfaceColor2
+                backgroundColor: Colors.surfaceColor
             }
             Button {
                 id: bttn1
                 text: i18n.tr("Cancel")
                 onClicked: PopupUtils.close(dialog2)
                 StyleHints {
-                    defaultColor: bttn1.pressed ? Colors.surfaceColor : "red"
+                    defaultColor: bttn1.pressed ? "#292929" : "red"
                 }
             }
             Button {
@@ -199,7 +199,7 @@ Rectangle {
                     bttn1.enabled = false
                 }
                 StyleHints {
-                    defaultColor: bttn2.pressed ? Colors.surfaceColor : "yellow"
+                    defaultColor: bttn2.pressed ? "#292929" : "yellow"
                 }
             }
             Button {
@@ -210,7 +210,7 @@ Rectangle {
                     Qt.quit()
                 }
                 StyleHints {
-                    defaultColor: bttn3.pressed ? Colors.surfaceColor : "green"
+                    defaultColor: bttn3.pressed ? "#292929" : "green"
                 }
             }
         }
