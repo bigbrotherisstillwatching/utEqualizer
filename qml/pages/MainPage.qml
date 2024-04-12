@@ -205,13 +205,12 @@ Rectangle {
             Button {
                 id: bttn3
                 enabled: false
-                text: i18n.tr("Ok")
+                text: bttn3.pressed ? i18n.tr("<font color=\"white\">Ok</font>") : i18n.tr("<font color=\"black\">Ok</font>")
                 onClicked: {
                     Qt.quit()
                 }
                 StyleHints {
                     defaultColor: bttn3.pressed ? Colors.surfaceColor : "green"
-                    textColor: "blue"
                 }
             }
         }
