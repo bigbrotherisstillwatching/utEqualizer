@@ -15,7 +15,7 @@ Item {
    property color borderColor: settings.darkMode ? "#121212" : "#e3e3e3"
    property color highlightColor: settings.darkMode ? "#313131" : "gray"
 
-   property color mainText: settings.darkMode ? "#808080" : "#808080"
+   property color mainText: settings.darkMode ? "#808080" : "black"
    property color detailText: settings.darkMode ? "#acacac" : "gray"
    property color accentText: settings.darkMode ? "#538cc6" : "#336699"
 }
