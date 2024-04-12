@@ -308,12 +308,14 @@ Rectangle {
                             height: slide1.availableHeight
                             radius: 2
                             color: "#32517F"
+                            border.width: 0
 
                             Rectangle {
                                 implicitWidth: parent.width
                                 implicitHeight: slide1.visualPosition * parent.height
                                 color: settings.darkMode ? "#808080" : "#f1f1f1"
                                 radius: 2
+                                border.width: 0
                             }
                         }
                         handle: Rectangle {
@@ -359,12 +361,14 @@ Rectangle {
                             height: slide2.availableHeight
                             radius: 2
                             color: "#32517F"
+                            border.width: 0
 
                             Rectangle {
                                 implicitWidth: parent.width
                                 implicitHeight: slide2.visualPosition * parent.height
                                 color: settings.darkMode ? "#808080" : "#f1f1f1"
                                 radius: 2
+                                border.width: 0
                             }
                         }
                         handle: Rectangle {
@@ -410,12 +414,14 @@ Rectangle {
                             height: slide3.availableHeight
                             radius: 2
                             color: "#32517F"
+                            border.width: 0
 
                             Rectangle {
                                 implicitWidth: parent.width
                                 implicitHeight: slide3.visualPosition * parent.height
                                 color: settings.darkMode ? "#808080" : "#f1f1f1"
                                 radius: 2
+                                border.width: 0
                             }
                         }
                         handle: Rectangle {
@@ -461,12 +467,14 @@ Rectangle {
                             height: slide4.availableHeight
                             radius: 2
                             color: "#32517F"
+                            border.width: 0
 
                             Rectangle {
                                 implicitWidth: parent.width
                                 implicitHeight: slide4.visualPosition * parent.height
                                 color: settings.darkMode ? "#808080" : "#f1f1f1"
                                 radius: 2
+                                border.width: 0
                             }
                         }
                         handle: Rectangle {
@@ -512,12 +520,14 @@ Rectangle {
                             height: slide5.availableHeight
                             radius: 2
                             color: "#32517F"
+                            border.width: 0
 
                             Rectangle {
                                 implicitWidth: parent.width
                                 implicitHeight: slide5.visualPosition * parent.height
                                 color: settings.darkMode ? "#808080" : "#f1f1f1"
                                 radius: 2
+                                border.width: 0
                             }
                         }
                         handle: Rectangle {
@@ -563,12 +573,14 @@ Rectangle {
                             height: slide6.availableHeight
                             radius: 2
                             color: "#32517F"
+                            border.width: 0
 
                             Rectangle {
                                 implicitWidth: parent.width
                                 implicitHeight: slide6.visualPosition * parent.height
                                 color: settings.darkMode ? "#808080" : "#f1f1f1"
                                 radius: 2
+                                border.width: 0
                             }
                         }
                         handle: Rectangle {
@@ -614,12 +626,14 @@ Rectangle {
                             height: slide7.availableHeight
                             radius: 2
                             color: "#32517F"
+                            border.width: 0
 
                             Rectangle {
                                 implicitWidth: parent.width
                                 implicitHeight: slide7.visualPosition * parent.height
                                 color: settings.darkMode ? "#808080" : "#f1f1f1"
                                 radius: 2
+                                border.width: 0
                             }
                         }
                         handle: Rectangle {
@@ -665,12 +679,14 @@ Rectangle {
                             height: slide8.availableHeight
                             radius: 2
                             color: "#32517F"
+                            border.width: 0
 
                             Rectangle {
                                 implicitWidth: parent.width
                                 implicitHeight: slide8.visualPosition * parent.height
                                 color: settings.darkMode ? "#808080" : "#f1f1f1"
                                 radius: 2
+                                border.width: 0
                             }
                         }
                         handle: Rectangle {
@@ -716,12 +732,14 @@ Rectangle {
                             height: slide9.availableHeight
                             radius: 2
                             color: "#32517F"
+                            border.width: 0
 
                             Rectangle {
                                 implicitWidth: parent.width
                                 implicitHeight: slide9.visualPosition * parent.height
                                 color: settings.darkMode ? "#808080" : "#f1f1f1"
                                 radius: 2
+                                border.width: 0
                             }
                         }
                         handle: Rectangle {
@@ -767,12 +785,14 @@ Rectangle {
                             height: slide10.availableHeight
                             radius: 2
                             color: "#32517F"
+                            border.width: 0
 
                             Rectangle {
                                 implicitWidth: parent.width
                                 implicitHeight: slide10.visualPosition * parent.height
                                 color: settings.darkMode ? "#808080" : "#f1f1f1"
                                 radius: 2
+                                border.width: 0
                             }
                         }
                         handle: Rectangle {
