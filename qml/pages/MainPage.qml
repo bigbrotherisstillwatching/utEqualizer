@@ -312,17 +312,19 @@ Rectangle {
                             Rectangle {
                                 implicitWidth: parent.width
                                 implicitHeight: slide1.visualPosition * parent.height
-                                color: "#f1f1f1"
+                                color: settings.darkMode ? "#808080" : "#f1f1f1"
                                 radius: 2
                             }
                         }
                         handle: Rectangle {
                             x: slide1.leftPadding + (slide1.horizontal ? slide1.visualPosition * (slide1.availableWidth - width) : (slide1.availableWidth - width) / 2)
                             y: slide1.topPadding + (slide1.vertical ? slide1.visualPosition * (slide1.availableHeight - height) : (slide1.availableHeight - height) / 2)
-                            implicitWidth: 26
-                            implicitHeight: 26
-                            radius: 13
-                            color: slide1.pressed ? "#32517F" : "white"
+                            implicitWidth: 52
+                            implicitHeight: 52
+                            radius: 26
+                            color: slide1.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                            border.color: "#f1f1f1"
+                            border.width: 2
                         }
                     }
                     Label {
