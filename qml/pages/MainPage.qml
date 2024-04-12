@@ -332,8 +332,8 @@ Rectangle {
                         }
                         DropShadow {
                             anchors.fill: slide1hndl
-                            horizontalOffset: 3
-                            verticalOffset: 3
+                            horizontalOffset: 1
+                            verticalOffset: 1
                             radius: 6
                             samples: 13
                             color: "black"
