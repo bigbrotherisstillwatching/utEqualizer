@@ -180,7 +180,7 @@ Rectangle {
             title: i18n.tr("<font color=\"white\">Quit</font>")
             text: i18n.tr("<font color=\"white\">Are you sure that you want to close the app?</font>")
             style: ActionBarStyle {
-                backgroundColor: Colors.surfaceColor
+                backgroundColor: "#292929"
             }
             Button {
                 id: bttn1
@@ -222,20 +222,20 @@ Rectangle {
         title: "utEqualizer"
         z: 1
         StyleHints {
-            foregroundColor: Colors.mainText
-            backgroundColor: Colors.backgroundColor
-            dividerColor: Colors.mainText
+            foregroundColor: settings.darkMode ? "#808080" : "black"
+            backgroundColor: settings.darkMode ? "#121212" : "white"
+            dividerColor: settings.darkMode ? "#808080" : "black"
         }
         contents: Rectangle {
             id: hdrrec
             anchors.fill: parent
-            color: Colors.backgroundColor
+            color: settings.darkMode ? "#121212" : "white"
             Text {
                 id: hdrtxt
                 anchors.left: hdrrec.left
                 anchors.verticalCenter: hdrrec.verticalCenter
                 text: header.title
-                color: Colors.mainText
+                color: settings.darkMode ? "#808080" : "black"
                 font.pointSize: 40
             }
             Button {
@@ -289,7 +289,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: slide1.value
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                     Qqc.Slider {
@@ -305,7 +305,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: "31Hz"
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                 }
@@ -314,7 +314,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: slide2.value
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                     Qqc.Slider {
@@ -330,7 +330,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: "63Hz"
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                 }
@@ -339,7 +339,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: slide3.value
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                     Qqc.Slider {
@@ -355,7 +355,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: "125Hz"
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                 }
@@ -364,7 +364,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: slide4.value
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                     Qqc.Slider {
@@ -380,7 +380,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: "250Hz"
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                 }
@@ -389,7 +389,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: slide5.value
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                     Qqc.Slider {
@@ -405,7 +405,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: "500Hz"
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                 }
@@ -414,7 +414,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: slide6.value
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                     Qqc.Slider {
@@ -430,7 +430,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: "1kHz"
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                 }
@@ -439,7 +439,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: slide7.value
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                     Qqc.Slider {
@@ -455,7 +455,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: "2kHz"
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                 }
@@ -464,7 +464,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: slide8.value
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                     Qqc.Slider {
@@ -480,7 +480,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: "4kHz"
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                 }
@@ -489,7 +489,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: slide9.value
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                     Qqc.Slider {
@@ -505,7 +505,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: "8kHz"
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                 }
@@ -514,7 +514,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: slide10.value
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                     Qqc.Slider {
@@ -530,7 +530,7 @@ Rectangle {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         text: "16kHz"
-                        color: Colors.mainText
+                        color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
                     }
                 }
@@ -553,7 +553,7 @@ Rectangle {
                     width: units.gu(4)
                     iconSource: chngbttn.pressed ? "../../assets/change_pressed.svg" : (settings.darkMode ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg")
                     StyleHints {
-                        defaultColor: chngbttn.pressed ? "#32517F" : Colors.surfaceColor
+                        defaultColor: chngbttn.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
                     }
                     onClicked: {
                         settings.equalizerControls1 = slide1.value.toFixed(1)
@@ -600,7 +600,7 @@ Rectangle {
                     width: units.gu(4)
                     iconSource: rstbttn.pressed ? "../../assets/resetzero_pressed.svg" : (settings.darkMode ? "../../assets/resetzero_darkmode.svg" : "../../assets/resetzero_lightmode.svg")
                     StyleHints {
-                        defaultColor: rstbttn.pressed ? "#32517F" : Colors.surfaceColor
+                        defaultColor: rstbttn.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
                     }
                     onClicked: {
                         slide1.value = 0.0
@@ -650,7 +650,7 @@ Rectangle {
         Text {
             id: txt1
             text: i18n.tr("Dark mode")
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             anchors.top: clmn1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
@@ -673,7 +673,7 @@ Rectangle {
 
         TextField {
             id: txtfld1
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             text: settings.preset1name
             placeholderText: i18n.tr("Preset 1")
             hasClearButton: false
@@ -702,7 +702,7 @@ Rectangle {
             anchors.topMargin: units.gu(3)
             iconSource: bttn5.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
             StyleHints {
-                defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
+                defaultColor: bttn5.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
             }
             onClicked: {
                 slide1.value = settings.preset1equalizerControls1
@@ -728,7 +728,7 @@ Rectangle {
             anchors.topMargin: units.gu(3)
             iconSource: bttn4.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
             StyleHints {
-                defaultColor: bttn4.pressed ? "#32517F" : Colors.surfaceColor
+                defaultColor: bttn4.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
             }
             onClicked: {
                 settings.preset1equalizerControls1 = slide1.value.toFixed(1)
@@ -746,7 +746,7 @@ Rectangle {
 
         TextField {
             id: txtfld2
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             text: settings.preset2name
             placeholderText: i18n.tr("Preset 2")
             hasClearButton: false
@@ -775,7 +775,7 @@ Rectangle {
             anchors.topMargin: units.gu(2)
             iconSource: bttn7.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
             StyleHints {
-                defaultColor: bttn7.pressed ? "#32517F" : Colors.surfaceColor
+                defaultColor: bttn7.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
             }
             onClicked: {
                 slide1.value = settings.preset2equalizerControls1
@@ -819,7 +819,7 @@ Rectangle {
 
         TextField {
             id: txtfld3
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             text: settings.preset3name
             placeholderText: i18n.tr("Preset 3")
             hasClearButton: false
@@ -892,7 +892,7 @@ Rectangle {
 
         TextField {
             id: txtfld4
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             text: settings.preset4name
             placeholderText: i18n.tr("Preset 4")
             hasClearButton: false
@@ -965,7 +965,7 @@ Rectangle {
 
         TextField {
             id: txtfld5
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             text: settings.preset5name
             placeholderText: i18n.tr("Preset 5")
             hasClearButton: false
@@ -1040,8 +1040,8 @@ Rectangle {
             id: lstitm1
             height: lstitmlay1.height + (divider.visible ? divider.height : 0)
             color: Colors.backgroundColor
-            divider.colorFrom: Colors.mainText
-            divider.colorTo: Colors.mainText
+            divider.colorFrom: settings.darkMode ? "#808080" : "black"
+            divider.colorTo: settings.darkMode ? "#808080" : "black"
             anchors.top: txtfld5.bottom
             anchors.left: parent.left
             anchors.right: parent.right
@@ -1055,7 +1055,7 @@ Rectangle {
                     id: hlptxt
                     SlotsLayout.position: SlotsLayout.Leading
                     text: i18n.tr("Help")
-                    color: Colors.mainText
+                    color: settings.darkMode ? "#808080" : "black"
                     font.pointSize: 40
                 }
             }
@@ -1075,7 +1075,7 @@ Rectangle {
         Text {
             id: txt4
             text: i18n.tr("Apply equalizer changes, when it's already activated.")
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn1.right
             anchors.right: parent.right
@@ -1102,7 +1102,7 @@ Rectangle {
         Text {
             id: txt5
             text: i18n.tr("Reset all bars to 0.0.")
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn2.right
             anchors.right: parent.right
@@ -1140,7 +1140,7 @@ Rectangle {
         Text {
             id: txt6
             text: i18n.tr("Save and load a preset. You can also give them a name (please don't forget to confirm with the return key). Apply the loaded equalizer settings by clicking the change button or by activating the equalizer.")
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn4.right
             anchors.right: parent.right
@@ -1156,7 +1156,7 @@ Rectangle {
         Text {
             id: txt7
             text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
             lineHeight: 1.2
@@ -1169,7 +1169,7 @@ Rectangle {
         Text {
             id: txt3
             text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
             lineHeight: 1.2
@@ -1187,7 +1187,7 @@ Rectangle {
         Text {
             id: txt8
             text: i18n.tr("The pulse-vumeter binary was compiled from the source code found at <a href=\"https://github.com/Luciousdev/pulse-vumeter\">github.com</a>.")
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
             lineHeight: 1.2
