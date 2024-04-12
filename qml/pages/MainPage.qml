@@ -252,17 +252,6 @@ Rectangle {
                 onClicked: {
                     PopupUtils.open(dialog)
                 }
-                DropShadow {
-                    anchors.fill: clsbttn
-                    horizontalOffset: 1
-                    verticalOffset: 1
-                    radius: 6
-                    samples: 13
-                    color: "black"
-                    source: clsbttn
-                    spread: 0
-                    cached: true
-                }
             }
         }
     }
