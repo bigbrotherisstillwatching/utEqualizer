@@ -667,7 +667,7 @@ Rectangle {
 
             onClicked: {
                 drkMd = checked
-                txt2.text = i18n.tr("Please restart the app for the dark mode option change to take effect.")
+//                txt2.text = i18n.tr("Please restart the app for the dark mode option change to take effect.")
             }
         }
 
