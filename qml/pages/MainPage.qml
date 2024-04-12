@@ -246,7 +246,7 @@ Rectangle {
                 anchors.right: hdrrec.right
                 y: 20
                 StyleHints {
-                    defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
+                    defaultColor: clsbttn.pressed ? "red" : (settings.darkMode ? "#292929" : "#f1f1f1")
                 }
                 onClicked: {
                     PopupUtils.open(dialog)
@@ -801,7 +801,7 @@ Rectangle {
             anchors.topMargin: units.gu(2)
             iconSource: bttn6.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
             StyleHints {
-                defaultColor: bttn6.pressed ? "#32517F" : Colors.surfaceColor
+                defaultColor: bttn6.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
             }
             onClicked: {
                 settings.preset2equalizerControls1 = slide1.value.toFixed(1)
@@ -848,7 +848,7 @@ Rectangle {
             anchors.topMargin: units.gu(2)
             iconSource: bttn9.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
             StyleHints {
-                defaultColor: bttn9.pressed ? "#32517F" : Colors.surfaceColor
+                defaultColor: bttn9.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
             }
             onClicked: {
                 slide1.value = settings.preset3equalizerControls1
@@ -874,7 +874,7 @@ Rectangle {
             anchors.topMargin: units.gu(2)
             iconSource: bttn8.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
             StyleHints {
-                defaultColor: bttn8.pressed ? "#32517F" : Colors.surfaceColor
+                defaultColor: bttn8.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
             }
             onClicked: {
                 settings.preset3equalizerControls1 = slide1.value.toFixed(1)
@@ -921,7 +921,7 @@ Rectangle {
             anchors.topMargin: units.gu(2)
             iconSource: bttn11.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
             StyleHints {
-                defaultColor: bttn11.pressed ? "#32517F" : Colors.surfaceColor
+                defaultColor: bttn11.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
             }
             onClicked: {
                 slide1.value = settings.preset4equalizerControls1
@@ -947,7 +947,7 @@ Rectangle {
             anchors.topMargin: units.gu(2)
             iconSource: bttn10.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
             StyleHints {
-                defaultColor: bttn10.pressed ? "#32517F" : Colors.surfaceColor
+                defaultColor: bttn10.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
             }
             onClicked: {
                 settings.preset4equalizerControls1 = slide1.value.toFixed(1)
@@ -994,7 +994,7 @@ Rectangle {
             anchors.topMargin: units.gu(2)
             iconSource: bttn13.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
             StyleHints {
-                defaultColor: bttn13.pressed ? "#32517F" : Colors.surfaceColor
+                defaultColor: bttn13.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
             }
             onClicked: {
                 slide1.value = settings.preset5equalizerControls1
@@ -1020,7 +1020,7 @@ Rectangle {
             anchors.topMargin: units.gu(2)
             iconSource: bttn12.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
             StyleHints {
-                defaultColor: bttn12.pressed ? "#32517F" : Colors.surfaceColor
+                defaultColor: bttn12.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
             }
             onClicked: {
                 settings.preset5equalizerControls1 = slide1.value.toFixed(1)
@@ -1039,7 +1039,7 @@ Rectangle {
         ListItem {
             id: lstitm1
             height: lstitmlay1.height + (divider.visible ? divider.height : 0)
-            color: Colors.backgroundColor
+            color: color: settings.darkMode ? "#121212" : "white"
             divider.colorFrom: settings.darkMode ? "#808080" : "black"
             divider.colorTo: settings.darkMode ? "#808080" : "black"
             anchors.top: txtfld5.bottom
