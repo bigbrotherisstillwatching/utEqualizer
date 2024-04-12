@@ -313,7 +313,7 @@ Rectangle {
                             Rectangle {
                                 implicitWidth: parent.width
                                 implicitHeight: slide1.visualPosition * parent.height
-                                color: settings.darkMode ? "#808080" : "#d4d4d4"
+                                color: settings.darkMode ? "#808080" : "#e2e2e2"
                                 radius: 2
                                 border.width: 0
                             }
@@ -325,7 +325,7 @@ Rectangle {
                             implicitHeight: 52
                             radius: 26
                             color: slide1.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-                            border.color: settings.darkMode ? "#808080" : "#d4d4d4"
+                            border.color: settings.darkMode ? "#808080" : "#e2e2e2"
                             border.width: 4
                         }
                     }
