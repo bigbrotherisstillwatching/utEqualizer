@@ -211,7 +211,7 @@ Rectangle {
                 }
                 StyleHints {
                     defaultColor: bttn3.pressed ? Colors.surfaceColor : "green"
-                    foregroundColor: "blue"
+                    textColor: "blue"
                 }
             }
         }
