@@ -320,6 +320,7 @@ Rectangle {
                             }
                         }
                         handle: Rectangle {
+                            id: slide1hndl
                             x: slide1.leftPadding + (slide1.horizontal ? slide1.visualPosition * (slide1.availableWidth - width) : (slide1.availableWidth - width) / 2)
                             y: slide1.topPadding + (slide1.vertical ? slide1.visualPosition * (slide1.availableHeight - height) : (slide1.availableHeight - height) / 2)
                             implicitWidth: 52
@@ -336,6 +337,16 @@ Rectangle {
                         text: "31Hz"
                         color: settings.darkMode ? "#808080" : "black"
                         font.pointSize: 20
+                    }
+                    DropShadow {
+                        anchors.fill: slide1hndl
+                        horizontalOffset: 3
+                        verticalOffset: 3
+                        radius: 0
+                        samples: 1
+                        color: "black"
+                        source: slide1hndl
+                        spread: 0
                     }
                 }
                 Column {
