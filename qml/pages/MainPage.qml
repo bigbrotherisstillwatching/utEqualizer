@@ -1039,7 +1039,7 @@ Rectangle {
         ListItem {
             id: lstitm1
             height: lstitmlay1.height + (divider.visible ? divider.height : 0)
-            color: color: settings.darkMode ? "#121212" : "white"
+            color: settings.darkMode ? "#121212" : "white"
             divider.colorFrom: settings.darkMode ? "#808080" : "black"
             divider.colorTo: settings.darkMode ? "#808080" : "black"
             anchors.top: txtfld5.bottom
