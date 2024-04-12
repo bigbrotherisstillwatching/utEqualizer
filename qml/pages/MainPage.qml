@@ -1116,7 +1116,7 @@ Rectangle {
 
         Icon {
             id: hlpicn3
-            name: "save"
+            source: settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg"
             width: units.gu(4)
             height: units.gu(4)
             anchors.top: lstitm1.bottom
