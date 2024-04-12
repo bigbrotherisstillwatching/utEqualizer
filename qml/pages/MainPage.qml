@@ -550,7 +550,7 @@ Rectangle {
                     id: chngbttn
                     height: units.gu(4)
                     width: units.gu(4)
-                    iconSource: "../../assets/change.svg"
+                    iconSource: chngbttn.pressed ? "../../assets/change_pressed.svg" : (settings.darkMode ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg")
                     StyleHints {
                         defaultColor: chngbttn.pressed ? "#32517F" : Colors.surfaceColor
                     }
@@ -597,7 +597,7 @@ Rectangle {
                     id: rstbttn
                     height: units.gu(4)
                     width: units.gu(4)
-                    iconSource: "../../assets/resetzero.svg"
+                    iconSource: rstbttn.pressed ? "../../assets/resetzero_pressed.svg" : (settings.darkMode ? "../../assets/resetzero_darkmode.svg" : "../../assets/resetzero_lightmode.svg")
                     StyleHints {
                         defaultColor: rstbttn.pressed ? "#32517F" : Colors.surfaceColor
                     }
@@ -699,7 +699,7 @@ Rectangle {
             anchors.right: parent.right
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
-            iconSource: "../../assets/load.svg"
+            iconSource: bttn5.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
             StyleHints {
                 defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
             }
@@ -725,7 +725,7 @@ Rectangle {
             anchors.right: bttn5.left
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
-            iconName: "save"
+            iconSource: bttn4.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
             StyleHints {
                 defaultColor: bttn4.pressed ? "#32517F" : Colors.surfaceColor
             }
@@ -772,7 +772,7 @@ Rectangle {
             anchors.right: parent.right
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            iconSource: "../../assets/load.svg"
+            iconSource: bttn7.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
             StyleHints {
                 defaultColor: bttn7.pressed ? "#32517F" : Colors.surfaceColor
             }
@@ -798,7 +798,7 @@ Rectangle {
             anchors.right: bttn7.left
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            iconName: "save"
+            iconSource: bttn6.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
             StyleHints {
                 defaultColor: bttn6.pressed ? "#32517F" : Colors.surfaceColor
             }
@@ -845,7 +845,7 @@ Rectangle {
             anchors.right: parent.right
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            iconSource: "../../assets/load.svg"
+            iconSource: bttn9.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
             StyleHints {
                 defaultColor: bttn9.pressed ? "#32517F" : Colors.surfaceColor
             }
@@ -871,7 +871,7 @@ Rectangle {
             anchors.right: bttn9.left
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            iconName: "save"
+            iconSource: bttn8.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
             StyleHints {
                 defaultColor: bttn8.pressed ? "#32517F" : Colors.surfaceColor
             }
@@ -918,7 +918,7 @@ Rectangle {
             anchors.right: parent.right
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            iconSource: "../../assets/load.svg"
+            iconSource: bttn11.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
             StyleHints {
                 defaultColor: bttn11.pressed ? "#32517F" : Colors.surfaceColor
             }
@@ -944,7 +944,7 @@ Rectangle {
             anchors.right: bttn11.left
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            iconName: "save"
+            iconSource: bttn10.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
             StyleHints {
                 defaultColor: bttn10.pressed ? "#32517F" : Colors.surfaceColor
             }
@@ -991,7 +991,7 @@ Rectangle {
             anchors.right: parent.right
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            iconSource: "../../assets/load.svg"
+            iconSource: bttn13.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
             StyleHints {
                 defaultColor: bttn13.pressed ? "#32517F" : Colors.surfaceColor
             }
@@ -1017,7 +1017,7 @@ Rectangle {
             anchors.right: bttn13.left
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            iconName: "save"
+            iconSource: bttn12.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
             StyleHints {
                 defaultColor: bttn12.pressed ? "#32517F" : Colors.surfaceColor
             }
@@ -1062,7 +1062,7 @@ Rectangle {
 
         Icon {
             id: hlpicn1
-            source: "../../assets/change.svg"
+            source: settings.darkMode ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg"
             width: units.gu(4)
             height: units.gu(4)
             anchors.top: lstitm1.bottom
@@ -1089,7 +1089,7 @@ Rectangle {
 
         Icon {
             id: hlpicn2
-            source: "../../assets/resetzero.svg"
+            source: settings.darkMode ? "../../assets/resetzero_darkmode.svg" : "../../assets/resetzero_lightmode.svg"
             width: units.gu(4)
             height: units.gu(4)
             anchors.top: lstitm1.bottom
@@ -1127,7 +1127,7 @@ Rectangle {
 
         Icon {
             id: hlpicn4
-            source: "../../assets/load.svg"
+            source: settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg"
             width: units.gu(4)
             height: units.gu(4)
             anchors.top: lstitm1.bottom
