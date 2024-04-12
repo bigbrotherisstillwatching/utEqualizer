@@ -300,6 +300,30 @@ Rectangle {
                         orientation: Qt.Vertical
                         stepSize: 0.5
                         value: settings.equalizerControls1
+                        background: Rectangle {
+                            x: (slide1.width  - width) / 2
+                            y: (slide1.height - height) / 2
+                            implicitHeight: slide1.horizontal ? 1 : 200
+                            width: 4
+                            height: slide1.availableHeight
+                            radius: 2
+                            color: "#32517F"
+
+                            Rectangle {
+                                implicitWidth: parent.width
+                                implicitHeight: slide1.visualPosition * parent.height
+                                color: "#f1f1f1"
+                                radius: 2
+                            }
+                        }
+                        handle: Rectangle {
+                            x: slide1.leftPadding + (slide1.horizontal ? slide1.visualPosition * (slide1.availableWidth - width) : (slide1.availableWidth - width) / 2)
+                            y: slide1.topPadding + (slide1.vertical ? slide1.visualPosition * (slide1.availableHeight - height) : (slide1.availableHeight - height) / 2)
+                            implicitWidth: 26
+                            implicitHeight: 26
+                            radius: 13
+                            color: slide1.pressed ? "#32517F" : "white"
+                        }
                     }
                     Label {
                         width: parent.width
