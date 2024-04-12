@@ -30,7 +30,8 @@ Rectangle {
     id: mainPage
     anchors.fill: parent
 
-    color: Colors.backgroundColor
+//    color: Colors.backgroundColor
+    color: settings.darkMode ? "#121212" : "white"
 
     property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
