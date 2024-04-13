@@ -363,7 +363,7 @@ Rectangle {
                             implicitWidth: 52
                             implicitHeight: 52
                             radius: 26
-                            color: slide1.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
+                            color: slide1.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
 //                            border.color: settings.darkMode ? "#808080" : "#e2e2e2"
                             border.width: 0
                         }
@@ -428,7 +428,7 @@ Rectangle {
                             implicitWidth: 52
                             implicitHeight: 52
                             radius: 26
-                            color: slide2.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
+                            color: slide2.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
 //                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                             border.width: 0
                         }
@@ -493,7 +493,7 @@ Rectangle {
                             implicitWidth: 52
                             implicitHeight: 52
                             radius: 26
-                            color: slide3.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
+                            color: slide3.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
 //                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                             border.width: 0
                         }
@@ -558,7 +558,7 @@ Rectangle {
                             implicitWidth: 52
                             implicitHeight: 52
                             radius: 26
-                            color: slide4.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
+                            color: slide4.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
 //                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                             border.width: 0
                         }
@@ -623,7 +623,7 @@ Rectangle {
                             implicitWidth: 52
                             implicitHeight: 52
                             radius: 26
-                            color: slide5.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
+                            color: slide5.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
 //                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                             border.width: 0
                         }
@@ -688,7 +688,7 @@ Rectangle {
                             implicitWidth: 52
                             implicitHeight: 52
                             radius: 26
-                            color: slide6.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
+                            color: slide6.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
 //                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                             border.width: 0
                         }
@@ -753,7 +753,7 @@ Rectangle {
                             implicitWidth: 52
                             implicitHeight: 52
                             radius: 26
-                            color: slide7.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
+                            color: slide7.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
 //                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                             border.width: 0
                         }
@@ -818,7 +818,7 @@ Rectangle {
                             implicitWidth: 52
                             implicitHeight: 52
                             radius: 26
-                            color: slide8.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
+                            color: slide8.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
 //                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                             border.width: 0
                         }
@@ -883,7 +883,7 @@ Rectangle {
                             implicitWidth: 52
                             implicitHeight: 52
                             radius: 26
-                            color: slide9.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
+                            color: slide9.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
 //                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                             border.width: 0
                         }
@@ -948,7 +948,7 @@ Rectangle {
                             implicitWidth: 52
                             implicitHeight: 52
                             radius: 26
-                            color: slide10.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
+                            color: slide10.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
 //                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                             border.width: 0
                         }
