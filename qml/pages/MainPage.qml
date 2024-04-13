@@ -985,7 +985,7 @@ Rectangle {
                 id: row2
                 anchors.horizontalCenter: clmn1.horizontalCenter
                 spacing: units.gu(5)
-                Button {
+/*                Button {
                     id: chngbttn
                     height: units.gu(4)
                     width: units.gu(4)
@@ -1006,7 +1006,56 @@ Rectangle {
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                         process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_change.sh"])
                     }
+                }*/
+
+                Rectangle {
+                    id: chngbttn
+                    height: units.gu(4)
+                    width: units.gu(4)
+//                    anchors.right: hdrrec.right
+//                    y: 20
+//                    anchors.verticalCenter: hdrrec.verticalCenter
+                    radius: units.gu(1)
+                    color: chngbttnma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
                 }
+                Icon {
+                    id: chngbttnicn
+                    source: chngbttnma.pressed ? "../../assets/change_pressed.svg" : (settings.darkMode ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg")
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    anchors.centerIn: chngbttn
+                    z: 2
+                }
+                MouseArea {
+                    id: chngbttnma
+                    anchors.fill: chngbttn
+ 
+                    onClicked: {
+                        settings.equalizerControls1 = slide1.value.toFixed(1)
+                        settings.equalizerControls2 = slide2.value.toFixed(1)
+                        settings.equalizerControls3 = slide3.value.toFixed(1)
+                        settings.equalizerControls4 = slide4.value.toFixed(1)
+                        settings.equalizerControls5 = slide5.value.toFixed(1)
+                        settings.equalizerControls6 = slide6.value.toFixed(1)
+                        settings.equalizerControls7 = slide7.value.toFixed(1)
+                        settings.equalizerControls8 = slide8.value.toFixed(1)
+                        settings.equalizerControls9 = slide9.value.toFixed(1)
+                        settings.equalizerControls10 = slide10.value.toFixed(1)
+                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_change.sh"])
+                    }
+                }
+                DropShadow {
+                    anchors.fill: chngbttn
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: chngbttn
+                    spread: 0
+                    cached: true
+                }
+
                 Qqc.Switch {
                     id: eqswitch
                     y: 5
