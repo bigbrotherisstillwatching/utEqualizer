@@ -268,6 +268,7 @@ Rectangle {
                 width: units.gu(4)
                 height: units.gu(4)
                 anchors.centerIn: clsbttn
+                z: 2
             }
             MouseArea {
                 id: clsbttnma
