@@ -261,7 +261,7 @@ Rectangle {
 //                y: 20
                 anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
-                color: clsbttnma.pressed ? "red" : (settings.darkMode ? "#292929" : "#f1f1f1")
+                color: clsbttnma.pressed ? "red" : (settings.darkMode ? "#292929" : "white")
             }
             Icon {
                 id: clsbttnicn
