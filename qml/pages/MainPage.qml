@@ -239,7 +239,7 @@ Rectangle {
                 color: settings.darkMode ? "#808080" : "black"
                 font.pointSize: 40
             }
-            Button {
+/*            Button {
                 id: clsbttn
                 height: units.gu(4)
                 width: units.gu(4)
@@ -252,6 +252,41 @@ Rectangle {
                 onClicked: {
                     PopupUtils.open(dialog)
                 }
+            }*/
+            Rectangle {
+                id: clsbttn
+                height: units.gu(4)
+                width: units.gu(4)
+                anchors.right: hdrrec.right
+                y: 20
+                radius: unit.gu(1)
+                color: clsbttnma.pressed ? "red" : (settings.darkMode ? "#292929" : "#f1f1f1")
+            }
+            Icon {
+                id: clsbttnicn
+                source: settings.darkMode ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg"
+                width: units.gu(4)
+                height: units.gu(4)
+                anchors.centerIn: clsbttn
+            }
+            MouseArea {
+                id: clsbttnma
+                anchors.fill: clsbttn
+ 
+                onClicked: {
+                    PopupUtils.open(dialog)
+                }
+            }
+            DropShadow {
+                anchors.fill: clsbttn
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: clsbttn
+                spread: 0
+                cached: true
             }
         }
     }
