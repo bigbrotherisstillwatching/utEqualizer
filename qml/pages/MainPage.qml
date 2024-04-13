@@ -259,7 +259,7 @@ Rectangle {
                 width: units.gu(4)
                 anchors.right: hdrrec.right
                 y: 20
-                radius: unit.gu(1)
+                radius: units.gu(1)
                 color: clsbttnma.pressed ? "red" : (settings.darkMode ? "#292929" : "#f1f1f1")
             }
             Icon {
