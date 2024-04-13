@@ -264,7 +264,7 @@ Rectangle {
             }
             Icon {
                 id: clsbttnicn
-                source: clsbttnma.pressed ? "../../assets/close_darkmode.svg" : (settings.darkMode ? "../../assets/close_darkmode.svg" : "../../assets/close_lightmode.svg"
+                source: clsbttnma.pressed ? "../../assets/close_darkmode.svg" : (settings.darkMode ? "../../assets/close_darkmode.svg" : "../../assets/close_lightmode.svg")
                 width: units.gu(4)
                 height: units.gu(4)
                 anchors.centerIn: clsbttn
