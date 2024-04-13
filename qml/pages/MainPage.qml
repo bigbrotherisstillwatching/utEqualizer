@@ -1056,6 +1056,7 @@ Rectangle {
                         spread: 0
                         cached: true
                     }
+                }
 
 /*                Qqc.Switch {
                     id: eqswitch
