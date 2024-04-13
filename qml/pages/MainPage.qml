@@ -1058,7 +1058,7 @@ Rectangle {
                     }
                 }
 
-/*                Qqc.Switch {
+                Qqc.Switch {
                     id: eqswitch
                     y: 5
                     onClicked: {
@@ -1083,7 +1083,7 @@ Rectangle {
                         }
                     }
                 }
-                Button {
+/*                Button {
                     id: rstbttn
                     height: units.gu(4)
                     width: units.gu(4)
