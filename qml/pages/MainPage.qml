@@ -258,7 +258,7 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 anchors.right: hdrrec.right
-                y: 20
+                y: 25
                 radius: units.gu(1)
                 color: clsbttnma.pressed ? "red" : (settings.darkMode ? "#292929" : "#f1f1f1")
             }
