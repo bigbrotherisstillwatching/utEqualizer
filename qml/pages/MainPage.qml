@@ -1083,7 +1083,7 @@ Rectangle {
                         }
                     }
                 }
-/*                Button {
+                Button {
                     id: rstbttn
                     height: units.gu(4)
                     width: units.gu(4)
@@ -1113,7 +1113,7 @@ Rectangle {
                         settings.equalizerControls9 = slide9.value.toFixed(1)
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                     }
-                }*/
+                }
             }
             Text {
                  id: txt2
