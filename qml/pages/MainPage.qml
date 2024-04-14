@@ -1044,7 +1044,7 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: prgrssbr.bottom
             anchors.topMargin: units.gu(3)
-            y: 5
+//            y: 5
             onClicked: {
                 if (settings.equalizerStatus === true) {
                     process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
@@ -1067,6 +1067,70 @@ Rectangle {
                 }
             }
         }
+
+        Item {
+            anchors.top: prgrssbr.bottom
+            anchors.left: eqswitch.right
+            anchors.leftMargin: units.gu(5)
+            anchors.topMargin: units.gu(3)
+            Rectangle {
+                id: rstbttn
+                height: units.gu(4)
+                width: units.gu(4)
+//                anchors.right: hdrrec.right
+//                y: 20
+//                anchors.verticalCenter: hdrrec.verticalCenter
+                radius: units.gu(1)
+                color: rstbttnma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+            }
+            Icon {
+                id: rstbttnicn
+                source: rstbttnma.pressed ? "../../assets/resetzero_pressed.svg" : (settings.darkMode ? "../../assets/resetzero_darkmode.svg" : "../../assets/resetzero_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: rstbttn
+                z: 2
+            }
+            MouseArea {
+                id: rstbttnma
+                anchors.fill: rstbttn
+ 
+                onClicked: {
+                    slide1.value = 0.0
+                    slide2.value = 0.0
+                    slide3.value = 0.0
+                    slide4.value = 0.0
+                    slide5.value = 0.0
+                    slide6.value = 0.0
+                    slide7.value = 0.0
+                    slide8.value = 0.0
+                    slide9.value = 0.0
+                    slide10.value = 0.0
+                    settings.equalizerControls1 = slide1.value.toFixed(1)
+                    settings.equalizerControls2 = slide2.value.toFixed(1)
+                    settings.equalizerControls3 = slide3.value.toFixed(1)
+                    settings.equalizerControls4 = slide4.value.toFixed(1)
+                    settings.equalizerControls5 = slide5.value.toFixed(1)
+                    settings.equalizerControls6 = slide6.value.toFixed(1)
+                    settings.equalizerControls7 = slide7.value.toFixed(1)
+                    settings.equalizerControls8 = slide8.value.toFixed(1)
+                    settings.equalizerControls9 = slide9.value.toFixed(1)
+                    settings.equalizerControls10 = slide10.value.toFixed(1)
+                }
+            }
+            DropShadow {
+                anchors.fill: rstbttn
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: rstbttn
+                spread: 0
+                cached: true
+            }
+        }
+
     }
 }
 /*            Button {
