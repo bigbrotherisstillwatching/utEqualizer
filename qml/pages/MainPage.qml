@@ -1035,7 +1035,7 @@ Rectangle {
                 }
             }*/
 
-            Qqc.Switch {
+/*            Qqc.Switch {
                 id: eqswitch
                 anchors.horizontalCenter: parent.horizontalCenter
                 y: 5
@@ -1060,7 +1060,7 @@ Rectangle {
                         txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
                     }
                 }
-            }
+            }*/
 /*            Button {
                 id: rstbttn
                 height: units.gu(4)
