@@ -952,15 +952,17 @@ Rectangle {
                 }
             }
         }
+
+        ProgressBar {
+            id: prgrssbr
+            maximumValue: 1.00
+            minimumValue: 0.00
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: row1.bottom
+            anchors.topMargin: units.gu(3)
+        }
     }
 }
-
-/*            ProgressBar {
-                id: prgrssbr
-                maximumValue: 1.00
-                minimumValue: 0.00
-                anchors.horizontalCenter: parent.horizontalCenter
-            }*/
 
 /*                Button {
                     id: chngbttn
