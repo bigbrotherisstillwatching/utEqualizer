@@ -296,7 +296,7 @@ Rectangle {
     Flickable {
         id: flick1
         anchors.top: header.bottom
-        contentHeight: clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + units.gu(90)
+        contentHeight: /*clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + */units.gu(300)
         contentWidth: mainPage.width
         width: mainPage.width
         height: mainPage.height - header.height
