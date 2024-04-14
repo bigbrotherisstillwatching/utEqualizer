@@ -986,9 +986,10 @@ Rectangle {
                 }*/
 
         Item {
+            id: itm1
             anchors.top: prgrssbr.bottom
-            anchors.right: eqswitch.left
-            anchors.rightMargin: units.gu(5)
+            anchors.right: itm2.left
+            anchors.rightMargin: units.gu(14)
             anchors.topMargin: units.gu(3)
             Rectangle {
                 id: chngbttn
@@ -1069,6 +1070,7 @@ Rectangle {
         }
 
         Item {
+            id: itm2
             anchors.top: prgrssbr.bottom
             anchors.left: eqswitch.right
             anchors.leftMargin: units.gu(5)
