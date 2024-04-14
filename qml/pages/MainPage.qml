@@ -31,7 +31,6 @@ Rectangle {
     id: mainPage
     anchors.fill: parent
 
-//    color: Colors.backgroundColor
     color: settings.darkMode ? "#121212" : "white"
 
     property var padding: units.gu(1)
@@ -239,26 +238,11 @@ Rectangle {
                 color: settings.darkMode ? "#808080" : "black"
                 font.pointSize: 40
             }
-/*            Button {
-                id: clsbttn
-                height: units.gu(4)
-                width: units.gu(4)
-                iconSource: clsbttn.pressed ? "../../assets/close_pressed.svg" : (settings.darkMode ? "../../assets/close_darkmode.svg" : "../../assets/close_lightmode.svg")
-                anchors.right: hdrrec.right
-                y: 20
-                StyleHints {
-                    defaultColor: clsbttn.pressed ? "red" : (settings.darkMode ? "#292929" : "#f1f1f1")
-                }
-                onClicked: {
-                    PopupUtils.open(dialog)
-                }
-            }*/
             Rectangle {
                 id: clsbttn
                 height: units.gu(4)
                 width: units.gu(4)
                 anchors.right: hdrrec.right
-//                y: 20
                 anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: clsbttnma.pressed ? "red" : (settings.darkMode ? "#292929" : "white")
@@ -311,12 +295,6 @@ Rectangle {
                 focus = true
             }
         }
-
-/*        Column {
-            id: clmn1
-            topPadding: units.gu(3)
-            spacing: units.gu(3)
-            width: flick1.width*/
 
         Row {
             id: row1
@@ -973,19 +951,15 @@ Rectangle {
                     font.pointSize: 20
                 }
             }
-//            }
+        }
 
-            ProgressBar {
+/*            ProgressBar {
                 id: prgrssbr
                 maximumValue: 1.00
                 minimumValue: 0.00
                 anchors.horizontalCenter: parent.horizontalCenter
-            }
+            }*/
 
-//            Row {
-//                id: row2
-//                anchors.horizontalCenter: clmn1.horizontalCenter
-//                spacing: units.gu(5)
 /*                Button {
                     id: chngbttn
                     height: units.gu(4)
