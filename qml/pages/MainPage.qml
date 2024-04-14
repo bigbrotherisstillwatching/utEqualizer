@@ -312,276 +312,277 @@ Rectangle {
             }
         }
 
-        Column {
+/*        Column {
             id: clmn1
             topPadding: units.gu(3)
             spacing: units.gu(3)
-            width: flick1.width
+            width: flick1.width*/
 
-            Row {
-                id: row1
-                spacing: 1
-                anchors.horizontalCenter: clmn1.horizontalCenter
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide1.value
-                        color: settings.darkMode ? "#808080" : "black"
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide1
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls1
-                        background: Rectangle {
-                            x: (slide1.width  - width) / 2
-                            y: (slide1.height - height) / 2
-                            implicitHeight: slide1.horizontal ? 1 : 200
-                            width: 4
-                            height: slide1.availableHeight
+        Row {
+            id: row1
+            spacing: 1
+            anchors.horizontalCenter: parent.horizontalCenter
+            topPadding: units.gu(3)
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide1.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide1
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls1
+                    background: Rectangle {
+                        x: (slide1.width  - width) / 2
+                        y: (slide1.height - height) / 2
+                        implicitHeight: slide1.horizontal ? 1 : 200
+                        width: 4
+                        height: slide1.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
+
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide1.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
                             radius: 2
-                            color: "#32517F"
                             border.width: 0
-
-                            Rectangle {
-                                implicitWidth: parent.width
-                                implicitHeight: slide1.visualPosition * parent.height
-                                color: settings.darkMode ? "#808080" : "#f1f1f1"
-                                radius: 2
-                                border.width: 0
-                            }
-                        }
-                        handle: Rectangle {
-                            id: slide1hndl
-                            x: slide1.leftPadding + (slide1.horizontal ? slide1.visualPosition * (slide1.availableWidth - width) : (slide1.availableWidth - width) / 2)
-                            y: slide1.topPadding + (slide1.vertical ? slide1.visualPosition * (slide1.availableHeight - height) : (slide1.availableHeight - height) / 2)
-                            implicitWidth: 52
-                            implicitHeight: 52
-                            radius: 26
-                            color: slide1.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                            border.color: settings.darkMode ? "#808080" : "#e2e2e2"
-                            border.width: 0
-                        }
-                        DropShadow {
-                            anchors.fill: slide1hndl
-                            horizontalOffset: 1
-                            verticalOffset: 1
-                            radius: 6
-                            samples: 13
-                            color: "black"
-                            source: slide1hndl
-                            spread: 0
-                            cached: true
                         }
                     }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "31Hz"
-                        color: settings.darkMode ? "#808080" : "black"
-                        font.pointSize: 20
+                    handle: Rectangle {
+                        id: slide1hndl
+                        x: slide1.leftPadding + (slide1.horizontal ? slide1.visualPosition * (slide1.availableWidth - width) : (slide1.availableWidth - width) / 2)
+                        y: slide1.topPadding + (slide1.vertical ? slide1.visualPosition * (slide1.availableHeight - height) : (slide1.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide1.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+//                        border.color: settings.darkMode ? "#808080" : "#e2e2e2"
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide1hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide1hndl
+                        spread: 0
+                        cached: true
                     }
                 }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide2.value
-                        color: settings.darkMode ? "#808080" : "black"
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide2
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls2
-                        background: Rectangle {
-                            x: (slide2.width  - width) / 2
-                            y: (slide2.height - height) / 2
-                            implicitHeight: slide2.horizontal ? 1 : 200
-                            width: 4
-                            height: slide2.availableHeight
-                            radius: 2
-                            color: "#32517F"
-                            border.width: 0
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "31Hz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide2.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide2
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls2
+                    background: Rectangle {
+                        x: (slide2.width  - width) / 2
+                        y: (slide2.height - height) / 2
+                        implicitHeight: slide2.horizontal ? 1 : 200
+                        width: 4
+                        height: slide2.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
 
-                            Rectangle {
-                                implicitWidth: parent.width
-                                implicitHeight: slide2.visualPosition * parent.height
-                                color: settings.darkMode ? "#808080" : "#f1f1f1"
-                                radius: 2
-                                border.width: 0
-                            }
-                        }
-                        handle: Rectangle {
-                            id: slide2hndl
-                            x: slide2.leftPadding + (slide2.horizontal ? slide2.visualPosition * (slide2.availableWidth - width) : (slide2.availableWidth - width) / 2)
-                            y: slide2.topPadding + (slide2.vertical ? slide2.visualPosition * (slide2.availableHeight - height) : (slide2.availableHeight - height) / 2)
-                            implicitWidth: 52
-                            implicitHeight: 52
-                            radius: 26
-                            color: slide2.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide2.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
                             border.width: 0
                         }
-                        DropShadow {
-                            anchors.fill: slide2hndl
-                            horizontalOffset: 1
-                            verticalOffset: 1
-                            radius: 6
-                            samples: 13
-                            color: "black"
-                            source: slide2hndl
-                            spread: 0
-                            cached: true
-                        }
                     }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "63Hz"
-                        color: settings.darkMode ? "#808080" : "black"
-                        font.pointSize: 20
+                    handle: Rectangle {
+                        id: slide2hndl
+                        x: slide2.leftPadding + (slide2.horizontal ? slide2.visualPosition * (slide2.availableWidth - width) : (slide2.availableWidth - width) / 2)
+                        y: slide2.topPadding + (slide2.vertical ? slide2.visualPosition * (slide2.availableHeight - height) : (slide2.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide2.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+//                        border.color: settings.darkMode ? "#808080" : "#f1f1f1"
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide2hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide2hndl
+                        spread: 0
+                        cached: true
                     }
                 }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide3.value
-                        color: settings.darkMode ? "#808080" : "black"
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide3
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls3
-                        background: Rectangle {
-                            x: (slide3.width  - width) / 2
-                            y: (slide3.height - height) / 2
-                            implicitHeight: slide3.horizontal ? 1 : 200
-                            width: 4
-                            height: slide3.availableHeight
-                            radius: 2
-                            color: "#32517F"
-                            border.width: 0
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "63Hz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide3.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide3
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls3
+                    background: Rectangle {
+                        x: (slide3.width  - width) / 2
+                        y: (slide3.height - height) / 2
+                        implicitHeight: slide3.horizontal ? 1 : 200
+                        width: 4
+                        height: slide3.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
 
-                            Rectangle {
-                                implicitWidth: parent.width
-                                implicitHeight: slide3.visualPosition * parent.height
-                                color: settings.darkMode ? "#808080" : "#f1f1f1"
-                                radius: 2
-                                border.width: 0
-                            }
-                        }
-                        handle: Rectangle {
-                            id: slide3hndl
-                            x: slide3.leftPadding + (slide3.horizontal ? slide3.visualPosition * (slide3.availableWidth - width) : (slide3.availableWidth - width) / 2)
-                            y: slide3.topPadding + (slide3.vertical ? slide3.visualPosition * (slide3.availableHeight - height) : (slide3.availableHeight - height) / 2)
-                            implicitWidth: 52
-                            implicitHeight: 52
-                            radius: 26
-                            color: slide3.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide3.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
                             border.width: 0
                         }
-                        DropShadow {
-                            anchors.fill: slide3hndl
-                            horizontalOffset: 1
-                            verticalOffset: 1
-                            radius: 6
-                            samples: 13
-                            color: "black"
-                            source: slide3hndl
-                            spread: 0
-                            cached: true
-                        }
                     }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "125Hz"
-                        color: settings.darkMode ? "#808080" : "black"
-                        font.pointSize: 20
+                    handle: Rectangle {
+                        id: slide3hndl
+                        x: slide3.leftPadding + (slide3.horizontal ? slide3.visualPosition * (slide3.availableWidth - width) : (slide3.availableWidth - width) / 2)
+                        y: slide3.topPadding + (slide3.vertical ? slide3.visualPosition * (slide3.availableHeight - height) : (slide3.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide3.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+//                        border.color: settings.darkMode ? "#808080" : "#f1f1f1"
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide3hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide3hndl
+                        spread: 0
+                        cached: true
                     }
                 }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide4.value
-                        color: settings.darkMode ? "#808080" : "black"
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide4
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls4
-                        background: Rectangle {
-                            x: (slide4.width  - width) / 2
-                            y: (slide4.height - height) / 2
-                            implicitHeight: slide4.horizontal ? 1 : 200
-                            width: 4
-                            height: slide4.availableHeight
-                            radius: 2
-                            color: "#32517F"
-                            border.width: 0
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "125Hz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide4.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide4
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls4
+                    background: Rectangle {
+                        x: (slide4.width  - width) / 2
+                        y: (slide4.height - height) / 2
+                        implicitHeight: slide4.horizontal ? 1 : 200
+                        width: 4
+                        height: slide4.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
 
-                            Rectangle {
-                                implicitWidth: parent.width
-                                implicitHeight: slide4.visualPosition * parent.height
-                                color: settings.darkMode ? "#808080" : "#f1f1f1"
-                                radius: 2
-                                border.width: 0
-                            }
-                        }
-                        handle: Rectangle {
-                            id: slide4hndl
-                            x: slide4.leftPadding + (slide4.horizontal ? slide4.visualPosition * (slide4.availableWidth - width) : (slide4.availableWidth - width) / 2)
-                            y: slide4.topPadding + (slide4.vertical ? slide4.visualPosition * (slide4.availableHeight - height) : (slide4.availableHeight - height) / 2)
-                            implicitWidth: 52
-                            implicitHeight: 52
-                            radius: 26
-                            color: slide4.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                            border.color: settings.darkMode ? "#808080" : "#f1f1f1"
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide4.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
                             border.width: 0
                         }
-                        DropShadow {
-                            anchors.fill: slide4hndl
-                            horizontalOffset: 1
-                            verticalOffset: 1
-                            radius: 6
-                            samples: 13
-                            color: "black"
-                            source: slide4hndl
-                            spread: 0
-                            cached: true
-                        }
                     }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "250Hz"
-                        color: settings.darkMode ? "#808080" : "black"
-                        font.pointSize: 20
+                    handle: Rectangle {
+                        id: slide4hndl
+                        x: slide4.leftPadding + (slide4.horizontal ? slide4.visualPosition * (slide4.availableWidth - width) : (slide4.availableWidth - width) / 2)
+                        y: slide4.topPadding + (slide4.vertical ? slide4.visualPosition * (slide4.availableHeight - height) : (slide4.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide4.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+//                        border.color: settings.darkMode ? "#808080" : "#f1f1f1"
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide4hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide4hndl
+                        spread: 0
+                        cached: true
                     }
                 }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "250Hz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+            }
                 Column {
                     Label {
                         width: parent.width
