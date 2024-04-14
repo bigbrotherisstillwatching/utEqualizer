@@ -1073,7 +1073,7 @@ Rectangle {
             id: itm2
             anchors.top: prgrssbr.bottom
             anchors.right: parent.right
-            anchors.rightMargin: units.gu(12.5)
+            anchors.rightMargin: units.gu(16.5)
             anchors.topMargin: units.gu(3)
             Rectangle {
                 id: rstbttn
