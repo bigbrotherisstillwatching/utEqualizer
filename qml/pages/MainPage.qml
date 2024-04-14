@@ -961,8 +961,6 @@ Rectangle {
             anchors.top: row1.bottom
             anchors.topMargin: units.gu(3)
         }
-    }
-}
 
 /*                Button {
                     id: chngbttn
@@ -987,84 +985,88 @@ Rectangle {
                     }
                 }*/
 
-/*            Item {
-                anchors.right: eqswitch.left
-                anchors.rightMargin: units.gu(5)
-                Rectangle {
-                    id: chngbttn
-                    height: units.gu(4)
-                    width: units.gu(4)
-//                    anchors.right: hdrrec.right
-//                    y: 20
-//                    anchors.verticalCenter: hdrrec.verticalCenter
-                    radius: units.gu(1)
-                    color: chngbttnma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-                }
-                Icon {
-                    id: chngbttnicn
-                    source: chngbttnma.pressed ? "../../assets/change_pressed.svg" : (settings.darkMode ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg")
-                    width: units.gu(3)
-                    height: units.gu(3)
-                    anchors.centerIn: chngbttn
-                    z: 2
-                }
-                MouseArea {
-                    id: chngbttnma
-                    anchors.fill: chngbttn
+        Item {
+            anchors.top: prgrssbr.bottom
+            anchors.right: eqswitch.left
+            anchors.rightMargin: units.gu(5)
+            anchors.topMargin: units.gu(3)
+            Rectangle {
+                id: chngbttn
+                height: units.gu(4)
+                width: units.gu(4)
+//                anchors.right: hdrrec.right
+//                y: 20
+//                anchors.verticalCenter: hdrrec.verticalCenter
+                radius: units.gu(1)
+                color: chngbttnma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+            }
+            Icon {
+                id: chngbttnicn
+                source: chngbttnma.pressed ? "../../assets/change_pressed.svg" : (settings.darkMode ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: chngbttn
+                z: 2
+            }
+            MouseArea {
+                id: chngbttnma
+                anchors.fill: chngbttn
  
-                    onClicked: {
-                        settings.equalizerControls1 = slide1.value.toFixed(1)
-                        settings.equalizerControls2 = slide2.value.toFixed(1)
-                        settings.equalizerControls3 = slide3.value.toFixed(1)
-                        settings.equalizerControls4 = slide4.value.toFixed(1)
-                        settings.equalizerControls5 = slide5.value.toFixed(1)
-                        settings.equalizerControls6 = slide6.value.toFixed(1)
-                        settings.equalizerControls7 = slide7.value.toFixed(1)
-                        settings.equalizerControls8 = slide8.value.toFixed(1)
-                        settings.equalizerControls9 = slide9.value.toFixed(1)
-                        settings.equalizerControls10 = slide10.value.toFixed(1)
-                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_change.sh"])
-                    }
-                }
-                DropShadow {
-                    anchors.fill: chngbttn
-                    horizontalOffset: 1
-                    verticalOffset: 1
-                    radius: 6
-                    samples: 13
-                    color: "black"
-                    source: chngbttn
-                    spread: 0
-                    cached: true
-                }
-            }*/
-
-/*            Qqc.Switch {
-                id: eqswitch
-                anchors.horizontalCenter: parent.horizontalCenter
-                y: 5
                 onClicked: {
-                    if (settings.equalizerStatus === true) {
-                        process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
-                        eqsts = checked
-                        txt2.text = ""
-                    } else if (settings.equalizerStatus === false) {
-                        settings.equalizerControls1 = slide1.value.toFixed(1)
-                        settings.equalizerControls2 = slide2.value.toFixed(1)
-                        settings.equalizerControls3 = slide3.value.toFixed(1)
-                        settings.equalizerControls4 = slide4.value.toFixed(1)
-                        settings.equalizerControls5 = slide5.value.toFixed(1)
-                        settings.equalizerControls6 = slide6.value.toFixed(1)
-                        settings.equalizerControls7 = slide7.value.toFixed(1)
-                        settings.equalizerControls8 = slide8.value.toFixed(1)
-                        settings.equalizerControls9 = slide9.value.toFixed(1)
-                        settings.equalizerControls10 = slide10.value.toFixed(1)
-                        process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_start.sh"])
-                        eqsts = checked
-                        txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
-                    }
+                    settings.equalizerControls1 = slide1.value.toFixed(1)
+                    settings.equalizerControls2 = slide2.value.toFixed(1)
+                    settings.equalizerControls3 = slide3.value.toFixed(1)
+                    settings.equalizerControls4 = slide4.value.toFixed(1)
+                    settings.equalizerControls5 = slide5.value.toFixed(1)
+                    settings.equalizerControls6 = slide6.value.toFixed(1)
+                    settings.equalizerControls7 = slide7.value.toFixed(1)
+                    settings.equalizerControls8 = slide8.value.toFixed(1)
+                    settings.equalizerControls9 = slide9.value.toFixed(1)
+                    settings.equalizerControls10 = slide10.value.toFixed(1)
+                    process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_change.sh"])
                 }
-            }*/
+            }
+            DropShadow {
+                anchors.fill: chngbttn
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: chngbttn
+                spread: 0
+                cached: true
+            }
+        }
+
+        Qqc.Switch {
+            id: eqswitch
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 5
+            onClicked: {
+                if (settings.equalizerStatus === true) {
+                    process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
+                    eqsts = checked
+                    txt2.text = ""
+                } else if (settings.equalizerStatus === false) {
+                    settings.equalizerControls1 = slide1.value.toFixed(1)
+                    settings.equalizerControls2 = slide2.value.toFixed(1)
+                    settings.equalizerControls3 = slide3.value.toFixed(1)
+                    settings.equalizerControls4 = slide4.value.toFixed(1)
+                    settings.equalizerControls5 = slide5.value.toFixed(1)
+                    settings.equalizerControls6 = slide6.value.toFixed(1)
+                    settings.equalizerControls7 = slide7.value.toFixed(1)
+                    settings.equalizerControls8 = slide8.value.toFixed(1)
+                    settings.equalizerControls9 = slide9.value.toFixed(1)
+                    settings.equalizerControls10 = slide10.value.toFixed(1)
+                    process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_start.sh"])
+                    eqsts = checked
+                    txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
+                }
+            }
+        }
+    }
+}
 /*            Button {
                 id: rstbttn
                 height: units.gu(4)
