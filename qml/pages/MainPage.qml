@@ -952,6 +952,8 @@ Rectangle {
                 }
             }
         }
+    }
+}
 
 /*            ProgressBar {
                 id: prgrssbr
@@ -1668,6 +1670,5 @@ Rectangle {
             anchors.rightMargin: units.gu(2)
             bottomPadding: units.gu(2)
         }
-
-    }*/
-}
+    }
+}*/
