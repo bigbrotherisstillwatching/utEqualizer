@@ -2144,6 +2144,7 @@ Rectangle {
                     text: i18n.tr("Help")
                     color: settings.darkMode ? "#808080" : "black"
                     font.pointSize: 40
+                    height: parent.height
                     bottomPadding: units.gu(0.5)
                 }
             }
