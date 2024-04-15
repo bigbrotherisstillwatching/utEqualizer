@@ -1216,10 +1216,8 @@ Rectangle {
 //                txt2.text = i18n.tr("Please restart the app for the dark mode option change to take effect.")
             }
         }
-    }
-}
 
-/*        TextField {
+        TextField {
             id: txtfld1
             color: settings.darkMode ? "#808080" : "black"
             text: settings.preset1name
@@ -1240,7 +1238,117 @@ Rectangle {
             }
         }
 
-        Button {
+        Item {
+            id: itm3
+            anchors.top: txt1.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(6)
+            anchors.topMargin: units.gu(3)
+            Rectangle {
+                id: bttn5
+                height: units.gu(4)
+                width: units.gu(4)
+//                anchors.right: hdrrec.right
+//                y: 20
+//                anchors.verticalCenter: hdrrec.verticalCenter
+                radius: units.gu(1)
+                color: bttn5.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+            }
+            Icon {
+                id: bttn5icn
+                source: bttn5.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn5
+                z: 2
+            }
+            MouseArea {
+                id: bttn5ma
+                anchors.fill: bttn5
+ 
+                onClicked: {
+                    slide1.value = settings.preset1equalizerControls1
+                    slide2.value = settings.preset1equalizerControls2
+                    slide3.value = settings.preset1equalizerControls3
+                    slide4.value = settings.preset1equalizerControls4
+                    slide5.value = settings.preset1equalizerControls5
+                    slide6.value = settings.preset1equalizerControls6
+                    slide7.value = settings.preset1equalizerControls7
+                    slide8.value = settings.preset1equalizerControls8
+                    slide9.value = settings.preset1equalizerControls9
+                    slide10.value = settings.preset1equalizerControls10
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn5
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn5
+                spread: 0
+                cached: true
+            }
+        }
+
+        Item {
+            id: itm4
+            anchors.top: txt1.bottom
+            anchors.right: bttn5.left
+            anchors.rightMargin: units.gu(6)
+            anchors.topMargin: units.gu(3)
+            Rectangle {
+                id: bttn4
+                height: units.gu(4)
+                width: units.gu(4)
+//                anchors.right: hdrrec.right
+//                y: 20
+//                anchors.verticalCenter: hdrrec.verticalCenter
+                radius: units.gu(1)
+                color: bttn4.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+            }
+            Icon {
+                id: bttn4icn
+                source: bttn4.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn4
+                z: 2
+            }
+            MouseArea {
+                id: bttn4ma
+                anchors.fill: bttn4
+ 
+                onClicked: {
+                    settings.preset1equalizerControls1 = slide1.value.toFixed(1)
+                    settings.preset1equalizerControls2 = slide2.value.toFixed(1)
+                    settings.preset1equalizerControls3 = slide3.value.toFixed(1)
+                    settings.preset1equalizerControls4 = slide4.value.toFixed(1)
+                    settings.preset1equalizerControls5 = slide5.value.toFixed(1)
+                    settings.preset1equalizerControls6 = slide6.value.toFixed(1)
+                    settings.preset1equalizerControls7 = slide7.value.toFixed(1)
+                    settings.preset1equalizerControls8 = slide8.value.toFixed(1)
+                    settings.preset1equalizerControls9 = slide9.value.toFixed(1)
+                    settings.preset1equalizerControls10 = slide10.value.toFixed(1)
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn4
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn4
+                spread: 0
+                cached: true
+            }
+        }
+    }
+}
+
+/*        Button {
             id: bttn5
             height: units.gu(4)
             width: units.gu(4)
@@ -1264,9 +1372,9 @@ Rectangle {
                 slide9.value = settings.preset1equalizerControls9
                 slide10.value = settings.preset1equalizerControls10
             }
-        }
+        }*/
 
-        Button {
+/*        Button {
             id: bttn4
             height: units.gu(4)
             width: units.gu(4)
@@ -1290,9 +1398,9 @@ Rectangle {
                 settings.preset1equalizerControls9 = slide9.value.toFixed(1)
                 settings.preset1equalizerControls10 = slide10.value.toFixed(1)
             }
-        }
+        }*/
 
-        TextField {
+/*        TextField {
             id: txtfld2
             color: settings.darkMode ? "#808080" : "black"
             text: settings.preset2name
