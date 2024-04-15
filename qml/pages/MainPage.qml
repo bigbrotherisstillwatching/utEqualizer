@@ -1133,8 +1133,6 @@ Rectangle {
             }
         }
 
-    }
-}
 /*            Button {
                 id: rstbttn
                 height: units.gu(4)
@@ -1166,53 +1164,62 @@ Rectangle {
                     settings.equalizerControls10 = slide10.value.toFixed(1)
                 }
             }*/
-//        }
-/*            Text {
-                 id: txt2
-                 text: ""
-                 color: "red"
-                 anchors.horizontalCenter: parent.horizontalCenter
-                 wrapMode: Text.WordWrap
-                 width: parent.width
-                 lineHeight: 1.2
-                 horizontalAlignment: Text.AlignHCenter
-                 leftPadding: units.gu(3)
-                 rightPadding: units.gu(3)
-            }
-            Rectangle {
-                 id: plchldrrec
-                 color: "transparent"
-                 anchors.horizontalCenter: clmn1.horizontalCenter
-                 width: parent.width
-                 height: units.gu(5) - txt2.height
-            }
+
+        Text {
+            id: txt2
+            text: ""
+            color: "red"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: prgrssbr.bottom
+            anchors.right: parent.right
+            anchors.left: parent.left
+            anchors.topMargin: units.gu(10)
+            wrapMode: Text.WordWrap
+            width: parent.width
+            lineHeight: 1.2
+            horizontalAlignment: Text.AlignHCenter
+            leftPadding: units.gu(3)
+            rightPadding: units.gu(3)
+        }
+        Rectangle {
+            id: plchldrrec
+            color: "transparent"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: txt2.bottom
+            anchors.right: parent.right
+            anchors.left: parent.left
+            anchors.topMargin: units.gu(3)
+            width: parent.width
+            height: units.gu(5) - txt2.height
         }
 
         Text {
             id: txt1
             text: i18n.tr("Dark mode")
             color: settings.darkMode ? "#808080" : "black"
-            anchors.top: clmn1.bottom
+            anchors.top: plchldrrec.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
+            anchors.topMargin: units.gu(3)
         }
         Qqc.Switch {
             id: drkmdswitch
             y: -15
             checked: settings.darkMode
-            anchors.top: clmn1.bottom
+            anchors.top: plchldrrec.bottom
             anchors.right: parent.right
             anchors.rightMargin: units.gu(1)
-            anchors.topMargin: units.gu(1)
+            anchors.topMargin: units.gu(3)
 
             onClicked: {
                 drkMd = checked
 //                txt2.text = i18n.tr("Please restart the app for the dark mode option change to take effect.")
             }
         }
+    }
+}
 
-        TextField {
+/*        TextField {
             id: txtfld1
             color: settings.darkMode ? "#808080" : "black"
             text: settings.preset1name
