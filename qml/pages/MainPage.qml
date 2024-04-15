@@ -1252,11 +1252,11 @@ Rectangle {
 //                y: 20
 //                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
-                color: bttn5.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: bttn5ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
             Icon {
                 id: bttn5icn
-                source: bttn5.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                source: bttn5ma.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: bttn5
@@ -1306,11 +1306,11 @@ Rectangle {
 //                y: 20
 //                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
-                color: bttn4.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: bttn4ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
             Icon {
                 id: bttn4icn
-                source: bttn4.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                source: bttn4ma.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: bttn4
@@ -1345,8 +1345,6 @@ Rectangle {
                 cached: true
             }
         }
-    }
-}
 
 /*        Button {
             id: bttn5
@@ -1400,7 +1398,7 @@ Rectangle {
             }
         }*/
 
-/*        TextField {
+        TextField {
             id: txtfld2
             color: settings.darkMode ? "#808080" : "black"
             text: settings.preset2name
@@ -1421,7 +1419,117 @@ Rectangle {
             }
         }
 
-        Button {
+        Item {
+            id: itm5
+            anchors.top: itm3.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(2)
+            anchors.topMargin: units.gu(2)
+            Rectangle {
+                id: bttn7
+                height: units.gu(4)
+                width: units.gu(4)
+//                anchors.right: hdrrec.right
+//                y: 20
+//                anchors.verticalCenter: hdrrec.verticalCenter
+                radius: units.gu(1)
+                color: bttn7ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+            }
+            Icon {
+                id: bttn7icn
+                source: bttn7ma.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn7
+                z: 2
+            }
+            MouseArea {
+                id: bttn7ma
+                anchors.fill: bttn7
+ 
+                onClicked: {
+                    slide1.value = settings.preset2equalizerControls1
+                    slide2.value = settings.preset2equalizerControls2
+                    slide3.value = settings.preset2equalizerControls3
+                    slide4.value = settings.preset2equalizerControls4
+                    slide5.value = settings.preset2equalizerControls5
+                    slide6.value = settings.preset2equalizerControls6
+                    slide7.value = settings.preset2equalizerControls7
+                    slide8.value = settings.preset2equalizerControls8
+                    slide9.value = settings.preset2equalizerControls9
+                    slide10.value = settings.preset2equalizerControls10
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn7
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn7
+                spread: 0
+                cached: true
+            }
+        }
+
+        Item {
+            id: itm6
+            anchors.top: itm4.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(12)
+            anchors.topMargin: units.gu(2)
+            Rectangle {
+                id: bttn6
+                height: units.gu(4)
+                width: units.gu(4)
+//                anchors.right: hdrrec.right
+//                y: 20
+//                anchors.verticalCenter: hdrrec.verticalCenter
+                radius: units.gu(1)
+                color: bttn6ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+            }
+            Icon {
+                id: bttn6icn
+                source: bttn6ma.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn6
+                z: 2
+            }
+            MouseArea {
+                id: bttn6ma
+                anchors.fill: bttn6
+ 
+                onClicked: {
+                    settings.preset2equalizerControls1 = slide1.value.toFixed(1)
+                    settings.preset2equalizerControls2 = slide2.value.toFixed(1)
+                    settings.preset2equalizerControls3 = slide3.value.toFixed(1)
+                    settings.preset2equalizerControls4 = slide4.value.toFixed(1)
+                    settings.preset2equalizerControls5 = slide5.value.toFixed(1)
+                    settings.preset2equalizerControls6 = slide6.value.toFixed(1)
+                    settings.preset2equalizerControls7 = slide7.value.toFixed(1)
+                    settings.preset2equalizerControls8 = slide8.value.toFixed(1)
+                    settings.preset2equalizerControls9 = slide9.value.toFixed(1)
+                    settings.preset2equalizerControls10 = slide10.value.toFixed(1)
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn6
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn6
+                spread: 0
+                cached: true
+            }
+        }
+    }
+}
+
+/*        Button {
             id: bttn7
             height: units.gu(4)
             width: units.gu(4)
@@ -1445,9 +1553,9 @@ Rectangle {
                 slide9.value = settings.preset2equalizerControls9
                 slide10.value = settings.preset2equalizerControls10
             }
-        }
+        }*/
 
-        Button {
+/*        Button {
             id: bttn6
             height: units.gu(4)
             width: units.gu(4)
