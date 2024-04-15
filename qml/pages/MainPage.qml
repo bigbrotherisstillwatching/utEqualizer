@@ -1423,8 +1423,8 @@ Rectangle {
             id: itm5
             anchors.top: itm3.bottom
             anchors.right: parent.right
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
+            anchors.rightMargin: units.gu(6)
+            anchors.topMargin: units.gu(6)
             Rectangle {
                 id: bttn7
                 height: units.gu(4)
@@ -1478,7 +1478,7 @@ Rectangle {
             anchors.top: itm4.bottom
             anchors.right: parent.right
             anchors.rightMargin: units.gu(12)
-            anchors.topMargin: units.gu(2)
+            anchors.topMargin: units.gu(6)
             Rectangle {
                 id: bttn6
                 height: units.gu(4)
