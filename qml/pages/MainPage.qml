@@ -2120,7 +2120,7 @@ Rectangle {
                 settings.preset5equalizerControls9 = slide9.value.toFixed(1)
                 settings.preset5equalizerControls10 = slide10.value.toFixed(1)
             }
-        }
+        }*/
 
         ListItem {
             id: lstitm1
