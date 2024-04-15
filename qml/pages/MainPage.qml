@@ -2146,7 +2146,7 @@ Rectangle {
                     font.pointSize: 40
                     height: parent.height
                     verticalAlignment: Text.AlignVCenter
-                    bottomPadding: units.gu(2)
+                    bottomPadding: units.gu(3)
                 }
             }
         }
