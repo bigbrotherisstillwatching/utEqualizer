@@ -2144,7 +2144,7 @@ Rectangle {
                     text: i18n.tr("Help")
                     color: settings.darkMode ? "#808080" : "black"
                     font.pointSize: 40
-                    anchors.verticalCenter: lstitm1.verticalCenter
+                    anchors.verticalCenter: parent.verticalCenter
                 }
             }
         }
