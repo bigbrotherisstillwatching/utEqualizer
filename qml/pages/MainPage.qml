@@ -1577,7 +1577,7 @@ Rectangle {
                 settings.preset2equalizerControls9 = slide9.value.toFixed(1)
                 settings.preset2equalizerControls10 = slide10.value.toFixed(1)
             }
-        }
+        }*/
 
         TextField {
             id: txtfld3
