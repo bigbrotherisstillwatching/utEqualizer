@@ -2095,8 +2095,6 @@ Rectangle {
                 cached: true
             }
         }
-    }
-}
 
 /*        Button {
             id: bttn12
@@ -2290,4 +2288,4 @@ Rectangle {
             bottomPadding: units.gu(2)
         }
     }
-}*/
+}
