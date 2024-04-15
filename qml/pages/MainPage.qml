@@ -1171,8 +1171,8 @@ Rectangle {
             color: "red"
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: prgrssbr.bottom
-            anchors.right: parent.right
-            anchors.left: parent.left
+//            anchors.right: parent.right
+//            anchors.left: parent.left
             anchors.topMargin: units.gu(10)
             wrapMode: Text.WordWrap
             width: parent.width
@@ -1186,8 +1186,8 @@ Rectangle {
             color: "transparent"
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: txt2.bottom
-            anchors.right: parent.right
-            anchors.left: parent.left
+//            anchors.right: parent.right
+//            anchors.left: parent.left
             anchors.topMargin: units.gu(3)
             width: parent.width
             height: units.gu(5) - txt2.height
@@ -1295,8 +1295,8 @@ Rectangle {
         Item {
             id: itm4
             anchors.top: txt1.bottom
-            anchors.right: bttn5.left
-            anchors.rightMargin: units.gu(6)
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(12)
             anchors.topMargin: units.gu(3)
             Rectangle {
                 id: bttn4
