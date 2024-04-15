@@ -2125,7 +2125,7 @@ Rectangle {
         ListItem {
             id: lstitm1
 //            height: lstitmlay1.height + (divider.visible ? divider.height : 0)
-            height: header.height + (divider.visible ? divider.height : 0)
+            height: header.height + divider.height
             color: settings.darkMode ? "#121212" : "white"
             divider.colorFrom: settings.darkMode ? "#808080" : "black"
             divider.colorTo: settings.darkMode ? "#808080" : "black"
@@ -2144,7 +2144,7 @@ Rectangle {
                     text: i18n.tr("Help")
                     color: settings.darkMode ? "#808080" : "black"
                     font.pointSize: 40
-                    anchors.verticalCenter: parent.verticalCenter
+                    y: -units.gu(0.5)
                 }
             }
         }
