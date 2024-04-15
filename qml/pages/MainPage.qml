@@ -1209,7 +1209,7 @@ Rectangle {
             anchors.top: plchldrrec.bottom
             anchors.right: parent.right
             anchors.rightMargin: units.gu(1)
-            anchors.topMargin: units.gu(3)
+            anchors.topMargin: units.gu(2)
 
             onClicked: {
                 drkMd = checked
