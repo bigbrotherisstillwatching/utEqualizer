@@ -160,7 +160,7 @@ Rectangle {
             } else if (settings.equalizerStatus === false) {
                 console.log("EQ is inactive");
             }
-            process8.kill()
+//            process8.kill()
             console.log("Goodbye!");
         }
     }
@@ -169,7 +169,7 @@ Rectangle {
         process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
         eqswitch.checked = false
         eqsts = false
-        process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/bin/pulse-vumeter"])
+//        process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/bin/pulse-vumeter"])
     }
 
     Component {
@@ -198,7 +198,7 @@ Rectangle {
                     bttn3.enabled = true
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     bttn1.enabled = false
-                    process8.kill()
+//                    process8.kill()
                 }
                 StyleHints {
                     defaultColor: bttn2.pressed ? "#32517F" : "yellow"
@@ -281,7 +281,7 @@ Rectangle {
     Flickable {
         id: flick1
         anchors.top: header.bottom
-        contentHeight: /*clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + */units.gu(200)
+        contentHeight: /*clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + */units.gu(175)
         contentWidth: mainPage.width
         width: mainPage.width
         height: mainPage.height - header.height
@@ -1052,6 +1052,7 @@ Rectangle {
                     process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
                     eqsts = checked
                     txt2.text = ""
+                    process8.kill()
                 } else if (settings.equalizerStatus === false) {
                     settings.equalizerControls1 = slide1.value.toFixed(1)
                     settings.equalizerControls2 = slide2.value.toFixed(1)
@@ -1066,6 +1067,7 @@ Rectangle {
                     process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_start.sh"])
                     eqsts = checked
                     txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
+                    process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/bin/pulse-vumeter"])
                 }
             }
         }
