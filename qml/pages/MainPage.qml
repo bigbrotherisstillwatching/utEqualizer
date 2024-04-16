@@ -1050,11 +1050,11 @@ Rectangle {
 //            y: 5
             onClicked: {
                 if (settings.equalizerStatus === true) {
+                    prgrssbr.value = 0                    
                     process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
                     eqsts = checked
                     txt2.text = ""
                     process8.kill()
-                    prgrssbr.value = 0
                 } else if (settings.equalizerStatus === false) {
                     settings.equalizerControls1 = slide1.value.toFixed(1)
                     settings.equalizerControls2 = slide2.value.toFixed(1)
