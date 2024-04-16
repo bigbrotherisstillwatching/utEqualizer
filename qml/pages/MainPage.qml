@@ -37,6 +37,17 @@ Rectangle {
     property alias eqsts: settings.equalizerStatus
     property alias drkMd: settings.darkMode
 
+    Timer {
+        id: timer
+    }
+
+    function delay(delayTime,cb) {
+        timer.interval = delayTime;
+        timer.repeat = false;
+        timer.triggered.connect(cb);
+        timer.start();
+    }
+
     Process {
         id: process
     }
@@ -1054,7 +1065,9 @@ Rectangle {
                     eqsts = checked
                     txt2.text = ""
                     process8.kill()
-                    prgrssbr.value = 0.00
+                    delay(500, function() {
+                        prgrssbr.value = 0.00
+                    })
                 } else if (settings.equalizerStatus === false) {
                     settings.equalizerControls1 = slide1.value.toFixed(1)
                     settings.equalizerControls2 = slide2.value.toFixed(1)
