@@ -1093,16 +1093,16 @@ Rectangle {
                     anchors.bottom: rec1.bottom
                     anchors.left: rec1.left
                     anchors.right: rec1.right
-                    anchors.topMargin: 4
-                    anchors.leftMargin: 10
+                    anchors.topMargin: units.gu(1)
+                    anchors.leftMargin: units.gu(1)
                 }
 
                 Rectangle {
                     id: rec2
                     x: eqswitch.checked ? parent.width - width : 0
-                    width: units.gu(2)
-                    height: units.gu(2)
-                    radius: units.gu(1)
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    radius: units.gu(1.5)
                     color: settings.darkMode ? (eqswitch.down ? "#32517F" : "#292929") : (eqswitch.down ? "#32517F" : "white")
                 }
                 DropShadow {
