@@ -1059,6 +1059,64 @@ Rectangle {
             anchors.top: prgrssbr.bottom
             anchors.topMargin: units.gu(3)
 //            y: 5
+
+            indicator: Rectangle {
+                id: rec1
+                implicitWidth: 48
+                implicitHeight: 26
+                x: eqswitch.leftPadding
+                y: parent.height / 2 - height / 2
+                radius: 13
+                color: settings.darkMode ? (eqswitch.checked ? "#17a81a" : "#808080") : (eqswitch.checked ? "#17a81a" : "white")
+        
+                DropShadow {
+                    anchors.fill: rec1
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: rec1
+                    spread: 0
+                    cached: true
+//                    z: -1
+                }
+        
+                Text {
+                    id: txt
+                    color: settings.darkMode ? (eqswitch.checked ? "#292929" : "#292929") : (eqswitch.checked ? "black" : "black")
+                    text: "I   O"
+//                    font.letterSpacing: 10
+//                    anchors.verticalCenter: rec1.verticalCenter
+//                    anchors.horizontalCenter: rec1.horizontalCenter
+                    anchors.top: rec1.top
+                    anchors.bottom: rec1.bottom
+                    anchors.left: rec1.left
+                    anchors.right: rec1.right
+                    anchors.topMargin: 4
+                    anchors.leftMargin: 10
+                }
+
+                Rectangle {
+                    id: rec2
+                    x: eqswitch.checked ? parent.width - width : 0
+                    width: 26
+                    height: 26
+                    radius: 13
+                    color: settings.darkMode ? (eqswitch.down ? "#32517F" : "#292929") : (eqswitch.down ? "#32517F" : "white")
+                }
+                DropShadow {
+                    anchors.fill: rec2
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: rec2
+                    spread: 0
+                    cached: true
+                }
+            }
             onClicked: {
                 if (settings.equalizerStatus === true) {                    
                     process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
@@ -1086,6 +1144,40 @@ Rectangle {
                 }
             }
         }
+
+/*        Qqc.Switch {
+            id: eqswitch
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: prgrssbr.bottom
+            anchors.topMargin: units.gu(3)
+//            y: 5
+            onClicked: {
+                if (settings.equalizerStatus === true) {                    
+                    process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
+                    eqsts = checked
+                    txt2.text = ""
+                    process8.kill()
+                    delay(500, function() {
+                        prgrssbr.value = 0.00
+                    })
+                } else if (settings.equalizerStatus === false) {
+                    settings.equalizerControls1 = slide1.value.toFixed(1)
+                    settings.equalizerControls2 = slide2.value.toFixed(1)
+                    settings.equalizerControls3 = slide3.value.toFixed(1)
+                    settings.equalizerControls4 = slide4.value.toFixed(1)
+                    settings.equalizerControls5 = slide5.value.toFixed(1)
+                    settings.equalizerControls6 = slide6.value.toFixed(1)
+                    settings.equalizerControls7 = slide7.value.toFixed(1)
+                    settings.equalizerControls8 = slide8.value.toFixed(1)
+                    settings.equalizerControls9 = slide9.value.toFixed(1)
+                    settings.equalizerControls10 = slide10.value.toFixed(1)
+                    process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_start.sh"])
+                    eqsts = checked
+                    txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
+                    process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/bin/pulse-vumeter"])
+                }
+            }
+        }*/
 
         Item {
             id: itm2
