@@ -1059,7 +1059,7 @@ Rectangle {
 //            anchors.horizontalCenter: (((parent.width / 4) + (parent.width / 4)) - 100)
 //            x: units.gu(22.5)
             anchors.left: parent.left
-            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 80)
+            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 90)
             anchors.top: prgrssbr.bottom
             anchors.topMargin: units.gu(3)
 //            y: 5
