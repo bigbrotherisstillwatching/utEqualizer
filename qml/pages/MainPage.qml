@@ -1062,14 +1062,14 @@ Rectangle {
 
             indicator: Rectangle {
                 id: rec1
-                implicitWidth: units.gu(4)
-                implicitHeight: units.gu(2)
+                implicitWidth: units.gu(6)
+                implicitHeight: units.gu(3)
                 x: eqswitch.leftPadding
                 y: parent.height / 2 - height / 2
-                radius: units.gu(1)
-                color: settings.darkMode ? (eqswitch.checked ? "#17a81a" : "#808080") : (eqswitch.checked ? "#17a81a" : "white")
+                radius: units.gu(1.5)
+                color: settings.darkMode ? (eqswitch.checked ? "#17a81a" : "red") : (eqswitch.checked ? "#17a81a" : "red")
         
-                DropShadow {
+/*                DropShadow {
                     anchors.fill: rec1
                     horizontalOffset: 1
                     verticalOffset: 1
@@ -1080,11 +1080,11 @@ Rectangle {
                     spread: 0
                     cached: true
                     z: -1
-                }
+                }*/
         
                 Text {
                     id: txt
-                    color: settings.darkMode ? (eqswitch.checked ? "#292929" : "#292929") : (eqswitch.checked ? "black" : "black")
+                    color: settings.darkMode ? (eqswitch.checked ? "#292929" : "#808080") : (eqswitch.checked ? "black" : "white")
                     text: "I   O"
 //                    font.letterSpacing: 10
 //                    anchors.verticalCenter: rec1.verticalCenter
