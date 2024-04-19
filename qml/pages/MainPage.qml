@@ -1062,12 +1062,12 @@ Rectangle {
 
             indicator: Rectangle {
                 id: rec1
-                implicitWidth: units.gu(6)
-                implicitHeight: units.gu(3)
+                implicitWidth: 144
+                implicitHeight: 78
                 x: eqswitch.leftPadding
                 y: parent.height / 2 - height / 2
-                radius: units.gu(1.5)
-                color: settings.darkMode ? (eqswitch.checked ? "#17a81a" : "red") : (eqswitch.checked ? "#17a81a" : "red")
+                radius: units.gu(39)
+                color: settings.darkMode ? (eqswitch.checked ? "#32517F" : "#808080") : (eqswitch.checked ? "#32517F" : "#f1f1f1")
         
 /*                DropShadow {
                     anchors.fill: rec1
@@ -1084,8 +1084,8 @@ Rectangle {
         
                 Text {
                     id: txt
-                    color: settings.darkMode ? (eqswitch.checked ? "#292929" : "#808080") : (eqswitch.checked ? "black" : "white")
-                    text: "I     O"
+                    color: settings.darkMode ? (eqswitch.checked ? "#292929" : "#292929") : (eqswitch.checked ? "black" : "black")
+                    text: "I   O"
 //                    font.letterSpacing: 10
 //                    anchors.verticalCenter: rec1.verticalCenter
 //                    anchors.horizontalCenter: rec1.horizontalCenter
@@ -1093,8 +1093,8 @@ Rectangle {
                     anchors.bottom: rec1.bottom
                     anchors.left: rec1.left
                     anchors.right: rec1.right
-                    anchors.topMargin: units.gu(0.48)
-                    anchors.leftMargin: units.gu(1.5)
+                    anchors.topMargin: 12
+                    anchors.leftMargin: 30
                 }
 
                 Rectangle {
