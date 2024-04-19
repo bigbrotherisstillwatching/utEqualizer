@@ -1093,8 +1093,8 @@ Rectangle {
                     anchors.bottom: rec1.bottom
                     anchors.left: rec1.left
                     anchors.right: rec1.right
-                    anchors.topMargin: units.gu(1)
-                    anchors.leftMargin: units.gu(1)
+                    anchors.topMargin: units.gu(0.5)
+                    anchors.leftMargin: units.gu(2)
                 }
 
                 Rectangle {
