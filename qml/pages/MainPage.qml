@@ -1079,7 +1079,7 @@ Rectangle {
                     source: rec1
                     spread: 0
                     cached: true
-//                    z: -1
+                    z: -1
                 }
         
                 Text {
