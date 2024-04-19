@@ -1003,7 +1003,7 @@ Rectangle {
             anchors.top: prgrssbr.bottom
             anchors.left: parent.left
 //            anchors.leftMargin: units.gu(12.5)
-            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 100)
+            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 200)
             anchors.topMargin: units.gu(3)
             Rectangle {
                 id: chngbttn
@@ -1186,7 +1186,7 @@ Rectangle {
             anchors.top: prgrssbr.bottom
             anchors.right: parent.right
 //            anchors.rightMargin: units.gu(16.5)
-            anchors.rightMargin: ((((parent.width / 4) + (parent.width / 4)) - 100) + units.gu(4))
+            anchors.rightMargin: ((((parent.width / 4) + (parent.width / 4)) - 200) + units.gu(4))
             anchors.topMargin: units.gu(3)
             Rectangle {
                 id: rstbttn
