@@ -1062,11 +1062,11 @@ Rectangle {
 
             indicator: Rectangle {
                 id: rec1
-                implicitWidth: 48
-                implicitHeight: 26
+                implicitWidth: units.gu(4)
+                implicitHeight: units.gu(2)
                 x: eqswitch.leftPadding
                 y: parent.height / 2 - height / 2
-                radius: 13
+                radius: units.gu(1)
                 color: settings.darkMode ? (eqswitch.checked ? "#17a81a" : "#808080") : (eqswitch.checked ? "#17a81a" : "white")
         
                 DropShadow {
@@ -1100,9 +1100,9 @@ Rectangle {
                 Rectangle {
                     id: rec2
                     x: eqswitch.checked ? parent.width - width : 0
-                    width: 26
-                    height: 26
-                    radius: 13
+                    width: units.gu(2)
+                    height: units.gu(2)
+                    radius: units.gu(1)
                     color: settings.darkMode ? (eqswitch.down ? "#32517F" : "#292929") : (eqswitch.down ? "#32517F" : "white")
                 }
                 DropShadow {
