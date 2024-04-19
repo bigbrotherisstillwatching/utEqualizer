@@ -1055,7 +1055,8 @@ Rectangle {
 
         Qqc.Switch {
             id: eqswitch
-            anchors.horizontalCenter: parent.horizontalCenter
+//            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.left: itm1.right + units.gu(6)
             anchors.top: prgrssbr.bottom
             anchors.topMargin: units.gu(3)
 //            y: 5
