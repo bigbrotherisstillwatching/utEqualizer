@@ -1084,8 +1084,8 @@ Rectangle {
         
                 Text {
                     id: txt
-                    color: settings.darkMode ? (eqswitch.checked ? "#292929" : "#292929") : (eqswitch.checked ? "white" : "black")
-                    text: "I   O"
+                    color: settings.darkMode ? (eqswitch.checked ? "#808080" : "#292929") : (eqswitch.checked ? "white" : "black")
+                    text: "I     O"
 //                    font.letterSpacing: 10
 //                    anchors.verticalCenter: rec1.verticalCenter
 //                    anchors.horizontalCenter: rec1.horizontalCenter
@@ -1093,7 +1093,7 @@ Rectangle {
                     anchors.bottom: rec1.bottom
                     anchors.left: rec1.left
                     anchors.right: rec1.right
-                    anchors.topMargin: 10
+                    anchors.topMargin: 12
                     anchors.leftMargin: 25
                 }
 
