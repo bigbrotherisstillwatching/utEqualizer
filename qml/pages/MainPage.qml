@@ -1093,7 +1093,7 @@ Rectangle {
                     anchors.bottom: rec1.bottom
                     anchors.left: rec1.left
                     anchors.right: rec1.right
-                    anchors.topMargin: 12
+                    anchors.topMargin: 11
                     anchors.leftMargin: 25
                 }
 
