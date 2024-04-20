@@ -1394,6 +1394,8 @@ Rectangle {
         TextField {
             id: txtfld2
             color: settings.darkMode ? "#808080" : "black"
+            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            selectionColor: "#32517F"
             text: settings.preset2name
             placeholderText: i18n.tr("Preset 2")
             hasClearButton: false
@@ -1517,6 +1519,8 @@ Rectangle {
         TextField {
             id: txtfld3
             color: settings.darkMode ? "#808080" : "black"
+            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            selectionColor: "#32517F"
             text: settings.preset3name
             placeholderText: i18n.tr("Preset 3")
             hasClearButton: false
@@ -1640,6 +1644,8 @@ Rectangle {
         TextField {
             id: txtfld4
             color: settings.darkMode ? "#808080" : "black"
+            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            selectionColor: "#32517F"
             text: settings.preset4name
             placeholderText: i18n.tr("Preset 4")
             hasClearButton: false
@@ -1763,6 +1769,8 @@ Rectangle {
         TextField {
             id: txtfld5
             color: settings.darkMode ? "#808080" : "black"
+            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            selectionColor: "#32517F"
             text: settings.preset5name
             placeholderText: i18n.tr("Preset 5")
             hasClearButton: false
