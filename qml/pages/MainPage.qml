@@ -1269,6 +1269,8 @@ Rectangle {
         TextField {
             id: txtfld1
             color: settings.darkMode ? "#808080" : "black"
+            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            selectionColor: "#32517F"
             text: settings.preset1name
             placeholderText: i18n.tr("Preset 1")
             hasClearButton: false
