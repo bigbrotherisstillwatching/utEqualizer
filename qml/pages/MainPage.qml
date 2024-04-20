@@ -1057,7 +1057,7 @@ Rectangle {
             anchors.left: parent.left
 //            anchors.leftMargin: units.gu(12.5)
             anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 300)
-            anchors.topMargin: units.gu(3)
+            anchors.topMargin: units.gu(1)
             Rectangle {
                 id: chngbttn
                 height: units.gu(4)
@@ -1114,7 +1114,7 @@ Rectangle {
             anchors.left: parent.left
             anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 70)
             anchors.top: prgrssbr.bottom
-            anchors.topMargin: units.gu(3)
+            anchors.topMargin: units.gu(1)
 //            y: 5
 
             indicator: Rectangle {
@@ -1242,7 +1242,7 @@ Rectangle {
             anchors.right: parent.right
 //            anchors.rightMargin: units.gu(16.5)
             anchors.rightMargin: ((((parent.width / 4) + (parent.width / 4)) - 300) + units.gu(4))
-            anchors.topMargin: units.gu(3)
+            anchors.topMargin: units.gu(1)
             Rectangle {
                 id: rstbttn
                 height: units.gu(4)
