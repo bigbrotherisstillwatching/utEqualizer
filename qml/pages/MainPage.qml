@@ -977,7 +977,7 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: row1.bottom
             anchors.topMargin: units.gu(3)
-            enabled: false
+            enabled: true
 
             background: Rectangle {
 //                x: control.leftPadding
