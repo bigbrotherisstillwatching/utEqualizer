@@ -1330,7 +1330,7 @@ Rectangle {
             checked: settings.darkMode
             anchors.top: plchldrrec.bottom
             anchors.right: parent.right
-            anchors.rightMargin: units.gu(1)
+//            anchors.rightMargin: units.gu(1)
             anchors.topMargin: units.gu(2)
 //            y: 5
 
