@@ -976,7 +976,7 @@ Rectangle {
             stepSize: 0.01
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: row1.bottom
-            anchors.topMargin: units.gu(3)
+            anchors.topMargin: units.gu(1)
             enabled: true
 
             background: Rectangle {
