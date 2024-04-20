@@ -977,24 +977,24 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: row1.bottom
             anchors.topMargin: units.gu(3)
-            enabled: true
+            enabled: false
 
             background: Rectangle {
 //                x: control.leftPadding
 //                y: control.topPadding + control.availableHeight / 2 - height / 2
-                x: (control.width  - width) / 2
-                y: (control.height - height) / 2
+                x: (prgrssbr.width  - width) / 2
+                y: (prgrssbr.height - height) / 2
 //                implicitWidth: 200
 //                implicitHeight: 4
                 implicitWidth: 200
 //                implicitHeight: control.horizontal ? 1 : 200
-                width: control.availableWidth
+                width: prgrssbr.availableWidth
                 height: 10
                 radius: 5
                 color: settings.darkMode ? "#808080" : "#f1f1f1"
 
                 Rectangle {
-                    width: control.visualPosition * parent.width
+                    width: prgrssbr.visualPosition * parent.width
                     height: parent.height
 //                    implicitWidth: parent.width
 //                    implicitHeight: control.visualPosition * parent.height
@@ -1006,15 +1006,15 @@ Rectangle {
             handle: Rectangle {
                 visible: false
 //                x: control.leftPadding + control.visualPosition * (control.availableHeight - height)
-                x: control.leftPadding + (control.horizontal ? control.visualPosition * (control.availableWidth - width) : (control.availableWidth - width) / 2)
+                x: prgrssbr.leftPadding + (prgrssbr.horizontal ? prgrssbr.visualPosition * (prgrssbr.availableWidth - width) : (prgrssbr.availableWidth - width) / 2)
 //                y: control.topPadding + control.availableHeight / 2 - height / 2
-                y: control.topPadding + (control.vertical ? control.visualPosition * (control.availableHeight - height) : (control.availableHeight - height) / 2)
+                y: prgrssbr.topPadding + (prgrssbr.vertical ? prgrssbr.visualPosition * (prgrssbr.availableHeight - height) : (prgrssbr.availableHeight - height) / 2)
                 implicitWidth: 26
                 implicitHeight: 26
 //                width: 26
 //                height: 26
                 radius: 13
-                color: control.pressed ? "#32517F" : "#292929"
+                color: prgrssbr.pressed ? "#32517F" : "#292929"
 //                border.color: "#bdbebf"
             }
         }
