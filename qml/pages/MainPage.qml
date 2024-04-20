@@ -1341,7 +1341,7 @@ Rectangle {
             anchors.top: prgrssbr.bottom
 //            anchors.right: parent.right
 //            anchors.left: parent.left
-            anchors.topMargin: units.gu(10)
+            anchors.topMargin: units.gu(8)
             wrapMode: Text.WordWrap
             width: parent.width
             lineHeight: 1.2
