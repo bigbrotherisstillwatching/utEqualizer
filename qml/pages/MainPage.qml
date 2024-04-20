@@ -977,7 +977,7 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: row1.bottom
             anchors.topMargin: units.gu(3)
-            enabled: false
+            enabled: true
 
             background: Rectangle {
 //                x: control.leftPadding
@@ -989,8 +989,8 @@ Rectangle {
                 implicitWidth: 200
 //                implicitHeight: control.horizontal ? 1 : 200
                 width: control.availableWidth
-                height: 4
-                radius: 2
+                height: 10
+                radius: 5
                 color: settings.darkMode ? "#808080" : "#f1f1f1"
 
                 Rectangle {
