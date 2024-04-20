@@ -25,8 +25,6 @@ import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Styles 1.3
 import QtGraphicalEffects 1.12
 
-import "../colors"
-
 Rectangle {
     id: mainPage
     anchors.fill: parent
