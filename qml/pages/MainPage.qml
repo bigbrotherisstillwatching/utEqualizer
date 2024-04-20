@@ -1317,7 +1317,86 @@ Rectangle {
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
         }
+
         Qqc.Switch {
+            id: drkmdswitch
+//            anchors.horizontalCenter: (((parent.width / 4) + (parent.width / 4)) - 100)
+//            x: units.gu(22.5)
+//            anchors.left: parent.left
+//            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 70)
+//            anchors.top: prgrssbr.bottom
+//            anchors.topMargin: units.gu(3)
+//            y: -15
+            checked: settings.darkMode
+            anchors.top: plchldrrec.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(1)
+            anchors.topMargin: units.gu(2)
+//            y: 5
+
+            indicator: Rectangle {
+                id: rec3
+                implicitWidth: 120
+                implicitHeight: 65
+                x: eqswitch.leftPadding
+                y: parent.height / 2 - height / 2
+                radius: 32.5
+                color: settings.darkMode ? (drkmdswitch.checked ? "#32517F" : "#808080") : (drkmdswitch.checked ? "#32517F" : "#f1f1f1")
+        
+/*                DropShadow {
+                    anchors.fill: rec1
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: rec1
+                    spread: 0
+                    cached: true
+                    z: -1
+                }*/
+        
+                Text {
+                    id: txt9
+                    color: settings.darkMode ? (drkmdswitch.checked ? "#808080" : "#292929") : (drkmdswitch.checked ? "white" : "black")
+                    text: "I     O"
+//                    font.letterSpacing: 10
+//                    anchors.verticalCenter: rec1.verticalCenter
+//                    anchors.horizontalCenter: rec1.horizontalCenter
+                    anchors.top: rec3.top
+                    anchors.bottom: rec3.bottom
+                    anchors.left: rec3.left
+                    anchors.right: rec3.right
+                    anchors.topMargin: 11
+                    anchors.leftMargin: 25
+                }
+
+                Rectangle {
+                    id: rec4
+                    x: drkmdswitch.checked ? parent.width - width : 0
+                    width: 65
+                    height: 65
+                    radius: 32.5
+                    color: settings.darkMode ? (drkmdswitch.down ? "#32517F" : "#292929") : (drkmdswitch.down ? "#32517F" : "white")
+                }
+                DropShadow {
+                    anchors.fill: rec4
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: rec4
+                    spread: 0
+                    cached: true
+                }
+            }
+            onClicked: {
+                drkMd = checked
+            }
+        }
+
+/*        Qqc.Switch {
             id: drkmdswitch
             y: -15
             checked: settings.darkMode
@@ -1330,7 +1409,7 @@ Rectangle {
                 drkMd = checked
 //                txt2.text = i18n.tr("Please restart the app for the dark mode option change to take effect.")
             }
-        }
+        }*/
 
         TextField {
             id: txtfld1
