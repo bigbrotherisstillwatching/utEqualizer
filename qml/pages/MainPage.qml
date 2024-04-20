@@ -171,7 +171,6 @@ Rectangle {
             } else if (settings.equalizerStatus === false) {
                 console.log("EQ is inactive");
             }
-//            process8.kill()
             console.log("Goodbye!");
         }
     }
@@ -180,7 +179,6 @@ Rectangle {
         process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
         eqswitch.checked = false
         eqsts = false
-//        process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/bin/pulse-vumeter"])
         prgrssbr.value = 0
     }
 
@@ -210,7 +208,6 @@ Rectangle {
                     bttn3.enabled = true
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     bttn1.enabled = false
-//                    process8.kill()
                 }
                 StyleHints {
                     defaultColor: bttn2.pressed ? "#32517F" : "yellow"
@@ -293,7 +290,7 @@ Rectangle {
     Flickable {
         id: flick1
         anchors.top: header.bottom
-        contentHeight: /*clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + */units.gu(175)
+        contentHeight: units.gu(175)
         contentWidth: mainPage.width
         width: mainPage.width
         height: mainPage.height - header.height
@@ -356,7 +353,6 @@ Rectangle {
                         implicitHeight: 52
                         radius: 26
                         color: slide1.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                        border.color: settings.darkMode ? "#808080" : "#e2e2e2"
                         border.width: 0
                     }
                     DropShadow {
@@ -421,7 +417,6 @@ Rectangle {
                         implicitHeight: 52
                         radius: 26
                         color: slide2.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                        border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                         border.width: 0
                     }
                     DropShadow {
@@ -486,7 +481,6 @@ Rectangle {
                         implicitHeight: 52
                         radius: 26
                         color: slide3.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                        border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                         border.width: 0
                     }
                     DropShadow {
@@ -551,7 +545,6 @@ Rectangle {
                         implicitHeight: 52
                         radius: 26
                         color: slide4.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                        border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                         border.width: 0
                     }
                     DropShadow {
@@ -616,7 +609,6 @@ Rectangle {
                         implicitHeight: 52
                         radius: 26
                         color: slide5.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                        border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                         border.width: 0
                     }
                     DropShadow {
@@ -681,7 +673,6 @@ Rectangle {
                         implicitHeight: 52
                         radius: 26
                         color: slide6.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                        border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                         border.width: 0
                     }
                     DropShadow {
@@ -746,7 +737,6 @@ Rectangle {
                         implicitHeight: 52
                         radius: 26
                         color: slide7.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                        border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                         border.width: 0
                     }
                     DropShadow {
@@ -811,7 +801,6 @@ Rectangle {
                         implicitHeight: 52
                         radius: 26
                         color: slide8.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                        border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                         border.width: 0
                     }
                     DropShadow {
@@ -876,7 +865,6 @@ Rectangle {
                         implicitHeight: 52
                         radius: 26
                         color: slide9.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                        border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                         border.width: 0
                     }
                     DropShadow {
@@ -941,7 +929,6 @@ Rectangle {
                         implicitHeight: 52
                         radius: 26
                         color: slide10.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
-//                        border.color: settings.darkMode ? "#808080" : "#f1f1f1"
                         border.width: 0
                     }
                     DropShadow {
@@ -968,8 +955,6 @@ Rectangle {
 
         Qqc.Slider {
             id: prgrssbr
-//            orientation: Qt.Vertical
-//            anchors.centerIn: parent
             from: 0.00
             to: 1.00
             live: true
@@ -980,14 +965,9 @@ Rectangle {
             enabled: true
 
             background: Rectangle {
-//                x: control.leftPadding
-//                y: control.topPadding + control.availableHeight / 2 - height / 2
                 x: (prgrssbr.width  - width) / 2
                 y: (prgrssbr.height - height) / 2
-//                implicitWidth: 200
-//                implicitHeight: 4
                 implicitWidth: 200
-//                implicitHeight: control.horizontal ? 1 : 200
                 width: prgrssbr.availableWidth
                 height: 10
                 radius: 5
@@ -996,8 +976,6 @@ Rectangle {
                 Rectangle {
                     width: prgrssbr.visualPosition * parent.width
                     height: parent.height
-//                    implicitWidth: parent.width
-//                    implicitHeight: control.visualPosition * parent.height
                     color: "#32517F"
                     radius: 2
                 }
@@ -1005,66 +983,25 @@ Rectangle {
 
             handle: Rectangle {
                 visible: false
-//                x: control.leftPadding + control.visualPosition * (control.availableHeight - height)
                 x: prgrssbr.leftPadding + (prgrssbr.horizontal ? prgrssbr.visualPosition * (prgrssbr.availableWidth - width) : (prgrssbr.availableWidth - width) / 2)
-//                y: control.topPadding + control.availableHeight / 2 - height / 2
                 y: prgrssbr.topPadding + (prgrssbr.vertical ? prgrssbr.visualPosition * (prgrssbr.availableHeight - height) : (prgrssbr.availableHeight - height) / 2)
                 implicitWidth: 26
                 implicitHeight: 26
-//                width: 26
-//                height: 26
                 radius: 13
                 color: prgrssbr.pressed ? "#32517F" : "#292929"
-//                border.color: "#bdbebf"
             }
         }
-
-/*        ProgressBar {
-            id: prgrssbr
-            maximumValue: 1.00
-            minimumValue: 0.00
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: row1.bottom
-            anchors.topMargin: units.gu(3)
-        }*/
-
-/*                Button {
-                    id: chngbttn
-                    height: units.gu(4)
-                    width: units.gu(4)
-                    iconSource: chngbttn.pressed ? "../../assets/change_pressed.svg" : (settings.darkMode ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg")
-                    StyleHints {
-                        defaultColor: chngbttn.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-                    }
-                    onClicked: {
-                        settings.equalizerControls1 = slide1.value.toFixed(1)
-                        settings.equalizerControls2 = slide2.value.toFixed(1)
-                        settings.equalizerControls3 = slide3.value.toFixed(1)
-                        settings.equalizerControls4 = slide4.value.toFixed(1)
-                        settings.equalizerControls5 = slide5.value.toFixed(1)
-                        settings.equalizerControls6 = slide6.value.toFixed(1)
-                        settings.equalizerControls7 = slide7.value.toFixed(1)
-                        settings.equalizerControls8 = slide8.value.toFixed(1)
-                        settings.equalizerControls9 = slide9.value.toFixed(1)
-                        settings.equalizerControls10 = slide10.value.toFixed(1)
-                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_change.sh"])
-                    }
-                }*/
 
         Item {
             id: itm1
             anchors.top: prgrssbr.bottom
             anchors.left: parent.left
-//            anchors.leftMargin: units.gu(12.5)
             anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 300)
             anchors.topMargin: units.gu(1)
             Rectangle {
                 id: chngbttn
                 height: units.gu(4)
                 width: units.gu(4)
-//                anchors.right: hdrrec.right
-//                y: 20
-//                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: chngbttnma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
@@ -1109,13 +1046,10 @@ Rectangle {
 
         Qqc.Switch {
             id: eqswitch
-//            anchors.horizontalCenter: (((parent.width / 4) + (parent.width / 4)) - 100)
-//            x: units.gu(22.5)
             anchors.left: parent.left
             anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 70)
             anchors.top: prgrssbr.bottom
             anchors.topMargin: units.gu(1)
-//            y: 5
 
             indicator: Rectangle {
                 id: rec1
@@ -1126,26 +1060,10 @@ Rectangle {
                 radius: 32.5
                 color: settings.darkMode ? (eqswitch.checked ? "#32517F" : "#808080") : (eqswitch.checked ? "#32517F" : "#f1f1f1")
         
-/*                DropShadow {
-                    anchors.fill: rec1
-                    horizontalOffset: 1
-                    verticalOffset: 1
-                    radius: 6
-                    samples: 13
-                    color: "black"
-                    source: rec1
-                    spread: 0
-                    cached: true
-                    z: -1
-                }*/
-        
                 Text {
                     id: txt
                     color: settings.darkMode ? (eqswitch.checked ? "#808080" : "#292929") : (eqswitch.checked ? "white" : "black")
                     text: "I     O"
-//                    font.letterSpacing: 10
-//                    anchors.verticalCenter: rec1.verticalCenter
-//                    anchors.horizontalCenter: rec1.horizontalCenter
                     anchors.top: rec1.top
                     anchors.bottom: rec1.bottom
                     anchors.left: rec1.left
@@ -1202,54 +1120,16 @@ Rectangle {
             }
         }
 
-/*        Qqc.Switch {
-            id: eqswitch
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: prgrssbr.bottom
-            anchors.topMargin: units.gu(3)
-//            y: 5
-            onClicked: {
-                if (settings.equalizerStatus === true) {                    
-                    process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
-                    eqsts = checked
-                    txt2.text = ""
-                    process8.kill()
-                    delay(500, function() {
-                        prgrssbr.value = 0.00
-                    })
-                } else if (settings.equalizerStatus === false) {
-                    settings.equalizerControls1 = slide1.value.toFixed(1)
-                    settings.equalizerControls2 = slide2.value.toFixed(1)
-                    settings.equalizerControls3 = slide3.value.toFixed(1)
-                    settings.equalizerControls4 = slide4.value.toFixed(1)
-                    settings.equalizerControls5 = slide5.value.toFixed(1)
-                    settings.equalizerControls6 = slide6.value.toFixed(1)
-                    settings.equalizerControls7 = slide7.value.toFixed(1)
-                    settings.equalizerControls8 = slide8.value.toFixed(1)
-                    settings.equalizerControls9 = slide9.value.toFixed(1)
-                    settings.equalizerControls10 = slide10.value.toFixed(1)
-                    process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_start.sh"])
-                    eqsts = checked
-                    txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
-                    process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/bin/pulse-vumeter"])
-                }
-            }
-        }*/
-
         Item {
             id: itm2
             anchors.top: prgrssbr.bottom
             anchors.right: parent.right
-//            anchors.rightMargin: units.gu(16.5)
             anchors.rightMargin: ((((parent.width / 4) + (parent.width / 4)) - 300) + units.gu(4))
             anchors.topMargin: units.gu(1)
             Rectangle {
                 id: rstbttn
                 height: units.gu(4)
                 width: units.gu(4)
-//                anchors.right: hdrrec.right
-//                y: 20
-//                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: rstbttnma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
@@ -1301,46 +1181,12 @@ Rectangle {
             }
         }
 
-/*            Button {
-                id: rstbttn
-                height: units.gu(4)
-                width: units.gu(4)
-                iconSource: rstbttn.pressed ? "../../assets/resetzero_pressed.svg" : (settings.darkMode ? "../../assets/resetzero_darkmode.svg" : "../../assets/resetzero_lightmode.svg")
-                StyleHints {
-                    defaultColor: rstbttn.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-                }
-                onClicked: {
-                    slide1.value = 0.0
-                    slide2.value = 0.0
-                    slide3.value = 0.0
-                    slide4.value = 0.0
-                    slide5.value = 0.0
-                    slide6.value = 0.0
-                    slide7.value = 0.0
-                    slide8.value = 0.0
-                    slide9.value = 0.0
-                    slide10.value = 0.0
-                    settings.equalizerControls1 = slide1.value.toFixed(1)
-                    settings.equalizerControls2 = slide2.value.toFixed(1)
-                    settings.equalizerControls3 = slide3.value.toFixed(1)
-                    settings.equalizerControls4 = slide4.value.toFixed(1)
-                    settings.equalizerControls5 = slide5.value.toFixed(1)
-                    settings.equalizerControls6 = slide6.value.toFixed(1)
-                    settings.equalizerControls7 = slide7.value.toFixed(1)
-                    settings.equalizerControls8 = slide8.value.toFixed(1)
-                    settings.equalizerControls9 = slide9.value.toFixed(1)
-                    settings.equalizerControls10 = slide10.value.toFixed(1)
-                }
-            }*/
-
         Text {
             id: txt2
             text: ""
             color: "red"
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: prgrssbr.bottom
-//            anchors.right: parent.right
-//            anchors.left: parent.left
             anchors.topMargin: units.gu(8)
             wrapMode: Text.WordWrap
             width: parent.width
@@ -1354,8 +1200,6 @@ Rectangle {
             color: "transparent"
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: txt2.bottom
-//            anchors.right: parent.right
-//            anchors.left: parent.left
             anchors.topMargin: units.gu(3)
             width: parent.width
             height: units.gu(5) - txt2.height
@@ -1373,19 +1217,10 @@ Rectangle {
 
         Qqc.Switch {
             id: drkmdswitch
-//            anchors.horizontalCenter: (((parent.width / 4) + (parent.width / 4)) - 100)
-//            x: units.gu(22.5)
-//            anchors.left: parent.left
-//            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 70)
-//            anchors.top: prgrssbr.bottom
-//            anchors.topMargin: units.gu(3)
-//            y: -15
             checked: settings.darkMode
             anchors.top: plchldrrec.bottom
             anchors.right: parent.right
-//            anchors.rightMargin: units.gu(1)
             anchors.topMargin: units.gu(2)
-//            y: 5
 
             indicator: Rectangle {
                 id: rec3
@@ -1396,26 +1231,10 @@ Rectangle {
                 radius: 32.5
                 color: settings.darkMode ? (drkmdswitch.checked ? "#32517F" : "#808080") : (drkmdswitch.checked ? "#32517F" : "#f1f1f1")
         
-/*                DropShadow {
-                    anchors.fill: rec1
-                    horizontalOffset: 1
-                    verticalOffset: 1
-                    radius: 6
-                    samples: 13
-                    color: "black"
-                    source: rec1
-                    spread: 0
-                    cached: true
-                    z: -1
-                }*/
-        
                 Text {
                     id: txt9
                     color: settings.darkMode ? (drkmdswitch.checked ? "#808080" : "#292929") : (drkmdswitch.checked ? "white" : "black")
                     text: "I     O"
-//                    font.letterSpacing: 10
-//                    anchors.verticalCenter: rec1.verticalCenter
-//                    anchors.horizontalCenter: rec1.horizontalCenter
                     anchors.top: rec3.top
                     anchors.bottom: rec3.bottom
                     anchors.left: rec3.left
@@ -1449,21 +1268,6 @@ Rectangle {
             }
         }
 
-/*        Qqc.Switch {
-            id: drkmdswitch
-            y: -15
-            checked: settings.darkMode
-            anchors.top: plchldrrec.bottom
-            anchors.right: parent.right
-            anchors.rightMargin: units.gu(1)
-            anchors.topMargin: units.gu(2)
-
-            onClicked: {
-                drkMd = checked
-//                txt2.text = i18n.tr("Please restart the app for the dark mode option change to take effect.")
-            }
-        }*/
-
         TextField {
             id: txtfld1
             color: settings.darkMode ? "#808080" : "black"
@@ -1495,9 +1299,6 @@ Rectangle {
                 id: bttn5
                 height: units.gu(4)
                 width: units.gu(4)
-//                anchors.right: hdrrec.right
-//                y: 20
-//                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: bttn5ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
@@ -1539,32 +1340,6 @@ Rectangle {
             }
         }
 
-/*        Button {
-            id: bttn5
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: txt1.bottom
-            anchors.right: parent.right
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(3)
-            iconSource: bttn5.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
-            StyleHints {
-                defaultColor: bttn5.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-            }
-            onClicked: {
-                slide1.value = settings.preset1equalizerControls1
-                slide2.value = settings.preset1equalizerControls2
-                slide3.value = settings.preset1equalizerControls3
-                slide4.value = settings.preset1equalizerControls4
-                slide5.value = settings.preset1equalizerControls5
-                slide6.value = settings.preset1equalizerControls6
-                slide7.value = settings.preset1equalizerControls7
-                slide8.value = settings.preset1equalizerControls8
-                slide9.value = settings.preset1equalizerControls9
-                slide10.value = settings.preset1equalizerControls10
-            }
-        }*/
-
         Item {
             id: itm4
             anchors.top: txt1.bottom
@@ -1575,9 +1350,6 @@ Rectangle {
                 id: bttn4
                 height: units.gu(4)
                 width: units.gu(4)
-//                anchors.right: hdrrec.right
-//                y: 20
-//                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: bttn4ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
@@ -1619,32 +1391,6 @@ Rectangle {
             }
         }
 
-/*        Button {
-            id: bttn4
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: txt1.bottom
-            anchors.right: bttn5.left
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(3)
-            iconSource: bttn4.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
-            StyleHints {
-                defaultColor: bttn4.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-            }
-            onClicked: {
-                settings.preset1equalizerControls1 = slide1.value.toFixed(1)
-                settings.preset1equalizerControls2 = slide2.value.toFixed(1)
-                settings.preset1equalizerControls3 = slide3.value.toFixed(1)
-                settings.preset1equalizerControls4 = slide4.value.toFixed(1)
-                settings.preset1equalizerControls5 = slide5.value.toFixed(1)
-                settings.preset1equalizerControls6 = slide6.value.toFixed(1)
-                settings.preset1equalizerControls7 = slide7.value.toFixed(1)
-                settings.preset1equalizerControls8 = slide8.value.toFixed(1)
-                settings.preset1equalizerControls9 = slide9.value.toFixed(1)
-                settings.preset1equalizerControls10 = slide10.value.toFixed(1)
-            }
-        }*/
-
         TextField {
             id: txtfld2
             color: settings.darkMode ? "#808080" : "black"
@@ -1676,9 +1422,6 @@ Rectangle {
                 id: bttn7
                 height: units.gu(4)
                 width: units.gu(4)
-//                anchors.right: hdrrec.right
-//                y: 20
-//                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: bttn7ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
@@ -1720,32 +1463,6 @@ Rectangle {
             }
         }
 
-/*        Button {
-            id: bttn7
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn5.bottom
-            anchors.right: parent.right
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconSource: bttn7.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
-            StyleHints {
-                defaultColor: bttn7.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-            }
-            onClicked: {
-                slide1.value = settings.preset2equalizerControls1
-                slide2.value = settings.preset2equalizerControls2
-                slide3.value = settings.preset2equalizerControls3
-                slide4.value = settings.preset2equalizerControls4
-                slide5.value = settings.preset2equalizerControls5
-                slide6.value = settings.preset2equalizerControls6
-                slide7.value = settings.preset2equalizerControls7
-                slide8.value = settings.preset2equalizerControls8
-                slide9.value = settings.preset2equalizerControls9
-                slide10.value = settings.preset2equalizerControls10
-            }
-        }*/
-
         Item {
             id: itm6
             anchors.top: itm4.bottom
@@ -1756,9 +1473,6 @@ Rectangle {
                 id: bttn6
                 height: units.gu(4)
                 width: units.gu(4)
-//                anchors.right: hdrrec.right
-//                y: 20
-//                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: bttn6ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
@@ -1800,32 +1514,6 @@ Rectangle {
             }
         }
 
-/*        Button {
-            id: bttn6
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn4.bottom
-            anchors.right: bttn7.left
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconSource: bttn6.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
-            StyleHints {
-                defaultColor: bttn6.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-            }
-            onClicked: {
-                settings.preset2equalizerControls1 = slide1.value.toFixed(1)
-                settings.preset2equalizerControls2 = slide2.value.toFixed(1)
-                settings.preset2equalizerControls3 = slide3.value.toFixed(1)
-                settings.preset2equalizerControls4 = slide4.value.toFixed(1)
-                settings.preset2equalizerControls5 = slide5.value.toFixed(1)
-                settings.preset2equalizerControls6 = slide6.value.toFixed(1)
-                settings.preset2equalizerControls7 = slide7.value.toFixed(1)
-                settings.preset2equalizerControls8 = slide8.value.toFixed(1)
-                settings.preset2equalizerControls9 = slide9.value.toFixed(1)
-                settings.preset2equalizerControls10 = slide10.value.toFixed(1)
-            }
-        }*/
-
         TextField {
             id: txtfld3
             color: settings.darkMode ? "#808080" : "black"
@@ -1857,9 +1545,6 @@ Rectangle {
                 id: bttn9
                 height: units.gu(4)
                 width: units.gu(4)
-//                anchors.right: hdrrec.right
-//                y: 20
-//                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: bttn9ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
@@ -1901,32 +1586,6 @@ Rectangle {
             }
         }
 
-/*        Button {
-            id: bttn9
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn7.bottom
-            anchors.right: parent.right
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconSource: bttn9.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
-            StyleHints {
-                defaultColor: bttn9.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-            }
-            onClicked: {
-                slide1.value = settings.preset3equalizerControls1
-                slide2.value = settings.preset3equalizerControls2
-                slide3.value = settings.preset3equalizerControls3
-                slide4.value = settings.preset3equalizerControls4
-                slide5.value = settings.preset3equalizerControls5
-                slide6.value = settings.preset3equalizerControls6
-                slide7.value = settings.preset3equalizerControls7
-                slide8.value = settings.preset3equalizerControls8
-                slide9.value = settings.preset3equalizerControls9
-                slide10.value = settings.preset3equalizerControls10
-            }
-        }*/
-
         Item {
             id: itm8
             anchors.top: itm6.bottom
@@ -1937,9 +1596,6 @@ Rectangle {
                 id: bttn8
                 height: units.gu(4)
                 width: units.gu(4)
-//                anchors.right: hdrrec.right
-//                y: 20
-//                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: bttn8ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
@@ -1981,32 +1637,6 @@ Rectangle {
             }
         }
 
-/*        Button {
-            id: bttn8
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn6.bottom
-            anchors.right: bttn9.left
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconSource: bttn8.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
-            StyleHints {
-                defaultColor: bttn8.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-            }
-            onClicked: {
-                settings.preset3equalizerControls1 = slide1.value.toFixed(1)
-                settings.preset3equalizerControls2 = slide2.value.toFixed(1)
-                settings.preset3equalizerControls3 = slide3.value.toFixed(1)
-                settings.preset3equalizerControls4 = slide4.value.toFixed(1)
-                settings.preset3equalizerControls5 = slide5.value.toFixed(1)
-                settings.preset3equalizerControls6 = slide6.value.toFixed(1)
-                settings.preset3equalizerControls7 = slide7.value.toFixed(1)
-                settings.preset3equalizerControls8 = slide8.value.toFixed(1)
-                settings.preset3equalizerControls9 = slide9.value.toFixed(1)
-                settings.preset3equalizerControls10 = slide10.value.toFixed(1)
-            }
-        }*/
-
         TextField {
             id: txtfld4
             color: settings.darkMode ? "#808080" : "black"
@@ -2038,9 +1668,6 @@ Rectangle {
                 id: bttn11
                 height: units.gu(4)
                 width: units.gu(4)
-//                anchors.right: hdrrec.right
-//                y: 20
-//                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: bttn11ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
@@ -2082,32 +1709,6 @@ Rectangle {
             }
         }
 
-/*        Button {
-            id: bttn11
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn9.bottom
-            anchors.right: parent.right
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconSource: bttn11.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
-            StyleHints {
-                defaultColor: bttn11.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-            }
-            onClicked: {
-                slide1.value = settings.preset4equalizerControls1
-                slide2.value = settings.preset4equalizerControls2
-                slide3.value = settings.preset4equalizerControls3
-                slide4.value = settings.preset4equalizerControls4
-                slide5.value = settings.preset4equalizerControls5
-                slide6.value = settings.preset4equalizerControls6
-                slide7.value = settings.preset4equalizerControls7
-                slide8.value = settings.preset4equalizerControls8
-                slide9.value = settings.preset4equalizerControls9
-                slide10.value = settings.preset4equalizerControls10
-            }
-        }*/
-
         Item {
             id: itm10
             anchors.top: itm8.bottom
@@ -2118,9 +1719,6 @@ Rectangle {
                 id: bttn10
                 height: units.gu(4)
                 width: units.gu(4)
-//                anchors.right: hdrrec.right
-//                y: 20
-//                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: bttn10ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
@@ -2162,32 +1760,6 @@ Rectangle {
             }
         }
 
-/*        Button {
-            id: bttn10
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn8.bottom
-            anchors.right: bttn11.left
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconSource: bttn10.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
-            StyleHints {
-                defaultColor: bttn10.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-            }
-            onClicked: {
-                settings.preset4equalizerControls1 = slide1.value.toFixed(1)
-                settings.preset4equalizerControls2 = slide2.value.toFixed(1)
-                settings.preset4equalizerControls3 = slide3.value.toFixed(1)
-                settings.preset4equalizerControls4 = slide4.value.toFixed(1)
-                settings.preset4equalizerControls5 = slide5.value.toFixed(1)
-                settings.preset4equalizerControls6 = slide6.value.toFixed(1)
-                settings.preset4equalizerControls7 = slide7.value.toFixed(1)
-                settings.preset4equalizerControls8 = slide8.value.toFixed(1)
-                settings.preset4equalizerControls9 = slide9.value.toFixed(1)
-                settings.preset4equalizerControls10 = slide10.value.toFixed(1)
-            }
-        }*/
-
         TextField {
             id: txtfld5
             color: settings.darkMode ? "#808080" : "black"
@@ -2219,9 +1791,6 @@ Rectangle {
                 id: bttn13
                 height: units.gu(4)
                 width: units.gu(4)
-//                anchors.right: hdrrec.right
-//                y: 20
-//                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: bttn13ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
@@ -2263,32 +1832,6 @@ Rectangle {
             }
         }
 
-/*        Button {
-            id: bttn13
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn11.bottom
-            anchors.right: parent.right
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconSource: bttn13.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
-            StyleHints {
-                defaultColor: bttn13.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-            }
-            onClicked: {
-                slide1.value = settings.preset5equalizerControls1
-                slide2.value = settings.preset5equalizerControls2
-                slide3.value = settings.preset5equalizerControls3
-                slide4.value = settings.preset5equalizerControls4
-                slide5.value = settings.preset5equalizerControls5
-                slide6.value = settings.preset5equalizerControls6
-                slide7.value = settings.preset5equalizerControls7
-                slide8.value = settings.preset5equalizerControls8
-                slide9.value = settings.preset5equalizerControls9
-                slide10.value = settings.preset5equalizerControls10
-            }
-        }*/
-
         Item {
             id: itm12
             anchors.top: itm10.bottom
@@ -2299,9 +1842,6 @@ Rectangle {
                 id: bttn12
                 height: units.gu(4)
                 width: units.gu(4)
-//                anchors.right: hdrrec.right
-//                y: 20
-//                anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
                 color: bttn12ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
@@ -2343,35 +1883,8 @@ Rectangle {
             }
         }
 
-/*        Button {
-            id: bttn12
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn10.bottom
-            anchors.right: bttn13.left
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconSource: bttn12.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
-            StyleHints {
-                defaultColor: bttn12.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "#f1f1f1")
-            }
-            onClicked: {
-                settings.preset5equalizerControls1 = slide1.value.toFixed(1)
-                settings.preset5equalizerControls2 = slide2.value.toFixed(1)
-                settings.preset5equalizerControls3 = slide3.value.toFixed(1)
-                settings.preset5equalizerControls4 = slide4.value.toFixed(1)
-                settings.preset5equalizerControls5 = slide5.value.toFixed(1)
-                settings.preset5equalizerControls6 = slide6.value.toFixed(1)
-                settings.preset5equalizerControls7 = slide7.value.toFixed(1)
-                settings.preset5equalizerControls8 = slide8.value.toFixed(1)
-                settings.preset5equalizerControls9 = slide9.value.toFixed(1)
-                settings.preset5equalizerControls10 = slide10.value.toFixed(1)
-            }
-        }*/
-
         ListItem {
             id: lstitm1
-//            height: lstitmlay1.height + (divider.visible ? divider.height : 0)
             height: header.height
             color: settings.darkMode ? "#121212" : "white"
             divider.colorFrom: settings.darkMode ? "#808080" : "black"
