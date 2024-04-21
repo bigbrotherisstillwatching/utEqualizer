@@ -1287,6 +1287,43 @@ Rectangle {
                 txtfld1.text = settings.preset1name
                 ma1.focus = true
             }
+
+            cursorDelegate: Rectangle {
+                id: cursor
+                visible: false
+                color: "#32517F"
+                width: txtfld1.cursorRectangle.width
+
+                SequentialAnimation {
+                    loops: Animation.Infinite
+                    running: txtfld1.cursorVisible
+
+                    PropertyAction {
+                        target: cursor
+                        property: 'visible'
+                        value: true
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    PropertyAction {
+                        target: cursor
+                        property: 'visible'
+                        value: false
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    onStopped: {
+                        cursor.visible = false
+                    }
+                }
+            }
+
         }
 
         Item {
