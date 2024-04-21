@@ -962,6 +962,11 @@ Rectangle {
             anchors.topMargin: units.gu(1)
             enabled: true
 
+            MouseArea {
+                anchors.fill: prgrssbr
+                enabled: true
+            }
+
             background: Rectangle {
                 x: (prgrssbr.width  - width) / 2
                 y: (prgrssbr.height - height) / 2
