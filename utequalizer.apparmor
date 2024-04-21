@@ -1,5 +1,5 @@
 {
-    "policy_groups": ["audio"],
+    "policy_groups": [],
     "read_path": [
         "/opt/click.ubuntu.com/radio.s710"
         ],

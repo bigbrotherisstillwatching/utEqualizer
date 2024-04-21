@@ -23,18 +23,28 @@ import QtQuick.Controls 2.7 as Qqc
 import Process 1.0
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Styles 1.3
-
-import "../colors"
+import QtGraphicalEffects 1.12
 
 Rectangle {
     id: mainPage
     anchors.fill: parent
 
-    color: Colors.backgroundColor
+    color: settings.darkMode ? "#121212" : "white"
 
     property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
     property alias drkMd: settings.darkMode
+
+    Timer {
+        id: timer
+    }
+
+    function delay(delayTime,cb) {
+        timer.interval = delayTime;
+        timer.repeat = false;
+        timer.triggered.connect(cb);
+        timer.start();
+    }
 
     Process {
         id: process
@@ -62,6 +72,22 @@ Rectangle {
 
     Process {
         id: process7
+    }
+
+    Process {
+        id: process8
+
+        property real output
+
+        onStarted: print("pulse-vumeter started")
+        onFinished: print("Closed")
+
+        onErrorOccurred: console.log("Error Occurred: ", error)
+
+        onReadyReadStandardOutput: {
+            output = process8.readAll()
+            prgrssbr.value = output
+        }
     }
 
     Settings {
@@ -148,9 +174,10 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_stop.sh"])
+        process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
         eqswitch.checked = false
         eqsts = false
+        prgrssbr.value = 0
     }
 
     Component {
@@ -161,38 +188,38 @@ Rectangle {
             title: i18n.tr("<font color=\"white\">Quit</font>")
             text: i18n.tr("<font color=\"white\">Are you sure that you want to close the app?</font>")
             style: ActionBarStyle {
-                backgroundColor: Colors.surfaceColor2
+                backgroundColor: "#292929"
             }
             Button {
                 id: bttn1
-                text: i18n.tr("Cancel")
+                text: bttn1.pressed ? i18n.tr("<font color=\"white\">Cancel</font>") : i18n.tr("<font color=\"black\">Cancel</font>")
                 onClicked: PopupUtils.close(dialog2)
                 StyleHints {
-                    defaultColor: bttn1.pressed ? Colors.surfaceColor : "red"
+                    defaultColor: bttn1.pressed ? "#32517F" : "red"
                 }
             }
             Button {
                 id: bttn2
-                text: i18n.tr("Turn off equalizer")
+                text: bttn2.pressed ? i18n.tr("<font color=\"white\">Turn off equalizer</font>") : i18n.tr("<font color=\"black\">Turn off equalizer</font>")
                 onClicked: {
-                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_stop.sh"])
+                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
                     bttn3.enabled = true
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     bttn1.enabled = false
                 }
                 StyleHints {
-                    defaultColor: bttn2.pressed ? Colors.surfaceColor : "yellow"
+                    defaultColor: bttn2.pressed ? "#32517F" : "yellow"
                 }
             }
             Button {
                 id: bttn3
                 enabled: false
-                text: i18n.tr("Ok")
+                text: bttn3.pressed ? i18n.tr("<font color=\"white\">Ok</font>") : i18n.tr("<font color=\"black\">Ok</font>")
                 onClicked: {
                     Qt.quit()
                 }
                 StyleHints {
-                    defaultColor: bttn3.pressed ? Colors.surfaceColor : "green"
+                    defaultColor: bttn3.pressed ? "#32517F" : "green"
                 }
             }
         }
@@ -203,35 +230,57 @@ Rectangle {
         title: "utEqualizer"
         z: 1
         StyleHints {
-            foregroundColor: Colors.mainText
-            backgroundColor: Colors.backgroundColor
-            dividerColor: Colors.mainText
+            foregroundColor: settings.darkMode ? "#808080" : "black"
+            backgroundColor: settings.darkMode ? "#121212" : "white"
+            dividerColor: settings.darkMode ? "#808080" : "black"
         }
         contents: Rectangle {
             id: hdrrec
             anchors.fill: parent
-            color: Colors.backgroundColor
+            color: settings.darkMode ? "#121212" : "white"
             Text {
                 id: hdrtxt
                 anchors.left: hdrrec.left
                 anchors.verticalCenter: hdrrec.verticalCenter
                 text: header.title
-                color: Colors.mainText
+                color: settings.darkMode ? "#808080" : "black"
                 font.pointSize: 40
             }
-            Button {
+            Rectangle {
                 id: clsbttn
                 height: units.gu(4)
                 width: units.gu(4)
-                iconName: "close"
                 anchors.right: hdrrec.right
-                y: 20
-                StyleHints {
-                    defaultColor: clsbttn.pressed ? "red" : Colors.surfaceColor
-                }
+                anchors.verticalCenter: hdrrec.verticalCenter
+                radius: units.gu(1)
+                color: clsbttnma.pressed ? "red" : (settings.darkMode ? "#292929" : "white")
+            }
+            Icon {
+                id: clsbttnicn
+                source: clsbttnma.pressed ? "../../assets/close_pressed.svg" : (settings.darkMode ? "../../assets/close_darkmode.svg" : "../../assets/close_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: clsbttn
+                z: 2
+            }
+            MouseArea {
+                id: clsbttnma
+                anchors.fill: clsbttn
+ 
                 onClicked: {
                     PopupUtils.open(dialog)
                 }
+            }
+            DropShadow {
+                anchors.fill: clsbttn
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: clsbttn
+                spread: 0
+                cached: true
             }
         }
     }
@@ -239,7 +288,7 @@ Rectangle {
     Flickable {
         id: flick1
         anchors.top: header.bottom
-        contentHeight: clmn1.height + txtfld1.height + txtfld2.height + txtfld3.height + txtfld4.height + txtfld5.height + txt3.height + units.gu(70)
+        contentHeight: units.gu(175)
         contentWidth: mainPage.width
         width: mainPage.width
         height: mainPage.height - header.height
@@ -255,402 +304,985 @@ Rectangle {
             }
         }
 
-        Column {
-            id: clmn1
+        Row {
+            id: row1
+            spacing: 1
+            anchors.horizontalCenter: parent.horizontalCenter
             topPadding: units.gu(3)
-            spacing: units.gu(3)
-            width: flick1.width
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide1.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide1
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls1
+                    background: Rectangle {
+                        x: (slide1.width  - width) / 2
+                        y: (slide1.height - height) / 2
+                        implicitHeight: slide1.horizontal ? 1 : 200
+                        width: 4
+                        height: slide1.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
 
-            Row {
-                id: row1
-                spacing: 1
-                anchors.horizontalCenter: clmn1.horizontalCenter
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide1.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide1
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls1
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "31Hz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide2.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide2
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls2
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "63Hz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide3.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide3
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls3
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "125Hz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide4.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide4
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls4
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "250Hz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide5.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide5
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls5
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "500Hz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide6.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide6
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls6
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "1kHz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide7.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide7
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls7
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "2kHz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide8.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide8
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls8
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "4kHz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide9.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide9
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls9
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "8kHz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-                Column {
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: slide10.value
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                    Qqc.Slider {
-                        id: slide10
-                        from: -48.0
-                        to: 24.0
-                        live: true
-                        orientation: Qt.Vertical
-                        stepSize: 0.5
-                        value: settings.equalizerControls10
-                    }
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignHCenter
-                        text: "16kHz"
-                        color: Colors.mainText
-                        font.pointSize: 20
-                    }
-                }
-            }
-
-            Row {
-                id: row2
-                anchors.horizontalCenter: clmn1.horizontalCenter
-                spacing: units.gu(5)
-                Button {
-                    id: chngbttn
-                    height: units.gu(4)
-                    width: units.gu(4)
-                    iconSource: "../../assets/change.svg"
-                    StyleHints {
-                        defaultColor: chngbttn.pressed ? "32517F" : Colors.surfaceColor
-                    }
-                    onClicked: {
-                        settings.equalizerControls1 = slide1.value.toFixed(1)
-                        settings.equalizerControls2 = slide2.value.toFixed(1)
-                        settings.equalizerControls3 = slide3.value.toFixed(1)
-                        settings.equalizerControls4 = slide4.value.toFixed(1)
-                        settings.equalizerControls5 = slide5.value.toFixed(1)
-                        settings.equalizerControls6 = slide6.value.toFixed(1)
-                        settings.equalizerControls7 = slide7.value.toFixed(1)
-                        settings.equalizerControls8 = slide8.value.toFixed(1)
-                        settings.equalizerControls9 = slide9.value.toFixed(1)
-                        settings.equalizerControls10 = slide10.value.toFixed(1)
-                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_change.sh"])
-                    }
-                }
-                Qqc.Switch {
-                    id: eqswitch
-                    y: 5
-                    onClicked: {
-                        if (settings.equalizerStatus === true) {
-                            process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_stop.sh"])
-                            eqsts = checked
-                            txt2.text = ""
-                        } else if (settings.equalizerStatus === false) {
-                            settings.equalizerControls1 = slide1.value.toFixed(1)
-                            settings.equalizerControls2 = slide2.value.toFixed(1)
-                            settings.equalizerControls3 = slide3.value.toFixed(1)
-                            settings.equalizerControls4 = slide4.value.toFixed(1)
-                            settings.equalizerControls5 = slide5.value.toFixed(1)
-                            settings.equalizerControls6 = slide6.value.toFixed(1)
-                            settings.equalizerControls7 = slide7.value.toFixed(1)
-                            settings.equalizerControls8 = slide8.value.toFixed(1)
-                            settings.equalizerControls9 = slide9.value.toFixed(1)
-                            settings.equalizerControls10 = slide10.value.toFixed(1)
-                            process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.2/scripts/equalizer_start.sh"])
-                            eqsts = checked
-                            txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide1.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
+                            border.width: 0
                         }
                     }
+                    handle: Rectangle {
+                        id: slide1hndl
+                        x: slide1.leftPadding + (slide1.horizontal ? slide1.visualPosition * (slide1.availableWidth - width) : (slide1.availableWidth - width) / 2)
+                        y: slide1.topPadding + (slide1.vertical ? slide1.visualPosition * (slide1.availableHeight - height) : (slide1.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide1.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide1hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide1hndl
+                        spread: 0
+                        cached: true
+                    }
                 }
-                Button {
-                    id: rstbttn
-                    height: units.gu(4)
-                    width: units.gu(4)
-                    iconSource: "../../assets/resetzero.svg"
-                    StyleHints {
-                        defaultColor: rstbttn.pressed ? "#32517F" : Colors.surfaceColor
-                    }
-                    onClicked: {
-                        slide1.value = 0.0
-                        slide2.value = 0.0
-                        slide3.value = 0.0
-                        slide4.value = 0.0
-                        slide5.value = 0.0
-                        slide6.value = 0.0
-                        slide7.value = 0.0
-                        slide8.value = 0.0
-                        slide9.value = 0.0
-                        slide10.value = 0.0
-                        settings.equalizerControls1 = slide1.value.toFixed(1)
-                        settings.equalizerControls2 = slide2.value.toFixed(1)
-                        settings.equalizerControls3 = slide3.value.toFixed(1)
-                        settings.equalizerControls4 = slide4.value.toFixed(1)
-                        settings.equalizerControls5 = slide5.value.toFixed(1)
-                        settings.equalizerControls6 = slide6.value.toFixed(1)
-                        settings.equalizerControls7 = slide7.value.toFixed(1)
-                        settings.equalizerControls8 = slide8.value.toFixed(1)
-                        settings.equalizerControls9 = slide9.value.toFixed(1)
-                        settings.equalizerControls10 = slide10.value.toFixed(1)
-                    }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "31Hz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
                 }
             }
-            Row {
-                id: row3
-                anchors.horizontalCenter: clmn1.horizontalCenter
-                spacing: units.gu(25)
-                Text {
-                    id: txt1
-                    text: i18n.tr("Dark mode")
-                    color: Colors.mainText
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide2.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
                 }
-                Qqc.Switch {
-                    id: drkmdswitch
-                    y: -15
-                    checked: settings.darkMode
+                Qqc.Slider {
+                    id: slide2
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls2
+                    background: Rectangle {
+                        x: (slide2.width  - width) / 2
+                        y: (slide2.height - height) / 2
+                        implicitHeight: slide2.horizontal ? 1 : 200
+                        width: 4
+                        height: slide2.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
 
-                    onClicked: {
-                        drkMd = checked
-                        txt2.text = i18n.tr("Please restart the app for the dark mode to take effect.")
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide2.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
+                            border.width: 0
+                        }
+                    }
+                    handle: Rectangle {
+                        id: slide2hndl
+                        x: slide2.leftPadding + (slide2.horizontal ? slide2.visualPosition * (slide2.availableWidth - width) : (slide2.availableWidth - width) / 2)
+                        y: slide2.topPadding + (slide2.vertical ? slide2.visualPosition * (slide2.availableHeight - height) : (slide2.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide2.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide2hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide2hndl
+                        spread: 0
+                        cached: true
                     }
                 }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "63Hz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
             }
-            Text {
-                 id: txt2
-                 text: ""
-                 color: "red"
-                 anchors.horizontalCenter: clmn1.horizontalCenter
-                 wrapMode: Text.WordWrap
-                 width: clmn1.width
-                 lineHeight: 1.2
-                 horizontalAlignment: Text.AlignHCenter
-                 leftPadding: units.gu(3)
-                 rightPadding: units.gu(3)
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide3.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide3
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls3
+                    background: Rectangle {
+                        x: (slide3.width  - width) / 2
+                        y: (slide3.height - height) / 2
+                        implicitHeight: slide3.horizontal ? 1 : 200
+                        width: 4
+                        height: slide3.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
+
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide3.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
+                            border.width: 0
+                        }
+                    }
+                    handle: Rectangle {
+                        id: slide3hndl
+                        x: slide3.leftPadding + (slide3.horizontal ? slide3.visualPosition * (slide3.availableWidth - width) : (slide3.availableWidth - width) / 2)
+                        y: slide3.topPadding + (slide3.vertical ? slide3.visualPosition * (slide3.availableHeight - height) : (slide3.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide3.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide3hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide3hndl
+                        spread: 0
+                        cached: true
+                    }
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "125Hz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
             }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide4.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide4
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls4
+                    background: Rectangle {
+                        x: (slide4.width  - width) / 2
+                        y: (slide4.height - height) / 2
+                        implicitHeight: slide4.horizontal ? 1 : 200
+                        width: 4
+                        height: slide4.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
+
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide4.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
+                            border.width: 0
+                        }
+                    }
+                    handle: Rectangle {
+                        id: slide4hndl
+                        x: slide4.leftPadding + (slide4.horizontal ? slide4.visualPosition * (slide4.availableWidth - width) : (slide4.availableWidth - width) / 2)
+                        y: slide4.topPadding + (slide4.vertical ? slide4.visualPosition * (slide4.availableHeight - height) : (slide4.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide4.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide4hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide4hndl
+                        spread: 0
+                        cached: true
+                    }
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "250Hz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide5.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide5
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls5
+                    background: Rectangle {
+                        x: (slide5.width  - width) / 2
+                        y: (slide5.height - height) / 2
+                        implicitHeight: slide5.horizontal ? 1 : 200
+                        width: 4
+                        height: slide5.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
+
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide5.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
+                            border.width: 0
+                        }
+                    }
+                    handle: Rectangle {
+                        id: slide5hndl
+                        x: slide5.leftPadding + (slide5.horizontal ? slide5.visualPosition * (slide5.availableWidth - width) : (slide5.availableWidth - width) / 2)
+                        y: slide5.topPadding + (slide5.vertical ? slide5.visualPosition * (slide5.availableHeight - height) : (slide5.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide5.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide5hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide5hndl
+                        spread: 0
+                        cached: true
+                    }
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "500Hz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide6.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide6
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls6
+                    background: Rectangle {
+                        x: (slide6.width  - width) / 2
+                        y: (slide6.height - height) / 2
+                        implicitHeight: slide6.horizontal ? 1 : 200
+                        width: 4
+                        height: slide6.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
+
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide6.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
+                            border.width: 0
+                        }
+                    }
+                    handle: Rectangle {
+                        id: slide6hndl
+                        x: slide6.leftPadding + (slide6.horizontal ? slide6.visualPosition * (slide6.availableWidth - width) : (slide6.availableWidth - width) / 2)
+                        y: slide6.topPadding + (slide6.vertical ? slide6.visualPosition * (slide6.availableHeight - height) : (slide6.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide6.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide6hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide6hndl
+                        spread: 0
+                        cached: true
+                    }
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "1kHz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide7.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide7
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls7
+                    background: Rectangle {
+                        x: (slide7.width  - width) / 2
+                        y: (slide7.height - height) / 2
+                        implicitHeight: slide7.horizontal ? 1 : 200
+                        width: 4
+                        height: slide7.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
+
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide7.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
+                            border.width: 0
+                        }
+                    }
+                    handle: Rectangle {
+                        id: slide7hndl
+                        x: slide7.leftPadding + (slide7.horizontal ? slide7.visualPosition * (slide7.availableWidth - width) : (slide7.availableWidth - width) / 2)
+                        y: slide7.topPadding + (slide7.vertical ? slide7.visualPosition * (slide7.availableHeight - height) : (slide7.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide7.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide7hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide7hndl
+                        spread: 0
+                        cached: true
+                    }
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "2kHz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide8.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide8
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls8
+                    background: Rectangle {
+                        x: (slide8.width  - width) / 2
+                        y: (slide8.height - height) / 2
+                        implicitHeight: slide8.horizontal ? 1 : 200
+                        width: 4
+                        height: slide8.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
+
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide8.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
+                            border.width: 0
+                        }
+                    }
+                    handle: Rectangle {
+                        id: slide8hndl
+                        x: slide8.leftPadding + (slide8.horizontal ? slide8.visualPosition * (slide8.availableWidth - width) : (slide8.availableWidth - width) / 2)
+                        y: slide8.topPadding + (slide8.vertical ? slide8.visualPosition * (slide8.availableHeight - height) : (slide8.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide8.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide8hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide8hndl
+                        spread: 0
+                        cached: true
+                    }
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "4kHz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide9.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                 Qqc.Slider {
+                    id: slide9
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls9
+                    background: Rectangle {
+                        x: (slide9.width  - width) / 2
+                        y: (slide9.height - height) / 2
+                        implicitHeight: slide9.horizontal ? 1 : 200
+                        width: 4
+                        height: slide9.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
+
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide9.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
+                            border.width: 0
+                        }
+                    }
+                    handle: Rectangle {
+                        id: slide9hndl
+                        x: slide9.leftPadding + (slide9.horizontal ? slide9.visualPosition * (slide9.availableWidth - width) : (slide9.availableWidth - width) / 2)
+                        y: slide9.topPadding + (slide9.vertical ? slide9.visualPosition * (slide9.availableHeight - height) : (slide9.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide9.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide9hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide9hndl
+                        spread: 0
+                        cached: true
+                    }
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "8kHz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+            }
+            Column {
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: slide10.value
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+                Qqc.Slider {
+                    id: slide10
+                    from: -48.0
+                    to: 24.0
+                    live: true
+                    orientation: Qt.Vertical
+                    stepSize: 0.5
+                    value: settings.equalizerControls10
+                    background: Rectangle {
+                        x: (slide10.width  - width) / 2
+                        y: (slide10.height - height) / 2
+                        implicitHeight: slide10.horizontal ? 1 : 200
+                        width: 4
+                        height: slide10.availableHeight
+                        radius: 2
+                        color: "#32517F"
+                        border.width: 0
+
+                        Rectangle {
+                            implicitWidth: parent.width
+                            implicitHeight: slide10.visualPosition * parent.height
+                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            radius: 2
+                            border.width: 0
+                        }
+                    }
+                    handle: Rectangle {
+                        id: slide10hndl
+                        x: slide10.leftPadding + (slide10.horizontal ? slide10.visualPosition * (slide10.availableWidth - width) : (slide10.availableWidth - width) / 2)
+                        y: slide10.topPadding + (slide10.vertical ? slide10.visualPosition * (slide10.availableHeight - height) : (slide10.availableHeight - height) / 2)
+                        implicitWidth: 52
+                        implicitHeight: 52
+                        radius: 26
+                        color: slide10.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        border.width: 0
+                    }
+                    DropShadow {
+                        anchors.fill: slide10hndl
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: slide10hndl
+                        spread: 0
+                        cached: true
+                    }
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "16kHz"
+                    color: settings.darkMode ? "#808080" : "black"
+                    font.pointSize: 20
+                }
+            }
+        }
+
+        Qqc.Slider {
+            id: prgrssbr
+            from: 0.00
+            to: 1.00
+            live: true
+            stepSize: 0.01
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: row1.bottom
+            anchors.topMargin: units.gu(1)
+            enabled: true
+
+            MouseArea {
+                anchors.fill: parent
+                enabled: true
+            }
+
+            background: Rectangle {
+                x: (prgrssbr.width  - width) / 2
+                y: (prgrssbr.height - height) / 2
+                implicitWidth: 200
+                width: prgrssbr.availableWidth
+                height: 10
+                radius: 5
+                color: settings.darkMode ? "#808080" : "#f1f1f1"
+
+                Rectangle {
+                    width: prgrssbr.visualPosition * parent.width
+                    height: parent.height
+                    color: "#32517F"
+                    radius: 2
+                }
+            }
+
+            handle: Rectangle {
+                visible: false
+                x: prgrssbr.leftPadding + (prgrssbr.horizontal ? prgrssbr.visualPosition * (prgrssbr.availableWidth - width) : (prgrssbr.availableWidth - width) / 2)
+                y: prgrssbr.topPadding + (prgrssbr.vertical ? prgrssbr.visualPosition * (prgrssbr.availableHeight - height) : (prgrssbr.availableHeight - height) / 2)
+                implicitWidth: 26
+                implicitHeight: 26
+                radius: 13
+                color: prgrssbr.pressed ? "#32517F" : "#292929"
+            }
+        }
+
+        Item {
+            id: itm1
+            anchors.top: prgrssbr.bottom
+            anchors.left: parent.left
+            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 300)
+            anchors.topMargin: units.gu(1)
             Rectangle {
-                 id: plchldrrec
-                 color: "transparent"
-                 anchors.horizontalCenter: clmn1.horizontalCenter
-                 width: clmn1.width
-                 height: units.gu(5) - txt2.height
+                id: chngbttn
+                height: units.gu(4)
+                width: units.gu(4)
+                radius: units.gu(1)
+                color: chngbttnma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+            }
+            Icon {
+                id: chngbttnicn
+                source: chngbttnma.pressed ? "../../assets/change_pressed.svg" : (settings.darkMode ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: chngbttn
+                z: 2
+            }
+            MouseArea {
+                id: chngbttnma
+                anchors.fill: chngbttn
+ 
+                onClicked: {
+                    settings.equalizerControls1 = slide1.value.toFixed(1)
+                    settings.equalizerControls2 = slide2.value.toFixed(1)
+                    settings.equalizerControls3 = slide3.value.toFixed(1)
+                    settings.equalizerControls4 = slide4.value.toFixed(1)
+                    settings.equalizerControls5 = slide5.value.toFixed(1)
+                    settings.equalizerControls6 = slide6.value.toFixed(1)
+                    settings.equalizerControls7 = slide7.value.toFixed(1)
+                    settings.equalizerControls8 = slide8.value.toFixed(1)
+                    settings.equalizerControls9 = slide9.value.toFixed(1)
+                    settings.equalizerControls10 = slide10.value.toFixed(1)
+                    process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_change.sh"])
+                }
+            }
+            DropShadow {
+                anchors.fill: chngbttn
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: chngbttn
+                spread: 0
+                cached: true
+            }
+        }
+
+        Qqc.Switch {
+            id: eqswitch
+            anchors.left: parent.left
+            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 70)
+            anchors.top: prgrssbr.bottom
+            anchors.topMargin: units.gu(1)
+
+            indicator: Rectangle {
+                id: rec1
+                implicitWidth: 120
+                implicitHeight: 65
+                x: eqswitch.leftPadding
+                y: parent.height / 2 - height / 2
+                radius: 32.5
+                color: settings.darkMode ? (eqswitch.checked ? "#32517F" : "#808080") : (eqswitch.checked ? "#32517F" : "#f1f1f1")
+        
+                Text {
+                    id: txt
+                    color: settings.darkMode ? (eqswitch.checked ? "#808080" : "#292929") : (eqswitch.checked ? "white" : "black")
+                    text: "I     O"
+                    anchors.top: rec1.top
+                    anchors.bottom: rec1.bottom
+                    anchors.left: rec1.left
+                    anchors.right: rec1.right
+                    anchors.topMargin: 11
+                    anchors.leftMargin: 25
+                }
+
+                Rectangle {
+                    id: rec2
+                    x: eqswitch.checked ? parent.width - width : 0
+                    width: 65
+                    height: 65
+                    radius: 32.5
+                    color: settings.darkMode ? (eqswitch.down ? "#32517F" : "#292929") : (eqswitch.down ? "#32517F" : "white")
+                }
+                DropShadow {
+                    anchors.fill: rec2
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: rec2
+                    spread: 0
+                    cached: true
+                }
+            }
+            onClicked: {
+                if (settings.equalizerStatus === true) {                    
+                    process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
+                    eqsts = checked
+                    txt2.text = ""
+                    process8.kill()
+                    delay(500, function() {
+                        prgrssbr.value = 0.00
+                    })
+                } else if (settings.equalizerStatus === false) {
+                    settings.equalizerControls1 = slide1.value.toFixed(1)
+                    settings.equalizerControls2 = slide2.value.toFixed(1)
+                    settings.equalizerControls3 = slide3.value.toFixed(1)
+                    settings.equalizerControls4 = slide4.value.toFixed(1)
+                    settings.equalizerControls5 = slide5.value.toFixed(1)
+                    settings.equalizerControls6 = slide6.value.toFixed(1)
+                    settings.equalizerControls7 = slide7.value.toFixed(1)
+                    settings.equalizerControls8 = slide8.value.toFixed(1)
+                    settings.equalizerControls9 = slide9.value.toFixed(1)
+                    settings.equalizerControls10 = slide10.value.toFixed(1)
+                    process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_start.sh"])
+                    eqsts = checked
+                    txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
+                    process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/bin/pulse-vumeter"])
+                }
+            }
+        }
+
+        Item {
+            id: itm2
+            anchors.top: prgrssbr.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: ((((parent.width / 4) + (parent.width / 4)) - 300) + units.gu(4))
+            anchors.topMargin: units.gu(1)
+            Rectangle {
+                id: rstbttn
+                height: units.gu(4)
+                width: units.gu(4)
+                radius: units.gu(1)
+                color: rstbttnma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+            }
+            Icon {
+                id: rstbttnicn
+                source: rstbttnma.pressed ? "../../assets/resetzero_pressed.svg" : (settings.darkMode ? "../../assets/resetzero_darkmode.svg" : "../../assets/resetzero_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: rstbttn
+                z: 2
+            }
+            MouseArea {
+                id: rstbttnma
+                anchors.fill: rstbttn
+ 
+                onClicked: {
+                    slide1.value = 0.0
+                    slide2.value = 0.0
+                    slide3.value = 0.0
+                    slide4.value = 0.0
+                    slide5.value = 0.0
+                    slide6.value = 0.0
+                    slide7.value = 0.0
+                    slide8.value = 0.0
+                    slide9.value = 0.0
+                    slide10.value = 0.0
+                    settings.equalizerControls1 = slide1.value.toFixed(1)
+                    settings.equalizerControls2 = slide2.value.toFixed(1)
+                    settings.equalizerControls3 = slide3.value.toFixed(1)
+                    settings.equalizerControls4 = slide4.value.toFixed(1)
+                    settings.equalizerControls5 = slide5.value.toFixed(1)
+                    settings.equalizerControls6 = slide6.value.toFixed(1)
+                    settings.equalizerControls7 = slide7.value.toFixed(1)
+                    settings.equalizerControls8 = slide8.value.toFixed(1)
+                    settings.equalizerControls9 = slide9.value.toFixed(1)
+                    settings.equalizerControls10 = slide10.value.toFixed(1)
+                }
+            }
+            DropShadow {
+                anchors.fill: rstbttn
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: rstbttn
+                spread: 0
+                cached: true
+            }
+        }
+
+        Text {
+            id: txt2
+            text: ""
+            color: "red"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: prgrssbr.bottom
+            anchors.topMargin: units.gu(8)
+            wrapMode: Text.WordWrap
+            width: parent.width
+            lineHeight: 1.2
+            horizontalAlignment: Text.AlignHCenter
+            leftPadding: units.gu(3)
+            rightPadding: units.gu(3)
+        }
+        Rectangle {
+            id: plchldrrec
+            color: "transparent"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: txt2.bottom
+            anchors.topMargin: units.gu(3)
+            width: parent.width
+            height: units.gu(5) - txt2.height
+        }
+
+        Text {
+            id: txt1
+            text: i18n.tr("Dark mode")
+            color: settings.darkMode ? "#808080" : "black"
+            anchors.top: plchldrrec.bottom
+            anchors.left: parent.left
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(3)
+        }
+
+        Qqc.Switch {
+            id: drkmdswitch
+            checked: settings.darkMode
+            anchors.top: plchldrrec.bottom
+            anchors.right: parent.right
+            anchors.topMargin: units.gu(2)
+
+            indicator: Rectangle {
+                id: rec3
+                implicitWidth: 120
+                implicitHeight: 65
+                x: eqswitch.leftPadding
+                y: parent.height / 2 - height / 2
+                radius: 32.5
+                color: settings.darkMode ? (drkmdswitch.checked ? "#32517F" : "#808080") : (drkmdswitch.checked ? "#32517F" : "#f1f1f1")
+        
+                Text {
+                    id: txt9
+                    color: settings.darkMode ? (drkmdswitch.checked ? "#808080" : "#292929") : (drkmdswitch.checked ? "white" : "black")
+                    text: "I     O"
+                    anchors.top: rec3.top
+                    anchors.bottom: rec3.bottom
+                    anchors.left: rec3.left
+                    anchors.right: rec3.right
+                    anchors.topMargin: 11
+                    anchors.leftMargin: 25
+                }
+
+                Rectangle {
+                    id: rec4
+                    x: drkmdswitch.checked ? parent.width - width : 0
+                    width: 65
+                    height: 65
+                    radius: 32.5
+                    color: settings.darkMode ? (drkmdswitch.down ? "#32517F" : "#292929") : (drkmdswitch.down ? "#32517F" : "white")
+                }
+                DropShadow {
+                    anchors.fill: rec4
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: rec4
+                    spread: 0
+                    cached: true
+                }
+            }
+            onClicked: {
+                drkMd = checked
             }
         }
 
         TextField {
             id: txtfld1
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
+            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            selectionColor: "#32517F"
             text: settings.preset1name
             placeholderText: i18n.tr("Preset 1")
             hasClearButton: false
-            anchors.top: clmn1.bottom
+            anchors.top: txt1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
-            anchors.topMargin: units.gu(1)
+            anchors.topMargin: units.gu(3)
             width: flick1.width / 2
             style: ActionBarStyle {
                 backgroundColor: "transparent"
@@ -660,63 +1292,152 @@ Rectangle {
                 txtfld1.text = settings.preset1name
                 ma1.focus = true
             }
+
+            cursorDelegate: Rectangle {
+                id: cursor
+                visible: false
+                color: settings.darkMode ? "#808080" : "black"
+                width: txtfld1.cursorRectangle.width
+
+                SequentialAnimation {
+                    loops: Animation.Infinite
+                    running: txtfld1.cursorVisible
+
+                    PropertyAction {
+                        target: cursor
+                        property: 'visible'
+                        value: true
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    PropertyAction {
+                        target: cursor
+                        property: 'visible'
+                        value: false
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    onStopped: {
+                        cursor.visible = false
+                    }
+                }
+            }
+
         }
 
-        Button {
-            id: bttn5
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: clmn1.bottom
+        Item {
+            id: itm3
+            anchors.top: txt1.bottom
             anchors.right: parent.right
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(1)
-            iconSource: "../../assets/load.svg"
-            StyleHints {
-                defaultColor: bttn5.pressed ? "#32517F" : Colors.surfaceColor
+            anchors.rightMargin: units.gu(6)
+            anchors.topMargin: units.gu(3)
+            Rectangle {
+                id: bttn5
+                height: units.gu(4)
+                width: units.gu(4)
+                radius: units.gu(1)
+                color: bttn5ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
-            onClicked: {
-                slide1.value = settings.preset1equalizerControls1
-                slide2.value = settings.preset1equalizerControls2
-                slide3.value = settings.preset1equalizerControls3
-                slide4.value = settings.preset1equalizerControls4
-                slide5.value = settings.preset1equalizerControls5
-                slide6.value = settings.preset1equalizerControls6
-                slide7.value = settings.preset1equalizerControls7
-                slide8.value = settings.preset1equalizerControls8
-                slide9.value = settings.preset1equalizerControls9
-                slide10.value = settings.preset1equalizerControls10
+            Icon {
+                id: bttn5icn
+                source: bttn5ma.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn5
+                z: 2
+            }
+            MouseArea {
+                id: bttn5ma
+                anchors.fill: bttn5
+ 
+                onClicked: {
+                    slide1.value = settings.preset1equalizerControls1
+                    slide2.value = settings.preset1equalizerControls2
+                    slide3.value = settings.preset1equalizerControls3
+                    slide4.value = settings.preset1equalizerControls4
+                    slide5.value = settings.preset1equalizerControls5
+                    slide6.value = settings.preset1equalizerControls6
+                    slide7.value = settings.preset1equalizerControls7
+                    slide8.value = settings.preset1equalizerControls8
+                    slide9.value = settings.preset1equalizerControls9
+                    slide10.value = settings.preset1equalizerControls10
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn5
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn5
+                spread: 0
+                cached: true
             }
         }
 
-        Button {
-            id: bttn4
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: clmn1.bottom
-            anchors.right: bttn5.left
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(1)
-            iconName: "save"
-            StyleHints {
-                defaultColor: bttn4.pressed ? "#32517F" : Colors.surfaceColor
+        Item {
+            id: itm4
+            anchors.top: txt1.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(12)
+            anchors.topMargin: units.gu(3)
+            Rectangle {
+                id: bttn4
+                height: units.gu(4)
+                width: units.gu(4)
+                radius: units.gu(1)
+                color: bttn4ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
-            onClicked: {
-                settings.preset1equalizerControls1 = slide1.value.toFixed(1)
-                settings.preset1equalizerControls2 = slide2.value.toFixed(1)
-                settings.preset1equalizerControls3 = slide3.value.toFixed(1)
-                settings.preset1equalizerControls4 = slide4.value.toFixed(1)
-                settings.preset1equalizerControls5 = slide5.value.toFixed(1)
-                settings.preset1equalizerControls6 = slide6.value.toFixed(1)
-                settings.preset1equalizerControls7 = slide7.value.toFixed(1)
-                settings.preset1equalizerControls8 = slide8.value.toFixed(1)
-                settings.preset1equalizerControls9 = slide9.value.toFixed(1)
-                settings.preset1equalizerControls10 = slide10.value.toFixed(1)
+            Icon {
+                id: bttn4icn
+                source: bttn4ma.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn4
+                z: 2
+            }
+            MouseArea {
+                id: bttn4ma
+                anchors.fill: bttn4
+ 
+                onClicked: {
+                    settings.preset1equalizerControls1 = slide1.value.toFixed(1)
+                    settings.preset1equalizerControls2 = slide2.value.toFixed(1)
+                    settings.preset1equalizerControls3 = slide3.value.toFixed(1)
+                    settings.preset1equalizerControls4 = slide4.value.toFixed(1)
+                    settings.preset1equalizerControls5 = slide5.value.toFixed(1)
+                    settings.preset1equalizerControls6 = slide6.value.toFixed(1)
+                    settings.preset1equalizerControls7 = slide7.value.toFixed(1)
+                    settings.preset1equalizerControls8 = slide8.value.toFixed(1)
+                    settings.preset1equalizerControls9 = slide9.value.toFixed(1)
+                    settings.preset1equalizerControls10 = slide10.value.toFixed(1)
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn4
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn4
+                spread: 0
+                cached: true
             }
         }
 
         TextField {
             id: txtfld2
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
+            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            selectionColor: "#32517F"
             text: settings.preset2name
             placeholderText: i18n.tr("Preset 2")
             hasClearButton: false
@@ -733,63 +1454,152 @@ Rectangle {
                 txtfld2.text = settings.preset2name
                 ma1.focus = true
             }
+
+            cursorDelegate: Rectangle {
+                id: cursor2
+                visible: false
+                color: settings.darkMode ? "#808080" : "black"
+                width: txtfld2.cursorRectangle.width
+
+                SequentialAnimation {
+                    loops: Animation.Infinite
+                    running: txtfld2.cursorVisible
+
+                    PropertyAction {
+                        target: cursor2
+                        property: 'visible'
+                        value: true
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    PropertyAction {
+                        target: cursor2
+                        property: 'visible'
+                        value: false
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    onStopped: {
+                        cursor2.visible = false
+                    }
+                }
+            }
+
         }
 
-        Button {
-            id: bttn7
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn5.bottom
+        Item {
+            id: itm5
+            anchors.top: itm3.bottom
             anchors.right: parent.right
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconSource: "../../assets/load.svg"
-            StyleHints {
-                defaultColor: bttn7.pressed ? "#32517F" : Colors.surfaceColor
+            anchors.rightMargin: units.gu(6)
+            anchors.topMargin: units.gu(6)
+            Rectangle {
+                id: bttn7
+                height: units.gu(4)
+                width: units.gu(4)
+                radius: units.gu(1)
+                color: bttn7ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
-            onClicked: {
-                slide1.value = settings.preset2equalizerControls1
-                slide2.value = settings.preset2equalizerControls2
-                slide3.value = settings.preset2equalizerControls3
-                slide4.value = settings.preset2equalizerControls4
-                slide5.value = settings.preset2equalizerControls5
-                slide6.value = settings.preset2equalizerControls6
-                slide7.value = settings.preset2equalizerControls7
-                slide8.value = settings.preset2equalizerControls8
-                slide9.value = settings.preset2equalizerControls9
-                slide10.value = settings.preset2equalizerControls10
+            Icon {
+                id: bttn7icn
+                source: bttn7ma.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn7
+                z: 2
+            }
+            MouseArea {
+                id: bttn7ma
+                anchors.fill: bttn7
+ 
+                onClicked: {
+                    slide1.value = settings.preset2equalizerControls1
+                    slide2.value = settings.preset2equalizerControls2
+                    slide3.value = settings.preset2equalizerControls3
+                    slide4.value = settings.preset2equalizerControls4
+                    slide5.value = settings.preset2equalizerControls5
+                    slide6.value = settings.preset2equalizerControls6
+                    slide7.value = settings.preset2equalizerControls7
+                    slide8.value = settings.preset2equalizerControls8
+                    slide9.value = settings.preset2equalizerControls9
+                    slide10.value = settings.preset2equalizerControls10
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn7
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn7
+                spread: 0
+                cached: true
             }
         }
 
-        Button {
-            id: bttn6
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn4.bottom
-            anchors.right: bttn7.left
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconName: "save"
-            StyleHints {
-                defaultColor: bttn6.pressed ? "#32517F" : Colors.surfaceColor
+        Item {
+            id: itm6
+            anchors.top: itm4.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(12)
+            anchors.topMargin: units.gu(6)
+            Rectangle {
+                id: bttn6
+                height: units.gu(4)
+                width: units.gu(4)
+                radius: units.gu(1)
+                color: bttn6ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
-            onClicked: {
-                settings.preset2equalizerControls1 = slide1.value.toFixed(1)
-                settings.preset2equalizerControls2 = slide2.value.toFixed(1)
-                settings.preset2equalizerControls3 = slide3.value.toFixed(1)
-                settings.preset2equalizerControls4 = slide4.value.toFixed(1)
-                settings.preset2equalizerControls5 = slide5.value.toFixed(1)
-                settings.preset2equalizerControls6 = slide6.value.toFixed(1)
-                settings.preset2equalizerControls7 = slide7.value.toFixed(1)
-                settings.preset2equalizerControls8 = slide8.value.toFixed(1)
-                settings.preset2equalizerControls9 = slide9.value.toFixed(1)
-                settings.preset2equalizerControls10 = slide10.value.toFixed(1)
+            Icon {
+                id: bttn6icn
+                source: bttn6ma.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn6
+                z: 2
+            }
+            MouseArea {
+                id: bttn6ma
+                anchors.fill: bttn6
+ 
+                onClicked: {
+                    settings.preset2equalizerControls1 = slide1.value.toFixed(1)
+                    settings.preset2equalizerControls2 = slide2.value.toFixed(1)
+                    settings.preset2equalizerControls3 = slide3.value.toFixed(1)
+                    settings.preset2equalizerControls4 = slide4.value.toFixed(1)
+                    settings.preset2equalizerControls5 = slide5.value.toFixed(1)
+                    settings.preset2equalizerControls6 = slide6.value.toFixed(1)
+                    settings.preset2equalizerControls7 = slide7.value.toFixed(1)
+                    settings.preset2equalizerControls8 = slide8.value.toFixed(1)
+                    settings.preset2equalizerControls9 = slide9.value.toFixed(1)
+                    settings.preset2equalizerControls10 = slide10.value.toFixed(1)
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn6
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn6
+                spread: 0
+                cached: true
             }
         }
 
         TextField {
             id: txtfld3
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
+            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            selectionColor: "#32517F"
             text: settings.preset3name
             placeholderText: i18n.tr("Preset 3")
             hasClearButton: false
@@ -806,63 +1616,152 @@ Rectangle {
                 txtfld3.text = settings.preset3name
                 ma1.focus = true
             }
+
+            cursorDelegate: Rectangle {
+                id: cursor3
+                visible: false
+                color: settings.darkMode ? "#808080" : "black"
+                width: txtfld3.cursorRectangle.width
+
+                SequentialAnimation {
+                    loops: Animation.Infinite
+                    running: txtfld3.cursorVisible
+
+                    PropertyAction {
+                        target: cursor3
+                        property: 'visible'
+                        value: true
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    PropertyAction {
+                        target: cursor3
+                        property: 'visible'
+                        value: false
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    onStopped: {
+                        cursor3.visible = false
+                    }
+                }
+            }
+
         }
 
-        Button {
-            id: bttn9
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn7.bottom
+        Item {
+            id: itm7
+            anchors.top: itm5.bottom
             anchors.right: parent.right
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconSource: "../../assets/load.svg"
-            StyleHints {
-                defaultColor: bttn9.pressed ? "#32517F" : Colors.surfaceColor
+            anchors.rightMargin: units.gu(6)
+            anchors.topMargin: units.gu(6)
+            Rectangle {
+                id: bttn9
+                height: units.gu(4)
+                width: units.gu(4)
+                radius: units.gu(1)
+                color: bttn9ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
-            onClicked: {
-                slide1.value = settings.preset3equalizerControls1
-                slide2.value = settings.preset3equalizerControls2
-                slide3.value = settings.preset3equalizerControls3
-                slide4.value = settings.preset3equalizerControls4
-                slide5.value = settings.preset3equalizerControls5
-                slide6.value = settings.preset3equalizerControls6
-                slide7.value = settings.preset3equalizerControls7
-                slide8.value = settings.preset3equalizerControls8
-                slide9.value = settings.preset3equalizerControls9
-                slide10.value = settings.preset3equalizerControls10
+            Icon {
+                id: bttn9icn
+                source: bttn9ma.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn9
+                z: 2
+            }
+            MouseArea {
+                id: bttn9ma
+                anchors.fill: bttn9
+ 
+                onClicked: {
+                    slide1.value = settings.preset3equalizerControls1
+                    slide2.value = settings.preset3equalizerControls2
+                    slide3.value = settings.preset3equalizerControls3
+                    slide4.value = settings.preset3equalizerControls4
+                    slide5.value = settings.preset3equalizerControls5
+                    slide6.value = settings.preset3equalizerControls6
+                    slide7.value = settings.preset3equalizerControls7
+                    slide8.value = settings.preset3equalizerControls8
+                    slide9.value = settings.preset3equalizerControls9
+                    slide10.value = settings.preset3equalizerControls10
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn9
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn9
+                spread: 0
+                cached: true
             }
         }
 
-        Button {
-            id: bttn8
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn6.bottom
-            anchors.right: bttn9.left
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconName: "save"
-            StyleHints {
-                defaultColor: bttn8.pressed ? "#32517F" : Colors.surfaceColor
+        Item {
+            id: itm8
+            anchors.top: itm6.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(12)
+            anchors.topMargin: units.gu(6)
+            Rectangle {
+                id: bttn8
+                height: units.gu(4)
+                width: units.gu(4)
+                radius: units.gu(1)
+                color: bttn8ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
-            onClicked: {
-                settings.preset3equalizerControls1 = slide1.value.toFixed(1)
-                settings.preset3equalizerControls2 = slide2.value.toFixed(1)
-                settings.preset3equalizerControls3 = slide3.value.toFixed(1)
-                settings.preset3equalizerControls4 = slide4.value.toFixed(1)
-                settings.preset3equalizerControls5 = slide5.value.toFixed(1)
-                settings.preset3equalizerControls6 = slide6.value.toFixed(1)
-                settings.preset3equalizerControls7 = slide7.value.toFixed(1)
-                settings.preset3equalizerControls8 = slide8.value.toFixed(1)
-                settings.preset3equalizerControls9 = slide9.value.toFixed(1)
-                settings.preset3equalizerControls10 = slide10.value.toFixed(1)
+            Icon {
+                id: bttn8icn
+                source: bttn8ma.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn8
+                z: 2
+            }
+            MouseArea {
+                id: bttn8ma
+                anchors.fill: bttn8
+ 
+                onClicked: {
+                    settings.preset3equalizerControls1 = slide1.value.toFixed(1)
+                    settings.preset3equalizerControls2 = slide2.value.toFixed(1)
+                    settings.preset3equalizerControls3 = slide3.value.toFixed(1)
+                    settings.preset3equalizerControls4 = slide4.value.toFixed(1)
+                    settings.preset3equalizerControls5 = slide5.value.toFixed(1)
+                    settings.preset3equalizerControls6 = slide6.value.toFixed(1)
+                    settings.preset3equalizerControls7 = slide7.value.toFixed(1)
+                    settings.preset3equalizerControls8 = slide8.value.toFixed(1)
+                    settings.preset3equalizerControls9 = slide9.value.toFixed(1)
+                    settings.preset3equalizerControls10 = slide10.value.toFixed(1)
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn8
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn8
+                spread: 0
+                cached: true
             }
         }
 
         TextField {
             id: txtfld4
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
+            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            selectionColor: "#32517F"
             text: settings.preset4name
             placeholderText: i18n.tr("Preset 4")
             hasClearButton: false
@@ -879,63 +1778,152 @@ Rectangle {
                 txtfld4.text = settings.preset4name
                 ma1.focus = true
             }
+
+            cursorDelegate: Rectangle {
+                id: cursor4
+                visible: false
+                color: settings.darkMode ? "#808080" : "black"
+                width: txtfld4.cursorRectangle.width
+
+                SequentialAnimation {
+                    loops: Animation.Infinite
+                    running: txtfld4.cursorVisible
+
+                    PropertyAction {
+                        target: cursor4
+                        property: 'visible'
+                        value: true
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    PropertyAction {
+                        target: cursor4
+                        property: 'visible'
+                        value: false
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    onStopped: {
+                        cursor4.visible = false
+                    }
+                }
+            }
+
         }
 
-        Button {
-            id: bttn11
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn9.bottom
+        Item {
+            id: itm9
+            anchors.top: itm7.bottom
             anchors.right: parent.right
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconSource: "../../assets/load.svg"
-            StyleHints {
-                defaultColor: bttn11.pressed ? "#32517F" : Colors.surfaceColor
+            anchors.rightMargin: units.gu(6)
+            anchors.topMargin: units.gu(6)
+            Rectangle {
+                id: bttn11
+                height: units.gu(4)
+                width: units.gu(4)
+                radius: units.gu(1)
+                color: bttn11ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
-            onClicked: {
-                slide1.value = settings.preset4equalizerControls1
-                slide2.value = settings.preset4equalizerControls2
-                slide3.value = settings.preset4equalizerControls3
-                slide4.value = settings.preset4equalizerControls4
-                slide5.value = settings.preset4equalizerControls5
-                slide6.value = settings.preset4equalizerControls6
-                slide7.value = settings.preset4equalizerControls7
-                slide8.value = settings.preset4equalizerControls8
-                slide9.value = settings.preset4equalizerControls9
-                slide10.value = settings.preset4equalizerControls10
+            Icon {
+                id: bttn11icn
+                source: bttn11ma.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn11
+                z: 2
+            }
+            MouseArea {
+                id: bttn11ma
+                anchors.fill: bttn11
+ 
+                onClicked: {
+                    slide1.value = settings.preset4equalizerControls1
+                    slide2.value = settings.preset4equalizerControls2
+                    slide3.value = settings.preset4equalizerControls3
+                    slide4.value = settings.preset4equalizerControls4
+                    slide5.value = settings.preset4equalizerControls5
+                    slide6.value = settings.preset4equalizerControls6
+                    slide7.value = settings.preset4equalizerControls7
+                    slide8.value = settings.preset4equalizerControls8
+                    slide9.value = settings.preset4equalizerControls9
+                    slide10.value = settings.preset4equalizerControls10
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn11
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn11
+                spread: 0
+                cached: true
             }
         }
 
-        Button {
-            id: bttn10
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn8.bottom
-            anchors.right: bttn11.left
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconName: "save"
-            StyleHints {
-                defaultColor: bttn10.pressed ? "#32517F" : Colors.surfaceColor
+        Item {
+            id: itm10
+            anchors.top: itm8.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(12)
+            anchors.topMargin: units.gu(6)
+            Rectangle {
+                id: bttn10
+                height: units.gu(4)
+                width: units.gu(4)
+                radius: units.gu(1)
+                color: bttn10ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
-            onClicked: {
-                settings.preset4equalizerControls1 = slide1.value.toFixed(1)
-                settings.preset4equalizerControls2 = slide2.value.toFixed(1)
-                settings.preset4equalizerControls3 = slide3.value.toFixed(1)
-                settings.preset4equalizerControls4 = slide4.value.toFixed(1)
-                settings.preset4equalizerControls5 = slide5.value.toFixed(1)
-                settings.preset4equalizerControls6 = slide6.value.toFixed(1)
-                settings.preset4equalizerControls7 = slide7.value.toFixed(1)
-                settings.preset4equalizerControls8 = slide8.value.toFixed(1)
-                settings.preset4equalizerControls9 = slide9.value.toFixed(1)
-                settings.preset4equalizerControls10 = slide10.value.toFixed(1)
+            Icon {
+                id: bttn10icn
+                source: bttn10ma.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn10
+                z: 2
+            }
+            MouseArea {
+                id: bttn10ma
+                anchors.fill: bttn10
+ 
+                onClicked: {
+                    settings.preset4equalizerControls1 = slide1.value.toFixed(1)
+                    settings.preset4equalizerControls2 = slide2.value.toFixed(1)
+                    settings.preset4equalizerControls3 = slide3.value.toFixed(1)
+                    settings.preset4equalizerControls4 = slide4.value.toFixed(1)
+                    settings.preset4equalizerControls5 = slide5.value.toFixed(1)
+                    settings.preset4equalizerControls6 = slide6.value.toFixed(1)
+                    settings.preset4equalizerControls7 = slide7.value.toFixed(1)
+                    settings.preset4equalizerControls8 = slide8.value.toFixed(1)
+                    settings.preset4equalizerControls9 = slide9.value.toFixed(1)
+                    settings.preset4equalizerControls10 = slide10.value.toFixed(1)
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn10
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn10
+                spread: 0
+                cached: true
             }
         }
 
         TextField {
             id: txtfld5
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
+            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            selectionColor: "#32517F"
             text: settings.preset5name
             placeholderText: i18n.tr("Preset 5")
             hasClearButton: false
@@ -952,66 +1940,153 @@ Rectangle {
                 txtfld5.text = settings.preset5name
                 ma1.focus = true
             }
+
+            cursorDelegate: Rectangle {
+                id: cursor5
+                visible: false
+                color: settings.darkMode ? "#808080" : "black"
+                width: txtfld5.cursorRectangle.width
+
+                SequentialAnimation {
+                    loops: Animation.Infinite
+                    running: txtfld5.cursorVisible
+
+                    PropertyAction {
+                        target: cursor5
+                        property: 'visible'
+                        value: true
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    PropertyAction {
+                        target: cursor5
+                        property: 'visible'
+                        value: false
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    onStopped: {
+                        cursor5.visible = false
+                    }
+                }
+            }
+
         }
 
-        Button {
-            id: bttn13
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn11.bottom
+        Item {
+            id: itm11
+            anchors.top: itm9.bottom
             anchors.right: parent.right
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconSource: "../../assets/load.svg"
-            StyleHints {
-                defaultColor: bttn13.pressed ? "#32517F" : Colors.surfaceColor
+            anchors.rightMargin: units.gu(6)
+            anchors.topMargin: units.gu(6)
+            Rectangle {
+                id: bttn13
+                height: units.gu(4)
+                width: units.gu(4)
+                radius: units.gu(1)
+                color: bttn13ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
-            onClicked: {
-                slide1.value = settings.preset5equalizerControls1
-                slide2.value = settings.preset5equalizerControls2
-                slide3.value = settings.preset5equalizerControls3
-                slide4.value = settings.preset5equalizerControls4
-                slide5.value = settings.preset5equalizerControls5
-                slide6.value = settings.preset5equalizerControls6
-                slide7.value = settings.preset5equalizerControls7
-                slide8.value = settings.preset5equalizerControls8
-                slide9.value = settings.preset5equalizerControls9
-                slide10.value = settings.preset5equalizerControls10
+            Icon {
+                id: bttn13icn
+                source: bttn13ma.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn13
+                z: 2
+            }
+            MouseArea {
+                id: bttn13ma
+                anchors.fill: bttn13
+ 
+                onClicked: {
+                    slide1.value = settings.preset5equalizerControls1
+                    slide2.value = settings.preset5equalizerControls2
+                    slide3.value = settings.preset5equalizerControls3
+                    slide4.value = settings.preset5equalizerControls4
+                    slide5.value = settings.preset5equalizerControls5
+                    slide6.value = settings.preset5equalizerControls6
+                    slide7.value = settings.preset5equalizerControls7
+                    slide8.value = settings.preset5equalizerControls8
+                    slide9.value = settings.preset5equalizerControls9
+                    slide10.value = settings.preset5equalizerControls10
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn13
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn13
+                spread: 0
+                cached: true
             }
         }
 
-        Button {
-            id: bttn12
-            height: units.gu(4)
-            width: units.gu(4)
-            anchors.top: bttn10.bottom
-            anchors.right: bttn13.left
-            anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(2)
-            iconName: "save"
-            StyleHints {
-                defaultColor: bttn12.pressed ? "#32517F" : Colors.surfaceColor
+        Item {
+            id: itm12
+            anchors.top: itm10.bottom
+            anchors.right: parent.right
+            anchors.rightMargin: units.gu(12)
+            anchors.topMargin: units.gu(6)
+            Rectangle {
+                id: bttn12
+                height: units.gu(4)
+                width: units.gu(4)
+                radius: units.gu(1)
+                color: bttn12ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
             }
-            onClicked: {
-                settings.preset5equalizerControls1 = slide1.value.toFixed(1)
-                settings.preset5equalizerControls2 = slide2.value.toFixed(1)
-                settings.preset5equalizerControls3 = slide3.value.toFixed(1)
-                settings.preset5equalizerControls4 = slide4.value.toFixed(1)
-                settings.preset5equalizerControls5 = slide5.value.toFixed(1)
-                settings.preset5equalizerControls6 = slide6.value.toFixed(1)
-                settings.preset5equalizerControls7 = slide7.value.toFixed(1)
-                settings.preset5equalizerControls8 = slide8.value.toFixed(1)
-                settings.preset5equalizerControls9 = slide9.value.toFixed(1)
-                settings.preset5equalizerControls10 = slide10.value.toFixed(1)
+            Icon {
+                id: bttn12icn
+                source: bttn12ma.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                width: units.gu(3)
+                height: units.gu(3)
+                anchors.centerIn: bttn12
+                z: 2
+            }
+            MouseArea {
+                id: bttn12ma
+                anchors.fill: bttn12
+ 
+                onClicked: {
+                    settings.preset5equalizerControls1 = slide1.value.toFixed(1)
+                    settings.preset5equalizerControls2 = slide2.value.toFixed(1)
+                    settings.preset5equalizerControls3 = slide3.value.toFixed(1)
+                    settings.preset5equalizerControls4 = slide4.value.toFixed(1)
+                    settings.preset5equalizerControls5 = slide5.value.toFixed(1)
+                    settings.preset5equalizerControls6 = slide6.value.toFixed(1)
+                    settings.preset5equalizerControls7 = slide7.value.toFixed(1)
+                    settings.preset5equalizerControls8 = slide8.value.toFixed(1)
+                    settings.preset5equalizerControls9 = slide9.value.toFixed(1)
+                    settings.preset5equalizerControls10 = slide10.value.toFixed(1)
+                }
+            }
+            DropShadow {
+                anchors.fill: bttn12
+                horizontalOffset: 1
+                verticalOffset: 1
+                radius: 6
+                samples: 13
+                color: "black"
+                source: bttn12
+                spread: 0
+                cached: true
             }
         }
 
         ListItem {
             id: lstitm1
-            height: lstitmlay1.height + (divider.visible ? divider.height : 0)
-            color: Colors.backgroundColor
-            divider.colorFrom: Colors.mainText
-            divider.colorTo: Colors.mainText
+            height: header.height
+            color: settings.darkMode ? "#121212" : "white"
+            divider.colorFrom: settings.darkMode ? "#808080" : "black"
+            divider.colorTo: settings.darkMode ? "#808080" : "black"
             anchors.top: txtfld5.bottom
             anchors.left: parent.left
             anchors.right: parent.right
@@ -1025,15 +2100,18 @@ Rectangle {
                     id: hlptxt
                     SlotsLayout.position: SlotsLayout.Leading
                     text: i18n.tr("Help")
-                    color: Colors.mainText
+                    color: settings.darkMode ? "#808080" : "black"
                     font.pointSize: 40
+                    height: parent.height
+                    verticalAlignment: Text.AlignVCenter
+                    bottomPadding: units.gu(4)
                 }
             }
         }
 
         Icon {
             id: hlpicn1
-            source: "../../assets/change.svg"
+            source: settings.darkMode ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg"
             width: units.gu(4)
             height: units.gu(4)
             anchors.top: lstitm1.bottom
@@ -1045,11 +2123,11 @@ Rectangle {
         Text {
             id: txt4
             text: i18n.tr("Apply equalizer changes, when it's already activated.")
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn1.right
             anchors.right: parent.right
-            anchors.leftMargin: units.gu(2)
+            anchors.leftMargin: units.gu(8)
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
             horizontalAlignment: Text.AlignLeft
@@ -1060,7 +2138,7 @@ Rectangle {
 
         Icon {
             id: hlpicn2
-            source: "../../assets/resetzero.svg"
+            source: settings.darkMode ? "../../assets/resetzero_darkmode.svg" : "../../assets/resetzero_lightmode.svg"
             width: units.gu(4)
             height: units.gu(4)
             anchors.top: lstitm1.bottom
@@ -1072,11 +2150,11 @@ Rectangle {
         Text {
             id: txt5
             text: i18n.tr("Reset all bars to 0.0.")
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn2.right
             anchors.right: parent.right
-            anchors.leftMargin: units.gu(2)
+            anchors.leftMargin: units.gu(8)
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(13)
             horizontalAlignment: Text.AlignLeft
@@ -1087,7 +2165,7 @@ Rectangle {
 
         Icon {
             id: hlpicn3
-            name: "save"
+            source: settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg"
             width: units.gu(4)
             height: units.gu(4)
             anchors.top: lstitm1.bottom
@@ -1098,7 +2176,7 @@ Rectangle {
 
         Icon {
             id: hlpicn4
-            source: "../../assets/load.svg"
+            source: settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg"
             width: units.gu(4)
             height: units.gu(4)
             anchors.top: lstitm1.bottom
@@ -1109,8 +2187,8 @@ Rectangle {
 
         Text {
             id: txt6
-            text: i18n.tr("Save and load a preset. You can also give them a name. Apply the settings by clicking the change button or by activating the equalizer.")
-            color: Colors.mainText
+            text: i18n.tr("Save and load a preset. You can also give them a name (please don't forget to confirm with the return key). Apply the loaded equalizer settings by clicking the change button or by activating the equalizer.")
+            color: settings.darkMode ? "#808080" : "black"
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn4.right
             anchors.right: parent.right
@@ -1126,7 +2204,7 @@ Rectangle {
         Text {
             id: txt7
             text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
             lineHeight: 1.2
@@ -1139,7 +2217,25 @@ Rectangle {
         Text {
             id: txt3
             text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
-            color: Colors.mainText
+            color: settings.darkMode ? "#808080" : "black"
+            wrapMode: Text.WordWrap
+            width: flick1.width
+            lineHeight: 1.2
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: true
+            onLinkActivated: Qt.openUrlExternally(link)
+            anchors.bottom: txt8.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.leftMargin: units.gu(2)
+            anchors.rightMargin: units.gu(2)
+            bottomPadding: units.gu(2)
+        }
+
+        Text {
+            id: txt8
+            text: i18n.tr("The pulse-vumeter binary was compiled from the source code found at <a href=\"https://github.com/Luciousdev/pulse-vumeter\">github.com</a>.")
+            color: settings.darkMode ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
             lineHeight: 1.2
@@ -1147,6 +2243,10 @@ Rectangle {
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
             anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.leftMargin: units.gu(2)
+            anchors.rightMargin: units.gu(2)
             bottomPadding: units.gu(2)
         }
     }

@@ -1,9 +1,21 @@
 <RCC>
     <qresource prefix="/assets">
         <file>logo.png</file>
-        <file>change.svg</file>
-        <file>resetzero.svg</file>
-        <file>load.svg</file>
+        <file>change_darkmode.svg</file>
+        <file>change_lightmode.svg</file>
+        <file>change_pressed.svg</file>
+        <file>close_darkmode.svg</file>
+        <file>close_lightmode.svg</file>
+        <file>close_pressed.svg</file>
+        <file>resetzero_darkmode.svg</file>
+        <file>resetzero_lightmode.svg</file>
+        <file>resetzero_pressed.svg</file>
+        <file>load_darkmode.svg</file>
+        <file>load_lightmode.svg</file>
+        <file>load_pressed.svg</file>
         <file>heart.png</file>
+        <file>save_darkmode.svg</file>
+        <file>save_lightmode.svg</file>
+        <file>save_pressed.svg</file>
     </qresource>
 </RCC>
