@@ -963,7 +963,7 @@ Rectangle {
             enabled: true
 
             MouseArea {
-                anchors.fill: prgrssbr
+                anchors.fill: parent
                 enabled: true
             }
 
