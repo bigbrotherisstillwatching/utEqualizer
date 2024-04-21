@@ -1449,6 +1449,43 @@ Rectangle {
                 txtfld2.text = settings.preset2name
                 ma1.focus = true
             }
+
+            cursorDelegate: Rectangle {
+                id: cursor2
+                visible: false
+                color: settings.darkMode ? "#808080" : "black"
+                width: txtfld2.cursorRectangle.width
+
+                SequentialAnimation {
+                    loops: Animation.Infinite
+                    running: txtfld2.cursorVisible
+
+                    PropertyAction {
+                        target: cursor2
+                        property: 'visible'
+                        value: true
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    PropertyAction {
+                        target: cursor2
+                        property: 'visible'
+                        value: false
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    onStopped: {
+                        cursor2.visible = false
+                    }
+                }
+            }
+
         }
 
         Item {
@@ -1574,6 +1611,43 @@ Rectangle {
                 txtfld3.text = settings.preset3name
                 ma1.focus = true
             }
+
+            cursorDelegate: Rectangle {
+                id: cursor3
+                visible: false
+                color: settings.darkMode ? "#808080" : "black"
+                width: txtfld3.cursorRectangle.width
+
+                SequentialAnimation {
+                    loops: Animation.Infinite
+                    running: txtfld3.cursorVisible
+
+                    PropertyAction {
+                        target: cursor3
+                        property: 'visible'
+                        value: true
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    PropertyAction {
+                        target: cursor3
+                        property: 'visible'
+                        value: false
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    onStopped: {
+                        cursor3.visible = false
+                    }
+                }
+            }
+
         }
 
         Item {
@@ -1699,6 +1773,43 @@ Rectangle {
                 txtfld4.text = settings.preset4name
                 ma1.focus = true
             }
+
+            cursorDelegate: Rectangle {
+                id: cursor4
+                visible: false
+                color: settings.darkMode ? "#808080" : "black"
+                width: txtfld4.cursorRectangle.width
+
+                SequentialAnimation {
+                    loops: Animation.Infinite
+                    running: txtfld4.cursorVisible
+
+                    PropertyAction {
+                        target: cursor4
+                        property: 'visible'
+                        value: true
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    PropertyAction {
+                        target: cursor4
+                        property: 'visible'
+                        value: false
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    onStopped: {
+                        cursor4.visible = false
+                    }
+                }
+            }
+
         }
 
         Item {
@@ -1824,6 +1935,43 @@ Rectangle {
                 txtfld5.text = settings.preset5name
                 ma1.focus = true
             }
+
+            cursorDelegate: Rectangle {
+                id: cursor5
+                visible: false
+                color: settings.darkMode ? "#808080" : "black"
+                width: txtfld5.cursorRectangle.width
+
+                SequentialAnimation {
+                    loops: Animation.Infinite
+                    running: txtfld5.cursorVisible
+
+                    PropertyAction {
+                        target: cursor5
+                        property: 'visible'
+                        value: true
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    PropertyAction {
+                        target: cursor5
+                        property: 'visible'
+                        value: false
+                    }
+
+                    PauseAnimation {
+                        duration: 600
+                    }
+
+                    onStopped: {
+                        cursor5.visible = false
+                    }
+                }
+            }
+
         }
 
         Item {
