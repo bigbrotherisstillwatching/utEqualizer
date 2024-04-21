@@ -1291,7 +1291,7 @@ Rectangle {
             cursorDelegate: Rectangle {
                 id: cursor
                 visible: false
-                color: "#32517F"
+                color: settings.darkMode ? "#808080" : "black"
                 width: txtfld1.cursorRectangle.width
 
                 SequentialAnimation {
