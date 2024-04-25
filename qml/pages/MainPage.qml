@@ -2105,7 +2105,7 @@ Rectangle {
 //                    height: parent.height
                     verticalAlignment: Text.AlignVCenter
 //                    bottomPadding: units.gu(4)
-                    bottomPadding: units.gu(2)
+                    bottomPadding: units.gu(1)
                 }
             }
         }
