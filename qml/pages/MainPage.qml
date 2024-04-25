@@ -1287,7 +1287,7 @@ Rectangle {
 //            style: ActionBarStyle {
 //                backgroundColor: "transparent"
 //            }
-            placeholderTextColor: "#808080"
+            placeholderTextColor: "white"
             background: Rectangle {
                 color: settings.darkMode ? "#121212" : "white"
             }
