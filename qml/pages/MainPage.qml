@@ -1273,7 +1273,7 @@ Rectangle {
 
         Qqc.TextField {
             id: txtfld1
-            color: settings.darkMode ? "#808080" : "black"
+            color: settings.darkMode ? "#292929" : "black"
             selectedTextColor: settings.darkMode ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset1name
@@ -1287,9 +1287,8 @@ Rectangle {
 //            style: ActionBarStyle {
 //                backgroundColor: "transparent"
 //            }
-            placeholderTextColor: "white"
             background: Rectangle {
-                color: settings.darkMode ? "#121212" : "white"
+                color: settings.darkMode ? "#808080" : "white"
             }
             font.pixelSize: txt1.font.pixelSize
             onAccepted: {
