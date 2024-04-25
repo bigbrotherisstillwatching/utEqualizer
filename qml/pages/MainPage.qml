@@ -2103,9 +2103,9 @@ Rectangle {
                     color: settings.darkMode ? "#808080" : "black"
                     font.pointSize: 40
 //                    height: parent.height
-                    verticalAlignment: Text.AlignVCenter
+//                    verticalAlignment: Text.AlignVCenter
 //                    bottomPadding: units.gu(4)
-                    bottomPadding: units.gu(0.9)
+//                    bottomPadding: units.gu(0.9)
                 }
             }
         }
