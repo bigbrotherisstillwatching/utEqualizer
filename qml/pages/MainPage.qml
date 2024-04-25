@@ -2102,7 +2102,7 @@ Rectangle {
                     text: i18n.tr("Help")
                     color: settings.darkMode ? "#808080" : "black"
                     font.pointSize: 40
-                    height: parent.height
+//                    height: parent.height
                     verticalAlignment: Text.AlignVCenter
                     bottomPadding: units.gu(4)
                 }
