@@ -1291,6 +1291,7 @@ Rectangle {
             background: Rectangle {
                 color: settings.darkMode ? "#121212" : "white"
             }
+            font.pointSize: txt1.font.pointSize
             onAccepted: {
                 settings.preset1name = txtfld1.text
                 txtfld1.text = settings.preset1name
