@@ -1281,13 +1281,13 @@ Rectangle {
 //            hasClearButton: false
             anchors.top: txt1.bottom
             anchors.left: parent.left
-            anchors.leftMargin: units.gu(2)
+            anchors.leftMargin: units.gu(1)
             anchors.topMargin: units.gu(3)
             width: flick1.width / 2
 //            style: ActionBarStyle {
 //                backgroundColor: "transparent"
 //            }
-            placeholderTextColor: settings.darkMode ? "#808080" : "black"
+//            placeholderTextColor: settings.darkMode ? "#808080" : "black"
             background: Rectangle {
                 color: settings.darkMode ? "#121212" : "white"
             }
