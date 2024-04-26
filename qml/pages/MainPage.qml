@@ -30,7 +30,7 @@ Rectangle {
     anchors.fill: parent
 
 //    color: settings.darkMode ? "#121212" : "white"
-    color: settings.darkMode ? "#292929" : "white"
+    color: settings.darkMode ? "black" : "white"
 
     property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
