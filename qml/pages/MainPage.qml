@@ -1289,7 +1289,7 @@ Rectangle {
 //                backgroundColor: "transparent"
 //            }
             background: Rectangle {
-                color: settings.darkMode ? "#292929" : "white"
+                color: settings.darkMode ? "black" : "white"
             }
             font.pixelSize: txt1.font.pixelSize
             onAccepted: {
