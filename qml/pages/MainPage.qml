@@ -1287,21 +1287,25 @@ Rectangle {
 //            style: ActionBarStyle {
 //                backgroundColor: "transparent"
 //            }
-            background: Rectangle {
-                id: txtfld1rec
-                color: settings.darkMode ? "#292929" : "white"
-                height: units.gu(4)
-                radius: units.gu(1)
-                DropShadow {
-                    anchors.fill: txtfld1rec
-                    horizontalOffset: 1
-                    verticalOffset: 1
-                    radius: 6
-                    samples: 13
-                    color: "black"
-                    source: txtfld1rec
-                    spread: 0
-                    cached: true
+            background: Item {
+                id: itm13
+                Rectangle {
+                    id: txtfld1rec
+                    color: settings.darkMode ? "#292929" : "white"
+                    height: units.gu(4)
+                    radius: units.gu(1)
+
+                    DropShadow {
+                        anchors.fill: txtfld1rec
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 6
+                        samples: 13
+                        color: "black"
+                        source: txtfld1rec
+                        spread: 0
+                        cached: true
+                    }
                 }
             }
             font.pixelSize: txt1.font.pixelSize
