@@ -1289,10 +1289,22 @@ Rectangle {
 //            }
             background: Rectangle {
                 id: txtfld1rec
-                color: settings.darkMode ? "#121212" : "white"
+                color: settings.darkMode ? "#292929" : "white"
+                height: units.gu(4)
+                radius: units.gu(1)
+                DropShadow {
+                    anchors.fill: txtfld1rec
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: txtfld1rec
+                    spread: 0
+                    cached: true
+                }
             }
             font.pixelSize: txt1.font.pixelSize
-            placeholderTextColor: settings.darkMode ? "#808080" : "black"
             onAccepted: {
                 settings.preset1name = txtfld1.text
                 txtfld1.text = settings.preset1name
