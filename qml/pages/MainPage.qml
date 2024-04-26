@@ -29,7 +29,8 @@ Rectangle {
     id: mainPage
     anchors.fill: parent
 
-    color: settings.darkMode ? "#121212" : "white"
+//    color: settings.darkMode ? "#121212" : "white"
+    color: settings.darkMode ? "#292929" : "white"
 
     property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
@@ -1273,7 +1274,7 @@ Rectangle {
 
         Qqc.TextField {
             id: txtfld1
-            color: settings.darkMode ? "#292929" : "black"
+            color: settings.darkMode ? "#808080" : "black"
             selectedTextColor: settings.darkMode ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset1name
@@ -1288,7 +1289,7 @@ Rectangle {
 //                backgroundColor: "transparent"
 //            }
             background: Rectangle {
-                color: settings.darkMode ? "#808080" : "white"
+                color: settings.darkMode ? "#292929" : "white"
             }
             font.pixelSize: txt1.font.pixelSize
             onAccepted: {
