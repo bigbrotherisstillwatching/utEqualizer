@@ -1287,11 +1287,15 @@ Rectangle {
 //            style: ActionBarStyle {
 //                backgroundColor: "transparent"
 //            }
-            background: Rectangle {
-                id: txtfld1rec
-                color: settings.darkMode ? "#292929" : "white"
-                height: units.gu(4)
-                radius: units.gu(1)
+            background: Item {
+                id: itm13
+                Rectangle {
+                    id: txtfld1rec
+                    anchors.fill: parent
+                    color: settings.darkMode ? "#292929" : "white"
+                    height: units.gu(4)
+                    radius: units.gu(1)
+                }
 
                 DropShadow {
                     anchors.fill: txtfld1rec
