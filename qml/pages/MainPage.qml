@@ -1310,7 +1310,7 @@ Rectangle {
                 }
             }
             font.pixelSize: txt1.font.pixelSize
-            width: flick1.width - units.gu(14)
+            width: flick1.width - units.gu(16)
             onAccepted: {
                 settings.preset1name = txtfld1.text
                 txtfld1.text = settings.preset1name
