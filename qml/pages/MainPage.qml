@@ -29,8 +29,7 @@ Rectangle {
     id: mainPage
     anchors.fill: parent
 
-//    color: settings.darkMode ? "#121212" : "white"
-    color: settings.darkMode ? "black" : "white"
+    color: settings.darkMode ? "#121212" : "white"
 
     property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
@@ -1274,7 +1273,7 @@ Rectangle {
 
         Qqc.TextField {
             id: txtfld1
-            color: settings.darkMode ? "#808080" : "black"
+            color: settings.darkMode ? "#292929" : "black"
             selectedTextColor: settings.darkMode ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset1name
@@ -1282,14 +1281,16 @@ Rectangle {
 //            hasClearButton: false
             anchors.top: txt1.bottom
             anchors.left: parent.left
-            anchors.leftMargin: units.gu(0.5)
+            anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
             width: flick1.width / 2
 //            style: ActionBarStyle {
 //                backgroundColor: "transparent"
 //            }
             background: Rectangle {
-                color: settings.darkMode ? "black" : "white"
+                id: txtfld1rec
+                color: settings.darkMode ? "#808080" : "white"
+                radius: height / 4
             }
             font.pixelSize: txt1.font.pixelSize
             onAccepted: {
