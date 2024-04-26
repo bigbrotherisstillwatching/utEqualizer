@@ -1273,7 +1273,7 @@ Rectangle {
 
         Qqc.TextField {
             id: txtfld1
-            color: settings.darkMode ? "#292929" : "black"
+            color: settings.darkMode ? "#808080" : "black"
             selectedTextColor: settings.darkMode ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset1name
@@ -1281,7 +1281,7 @@ Rectangle {
 //            hasClearButton: false
             anchors.top: txt1.bottom
             anchors.left: parent.left
-            anchors.leftMargin: units.gu(2)
+            anchors.leftMargin: units.gu(0.5)
             anchors.topMargin: units.gu(3)
             width: flick1.width / 2
 //            style: ActionBarStyle {
@@ -1289,10 +1289,10 @@ Rectangle {
 //            }
             background: Rectangle {
                 id: txtfld1rec
-                color: settings.darkMode ? "#808080" : "white"
-                radius: height / 4
+                color: settings.darkMode ? "#121212" : "white"
             }
             font.pixelSize: txt1.font.pixelSize
+            placeholderTextColor: settings.darkMode ? "#808080" : "black"
             onAccepted: {
                 settings.preset1name = txtfld1.text
                 txtfld1.text = settings.preset1name
