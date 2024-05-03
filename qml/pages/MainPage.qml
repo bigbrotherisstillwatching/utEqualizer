@@ -1278,15 +1278,10 @@ Rectangle {
             selectionColor: "#32517F"
             text: settings.preset1name
             placeholderText: i18n.tr("Preset 1")
-//            hasClearButton: false
             anchors.top: txt1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
-//            width: flick1.width / 2
-//            style: ActionBarStyle {
-//                backgroundColor: "transparent"
-//            }
             background: Item {
                 id: itm13
                 Rectangle {
@@ -1464,15 +1459,10 @@ Rectangle {
             selectionColor: "#32517F"
             text: settings.preset2name
             placeholderText: i18n.tr("Preset 2")
-//            hasClearButton: false
             anchors.top: txtfld1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-//            width: flick1.width / 2
-//            style: ActionBarStyle {
-//                backgroundColor: "transparent"
-//            }
 
             background: Item {
                 id: itm14
@@ -1652,15 +1642,10 @@ Rectangle {
             selectionColor: "#32517F"
             text: settings.preset3name
             placeholderText: i18n.tr("Preset 3")
-//            hasClearButton: false
             anchors.top: txtfld2.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-//            width: flick1.width / 2
-//            style: ActionBarStyle {
-//                backgroundColor: "transparent"
-//            }
 
             background: Item {
                 id: itm15
@@ -1840,15 +1825,10 @@ Rectangle {
             selectionColor: "#32517F"
             text: settings.preset4name
             placeholderText: i18n.tr("Preset 4")
-//            hasClearButton: false
             anchors.top: txtfld3.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-//            width: flick1.width / 2
-//            style: ActionBarStyle {
-//                backgroundColor: "transparent"
-//            }
 
             background: Item {
                 id: itm16
@@ -2028,15 +2008,10 @@ Rectangle {
             selectionColor: "#32517F"
             text: settings.preset5name
             placeholderText: i18n.tr("Preset 5")
-//            hasClearButton: false
             anchors.top: txtfld4.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-//            width: flick1.width / 2
-//            style: ActionBarStyle {
-//                backgroundColor: "transparent"
-//            }
 
             background: Item {
                 id: itm17
@@ -2230,10 +2205,8 @@ Rectangle {
                     text: i18n.tr("Help")
                     color: settings.darkMode ? "#808080" : "black"
                     font.pointSize: 40
-//                    height: parent.height
                     height: lstitm1.height
                     verticalAlignment: Text.AlignVCenter
-//                    bottomPadding: units.gu(4)
                     bottomPadding: units.gu(2)
                 }
             }
