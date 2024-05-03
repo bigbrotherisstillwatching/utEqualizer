@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/assets">
-        <file>logo18.svg</file>
+        <file>logo.svg</file>
         <file>change_darkmode.svg</file>
         <file>change_lightmode.svg</file>
         <file>change_pressed.svg</file>
