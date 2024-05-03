@@ -174,7 +174,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
+        process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.4/scripts/equalizer_stop.sh"])
         eqswitch.checked = false
         eqsts = false
         prgrssbr.value = 0
@@ -202,7 +202,7 @@ Rectangle {
                 id: bttn2
                 text: bttn2.pressed ? i18n.tr("<font color=\"white\">Turn off equalizer</font>") : i18n.tr("<font color=\"black\">Turn off equalizer</font>")
                 onClicked: {
-                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
+                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.4/scripts/equalizer_stop.sh"])
                     bttn3.enabled = true
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     bttn1.enabled = false
@@ -1031,7 +1031,7 @@ Rectangle {
                     settings.equalizerControls8 = slide8.value.toFixed(1)
                     settings.equalizerControls9 = slide9.value.toFixed(1)
                     settings.equalizerControls10 = slide10.value.toFixed(1)
-                    process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_change.sh"])
+                    process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.4/scripts/equalizer_change.sh"])
                 }
             }
             DropShadow {
@@ -1097,7 +1097,7 @@ Rectangle {
             }
             onClicked: {
                 if (settings.equalizerStatus === true) {                    
-                    process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_stop.sh"])
+                    process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.4/scripts/equalizer_stop.sh"])
                     eqsts = checked
                     txt2.text = ""
                     process8.kill()
@@ -1115,10 +1115,10 @@ Rectangle {
                     settings.equalizerControls8 = slide8.value.toFixed(1)
                     settings.equalizerControls9 = slide9.value.toFixed(1)
                     settings.equalizerControls10 = slide10.value.toFixed(1)
-                    process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/scripts/equalizer_start.sh"])
+                    process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.4/scripts/equalizer_start.sh"])
                     eqsts = checked
                     txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
-                    process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.3/bin/pulse-vumeter"])
+                    process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.4/bin/pulse-vumeter"])
                 }
             }
         }
@@ -1271,22 +1271,41 @@ Rectangle {
             }
         }
 
-        TextField {
+        Qqc.TextField {
             id: txtfld1
             color: settings.darkMode ? "#808080" : "black"
             selectedTextColor: settings.darkMode ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset1name
             placeholderText: i18n.tr("Preset 1")
-            hasClearButton: false
             anchors.top: txt1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
-            width: flick1.width / 2
-            style: ActionBarStyle {
-                backgroundColor: "transparent"
+            background: Item {
+                id: itm13
+                Rectangle {
+                    id: txtfld1rec
+                    anchors.fill: parent
+                    color: settings.darkMode ? "#292929" : "white"
+                    height: units.gu(4)
+                    radius: units.gu(1)
+                }
+
+                DropShadow {
+                    anchors.fill: txtfld1rec
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: txtfld1rec
+                    spread: 0
+                    cached: true
+                }
             }
+            font.pixelSize: txt1.font.pixelSize
+            width: flick1.width - units.gu(16)
             onAccepted: {
                 settings.preset1name = txtfld1.text
                 txtfld1.text = settings.preset1name
@@ -1433,22 +1452,43 @@ Rectangle {
             }
         }
 
-        TextField {
+        Qqc.TextField {
             id: txtfld2
             color: settings.darkMode ? "#808080" : "black"
             selectedTextColor: settings.darkMode ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset2name
             placeholderText: i18n.tr("Preset 2")
-            hasClearButton: false
             anchors.top: txtfld1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            width: flick1.width / 2
-            style: ActionBarStyle {
-                backgroundColor: "transparent"
+
+            background: Item {
+                id: itm14
+                Rectangle {
+                    id: txtfld2rec
+                    anchors.fill: parent
+                    color: settings.darkMode ? "#292929" : "white"
+                    height: units.gu(4)
+                    radius: units.gu(1)
+                }
+
+                DropShadow {
+                    anchors.fill: txtfld2rec
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: txtfld2rec
+                    spread: 0
+                    cached: true
+                }
             }
+            font.pixelSize: txt1.font.pixelSize
+            width: flick1.width - units.gu(16)
+
             onAccepted: {
                 settings.preset2name = txtfld2.text
                 txtfld2.text = settings.preset2name
@@ -1595,22 +1635,43 @@ Rectangle {
             }
         }
 
-        TextField {
+        Qqc.TextField {
             id: txtfld3
             color: settings.darkMode ? "#808080" : "black"
             selectedTextColor: settings.darkMode ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset3name
             placeholderText: i18n.tr("Preset 3")
-            hasClearButton: false
             anchors.top: txtfld2.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            width: flick1.width / 2
-            style: ActionBarStyle {
-                backgroundColor: "transparent"
+
+            background: Item {
+                id: itm15
+                Rectangle {
+                    id: txtfld3rec
+                    anchors.fill: parent
+                    color: settings.darkMode ? "#292929" : "white"
+                    height: units.gu(4)
+                    radius: units.gu(1)
+                }
+
+                DropShadow {
+                    anchors.fill: txtfld3rec
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: txtfld3rec
+                    spread: 0
+                    cached: true
+                }
             }
+            font.pixelSize: txt1.font.pixelSize
+            width: flick1.width - units.gu(16)
+
             onAccepted: {
                 settings.preset3name = txtfld3.text
                 txtfld3.text = settings.preset3name
@@ -1757,22 +1818,43 @@ Rectangle {
             }
         }
 
-        TextField {
+        Qqc.TextField {
             id: txtfld4
             color: settings.darkMode ? "#808080" : "black"
             selectedTextColor: settings.darkMode ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset4name
             placeholderText: i18n.tr("Preset 4")
-            hasClearButton: false
             anchors.top: txtfld3.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            width: flick1.width / 2
-            style: ActionBarStyle {
-                backgroundColor: "transparent"
+
+            background: Item {
+                id: itm16
+                Rectangle {
+                    id: txtfld4rec
+                    anchors.fill: parent
+                    color: settings.darkMode ? "#292929" : "white"
+                    height: units.gu(4)
+                    radius: units.gu(1)
+                }
+
+                DropShadow {
+                    anchors.fill: txtfld4rec
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: txtfld4rec
+                    spread: 0
+                    cached: true
+                }
             }
+            font.pixelSize: txt1.font.pixelSize
+            width: flick1.width - units.gu(16)
+
             onAccepted: {
                 settings.preset4name = txtfld4.text
                 txtfld4.text = settings.preset4name
@@ -1919,22 +2001,43 @@ Rectangle {
             }
         }
 
-        TextField {
+        Qqc.TextField {
             id: txtfld5
             color: settings.darkMode ? "#808080" : "black"
             selectedTextColor: settings.darkMode ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset5name
             placeholderText: i18n.tr("Preset 5")
-            hasClearButton: false
             anchors.top: txtfld4.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(2)
-            width: flick1.width / 2
-            style: ActionBarStyle {
-                backgroundColor: "transparent"
+
+            background: Item {
+                id: itm17
+                Rectangle {
+                    id: txtfld5rec
+                    anchors.fill: parent
+                    color: settings.darkMode ? "#292929" : "white"
+                    height: units.gu(4)
+                    radius: units.gu(1)
+                }
+
+                DropShadow {
+                    anchors.fill: txtfld5rec
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: txtfld5rec
+                    spread: 0
+                    cached: true
+                }
             }
+            font.pixelSize: txt1.font.pixelSize
+            width: flick1.width - units.gu(16)
+
             onAccepted: {
                 settings.preset5name = txtfld5.text
                 txtfld5.text = settings.preset5name
@@ -2102,9 +2205,9 @@ Rectangle {
                     text: i18n.tr("Help")
                     color: settings.darkMode ? "#808080" : "black"
                     font.pointSize: 40
-                    height: parent.height
+                    height: lstitm1.height
                     verticalAlignment: Text.AlignVCenter
-                    bottomPadding: units.gu(4)
+                    bottomPadding: units.gu(2)
                 }
             }
         }
