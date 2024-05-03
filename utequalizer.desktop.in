@@ -1,7 +1,7 @@
 [Desktop Entry]
 _Name=utEqualizer
 Exec=utequalizer %U
-Icon=assets/logo17.svg
+Icon=assets/logo2.png
 Terminal=false
 Type=Application
 X-Lomiri-Touch=true
