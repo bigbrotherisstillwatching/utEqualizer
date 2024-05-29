@@ -1,10 +1,10 @@
 {
     "policy_groups": [],
     "read_path": [
-        "/opt/click.ubuntu.com/radio.s710"
+        "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching"
         ],
     "write_path": [
-        "/opt/click.ubuntu.com/radio.s710"
+        "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching"
         ],
     "policy_version": 20.04,
     "template": "unconfined"
