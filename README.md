@@ -1,6 +1,7 @@
 # utEqualizer
 
 An equalizer for Ubuntu Touch Focal
+# DOESN'T WORK ANYMORE WITH UBUNTU TOUCH FOCAL OTA-8 (maybe I'll have a look at this)
 
 ## License
 
