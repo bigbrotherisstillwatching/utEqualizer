@@ -1,7 +1,6 @@
 # utEqualizer
 
 An equalizer for Ubuntu Touch Focal
-# DOESN'T WORK ANYMORE WITH UBUNTU TOUCH FOCAL OTA-8 (maybe I'll have a look at this)
 
 ## License
 
@@ -27,4 +26,5 @@ this program. If not, see <http://www.gnu.org/licenses/>.
   
 -it is an unconfined app with full access to the system    
 -only for arm64    
--you'll have to grant microphone permission for the volume bar to work
+-you'll have to grant microphone permission for the volume bar to work    
+-only tested on Fairphone 4
