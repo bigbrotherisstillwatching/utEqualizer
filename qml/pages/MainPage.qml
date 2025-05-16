@@ -222,7 +222,14 @@ Rectangle {
             Button {
                 id: bttn3
 //                enabled: false
-                enabled: settings.value("equalizerStatus", "false") ? true : false
+//                enabled: settings.value("equalizerStatus", "false") ? true : false
+                enabled: {
+                    if (settings.equalizerStatus === true) {
+                        false
+                    } else if (settings.equalizerStatus === false) {
+                        true
+                    }
+                }
                 text: bttn3.pressed ? i18n.tr("<font color=\"white\">Ok</font>") : i18n.tr("<font color=\"black\">Ok</font>")
                 onClicked: {
                     Qt.quit()
