@@ -211,7 +211,7 @@ Rectangle {
                 }
                 onClicked: {
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
-//                    bttn3.enabled = true
+                    bttn3.enabled = true
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
 //                    eqsts = checked
 //                    bttn1.enabled = false
@@ -227,8 +227,6 @@ Rectangle {
                 enabled: {
                     if (eqsts === true) {
                         false
-                    } else if (eqsts === false) {
-                        true
                     }
                 }
                 text: bttn3.pressed ? i18n.tr("<font color=\"white\">Ok</font>") : i18n.tr("<font color=\"black\">Ok</font>")
