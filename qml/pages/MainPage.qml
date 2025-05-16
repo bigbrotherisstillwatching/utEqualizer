@@ -203,9 +203,9 @@ Rectangle {
                 text: bttn2.pressed ? i18n.tr("<font color=\"white\">Turn off equalizer</font>") : i18n.tr("<font color=\"black\">Turn off equalizer</font>")
 //                enabled: settings.value("equalizerStatus", "true") ? true : false
                 enabled: {
-                    if(settings.value("equalizerStatus") === "true") {
+                    if (settings.equalizerStatus === true) {
                         true
-                    } else if(settings.value("equalizerStatus") === "false") {
+                    } else if (settings.equalizerStatus === false) {
                         false
                     }
                 }
