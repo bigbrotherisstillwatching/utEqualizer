@@ -201,7 +201,14 @@ Rectangle {
             Button {
                 id: bttn2
                 text: bttn2.pressed ? i18n.tr("<font color=\"white\">Turn off equalizer</font>") : i18n.tr("<font color=\"black\">Turn off equalizer</font>")
-                enabled: settings.value("equalizerStatus", "true") ? true : false
+//                enabled: settings.value("equalizerStatus", "true") ? true : false
+                enabled: {
+                    if(settings.value("equalizerStatus") === "true") {
+                        true
+                    } else if(settings.value("equalizerStatus") === "false") {
+                        false
+                    }
+                }
                 onClicked: {
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
 //                    bttn3.enabled = true
