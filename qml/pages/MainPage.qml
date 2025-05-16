@@ -217,7 +217,9 @@ Rectangle {
                     txt2.text = ""
                     eqsts = false
                     process8.kill()
-                    prgrssbr.value = 0
+                    delay(500, function() {
+                        prgrssbr.value = 0
+                    })
 //                    bttn1.enabled = false
                 }
                 StyleHints {
