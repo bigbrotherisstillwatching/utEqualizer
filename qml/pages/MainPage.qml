@@ -216,6 +216,7 @@ Rectangle {
                     eqswitch.checked = false
                     txt2.text = ""
                     eqsts = false
+                    process8.kill()
 //                    bttn1.enabled = false
                 }
                 StyleHints {
