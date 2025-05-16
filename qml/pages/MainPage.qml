@@ -203,16 +203,17 @@ Rectangle {
                 text: bttn2.pressed ? i18n.tr("<font color=\"white\">Turn off equalizer</font>") : i18n.tr("<font color=\"black\">Turn off equalizer</font>")
 //                enabled: settings.value("equalizerStatus", "true") ? true : false
                 enabled: {
-                    if (settings.equalizerStatus === true) {
+                    if (eqsts === true) {
                         true
-                    } else if (settings.equalizerStatus === false) {
+                    } else if (eqsts === false) {
                         false
                     }
                 }
                 onClicked: {
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
 //                    bttn3.enabled = true
-                    process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
+//                    process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
+                    eqsts = checked
 //                    bttn1.enabled = false
                 }
                 StyleHints {
@@ -224,9 +225,9 @@ Rectangle {
 //                enabled: false
 //                enabled: settings.value("equalizerStatus", "false") ? true : false
                 enabled: {
-                    if (settings.equalizerStatus === true) {
+                    if (eqsts === true) {
                         false
-                    } else if (settings.equalizerStatus === false) {
+                    } else if (eqsts === false) {
                         true
                     }
                 }
