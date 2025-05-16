@@ -214,6 +214,7 @@ Rectangle {
                     bttn3.enabled = true
                     process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     eqswitch.checked = false
+                    txt2.text = ""
 //                    eqsts = checked
 //                    bttn1.enabled = false
                 }
