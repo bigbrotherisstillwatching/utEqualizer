@@ -227,6 +227,8 @@ Rectangle {
                 enabled: {
                     if (eqsts === true) {
                         false
+                    } else if (eqsts === false) {
+                        true
                     }
                 }
                 text: bttn3.pressed ? i18n.tr("<font color=\"white\">Ok</font>") : i18n.tr("<font color=\"black\">Ok</font>")
