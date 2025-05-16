@@ -217,6 +217,7 @@ Rectangle {
                     txt2.text = ""
                     eqsts = false
                     process8.kill()
+                    prgrssbr.value = 0
 //                    bttn1.enabled = false
                 }
                 StyleHints {
@@ -1122,7 +1123,7 @@ Rectangle {
                     txt2.text = ""
                     process8.kill()
                     delay(500, function() {
-                        prgrssbr.value = 0.00
+                        prgrssbr.value = 0
                     })
                 } else if (settings.equalizerStatus === false) {
                     settings.equalizerControls1 = slide1.value.toFixed(1)
