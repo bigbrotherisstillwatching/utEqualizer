@@ -211,9 +211,10 @@ Rectangle {
 /*                    delay(500, function() {
                         prgrssbr.value = 0
                     })*/
-                    delay(500, function() {
+/*                    delay(500, function() {
                         prgrssbrvl = 0
-                    })
+                    })*/
+                    prgrssbrvl = 0
                 }
                 StyleHints {
                     defaultColor: bttn2.pressed ? "#32517F" : "yellow"
