@@ -34,6 +34,7 @@ Rectangle {
     property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
     property alias drkMd: settings.darkMode
+    property alias prgrssbrvl: prgrssbr.value
 
     Timer {
         id: timer
@@ -207,8 +208,11 @@ Rectangle {
                     txt2.text = ""
                     eqsts = false
                     process6.kill()
-                    delay(500, function() {
+/*                    delay(500, function() {
                         prgrssbr.value = 0
+                    })*/
+                    delay(500, function() {
+                        prgrssbrvl = 0
                     })
                 }
                 StyleHints {
