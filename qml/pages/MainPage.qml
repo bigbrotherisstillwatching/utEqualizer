@@ -207,8 +207,8 @@ Rectangle {
                     txt2.text = ""
                     eqsts = false
                     process6.kill()
-                    delay(500, function() {
-                        mainPage.prgrssbr.value = 0
+                    mainPage.delay(500, function() {
+                        prgrssbr.value = 0
                     })
                 }
                 StyleHints {
