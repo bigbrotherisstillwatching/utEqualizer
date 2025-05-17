@@ -68,14 +68,6 @@ Rectangle {
 
     Process {
         id: process6
-    }
-
-    Process {
-        id: process7
-    }
-
-    Process {
-        id: process8
 
         property real output
 
@@ -85,7 +77,7 @@ Rectangle {
         onErrorOccurred: console.log("Error Occurred: ", error)
 
         onReadyReadStandardOutput: {
-            output = process8.readAll()
+            output = process6.readAll()
             prgrssbr.value = output
         }
     }
@@ -174,7 +166,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
+        process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
         eqswitch.checked = false
         eqsts = false
         prgrssbr.value = 0
@@ -216,7 +208,7 @@ Rectangle {
                     eqswitch.checked = false
                     txt2.text = ""
                     eqsts = false
-                    process8.kill()
+                    process6.kill()
                     delay(500, function() {
                         prgrssbr.value = 0
                     })
@@ -1123,7 +1115,7 @@ Rectangle {
                     process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
                     eqsts = checked
                     txt2.text = ""
-                    process8.kill()
+                    process6.kill()
                     delay(500, function() {
                         prgrssbr.value = 0
                     })
@@ -1141,7 +1133,7 @@ Rectangle {
                     process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_start.sh"])
                     eqsts = checked
                     txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
-                    process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/bin/pulse-vumeter"])
+                    process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/bin/pulse-vumeter"])
                 }
             }
         }
