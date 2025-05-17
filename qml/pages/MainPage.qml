@@ -207,7 +207,7 @@ Rectangle {
                     txt2.text = ""
                     eqsts = false
                     process6.kill()
-                    mainPage.delay(500, function() {
+                    delay(500, function() {
                         prgrssbr.value = 0
                     })
                 }
