@@ -29,7 +29,7 @@ Rectangle {
     id: mainPage
     anchors.fill: parent
 
-    color: settings.darkMode ? "#121212" : "white"
+    color: drkMd ? "#121212" : "white"
 
     property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
@@ -156,9 +156,9 @@ Rectangle {
     Connections {
         target: Qt.application
         onAboutToQuit: {
-            if (settings.equalizerStatus === true) {
+            if (eqsts === true) {
                 console.log("EQ is still active");
-            } else if (settings.equalizerStatus === false) {
+            } else if (eqsts === false) {
                 console.log("EQ is inactive");
             }
             console.log("Goodbye!");
@@ -240,20 +240,20 @@ Rectangle {
         title: "utEqualizer"
         z: 1
         StyleHints {
-            foregroundColor: settings.darkMode ? "#808080" : "black"
-            backgroundColor: settings.darkMode ? "#121212" : "white"
-            dividerColor: settings.darkMode ? "#808080" : "black"
+            foregroundColor: drkMd ? "#808080" : "black"
+            backgroundColor: drkMd ? "#121212" : "white"
+            dividerColor: drkMd ? "#808080" : "black"
         }
         contents: Rectangle {
             id: hdrrec
             anchors.fill: parent
-            color: settings.darkMode ? "#121212" : "white"
+            color: drkMd ? "#121212" : "white"
             Text {
                 id: hdrtxt
                 anchors.left: hdrrec.left
                 anchors.verticalCenter: hdrrec.verticalCenter
                 text: header.title
-                color: settings.darkMode ? "#808080" : "black"
+                color: drkMd ? "#808080" : "black"
                 font.pointSize: 40
             }
             Rectangle {
@@ -263,11 +263,11 @@ Rectangle {
                 anchors.right: hdrrec.right
                 anchors.verticalCenter: hdrrec.verticalCenter
                 radius: units.gu(1)
-                color: clsbttnma.pressed ? "red" : (settings.darkMode ? "#292929" : "white")
+                color: clsbttnma.pressed ? "red" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: clsbttnicn
-                source: clsbttnma.pressed ? "../../assets/close_pressed.svg" : (settings.darkMode ? "../../assets/close_darkmode.svg" : "../../assets/close_lightmode.svg")
+                source: clsbttnma.pressed ? "../../assets/close_pressed.svg" : (drkMd ? "../../assets/close_darkmode.svg" : "../../assets/close_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: clsbttn
@@ -324,7 +324,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: slide1.value
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
                 Qqc.Slider {
@@ -348,7 +348,7 @@ Rectangle {
                         Rectangle {
                             implicitWidth: parent.width
                             implicitHeight: slide1.visualPosition * parent.height
-                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            color: drkMd ? "#808080" : "#f1f1f1"
                             radius: 2
                             border.width: 0
                         }
@@ -360,7 +360,7 @@ Rectangle {
                         implicitWidth: 52
                         implicitHeight: 52
                         radius: 26
-                        color: slide1.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        color: slide1.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
                     DropShadow {
@@ -379,7 +379,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: "31Hz"
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
             }
@@ -388,7 +388,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: slide2.value
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
                 Qqc.Slider {
@@ -412,7 +412,7 @@ Rectangle {
                         Rectangle {
                             implicitWidth: parent.width
                             implicitHeight: slide2.visualPosition * parent.height
-                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            color: drkMd ? "#808080" : "#f1f1f1"
                             radius: 2
                             border.width: 0
                         }
@@ -424,7 +424,7 @@ Rectangle {
                         implicitWidth: 52
                         implicitHeight: 52
                         radius: 26
-                        color: slide2.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        color: slide2.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
                     DropShadow {
@@ -443,7 +443,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: "63Hz"
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
             }
@@ -452,7 +452,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: slide3.value
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
                 Qqc.Slider {
@@ -476,7 +476,7 @@ Rectangle {
                         Rectangle {
                             implicitWidth: parent.width
                             implicitHeight: slide3.visualPosition * parent.height
-                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            color: drkMd ? "#808080" : "#f1f1f1"
                             radius: 2
                             border.width: 0
                         }
@@ -488,7 +488,7 @@ Rectangle {
                         implicitWidth: 52
                         implicitHeight: 52
                         radius: 26
-                        color: slide3.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        color: slide3.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
                     DropShadow {
@@ -507,7 +507,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: "125Hz"
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
             }
@@ -516,7 +516,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: slide4.value
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
                 Qqc.Slider {
@@ -540,7 +540,7 @@ Rectangle {
                         Rectangle {
                             implicitWidth: parent.width
                             implicitHeight: slide4.visualPosition * parent.height
-                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            color: drkMd ? "#808080" : "#f1f1f1"
                             radius: 2
                             border.width: 0
                         }
@@ -552,7 +552,7 @@ Rectangle {
                         implicitWidth: 52
                         implicitHeight: 52
                         radius: 26
-                        color: slide4.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        color: slide4.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
                     DropShadow {
@@ -571,7 +571,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: "250Hz"
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
             }
@@ -580,7 +580,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: slide5.value
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
                 Qqc.Slider {
@@ -604,7 +604,7 @@ Rectangle {
                         Rectangle {
                             implicitWidth: parent.width
                             implicitHeight: slide5.visualPosition * parent.height
-                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            color: drkMd ? "#808080" : "#f1f1f1"
                             radius: 2
                             border.width: 0
                         }
@@ -616,7 +616,7 @@ Rectangle {
                         implicitWidth: 52
                         implicitHeight: 52
                         radius: 26
-                        color: slide5.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        color: slide5.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
                     DropShadow {
@@ -635,7 +635,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: "500Hz"
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
             }
@@ -644,7 +644,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: slide6.value
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
                 Qqc.Slider {
@@ -668,7 +668,7 @@ Rectangle {
                         Rectangle {
                             implicitWidth: parent.width
                             implicitHeight: slide6.visualPosition * parent.height
-                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            color: drkMd ? "#808080" : "#f1f1f1"
                             radius: 2
                             border.width: 0
                         }
@@ -680,7 +680,7 @@ Rectangle {
                         implicitWidth: 52
                         implicitHeight: 52
                         radius: 26
-                        color: slide6.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        color: slide6.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
                     DropShadow {
@@ -699,7 +699,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: "1kHz"
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
             }
@@ -708,7 +708,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: slide7.value
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
                 Qqc.Slider {
@@ -732,7 +732,7 @@ Rectangle {
                         Rectangle {
                             implicitWidth: parent.width
                             implicitHeight: slide7.visualPosition * parent.height
-                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            color: drkMd ? "#808080" : "#f1f1f1"
                             radius: 2
                             border.width: 0
                         }
@@ -744,7 +744,7 @@ Rectangle {
                         implicitWidth: 52
                         implicitHeight: 52
                         radius: 26
-                        color: slide7.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        color: slide7.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
                     DropShadow {
@@ -763,7 +763,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: "2kHz"
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
             }
@@ -772,7 +772,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: slide8.value
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
                 Qqc.Slider {
@@ -796,7 +796,7 @@ Rectangle {
                         Rectangle {
                             implicitWidth: parent.width
                             implicitHeight: slide8.visualPosition * parent.height
-                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            color: drkMd ? "#808080" : "#f1f1f1"
                             radius: 2
                             border.width: 0
                         }
@@ -808,7 +808,7 @@ Rectangle {
                         implicitWidth: 52
                         implicitHeight: 52
                         radius: 26
-                        color: slide8.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        color: slide8.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
                     DropShadow {
@@ -827,7 +827,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: "4kHz"
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
             }
@@ -836,7 +836,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: slide9.value
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
                  Qqc.Slider {
@@ -860,7 +860,7 @@ Rectangle {
                         Rectangle {
                             implicitWidth: parent.width
                             implicitHeight: slide9.visualPosition * parent.height
-                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            color: drkMd ? "#808080" : "#f1f1f1"
                             radius: 2
                             border.width: 0
                         }
@@ -872,7 +872,7 @@ Rectangle {
                         implicitWidth: 52
                         implicitHeight: 52
                         radius: 26
-                        color: slide9.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        color: slide9.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
                     DropShadow {
@@ -891,7 +891,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: "8kHz"
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
             }
@@ -900,7 +900,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: slide10.value
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
                 Qqc.Slider {
@@ -924,7 +924,7 @@ Rectangle {
                         Rectangle {
                             implicitWidth: parent.width
                             implicitHeight: slide10.visualPosition * parent.height
-                            color: settings.darkMode ? "#808080" : "#f1f1f1"
+                            color: drkMd ? "#808080" : "#f1f1f1"
                             radius: 2
                             border.width: 0
                         }
@@ -936,7 +936,7 @@ Rectangle {
                         implicitWidth: 52
                         implicitHeight: 52
                         radius: 26
-                        color: slide10.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                        color: slide10.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
                     DropShadow {
@@ -955,7 +955,7 @@ Rectangle {
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
                     text: "16kHz"
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 20
                 }
             }
@@ -984,7 +984,7 @@ Rectangle {
                 width: prgrssbr.availableWidth
                 height: 10
                 radius: 5
-                color: settings.darkMode ? "#808080" : "#f1f1f1"
+                color: drkMd ? "#808080" : "#f1f1f1"
 
                 Rectangle {
                     width: prgrssbr.visualPosition * parent.width
@@ -1016,11 +1016,11 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 radius: units.gu(1)
-                color: chngbttnma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: chngbttnma.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: chngbttnicn
-                source: chngbttnma.pressed ? "../../assets/change_pressed.svg" : (settings.darkMode ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg")
+                source: chngbttnma.pressed ? "../../assets/change_pressed.svg" : (drkMd ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: chngbttn
@@ -1071,11 +1071,11 @@ Rectangle {
                 x: eqswitch.leftPadding
                 y: parent.height / 2 - height / 2
                 radius: 32.5
-                color: settings.darkMode ? (eqswitch.checked ? "#32517F" : "#808080") : (eqswitch.checked ? "#32517F" : "#f1f1f1")
+                color: drkMd ? (eqswitch.checked ? "#32517F" : "#808080") : (eqswitch.checked ? "#32517F" : "#f1f1f1")
         
                 Text {
                     id: txt
-                    color: settings.darkMode ? (eqswitch.checked ? "#808080" : "#292929") : (eqswitch.checked ? "white" : "black")
+                    color: drkMd ? (eqswitch.checked ? "#808080" : "#292929") : (eqswitch.checked ? "white" : "black")
                     text: "I     O"
                     anchors.top: rec1.top
                     anchors.bottom: rec1.bottom
@@ -1091,7 +1091,7 @@ Rectangle {
                     width: 65
                     height: 65
                     radius: 32.5
-                    color: settings.darkMode ? (eqswitch.down ? "#32517F" : "#292929") : (eqswitch.down ? "#32517F" : "white")
+                    color: drkMd ? (eqswitch.down ? "#32517F" : "#292929") : (eqswitch.down ? "#32517F" : "white")
                 }
                 DropShadow {
                     anchors.fill: rec2
@@ -1106,7 +1106,7 @@ Rectangle {
                 }
             }
             onClicked: {
-                if (settings.equalizerStatus === true) {                    
+                if (eqsts === true) {                    
                     process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
                     eqsts = checked
                     txt2.text = ""
@@ -1114,7 +1114,7 @@ Rectangle {
                     delay(500, function() {
                         prgrssbr.value = 0
                     })
-                } else if (settings.equalizerStatus === false) {
+                } else if (eqsts === false) {
                     settings.equalizerControls1 = slide1.value.toFixed(1)
                     settings.equalizerControls2 = slide2.value.toFixed(1)
                     settings.equalizerControls3 = slide3.value.toFixed(1)
@@ -1144,11 +1144,11 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 radius: units.gu(1)
-                color: rstbttnma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: rstbttnma.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: rstbttnicn
-                source: rstbttnma.pressed ? "../../assets/resetzero_pressed.svg" : (settings.darkMode ? "../../assets/resetzero_darkmode.svg" : "../../assets/resetzero_lightmode.svg")
+                source: rstbttnma.pressed ? "../../assets/resetzero_pressed.svg" : (drkMd ? "../../assets/resetzero_darkmode.svg" : "../../assets/resetzero_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: rstbttn
@@ -1221,7 +1221,7 @@ Rectangle {
         Text {
             id: txt1
             text: i18n.tr("Dark mode")
-            color: settings.darkMode ? "#808080" : "black"
+            color: drkMd ? "#808080" : "black"
             anchors.top: plchldrrec.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
@@ -1230,7 +1230,7 @@ Rectangle {
 
         Qqc.Switch {
             id: drkmdswitch
-            checked: settings.darkMode
+            checked: drkMd
             anchors.top: plchldrrec.bottom
             anchors.right: parent.right
             anchors.topMargin: units.gu(2)
@@ -1242,11 +1242,11 @@ Rectangle {
                 x: eqswitch.leftPadding
                 y: parent.height / 2 - height / 2
                 radius: 32.5
-                color: settings.darkMode ? (drkmdswitch.checked ? "#32517F" : "#808080") : (drkmdswitch.checked ? "#32517F" : "#f1f1f1")
+                color: drkMd ? (drkmdswitch.checked ? "#32517F" : "#808080") : (drkmdswitch.checked ? "#32517F" : "#f1f1f1")
         
                 Text {
                     id: txt9
-                    color: settings.darkMode ? (drkmdswitch.checked ? "#808080" : "#292929") : (drkmdswitch.checked ? "white" : "black")
+                    color: drkMd ? (drkmdswitch.checked ? "#808080" : "#292929") : (drkmdswitch.checked ? "white" : "black")
                     text: "I     O"
                     anchors.top: rec3.top
                     anchors.bottom: rec3.bottom
@@ -1262,7 +1262,7 @@ Rectangle {
                     width: 65
                     height: 65
                     radius: 32.5
-                    color: settings.darkMode ? (drkmdswitch.down ? "#32517F" : "#292929") : (drkmdswitch.down ? "#32517F" : "white")
+                    color: drkMd ? (drkmdswitch.down ? "#32517F" : "#292929") : (drkmdswitch.down ? "#32517F" : "white")
                 }
                 DropShadow {
                     anchors.fill: rec4
@@ -1283,8 +1283,8 @@ Rectangle {
 
         Qqc.TextField {
             id: txtfld1
-            color: settings.darkMode ? "#808080" : "black"
-            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            color: drkMd ? "#808080" : "black"
+            selectedTextColor: drkMd ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset1name
             placeholderText: i18n.tr("Preset 1")
@@ -1297,7 +1297,7 @@ Rectangle {
                 Rectangle {
                     id: txtfld1rec
                     anchors.fill: parent
-                    color: settings.darkMode ? "#292929" : "white"
+                    color: drkMd ? "#292929" : "white"
                     height: units.gu(4)
                     radius: units.gu(1)
                 }
@@ -1325,7 +1325,7 @@ Rectangle {
             cursorDelegate: Rectangle {
                 id: cursor
                 visible: false
-                color: settings.darkMode ? "#808080" : "black"
+                color: drkMd ? "#808080" : "black"
                 width: txtfld1.cursorRectangle.width
 
                 SequentialAnimation {
@@ -1371,11 +1371,11 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 radius: units.gu(1)
-                color: bttn5ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: bttn5ma.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: bttn5icn
-                source: bttn5ma.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                source: bttn5ma.pressed ? "../../assets/load_pressed.svg" : (drkMd ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: bttn5
@@ -1422,11 +1422,11 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 radius: units.gu(1)
-                color: bttn4ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: bttn4ma.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: bttn4icn
-                source: bttn4ma.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                source: bttn4ma.pressed ? "../../assets/save_pressed.svg" : (drkMd ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: bttn4
@@ -1464,8 +1464,8 @@ Rectangle {
 
         Qqc.TextField {
             id: txtfld2
-            color: settings.darkMode ? "#808080" : "black"
-            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            color: drkMd ? "#808080" : "black"
+            selectedTextColor: drkMd ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset2name
             placeholderText: i18n.tr("Preset 2")
@@ -1479,7 +1479,7 @@ Rectangle {
                 Rectangle {
                     id: txtfld2rec
                     anchors.fill: parent
-                    color: settings.darkMode ? "#292929" : "white"
+                    color: drkMd ? "#292929" : "white"
                     height: units.gu(4)
                     radius: units.gu(1)
                 }
@@ -1508,7 +1508,7 @@ Rectangle {
             cursorDelegate: Rectangle {
                 id: cursor2
                 visible: false
-                color: settings.darkMode ? "#808080" : "black"
+                color: drkMd ? "#808080" : "black"
                 width: txtfld2.cursorRectangle.width
 
                 SequentialAnimation {
@@ -1554,11 +1554,11 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 radius: units.gu(1)
-                color: bttn7ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: bttn7ma.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: bttn7icn
-                source: bttn7ma.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                source: bttn7ma.pressed ? "../../assets/load_pressed.svg" : (drkMd ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: bttn7
@@ -1605,11 +1605,11 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 radius: units.gu(1)
-                color: bttn6ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: bttn6ma.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: bttn6icn
-                source: bttn6ma.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                source: bttn6ma.pressed ? "../../assets/save_pressed.svg" : (drkMd ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: bttn6
@@ -1647,8 +1647,8 @@ Rectangle {
 
         Qqc.TextField {
             id: txtfld3
-            color: settings.darkMode ? "#808080" : "black"
-            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            color: drkMd ? "#808080" : "black"
+            selectedTextColor: drkMd ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset3name
             placeholderText: i18n.tr("Preset 3")
@@ -1662,7 +1662,7 @@ Rectangle {
                 Rectangle {
                     id: txtfld3rec
                     anchors.fill: parent
-                    color: settings.darkMode ? "#292929" : "white"
+                    color: drkMd ? "#292929" : "white"
                     height: units.gu(4)
                     radius: units.gu(1)
                 }
@@ -1691,7 +1691,7 @@ Rectangle {
             cursorDelegate: Rectangle {
                 id: cursor3
                 visible: false
-                color: settings.darkMode ? "#808080" : "black"
+                color: drkMd ? "#808080" : "black"
                 width: txtfld3.cursorRectangle.width
 
                 SequentialAnimation {
@@ -1737,11 +1737,11 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 radius: units.gu(1)
-                color: bttn9ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: bttn9ma.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: bttn9icn
-                source: bttn9ma.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                source: bttn9ma.pressed ? "../../assets/load_pressed.svg" : (drkMd ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: bttn9
@@ -1788,11 +1788,11 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 radius: units.gu(1)
-                color: bttn8ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: bttn8ma.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: bttn8icn
-                source: bttn8ma.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                source: bttn8ma.pressed ? "../../assets/save_pressed.svg" : (drkMd ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: bttn8
@@ -1830,8 +1830,8 @@ Rectangle {
 
         Qqc.TextField {
             id: txtfld4
-            color: settings.darkMode ? "#808080" : "black"
-            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            color: drkMd ? "#808080" : "black"
+            selectedTextColor: drkMd ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset4name
             placeholderText: i18n.tr("Preset 4")
@@ -1845,7 +1845,7 @@ Rectangle {
                 Rectangle {
                     id: txtfld4rec
                     anchors.fill: parent
-                    color: settings.darkMode ? "#292929" : "white"
+                    color: drkMd ? "#292929" : "white"
                     height: units.gu(4)
                     radius: units.gu(1)
                 }
@@ -1874,7 +1874,7 @@ Rectangle {
             cursorDelegate: Rectangle {
                 id: cursor4
                 visible: false
-                color: settings.darkMode ? "#808080" : "black"
+                color: drkMd ? "#808080" : "black"
                 width: txtfld4.cursorRectangle.width
 
                 SequentialAnimation {
@@ -1920,11 +1920,11 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 radius: units.gu(1)
-                color: bttn11ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: bttn11ma.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: bttn11icn
-                source: bttn11ma.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                source: bttn11ma.pressed ? "../../assets/load_pressed.svg" : (drkMd ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: bttn11
@@ -1971,11 +1971,11 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 radius: units.gu(1)
-                color: bttn10ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: bttn10ma.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: bttn10icn
-                source: bttn10ma.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                source: bttn10ma.pressed ? "../../assets/save_pressed.svg" : (drkMd ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: bttn10
@@ -2013,8 +2013,8 @@ Rectangle {
 
         Qqc.TextField {
             id: txtfld5
-            color: settings.darkMode ? "#808080" : "black"
-            selectedTextColor: settings.darkMode ? "#808080" : "white"
+            color: drkMd ? "#808080" : "black"
+            selectedTextColor: drkMd ? "#808080" : "white"
             selectionColor: "#32517F"
             text: settings.preset5name
             placeholderText: i18n.tr("Preset 5")
@@ -2028,7 +2028,7 @@ Rectangle {
                 Rectangle {
                     id: txtfld5rec
                     anchors.fill: parent
-                    color: settings.darkMode ? "#292929" : "white"
+                    color: drkMd ? "#292929" : "white"
                     height: units.gu(4)
                     radius: units.gu(1)
                 }
@@ -2057,7 +2057,7 @@ Rectangle {
             cursorDelegate: Rectangle {
                 id: cursor5
                 visible: false
-                color: settings.darkMode ? "#808080" : "black"
+                color: drkMd ? "#808080" : "black"
                 width: txtfld5.cursorRectangle.width
 
                 SequentialAnimation {
@@ -2103,11 +2103,11 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 radius: units.gu(1)
-                color: bttn13ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: bttn13ma.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: bttn13icn
-                source: bttn13ma.pressed ? "../../assets/load_pressed.svg" : (settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
+                source: bttn13ma.pressed ? "../../assets/load_pressed.svg" : (drkMd ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: bttn13
@@ -2154,11 +2154,11 @@ Rectangle {
                 height: units.gu(4)
                 width: units.gu(4)
                 radius: units.gu(1)
-                color: bttn12ma.pressed ? "#32517F" : (settings.darkMode ? "#292929" : "white")
+                color: bttn12ma.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
             }
             Icon {
                 id: bttn12icn
-                source: bttn12ma.pressed ? "../../assets/save_pressed.svg" : (settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
+                source: bttn12ma.pressed ? "../../assets/save_pressed.svg" : (drkMd ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg")
                 width: units.gu(3)
                 height: units.gu(3)
                 anchors.centerIn: bttn12
@@ -2197,9 +2197,9 @@ Rectangle {
         ListItem {
             id: lstitm1
             height: header.height
-            color: settings.darkMode ? "#121212" : "white"
-            divider.colorFrom: settings.darkMode ? "#808080" : "black"
-            divider.colorTo: settings.darkMode ? "#808080" : "black"
+            color: drkMd ? "#121212" : "white"
+            divider.colorFrom: drkMd ? "#808080" : "black"
+            divider.colorTo: drkMd ? "#808080" : "black"
             anchors.top: txtfld5.bottom
             anchors.left: parent.left
             anchors.right: parent.right
@@ -2213,7 +2213,7 @@ Rectangle {
                     id: hlptxt
                     SlotsLayout.position: SlotsLayout.Leading
                     text: i18n.tr("Help")
-                    color: settings.darkMode ? "#808080" : "black"
+                    color: drkMd ? "#808080" : "black"
                     font.pointSize: 40
                     height: lstitm1.height
                     verticalAlignment: Text.AlignVCenter
@@ -2224,7 +2224,7 @@ Rectangle {
 
         Icon {
             id: hlpicn1
-            source: settings.darkMode ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg"
+            source: drkMd ? "../../assets/change_darkmode.svg" : "../../assets/change_lightmode.svg"
             width: units.gu(4)
             height: units.gu(4)
             anchors.top: lstitm1.bottom
@@ -2236,7 +2236,7 @@ Rectangle {
         Text {
             id: txt4
             text: i18n.tr("Apply equalizer changes, when it's already activated.")
-            color: settings.darkMode ? "#808080" : "black"
+            color: drkMd ? "#808080" : "black"
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn1.right
             anchors.right: parent.right
@@ -2251,7 +2251,7 @@ Rectangle {
 
         Icon {
             id: hlpicn2
-            source: settings.darkMode ? "../../assets/resetzero_darkmode.svg" : "../../assets/resetzero_lightmode.svg"
+            source: drkMd ? "../../assets/resetzero_darkmode.svg" : "../../assets/resetzero_lightmode.svg"
             width: units.gu(4)
             height: units.gu(4)
             anchors.top: lstitm1.bottom
@@ -2263,7 +2263,7 @@ Rectangle {
         Text {
             id: txt5
             text: i18n.tr("Reset all bars to 0.0.")
-            color: settings.darkMode ? "#808080" : "black"
+            color: drkMd ? "#808080" : "black"
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn2.right
             anchors.right: parent.right
@@ -2278,7 +2278,7 @@ Rectangle {
 
         Icon {
             id: hlpicn3
-            source: settings.darkMode ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg"
+            source: drkMd ? "../../assets/save_darkmode.svg" : "../../assets/save_lightmode.svg"
             width: units.gu(4)
             height: units.gu(4)
             anchors.top: lstitm1.bottom
@@ -2289,7 +2289,7 @@ Rectangle {
 
         Icon {
             id: hlpicn4
-            source: settings.darkMode ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg"
+            source: drkMd ? "../../assets/load_darkmode.svg" : "../../assets/load_lightmode.svg"
             width: units.gu(4)
             height: units.gu(4)
             anchors.top: lstitm1.bottom
@@ -2301,7 +2301,7 @@ Rectangle {
         Text {
             id: txt6
             text: i18n.tr("Save and load a preset. You can also give them a name (please don't forget to confirm with the return key). Apply the loaded equalizer settings by clicking the change button or by activating the equalizer.")
-            color: settings.darkMode ? "#808080" : "black"
+            color: drkMd ? "#808080" : "black"
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn4.right
             anchors.right: parent.right
@@ -2317,7 +2317,7 @@ Rectangle {
         Text {
             id: txt7
             text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
-            color: settings.darkMode ? "#808080" : "black"
+            color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
             lineHeight: 1.2
@@ -2330,7 +2330,7 @@ Rectangle {
         Text {
             id: txt3
             text: i18n.tr("The caps plugin for the equalizer was published under the GNU Public License (version 3) by Tim Goetze. More information at <a href=\"http://quitte.de/dsp/caps.html\">quitte.de</a>.")
-            color: settings.darkMode ? "#808080" : "black"
+            color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
             lineHeight: 1.2
@@ -2348,7 +2348,7 @@ Rectangle {
         Text {
             id: txt8
             text: i18n.tr("The pulse-vumeter binary was compiled from the source code found at <a href=\"https://github.com/Luciousdev/pulse-vumeter\">github.com</a>.")
-            color: settings.darkMode ? "#808080" : "black"
+            color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
             lineHeight: 1.2
