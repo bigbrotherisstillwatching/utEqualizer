@@ -193,7 +193,6 @@ Rectangle {
             Button {
                 id: bttn2
                 text: bttn2.pressed ? i18n.tr("<font color=\"white\">Turn off equalizer</font>") : i18n.tr("<font color=\"black\">Turn off equalizer</font>")
-//                enabled: settings.value("equalizerStatus", "true") ? true : false
                 enabled: {
                     if (eqsts === true) {
                         true
@@ -204,7 +203,6 @@ Rectangle {
                 onClicked: {
                     process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
                     bttn3.enabled = true
-//                    process5.start("/bin/bash",["-c", "sed -i '13s/true/false/' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf"])
                     eqswitch.checked = false
                     txt2.text = ""
                     eqsts = false
@@ -212,7 +210,6 @@ Rectangle {
                     delay(500, function() {
                         prgrssbr.value = 0
                     })
-//                    bttn1.enabled = false
                 }
                 StyleHints {
                     defaultColor: bttn2.pressed ? "#32517F" : "yellow"
@@ -220,8 +217,6 @@ Rectangle {
             }
             Button {
                 id: bttn3
-//                enabled: false
-//                enabled: settings.value("equalizerStatus", "false") ? true : false
                 enabled: {
                     if (eqsts === true) {
                         false
