@@ -208,7 +208,7 @@ Rectangle {
                     eqsts = false
                     process6.kill()
                     delay(500, function() {
-                        prgrssbr.value = 0
+                        mainPage.prgrssbr.value = 0
                     })
                 }
                 StyleHints {
