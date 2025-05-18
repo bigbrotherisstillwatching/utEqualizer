@@ -209,18 +209,18 @@ Rectangle {
                     txt2.text = ""
                     eqsts = false
                     process6.kill()
-/*                    delay(500, function() {
+                    delay(500, function() {
                         prgrssbr.value = 0
-                    })*/
+                    })
 /*                    delay(500, function() {
                         mainPage.prgrssbrvl = 0
                     })*/
 /*                    delay(500, function() {
                         mainPage.prgrssbr.value = 0.00
                     })*/
-                    delay(250, function() {
+/*                    delay(250, function() {
                         prgrssbr.value = 0.00
-                    })
+                    })*/
 //                    prgrssbrvl = 0
                 }
                 StyleHints {
