@@ -35,7 +35,7 @@ Rectangle {
     property alias eqsts: settings.equalizerStatus
     property alias drkMd: settings.darkMode
 //    property alias prgrssbrvl: prgrssbr.value
-    property alias prgrssbr: prgrssbr
+//    property alias prgrssbr: prgrssbr
 
     Timer {
         id: timer
@@ -215,8 +215,11 @@ Rectangle {
 /*                    delay(500, function() {
                         mainPage.prgrssbrvl = 0
                     })*/
-                    delay(500, function() {
+/*                    delay(500, function() {
                         mainPage.prgrssbr.value = 0.00
+                    })*/
+                    delay(250, function() {
+                        prgrssbr.value = 0.00
                     })
 //                    prgrssbrvl = 0
                 }
