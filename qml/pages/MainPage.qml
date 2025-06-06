@@ -321,7 +321,8 @@ Rectangle {
 
         Row {
             id: row1
-            spacing: 1
+//            spacing: 1
+            spacing: padding*3
             anchors.horizontalCenter: parent.horizontalCenter
             topPadding: units.gu(3)
             Column {
