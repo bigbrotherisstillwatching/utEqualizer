@@ -2219,7 +2219,8 @@ Rectangle {
                     SlotsLayout.position: SlotsLayout.Leading
                     text: i18n.tr("Help")
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 40
+//                    font.pointSize: 40
+                    font.pointSize: lstitm1.height/3
                     height: lstitm1.height
                     verticalAlignment: Text.AlignVCenter
                     bottomPadding: units.gu(2)
