@@ -330,7 +330,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide1.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: txt1.font.pointSize
                 }
                 Qqc.Slider {
                     id: slide1
