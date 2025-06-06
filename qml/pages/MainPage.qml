@@ -266,7 +266,8 @@ Rectangle {
                 anchors.verticalCenter: hdrrec.verticalCenter
                 text: header.title
                 color: drkMd ? "#808080" : "black"
-                font.pointSize: 40
+//                font.pointSize: 40
+                font.pixelSize: 40
             }
             Rectangle {
                 id: clsbttn
