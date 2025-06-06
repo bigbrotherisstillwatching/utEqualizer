@@ -331,7 +331,7 @@ Rectangle {
                     text: slide1.value
                     color: drkMd ? "#808080" : "black"
 //                    font.pointSize: 20
-                    font.pointSize: txt1.font.pointSize
+                    font.pointSize: txt1.font.pointSize*2
                 }
                 Qqc.Slider {
                     id: slide1
