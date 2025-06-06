@@ -256,7 +256,7 @@ Rectangle {
                 anchors.verticalCenter: hdrrec.verticalCenter
                 text: header.title
                 color: drkMd ? "#808080" : "black"
-                font.pointSize: 0.36*dpi
+                font.pointSize: 0.1*dpi
 //                font.pointSize: 40
 //                font.pixelSize: 40
             }
