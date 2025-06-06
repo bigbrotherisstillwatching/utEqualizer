@@ -168,7 +168,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
+        process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/scripts/equalizer_stop.sh"])
         eqswitch.checked = false
         eqsts = false
         prgrssbr.value = 0
@@ -203,7 +203,7 @@ Rectangle {
                     }
                 }
                 onClicked: {
-                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
+                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/scripts/equalizer_stop.sh"])
                     bttn3.enabled = true
                     eqswitch.checked = false
                     txt2.text = ""
@@ -1054,7 +1054,7 @@ Rectangle {
                     settings.equalizerControls8 = slide8.value.toFixed(1)
                     settings.equalizerControls9 = slide9.value.toFixed(1)
                     settings.equalizerControls10 = slide10.value.toFixed(1)
-                    process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_change.sh"])
+                    process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/scripts/equalizer_change.sh"])
                 }
             }
             DropShadow {
@@ -1120,7 +1120,7 @@ Rectangle {
             }
             onClicked: {
                 if (eqsts === true) {                    
-                    process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
+                    process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/scripts/equalizer_stop.sh"])
                     eqsts = checked
                     txt2.text = ""
                     process6.kill()
@@ -1138,10 +1138,10 @@ Rectangle {
                     settings.equalizerControls8 = slide8.value.toFixed(1)
                     settings.equalizerControls9 = slide9.value.toFixed(1)
                     settings.equalizerControls10 = slide10.value.toFixed(1)
-                    process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_start.sh"])
+                    process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/scripts/equalizer_start.sh"])
                     eqsts = checked
                     txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
-                    process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/bin/pulse-vumeter"])
+                    process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/bin/pulse-vumeter"])
                 }
             }
         }
