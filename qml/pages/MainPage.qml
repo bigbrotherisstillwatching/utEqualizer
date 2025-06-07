@@ -24,7 +24,7 @@ import Process 1.0
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Styles 1.3
 import QtGraphicalEffects 1.12
-import QtQuick.Window 2.12
+//import QtQuick.Window 2.12
 
 Rectangle {
     id: mainPage
@@ -32,10 +32,10 @@ Rectangle {
 
     color: drkMd ? "#121212" : "white"
 
-    property var padding: units.gu(1)
+//    property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
     property alias drkMd: settings.darkMode
-    property int dpi: Screen.pixelDensity*25.4
+//    property int dpi: Screen.pixelDensity*25.4
 
     Timer {
         id: timer
@@ -256,7 +256,8 @@ Rectangle {
                 anchors.verticalCenter: hdrrec.verticalCenter
                 text: header.title
                 color: drkMd ? "#808080" : "black"
-                font.pointSize: hdrrec.height/3
+                font.pointSize: units.gu(2)
+//                font.pointSize: hdrrec.height/3
 //                font.pointSize: 0.1*dpi
 //                font.pointSize: 40
 //                font.pixelSize: 40
@@ -322,7 +323,7 @@ Rectangle {
         Row {
             id: row1
 //            spacing: 1
-            spacing: padding*3
+            spacing: units.gu(3)
             anchors.horizontalCenter: parent.horizontalCenter
             topPadding: units.gu(3)
             Column {
