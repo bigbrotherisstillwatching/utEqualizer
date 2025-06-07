@@ -323,7 +323,7 @@ Rectangle {
         Row {
             id: row1
 //            spacing: 1
-            spacing: units.gu(3)
+            spacing: units.gu(1)
             anchors.horizontalCenter: parent.horizontalCenter
             topPadding: units.gu(3)
             Column {
@@ -2223,7 +2223,8 @@ Rectangle {
                     text: i18n.tr("Help")
                     color: drkMd ? "#808080" : "black"
 //                    font.pointSize: 40
-                    font.pointSize: lstitm1.height/3
+//                    font.pointSize: lstitm1.height/3
+                    font.pointSize: units.gu(2)
                     height: lstitm1.height
                     verticalAlignment: Text.AlignVCenter
                     bottomPadding: units.gu(2)
