@@ -389,7 +389,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "31Hz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -398,7 +399,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide2.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide2
@@ -453,7 +455,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "63Hz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -462,7 +465,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide3.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide3
@@ -517,7 +521,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "125Hz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -526,7 +531,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide4.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide4
@@ -581,7 +587,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "250Hz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -590,7 +597,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide5.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide5
@@ -645,7 +653,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "500Hz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -654,7 +663,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide6.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide6
@@ -709,7 +719,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "1kHz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -718,7 +729,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide7.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide7
@@ -773,7 +785,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "2kHz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -782,7 +795,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide8.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide8
@@ -837,7 +851,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "4kHz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -846,7 +861,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide9.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                  Qqc.Slider {
                     id: slide9
@@ -901,7 +917,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "8kHz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -910,7 +927,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide10.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide10
@@ -965,7 +983,8 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "16kHz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+//                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
         }
