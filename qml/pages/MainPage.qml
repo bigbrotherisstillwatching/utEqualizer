@@ -369,9 +369,9 @@ Rectangle {
 //                        implicitWidth: 52
 //                        implicitHeight: 52
 //                        radius: 26
-                        implicitWidth: units.gu(2)
-                        implicitHeight: units.gu(2)
-                        radius: units.gu(1)
+                        implicitWidth: units.gu(3)
+                        implicitHeight: units.gu(3)
+                        radius: units.gu(1.5)
                         color: slide1.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
