@@ -351,10 +351,10 @@ Rectangle {
 //                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(20)
 //                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(5)
 //                        width: 4
-                        width: units.gu(0.25)
+                        width: units.gu(0.5)
                         height: slide1.availableHeight
 //                        radius: 2
-                        radius: units.gu(0.125)
+                        radius: units.gu(0.25)
                         color: "#32517F"
                         border.width: 0
 
@@ -363,7 +363,7 @@ Rectangle {
                             implicitHeight: slide1.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
 //                            radius: 2
-                            radius: units.gu(0.125)
+                            radius: units.gu(0.25)
                             border.width: 0
                         }
                     }
