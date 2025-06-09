@@ -348,7 +348,8 @@ Rectangle {
                         x: (slide1.width  - width)/2
                         y: (slide1.height - height)/2
 //                        implicitHeight: slide1.horizontal ? 1 : 200
-                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(20)
+//                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(20)
+                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(5)
 //                        width: 4
                         width: units.gu(0.25)
                         height: slide1.availableHeight
