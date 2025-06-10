@@ -1153,17 +1153,21 @@ Rectangle {
         Qqc.Switch {
             id: eqswitch
             anchors.left: parent.left
-            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 70)
+//            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 70)
+            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(2))
             anchors.top: prgrssbr.bottom
             anchors.topMargin: units.gu(1)
 
             indicator: Rectangle {
                 id: rec1
-                implicitWidth: 120
-                implicitHeight: 65
+//                implicitWidth: 120
+//                implicitHeight: 65
+                implicitWidth: units.gu(6)
+                implicitHeight: units.gu(3)
                 x: eqswitch.leftPadding
                 y: parent.height / 2 - height / 2
-                radius: 32.5
+//                radius: 32.5
+                radius: units.gu(1.5)
                 color: drkMd ? (eqswitch.checked ? "#32517F" : "#808080") : (eqswitch.checked ? "#32517F" : "#f1f1f1")
         
                 Text {
@@ -1181,9 +1185,12 @@ Rectangle {
                 Rectangle {
                     id: rec2
                     x: eqswitch.checked ? parent.width - width : 0
-                    width: 65
-                    height: 65
-                    radius: 32.5
+//                    width: 65
+//                    height: 65
+//                    radius: 32.5
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    radius: units.gu(1.5)
                     color: drkMd ? (eqswitch.down ? "#32517F" : "#292929") : (eqswitch.down ? "#32517F" : "white")
                 }
                 DropShadow {
