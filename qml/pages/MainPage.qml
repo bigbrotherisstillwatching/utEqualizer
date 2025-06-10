@@ -1070,17 +1070,20 @@ Rectangle {
             background: Rectangle {
                 x: (prgrssbr.width  - width) / 2
                 y: (prgrssbr.height - height) / 2
-                implicitWidth: 200
+//                implicitWidth: 200
                 width: prgrssbr.availableWidth
-                height: 10
-                radius: 5
+//                height: 10
+//                radius: 5
+                height: units.gu(0.5)
+                radius: units.gu(0.25)
                 color: drkMd ? "#808080" : "#f1f1f1"
 
                 Rectangle {
                     width: prgrssbr.visualPosition * parent.width
                     height: parent.height
                     color: "#32517F"
-                    radius: 2
+//                    radius: 2
+                    radius: units.gu(0.25)
                 }
             }
 
