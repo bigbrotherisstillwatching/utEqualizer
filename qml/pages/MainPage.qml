@@ -1165,8 +1165,8 @@ Rectangle {
 //                implicitHeight: 65
                 implicitWidth: units.gu(6)
                 implicitHeight: units.gu(3)
-                x: eqswitch.leftPadding
-                y: parent.height / 2 - height / 2
+//                x: eqswitch.leftPadding
+//                y: parent.height / 2 - height / 2
 //                radius: 32.5
                 radius: units.gu(1.5)
                 color: drkMd ? (eqswitch.checked ? "#32517F" : "#808080") : (eqswitch.checked ? "#32517F" : "#f1f1f1")
@@ -1394,11 +1394,15 @@ Rectangle {
 
             indicator: Rectangle {
                 id: rec3
-                implicitWidth: 120
-                implicitHeight: 65
-                x: eqswitch.leftPadding
+//                implicitWidth: 120
+//                implicitHeight: 65
+                implicitWidth: units.gu(6)
+                implicitHeight: units.gu(3)
+//                x: eqswitch.leftPadding
+                x: drkmdswitch.leftPadding
                 y: parent.height / 2 - height / 2
-                radius: 32.5
+//                radius: 32.5
+                radius: units.gu(1.5)
                 color: drkMd ? (drkmdswitch.checked ? "#32517F" : "#808080") : (drkmdswitch.checked ? "#32517F" : "#f1f1f1")
         
                 Text {
