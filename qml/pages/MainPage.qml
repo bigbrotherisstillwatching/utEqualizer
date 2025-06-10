@@ -1165,8 +1165,8 @@ Rectangle {
 //                implicitHeight: 65
                 implicitWidth: units.gu(6)
                 implicitHeight: units.gu(3)
-//                x: eqswitch.leftPadding
-//                y: parent.height / 2 - height / 2
+                x: eqswitch.leftPadding
+                y: parent.height / 2 - height / 2
 //                radius: 32.5
                 radius: units.gu(1.5)
                 color: drkMd ? (eqswitch.checked ? "#32517F" : "#808080") : (eqswitch.checked ? "#32517F" : "#f1f1f1")
@@ -1404,8 +1404,8 @@ Rectangle {
 //                radius: 32.5
                 radius: units.gu(1.5)
                 color: drkMd ? (drkmdswitch.checked ? "#32517F" : "#808080") : (drkmdswitch.checked ? "#32517F" : "#f1f1f1")
-        
-                Text {
+
+/*                Text {
                     id: txt9
                     color: drkMd ? (drkmdswitch.checked ? "#808080" : "#292929") : (drkmdswitch.checked ? "white" : "black")
                     text: "I     O"
@@ -1415,14 +1415,73 @@ Rectangle {
                     anchors.right: rec3.right
                     anchors.topMargin: 11
                     anchors.leftMargin: 25
+                }*/
+
+                Text {
+                    id: txt9
+                    color: drkMd ? (drkmdswitch.checked ? "#808080" : "#292929") : (drkmdswitch.checked ? "white" : "black")
+                    text: "I"
+//                    anchors.left: rec5.left
+//                    anchors.right: rec5.right
+                    anchors.verticalCenter: rec7.verticalCenter
+                    anchors.horizontalCenter: rec7.horizontalCenter
+                    horizontalAlignment: Text.AlignHCenter
+//                    anchors.top: rec1.top
+//                    anchors.bottom: rec1.bottom
+//                    anchors.left: rec1.left
+//                    anchors.right: rec1.right
+//                    anchors.topMargin: 11
+//                    anchors.leftMargin: 25
+//                    anchors.verticalCenter: parent.verticalCenter
+                }
+
+                Rectangle {
+                    id: rec7
+                    visible: false
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    anchors.left: rec3.left
+                    anchors.verticalCenter: rec3.verticalCenter
+                    radius: units.gu(1.5)
+                }
+
+                Text {
+                    id: txt11
+                    color: drkMd ? (drkmdswitch.checked ? "#808080" : "#292929") : (drkmdswitch.checked ? "white" : "black")
+                    text: "O"
+//                    anchors.left: rec6.left
+//                    anchors.right: rec6.right
+                    anchors.verticalCenter: rec8.verticalCenter
+                    anchors.horizontalCenter: rec8.horizontalCenter
+                    horizontalAlignment: Text.AlignHCenter
+//                    anchors.top: rec1.top
+//                    anchors.bottom: rec1.bottom
+//                    anchors.left: rec1.left
+//                    anchors.right: rec1.right
+//                    anchors.topMargin: 11
+//                    anchors.leftMargin: 25
+//                    anchors.verticalCenter: parent.verticalCenter
+                }
+
+                Rectangle {
+                    id: rec8
+                    visible: false
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    anchors.right: rec3.right
+                    anchors.verticalCenter: rec3.verticalCenter
+                    radius: units.gu(1.5)
                 }
 
                 Rectangle {
                     id: rec4
                     x: drkmdswitch.checked ? parent.width - width : 0
-                    width: 65
-                    height: 65
-                    radius: 32.5
+//                    width: 65
+//                    height: 65
+//                    radius: 32.5
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    radius: units.gu(1.5)
                     color: drkMd ? (drkmdswitch.down ? "#32517F" : "#292929") : (drkmdswitch.down ? "#32517F" : "white")
                 }
                 DropShadow {
