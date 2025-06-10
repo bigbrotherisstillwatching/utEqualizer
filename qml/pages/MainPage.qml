@@ -1152,9 +1152,10 @@ Rectangle {
 
         Qqc.Switch {
             id: eqswitch
-            anchors.left: parent.left
+//            anchors.left: parent.left
 //            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 70)
-            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(3))
+//            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(3))
+            anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: prgrssbr.bottom
             anchors.topMargin: units.gu(1)
 
