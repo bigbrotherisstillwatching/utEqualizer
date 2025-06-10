@@ -1191,7 +1191,7 @@ Rectangle {
 //                    anchors.right: rec5.right
                     anchors.verticalCenter: rec5.verticalCenter
                     anchors.horizontalCenter: rec5.horizontalCenter
-                    horizontalAlignment: Text.AlignHCenter
+//                    horizontalAlignment: Text.AlignHCenter
 //                    anchors.top: rec1.top
 //                    anchors.bottom: rec1.bottom
 //                    anchors.left: rec1.left
@@ -1219,7 +1219,7 @@ Rectangle {
 //                    anchors.right: rec6.right
                     anchors.verticalCenter: rec6.verticalCenter
                     anchors.horizontalCenter: rec6.horizontalCenter
-                    horizontalAlignment: Text.AlignHCenter
+//                    horizontalAlignment: Text.AlignHCenter
 //                    anchors.top: rec1.top
 //                    anchors.bottom: rec1.bottom
 //                    anchors.left: rec1.left
@@ -1425,7 +1425,7 @@ Rectangle {
 //                    anchors.right: rec5.right
                     anchors.verticalCenter: rec7.verticalCenter
                     anchors.horizontalCenter: rec7.horizontalCenter
-                    horizontalAlignment: Text.AlignHCenter
+//                    horizontalAlignment: Text.AlignHCenter
 //                    anchors.top: rec1.top
 //                    anchors.bottom: rec1.bottom
 //                    anchors.left: rec1.left
@@ -1453,7 +1453,7 @@ Rectangle {
 //                    anchors.right: rec6.right
                     anchors.verticalCenter: rec8.verticalCenter
                     anchors.horizontalCenter: rec8.horizontalCenter
-                    horizontalAlignment: Text.AlignHCenter
+//                    horizontalAlignment: Text.AlignHCenter
 //                    anchors.top: rec1.top
 //                    anchors.bottom: rec1.bottom
 //                    anchors.left: rec1.left
