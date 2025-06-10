@@ -342,6 +342,7 @@ Rectangle {
                         radius: units.gu(0.25)
                         color: "#32517F"
                         border.width: 0
+                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(20)
 
                         Rectangle {
                             implicitWidth: parent.width
