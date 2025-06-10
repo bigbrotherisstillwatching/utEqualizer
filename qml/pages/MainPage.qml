@@ -1171,7 +1171,7 @@ Rectangle {
                 radius: units.gu(1.5)
                 color: drkMd ? (eqswitch.checked ? "#32517F" : "#808080") : (eqswitch.checked ? "#32517F" : "#f1f1f1")
         
-                Text {
+/*                Text {
                     id: txt
                     color: drkMd ? (eqswitch.checked ? "#808080" : "#292929") : (eqswitch.checked ? "white" : "black")
                     text: "I     O"
@@ -1181,6 +1181,62 @@ Rectangle {
                     anchors.right: rec1.right
                     anchors.topMargin: 11
                     anchors.leftMargin: 25
+                }*/
+
+                Text {
+                    id: txt
+                    color: drkMd ? (eqswitch.checked ? "#808080" : "#292929") : (eqswitch.checked ? "white" : "black")
+                    text: "I"
+//                    anchors.left: rec5.left
+//                    anchors.right: rec5.right
+                    anchors.verticalCenter: rec5.verticalCenter
+                    anchors.horizontalCenter: rec5.horizontalCenter
+                    horizontalAlignment: Text.AlignHCenter
+//                    anchors.top: rec1.top
+//                    anchors.bottom: rec1.bottom
+//                    anchors.left: rec1.left
+//                    anchors.right: rec1.right
+//                    anchors.topMargin: 11
+//                    anchors.leftMargin: 25
+//                    anchors.verticalCenter: parent.verticalCenter
+                }
+
+                Rectangle {
+                    id: rec5
+                    visible: false
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    anchors.left: rec1.left
+                    anchors.verticalCenter: rec1.verticalCenter
+                    radius: units.gu(1.5)
+                }
+
+                Text {
+                    id: txt10
+                    color: drkMd ? (eqswitch.checked ? "#808080" : "#292929") : (eqswitch.checked ? "white" : "black")
+                    text: "O"
+//                    anchors.left: rec6.left
+//                    anchors.right: rec6.right
+                    anchors.verticalCenter: rec6.verticalCenter
+                    anchors.horizontalCenter: rec6.horizontalCenter
+                    horizontalAlignment: Text.AlignHCenter
+//                    anchors.top: rec1.top
+//                    anchors.bottom: rec1.bottom
+//                    anchors.left: rec1.left
+//                    anchors.right: rec1.right
+//                    anchors.topMargin: 11
+//                    anchors.leftMargin: 25
+//                    anchors.verticalCenter: parent.verticalCenter
+                }
+
+                Rectangle {
+                    id: rec6
+                    visible: false
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    anchors.right: rec1.right
+                    anchors.verticalCenter: rec1.verticalCenter
+                    radius: units.gu(1.5)
                 }
 
                 Rectangle {
