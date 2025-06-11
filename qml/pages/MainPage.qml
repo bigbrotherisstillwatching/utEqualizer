@@ -2450,7 +2450,7 @@ Rectangle {
             maximumLineCount: 10
         }
 
-/*        Text {
+        Text {
             id: txt7
             text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
             color: drkMd ? "#808080" : "black"
@@ -2461,9 +2461,9 @@ Rectangle {
             font.bold: false
             anchors.bottom: txt3.top
             bottomPadding: units.gu(2)
-        }*/
+        }
 
-        Text {
+/*        Text {
             id: txt7
             text: i18n.tr("Made with ")
             color: drkMd ? "#808080" : "black"
@@ -2474,7 +2474,7 @@ Rectangle {
             font.bold: false
             anchors.bottom: txt3.top
             bottomPadding: units.gu(2)
-        }
+        }*/
 
         Icon {
             id: hrticn
@@ -2488,6 +2488,8 @@ Rectangle {
 //            anchors.topMargin: units.gu(23)
 //            bottomPadding: units.gu(2)
             anchors.bottomMargin: units.gu(2.75)
+            keyColor: "red"
+            color: "blue"
         }
 
         Text {
