@@ -347,7 +347,7 @@ Rectangle {
 //                        visible: false
 
                         Rectangle {
-                            visible: false
+//                            visible: false
 //                            implicitWidth: parent.width
                             width: parent.width
 //                            implicitHeight: slide1.visualPosition * parent.height
