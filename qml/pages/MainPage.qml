@@ -343,13 +343,14 @@ Rectangle {
 //                        height: units.gu(20)
                         radius: units.gu(0.25)
 //                        radius: units.gu(0.5)
-                        color: "#32517F"
+//                        color: "#32517F"
+                        color: "#f1f1f1"
 //                        border.width: 0
 //                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(20)
-                        visible: false
+//                        visible: false
 
                         Rectangle {
-//                            visible: false
+                            visible: false
 //                            implicitWidth: parent.width
                             width: parent.width
 //                            implicitHeight: slide1.visualPosition * parent.height
