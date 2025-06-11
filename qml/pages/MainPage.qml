@@ -338,13 +338,10 @@ Rectangle {
                         x: (slide1.width  - width) / 2
                         y: (slide1.height - height) / 2
                         width: units.gu(0.5)
-//                        width: units.gu(1)
                         height: slide1.availableHeight
-//                        height: units.gu(20)
                         radius: units.gu(0.25)
-//                        radius: units.gu(0.5)
 //                        color: "#32517F"
-                        color: "#f1f1f1"
+                        color: drkMd ? "#808080" : "#f1f1f1"
 //                        border.width: 0
 //                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(20)
 //                        visible: false
@@ -355,7 +352,8 @@ Rectangle {
                             width: parent.width
 //                            implicitHeight: slide1.visualPosition * parent.height
                             height: slide1.visualPosition * parent.height
-                            color: drkMd ? "#808080" : "#f1f1f1"
+//                            color: drkMd ? "#808080" : "#f1f1f1"
+                            color: "#32517F"
                             radius: units.gu(0.25)
 //                            radius: units.gu(0.5)
 //                            border.width: 0
