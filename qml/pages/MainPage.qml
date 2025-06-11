@@ -409,12 +409,20 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide2.availableHeight
                         radius: units.gu(0.25)
-                        color: "#32517F"
+//                        color: "#32517F"
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide2.visualPosition * parent.height
+//                            implicitWidth: parent.width
+                            width: parent.width
+//                            implicitHeight: slide2.visualPosition * parent.height
+                            height: slide2.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
                             border.width: 0
@@ -472,12 +480,20 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide3.availableHeight
                         radius: units.gu(0.25)
-                        color: "#32517F"
+//                        color: "#32517F"
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide3.visualPosition * parent.height
+//                            implicitWidth: parent.width
+                            width: parent.width
+//                            implicitHeight: slide3.visualPosition * parent.height
+                            height: slide3.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
                             border.width: 0
@@ -535,12 +551,20 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide4.availableHeight
                         radius: units.gu(0.25)
-                        color: "#32517F"
+//                        color: "#32517F"
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide4.visualPosition * parent.height
+//                            implicitWidth: parent.width
+                            width: parent.width
+//                            implicitHeight: slide4.visualPosition * parent.height
+                            height: slide4.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
                             border.width: 0
@@ -598,12 +622,20 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide5.availableHeight
                         radius: units.gu(0.25)
-                        color: "#32517F"
+//                        color: "#32517F"
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide5.visualPosition * parent.height
+//                            implicitWidth: parent.width
+                            width: parent.width
+//                            implicitHeight: slide5.visualPosition * parent.height
+                            height: slide5.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
                             border.width: 0
@@ -661,12 +693,20 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide6.availableHeight
                         radius: units.gu(0.25)
-                        color: "#32517F"
+//                        color: "#32517F"
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide6.visualPosition * parent.height
+//                            implicitWidth: parent.width
+                            width: parent.width
+//                            implicitHeight: slide6.visualPosition * parent.height
+                            height: slide6.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
                             border.width: 0
@@ -724,12 +764,20 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide7.availableHeight
                         radius: units.gu(0.25)
-                        color: "#32517F"
+//                        color: "#32517F"
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide7.visualPosition * parent.height
+//                            implicitWidth: parent.width
+                            width: parent.width
+//                            implicitHeight: slide7.visualPosition * parent.height
+                            height: slide7.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
                             border.width: 0
@@ -787,12 +835,20 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide8.availableHeight
                         radius: units.gu(0.25)
-                        color: "#32517F"
+//                        color: "#32517F"
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide8.visualPosition * parent.height
+//                            implicitWidth: parent.width
+                            width: parent.width
+//                            implicitHeight: slide8.visualPosition * parent.height
+                            height: slide8.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
                             border.width: 0
@@ -850,12 +906,20 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide9.availableHeight
                         radius: units.gu(0.25)
-                        color: "#32517F"
+//                        color: "#32517F"
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide9.visualPosition * parent.height
+//                            implicitWidth: parent.width
+                            width: parent.width
+//                            implicitHeight: slide9.visualPosition * parent.height
+                            height: slide9.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
                             border.width: 0
@@ -913,12 +977,20 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide10.availableHeight
                         radius: units.gu(0.25)
-                        color: "#32517F"
+//                        color: "#32517F"
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide10.visualPosition * parent.height
+//                            implicitWidth: parent.width
+                            width: parent.width
+//                            implicitHeight: slide10.visualPosition * parent.height
+                            height: slide10.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
                             border.width: 0
