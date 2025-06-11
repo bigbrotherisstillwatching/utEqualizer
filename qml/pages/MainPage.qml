@@ -340,9 +340,9 @@ Rectangle {
                         y: (slide1.height - height) / 2
                         width: units.gu(0.5)
                         height: slide1.availableHeight
-                        radius: units.gu(0.25)
-//                        color: "#32517F"
-                        color: drkMd ? "#808080" : "#f1f1f1"
+//                        radius: units.gu(0.25)
+                        color: "#32517F"
+//                        color: drkMd ? "#808080" : "#f1f1f1"
 //                        border.width: units.gu(0.1)
 //                        border.color: "#32517F"
 //                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(20)
@@ -356,9 +356,9 @@ Rectangle {
                             height: slide1.visualPosition * parent.height
 //                            height: units.gu(10)
 //                            anchors.left: slide1.visualPosition
-//                            color: drkMd ? "#808080" : "#f1f1f1"
-                            color: "#32517F"
-                            radius: units.gu(0.25)
+                            color: drkMd ? "#808080" : "#f1f1f1"
+//                            color: "#32517F"
+//                            radius: units.gu(0.25)
 //                            radius: units.gu(0.5)
 //                            border.width: units.gu(0.5)
 //                            border.color: drkMd ? "#808080" : "#f1f1f1"
