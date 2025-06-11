@@ -2465,7 +2465,7 @@ Rectangle {
 
         Text {
             id: txt7
-            text: i18n.tr("Made with    by bbisw")
+            text: i18n.tr("Made with        by bbisw")
             color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
