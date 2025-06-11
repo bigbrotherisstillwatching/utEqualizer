@@ -351,7 +351,8 @@ Rectangle {
 //                            implicitWidth: parent.width
                             width: parent.width
 //                            implicitHeight: slide1.visualPosition * parent.height
-                            height: slide1.visualPosition * parent.height
+//                            height: slide1.visualPosition * parent.height
+                            height: slide1.visualPosition / parent.height
 //                            color: drkMd ? "#808080" : "#f1f1f1"
                             color: "#32517F"
                             radius: units.gu(0.25)
