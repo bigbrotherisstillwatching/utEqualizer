@@ -358,7 +358,7 @@ Rectangle {
 //                            color: "#32517F"
                             radius: units.gu(0.25)
 //                            radius: units.gu(0.5)
-                            border.width: units.gu(0.1)
+                            border.width: units.gu(0.5)
                             border.color: drkMd ? "#808080" : "#f1f1f1"
                         }
                     }
