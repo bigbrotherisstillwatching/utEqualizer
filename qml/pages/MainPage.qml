@@ -340,19 +340,21 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide1.availableHeight
                         radius: units.gu(0.25)
-                        color: "#32517F"
+//                        color: "#32517F"
                         border.width: 0
-//                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(20)
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 1.0; color: "#32517F" }
+                        }
 
                         Rectangle {
-//                            width: parent.width
-                            width: units.gu(0.5)
+                            width: parent.width
                             height: slide1.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
-//                            radius: units.gu(0.5)
-                            border.width: units.gu(1)
-                            border.color: drkMd ? "#808080" : "#f1f1f1"
+                            border.width: 0
                         }
                     }
                     handle: Rectangle {
