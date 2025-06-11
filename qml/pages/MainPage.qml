@@ -346,10 +346,10 @@ Rectangle {
 
                         Rectangle {
 //                            width: parent.width
-                            width: units.gu(0.5)
+                            width: units.gu(0.6)
                             height: slide1.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
-                            radius: units.gu(0.25)
+                            radius: units.gu(0.3)
 //                            radius: units.gu(0.5)
                             border.width: 0
                         }
