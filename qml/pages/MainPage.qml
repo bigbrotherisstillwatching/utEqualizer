@@ -2473,7 +2473,8 @@ Rectangle {
 //            anchors.leftMargin: units.gu(2)
             anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(14))
 //            anchors.topMargin: units.gu(23)
-            bottomPadding: units.gu(2)
+//            bottomPadding: units.gu(2)
+            anchors.bottomMargin: units.gu(2)
         }
 
         Text {
