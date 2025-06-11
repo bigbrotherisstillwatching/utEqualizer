@@ -2466,15 +2466,15 @@ Rectangle {
         Icon {
             id: hrticn
             source: "../../assets/heart.png"
-            width: units.gu(3)
-            height: units.gu(3)
+            width: units.gu(4)
+            height: units.gu(4)
             anchors.bottom: txt3.top
             anchors.left: parent.left
 //            anchors.leftMargin: units.gu(2)
             anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(14))
 //            anchors.topMargin: units.gu(23)
 //            bottomPadding: units.gu(2)
-            anchors.bottomMargin: units.gu(2)
+            anchors.bottomMargin: units.gu(3)
         }
 
         Text {
