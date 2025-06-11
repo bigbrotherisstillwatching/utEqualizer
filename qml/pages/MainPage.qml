@@ -353,7 +353,7 @@ Rectangle {
                             width: parent.width
 //                            implicitHeight: slide1.visualPosition * parent.height
 //                            height: slide1.visualPosition * parent.height
-                            height: parent.height - slide1.visualPosition
+                            height: slide1.visualPosition
 //                            anchors.left: slide1.visualPosition
 //                            color: drkMd ? "#808080" : "#f1f1f1"
                             color: "#32517F"
