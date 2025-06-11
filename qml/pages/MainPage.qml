@@ -344,9 +344,9 @@ Rectangle {
                         border.width: 0
                         gradient: Gradient {
                             GradientStop { position: 0.0; color: "transparent" }
-                            GradientStop { position: 0.3; color: "transparent" }
-                            GradientStop { position: 0.3; color: "#32517F" } 
-                            GradientStop { position: 1.0; color: "#32517F" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
                         }
 
                         Rectangle {
