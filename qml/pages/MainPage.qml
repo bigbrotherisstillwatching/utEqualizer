@@ -2452,8 +2452,7 @@ Rectangle {
 
         Text {
             id: txt7
-//            text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
-            text: i18n.tr("Made with ") + "<img width="47" height="90" src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
+            text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
             color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
@@ -2462,6 +2461,18 @@ Rectangle {
             font.bold: false
             anchors.bottom: txt3.top
             bottomPadding: units.gu(2)
+        }
+
+        Icon {
+            id: hrticn
+            source: "../../assets/heart.png"
+            width: units.gu(1)
+            height: units.gu(1)
+            anchors.bottom: txt3.top
+            anchors.left: parent.left
+//            anchors.leftMargin: units.gu(2)
+            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(14))
+//            anchors.topMargin: units.gu(23)
         }
 
         Text {
