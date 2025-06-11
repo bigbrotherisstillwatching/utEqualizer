@@ -361,8 +361,10 @@ Rectangle {
                         id: slide1hndl
                         x: slide1.leftPadding + (slide1.horizontal ? slide1.visualPosition * (slide1.availableWidth - width) : (slide1.availableWidth - width) / 2)
                         y: slide1.topPadding + (slide1.vertical ? slide1.visualPosition * (slide1.availableHeight - height) : (slide1.availableHeight - height) / 2)
-                        implicitWidth: units.gu(3)
-                        implicitHeight: units.gu(3)
+//                        implicitWidth: units.gu(3)
+//                        implicitHeight: units.gu(3)
+                        width: units.gu(3)
+                        height: units.gu(3)
                         radius: units.gu(1.5)
                         color: slide1.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
