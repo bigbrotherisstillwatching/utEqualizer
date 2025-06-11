@@ -328,8 +328,8 @@ Rectangle {
                 }
                 Qqc.Slider {
                     id: slide1
-                    from: -48.0
-                    to: 24.0
+                    from: 24.0
+                    to: -48.0
                     live: true
                     orientation: Qt.Vertical
                     stepSize: 0.5
@@ -352,8 +352,8 @@ Rectangle {
 //                            implicitWidth: parent.width
                             width: parent.width
 //                            implicitHeight: slide1.visualPosition * parent.height
-//                            height: slide1.visualPosition * parent.height
-                            height: units.gu(10)
+                            height: slide1.visualPosition * parent.height
+//                            height: units.gu(10)
 //                            anchors.left: slide1.visualPosition
 //                            color: drkMd ? "#808080" : "#f1f1f1"
                             color: "#32517F"
