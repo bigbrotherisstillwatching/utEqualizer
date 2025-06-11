@@ -434,8 +434,10 @@ Rectangle {
                         id: slide2hndl
                         x: slide2.leftPadding + (slide2.horizontal ? slide2.visualPosition * (slide2.availableWidth - width) : (slide2.availableWidth - width) / 2)
                         y: slide2.topPadding + (slide2.vertical ? slide2.visualPosition * (slide2.availableHeight - height) : (slide2.availableHeight - height) / 2)
-                        implicitWidth: units.gu(3)
-                        implicitHeight: units.gu(3)
+//                        implicitWidth: units.gu(3)
+//                        implicitHeight: units.gu(3)
+                        width: units.gu(3)
+                        height: units.gu(3)
                         radius: units.gu(1.5)
                         color: slide2.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
@@ -505,8 +507,10 @@ Rectangle {
                         id: slide3hndl
                         x: slide3.leftPadding + (slide3.horizontal ? slide3.visualPosition * (slide3.availableWidth - width) : (slide3.availableWidth - width) / 2)
                         y: slide3.topPadding + (slide3.vertical ? slide3.visualPosition * (slide3.availableHeight - height) : (slide3.availableHeight - height) / 2)
-                        implicitWidth: units.gu(3)
-                        implicitHeight: units.gu(3)
+//                        implicitWidth: units.gu(3)
+//                        implicitHeight: units.gu(3)
+                        width: units.gu(3)
+                        height: units.gu(3)
                         radius: units.gu(1.5)
                         color: slide3.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
@@ -576,8 +580,10 @@ Rectangle {
                         id: slide4hndl
                         x: slide4.leftPadding + (slide4.horizontal ? slide4.visualPosition * (slide4.availableWidth - width) : (slide4.availableWidth - width) / 2)
                         y: slide4.topPadding + (slide4.vertical ? slide4.visualPosition * (slide4.availableHeight - height) : (slide4.availableHeight - height) / 2)
-                        implicitWidth: units.gu(3)
-                        implicitHeight: units.gu(3)
+//                        implicitWidth: units.gu(3)
+//                        implicitHeight: units.gu(3)
+                        width: units.gu(3)
+                        height: units.gu(3)
                         radius: units.gu(1.5)
                         color: slide4.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
@@ -647,8 +653,10 @@ Rectangle {
                         id: slide5hndl
                         x: slide5.leftPadding + (slide5.horizontal ? slide5.visualPosition * (slide5.availableWidth - width) : (slide5.availableWidth - width) / 2)
                         y: slide5.topPadding + (slide5.vertical ? slide5.visualPosition * (slide5.availableHeight - height) : (slide5.availableHeight - height) / 2)
-                        implicitWidth: units.gu(3)
-                        implicitHeight: units.gu(3)
+//                        implicitWidth: units.gu(3)
+//                        implicitHeight: units.gu(3)
+                        width: units.gu(3)
+                        height: units.gu(3)
                         radius: units.gu(1.5)
                         color: slide5.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
@@ -718,8 +726,10 @@ Rectangle {
                         id: slide6hndl
                         x: slide6.leftPadding + (slide6.horizontal ? slide6.visualPosition * (slide6.availableWidth - width) : (slide6.availableWidth - width) / 2)
                         y: slide6.topPadding + (slide6.vertical ? slide6.visualPosition * (slide6.availableHeight - height) : (slide6.availableHeight - height) / 2)
-                        implicitWidth: units.gu(3)
-                        implicitHeight: units.gu(3)
+//                        implicitWidth: units.gu(3)
+//                        implicitHeight: units.gu(3)
+                        width: units.gu(3)
+                        height: units.gu(3)
                         radius: units.gu(1.5)
                         color: slide6.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
@@ -789,8 +799,10 @@ Rectangle {
                         id: slide7hndl
                         x: slide7.leftPadding + (slide7.horizontal ? slide7.visualPosition * (slide7.availableWidth - width) : (slide7.availableWidth - width) / 2)
                         y: slide7.topPadding + (slide7.vertical ? slide7.visualPosition * (slide7.availableHeight - height) : (slide7.availableHeight - height) / 2)
-                        implicitWidth: units.gu(3)
-                        implicitHeight: units.gu(3)
+//                        implicitWidth: units.gu(3)
+//                        implicitHeight: units.gu(3)
+                        width: units.gu(3)
+                        height: units.gu(3)
                         radius: units.gu(1.5)
                         color: slide7.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
@@ -860,8 +872,10 @@ Rectangle {
                         id: slide8hndl
                         x: slide8.leftPadding + (slide8.horizontal ? slide8.visualPosition * (slide8.availableWidth - width) : (slide8.availableWidth - width) / 2)
                         y: slide8.topPadding + (slide8.vertical ? slide8.visualPosition * (slide8.availableHeight - height) : (slide8.availableHeight - height) / 2)
-                        implicitWidth: units.gu(3)
-                        implicitHeight: units.gu(3)
+//                        implicitWidth: units.gu(3)
+//                        implicitHeight: units.gu(3)
+                        width: units.gu(3)
+                        height: units.gu(3)
                         radius: units.gu(1.5)
                         color: slide8.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
@@ -931,8 +945,10 @@ Rectangle {
                         id: slide9hndl
                         x: slide9.leftPadding + (slide9.horizontal ? slide9.visualPosition * (slide9.availableWidth - width) : (slide9.availableWidth - width) / 2)
                         y: slide9.topPadding + (slide9.vertical ? slide9.visualPosition * (slide9.availableHeight - height) : (slide9.availableHeight - height) / 2)
-                        implicitWidth: units.gu(3)
-                        implicitHeight: units.gu(3)
+//                        implicitWidth: units.gu(3)
+//                        implicitHeight: units.gu(3)
+                        width: units.gu(3)
+                        height: units.gu(3)
                         radius: units.gu(1.5)
                         color: slide9.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
@@ -1002,8 +1018,10 @@ Rectangle {
                         id: slide10hndl
                         x: slide10.leftPadding + (slide10.horizontal ? slide10.visualPosition * (slide10.availableWidth - width) : (slide10.availableWidth - width) / 2)
                         y: slide10.topPadding + (slide10.vertical ? slide10.visualPosition * (slide10.availableHeight - height) : (slide10.availableHeight - height) / 2)
-                        implicitWidth: units.gu(3)
-                        implicitHeight: units.gu(3)
+//                        implicitWidth: units.gu(3)
+//                        implicitHeight: units.gu(3)
+                        width: units.gu(3)
+                        height: units.gu(3)
                         radius: units.gu(1.5)
                         color: slide10.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
