@@ -2487,7 +2487,7 @@ Rectangle {
             anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(10))
 //            anchors.topMargin: units.gu(23)
 //            bottomPadding: units.gu(2)
-            anchors.bottomMargin: units.gu(3)
+            anchors.bottomMargin: units.gu(2.75)
         }
 
         Text {
