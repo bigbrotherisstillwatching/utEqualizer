@@ -331,7 +331,7 @@ Rectangle {
                     from: -48.0
                     to: 24.0
                     live: true
-                    orientation: Qt.Vertical
+//                    orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls1
                     background: Rectangle {
