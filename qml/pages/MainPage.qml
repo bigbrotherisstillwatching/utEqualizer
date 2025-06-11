@@ -2452,7 +2452,8 @@ Rectangle {
 
         Text {
             id: txt7
-            text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
+//            text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
+            text: i18n.tr("Made with ") + "<img width="47" height="90" src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
             color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
