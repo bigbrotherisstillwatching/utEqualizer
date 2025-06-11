@@ -342,8 +342,8 @@ Rectangle {
                         radius: units.gu(0.25)
                         color: "#32517F"
 //                        color: drkMd ? "#808080" : "#f1f1f1"
-                        border.width: units.gu(0.5)
-                        border.color: "white"
+//                        border.width: units.gu(0.1)
+//                        border.color: "#32517F"
 //                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(20)
 //                        visible: false
 
@@ -358,7 +358,8 @@ Rectangle {
 //                            color: "#32517F"
                             radius: units.gu(0.25)
 //                            radius: units.gu(0.5)
-//                            border.width: 0
+                            border.width: units.gu(0.1)
+                            border.color: drkMd ? "#808080" : "#f1f1f1"
                         }
                     }
                     handle: Rectangle {
