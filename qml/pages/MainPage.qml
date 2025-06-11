@@ -2450,7 +2450,7 @@ Rectangle {
             maximumLineCount: 10
         }
 
-        Text {
+/*        Text {
             id: txt7
             text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
             color: drkMd ? "#808080" : "black"
@@ -2461,11 +2461,11 @@ Rectangle {
             font.bold: false
             anchors.bottom: txt3.top
             bottomPadding: units.gu(2)
-        }
+        }*/
 
-/*        Text {
+        Text {
             id: txt7
-            text: i18n.tr("Made with ")
+            text: i18n.tr("Made with    by bbisw")
             color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
@@ -2474,7 +2474,7 @@ Rectangle {
             font.bold: false
             anchors.bottom: txt3.top
             bottomPadding: units.gu(2)
-        }*/
+        }
 
         Icon {
             id: hrticn
