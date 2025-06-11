@@ -348,7 +348,7 @@ Rectangle {
 //                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(20)
 
                         Rectangle {
-                            visible: false
+//                            visible: false
 //                            implicitWidth: parent.width
                             width: parent.width
 //                            implicitHeight: slide1.visualPosition * parent.height
