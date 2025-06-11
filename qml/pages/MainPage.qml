@@ -328,12 +328,13 @@ Rectangle {
                 }
                 Qqc.Slider {
                     id: slide1
-                    from: 24.0
-                    to: -48.0
+                    from: -48.0
+                    to: 24.0
                     live: true
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls1
+                    mirrored: true
                     background: Rectangle {
                         x: (slide1.width  - width) / 2
                         y: (slide1.height - height) / 2
