@@ -334,7 +334,6 @@ Rectangle {
                     orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls1
-                    mirrored: true
                     background: Rectangle {
                         x: (slide1.width  - width) / 2
                         y: (slide1.height - height) / 2
