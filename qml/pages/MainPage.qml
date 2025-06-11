@@ -331,7 +331,7 @@ Rectangle {
                     from: -48.0
                     to: 24.0
                     live: true
-//                    orientation: Qt.Vertical
+                    orientation: Qt.Vertical
                     stepSize: 0.5
                     value: settings.equalizerControls1
                     background: Rectangle {
@@ -346,6 +346,7 @@ Rectangle {
                         color: "#32517F"
 //                        border.width: 0
 //                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(20)
+                        visible: false
 
                         Rectangle {
 //                            visible: false
