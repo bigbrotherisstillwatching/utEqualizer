@@ -339,7 +339,8 @@ Rectangle {
                         y: (slide1.height - height) / 2
 //                        width: units.gu(0.5)
                         width: units.gu(1)
-                        height: slide1.availableHeight
+//                        height: slide1.availableHeight
+                        height: units.gu(20)
 //                        radius: units.gu(0.25)
                         radius: units.gu(0.5)
                         color: "#32517F"
