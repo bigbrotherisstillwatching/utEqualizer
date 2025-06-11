@@ -2450,9 +2450,22 @@ Rectangle {
             maximumLineCount: 10
         }
 
-        Text {
+/*        Text {
             id: txt7
             text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
+            color: drkMd ? "#808080" : "black"
+            wrapMode: Text.WordWrap
+            width: flick1.width
+            lineHeight: 1.2
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: false
+            anchors.bottom: txt3.top
+            bottomPadding: units.gu(2)
+        }*/
+
+        Text {
+            id: txt7
+            text: i18n.tr("Made with ")
             color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
@@ -2466,12 +2479,12 @@ Rectangle {
         Icon {
             id: hrticn
             source: "../../assets/heart.png"
-            width: units.gu(4)
-            height: units.gu(4)
+            width: units.gu(4.5)
+            height: units.gu(4.5)
             anchors.bottom: txt3.top
             anchors.left: parent.left
 //            anchors.leftMargin: units.gu(2)
-            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(14))
+            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(10))
 //            anchors.topMargin: units.gu(23)
 //            bottomPadding: units.gu(2)
             anchors.bottomMargin: units.gu(3)
