@@ -340,8 +340,8 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide1.availableHeight
                         radius: units.gu(0.25)
-//                        color: "#32517F"
-                        color: drkMd ? "#808080" : "#f1f1f1"
+                        color: "#32517F"
+//                        color: drkMd ? "#808080" : "#f1f1f1"
 //                        border.width: 0
 //                        implicitHeight: slide1.horizontal ? units.gu(0.1) : units.gu(20)
 //                        visible: false
@@ -352,12 +352,13 @@ Rectangle {
                             width: parent.width
 //                            implicitHeight: slide1.visualPosition * parent.height
 //                            height: slide1.visualPosition * parent.height
-                            height: -(slide1.visualPosition * parent.height)
-//                            color: drkMd ? "#808080" : "#f1f1f1"
-                            color: "#32517F"
+                            height: slide1.visualPosition * parent.height
+                            color: drkMd ? "#808080" : "#f1f1f1"
+//                            color: "#32517F"
                             radius: units.gu(0.25)
 //                            radius: units.gu(0.5)
 //                            border.width: 0
+                            z: 1
                         }
                     }
                     handle: Rectangle {
