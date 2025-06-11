@@ -1096,7 +1096,7 @@ Rectangle {
             anchors.top: prgrssbr.bottom
             anchors.left: parent.left
 //            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 300)
-            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(9))
+            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(15))
             anchors.topMargin: units.gu(1)
             Rectangle {
                 id: chngbttn
