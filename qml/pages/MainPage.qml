@@ -2484,12 +2484,12 @@ Rectangle {
             anchors.bottom: txt3.top
             anchors.left: parent.left
 //            anchors.leftMargin: units.gu(2)
-            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(8.5))
+            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(5))
 //            anchors.topMargin: units.gu(23)
 //            bottomPadding: units.gu(2)
             anchors.bottomMargin: units.gu(2.8)
-            keyColor: "red"
-            color: "blue"
+//            keyColor: "red"
+//            color: "blue"
         }
 
         Text {
