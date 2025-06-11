@@ -1248,7 +1248,8 @@ Rectangle {
             id: itm2
             anchors.top: prgrssbr.bottom
             anchors.right: parent.right
-            anchors.rightMargin: ((((parent.width / 4) + (parent.width / 4)) - 300) + units.gu(4))
+//            anchors.rightMargin: ((((parent.width / 4) + (parent.width / 4)) - 300) + units.gu(4))
+            anchors.rightMargin: ((((parent.width / 4) + (parent.width / 4)) - units.gu(14)) + units.gu(4))
             anchors.topMargin: units.gu(1)
             Rectangle {
                 id: rstbttn
