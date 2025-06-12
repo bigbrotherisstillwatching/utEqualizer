@@ -340,7 +340,6 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide1.availableHeight
                         radius: units.gu(0.25)
-//                        color: "#32517F"
                         border.width: 0
                         gradient: Gradient {
                             GradientStop { position: 0.0; color: "transparent" }
@@ -361,8 +360,6 @@ Rectangle {
                         id: slide1hndl
                         x: slide1.leftPadding + (slide1.horizontal ? slide1.visualPosition * (slide1.availableWidth - width) : (slide1.availableWidth - width) / 2)
                         y: slide1.topPadding + (slide1.vertical ? slide1.visualPosition * (slide1.availableHeight - height) : (slide1.availableHeight - height) / 2)
-//                        implicitWidth: units.gu(3)
-//                        implicitHeight: units.gu(3)
                         width: units.gu(3)
                         height: units.gu(3)
                         radius: units.gu(1.5)
@@ -411,7 +408,6 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide2.availableHeight
                         radius: units.gu(0.25)
-//                        color: "#32517F"
                         border.width: 0
                         gradient: Gradient {
                             GradientStop { position: 0.0; color: "transparent" }
@@ -421,9 +417,7 @@ Rectangle {
                         }
 
                         Rectangle {
-//                            implicitWidth: parent.width
                             width: parent.width
-//                            implicitHeight: slide2.visualPosition * parent.height
                             height: slide2.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
@@ -434,8 +428,6 @@ Rectangle {
                         id: slide2hndl
                         x: slide2.leftPadding + (slide2.horizontal ? slide2.visualPosition * (slide2.availableWidth - width) : (slide2.availableWidth - width) / 2)
                         y: slide2.topPadding + (slide2.vertical ? slide2.visualPosition * (slide2.availableHeight - height) : (slide2.availableHeight - height) / 2)
-//                        implicitWidth: units.gu(3)
-//                        implicitHeight: units.gu(3)
                         width: units.gu(3)
                         height: units.gu(3)
                         radius: units.gu(1.5)
@@ -484,7 +476,6 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide3.availableHeight
                         radius: units.gu(0.25)
-//                        color: "#32517F"
                         border.width: 0
                         gradient: Gradient {
                             GradientStop { position: 0.0; color: "transparent" }
@@ -494,9 +485,7 @@ Rectangle {
                         }
 
                         Rectangle {
-//                            implicitWidth: parent.width
                             width: parent.width
-//                            implicitHeight: slide3.visualPosition * parent.height
                             height: slide3.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
@@ -507,8 +496,6 @@ Rectangle {
                         id: slide3hndl
                         x: slide3.leftPadding + (slide3.horizontal ? slide3.visualPosition * (slide3.availableWidth - width) : (slide3.availableWidth - width) / 2)
                         y: slide3.topPadding + (slide3.vertical ? slide3.visualPosition * (slide3.availableHeight - height) : (slide3.availableHeight - height) / 2)
-//                        implicitWidth: units.gu(3)
-//                        implicitHeight: units.gu(3)
                         width: units.gu(3)
                         height: units.gu(3)
                         radius: units.gu(1.5)
@@ -557,7 +544,6 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide4.availableHeight
                         radius: units.gu(0.25)
-//                        color: "#32517F"
                         border.width: 0
                         gradient: Gradient {
                             GradientStop { position: 0.0; color: "transparent" }
@@ -567,9 +553,7 @@ Rectangle {
                         }
 
                         Rectangle {
-//                            implicitWidth: parent.width
                             width: parent.width
-//                            implicitHeight: slide4.visualPosition * parent.height
                             height: slide4.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
@@ -580,8 +564,6 @@ Rectangle {
                         id: slide4hndl
                         x: slide4.leftPadding + (slide4.horizontal ? slide4.visualPosition * (slide4.availableWidth - width) : (slide4.availableWidth - width) / 2)
                         y: slide4.topPadding + (slide4.vertical ? slide4.visualPosition * (slide4.availableHeight - height) : (slide4.availableHeight - height) / 2)
-//                        implicitWidth: units.gu(3)
-//                        implicitHeight: units.gu(3)
                         width: units.gu(3)
                         height: units.gu(3)
                         radius: units.gu(1.5)
@@ -630,7 +612,6 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide5.availableHeight
                         radius: units.gu(0.25)
-//                        color: "#32517F"
                         border.width: 0
                         gradient: Gradient {
                             GradientStop { position: 0.0; color: "transparent" }
@@ -640,9 +621,7 @@ Rectangle {
                         }
 
                         Rectangle {
-//                            implicitWidth: parent.width
                             width: parent.width
-//                            implicitHeight: slide5.visualPosition * parent.height
                             height: slide5.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
@@ -653,8 +632,6 @@ Rectangle {
                         id: slide5hndl
                         x: slide5.leftPadding + (slide5.horizontal ? slide5.visualPosition * (slide5.availableWidth - width) : (slide5.availableWidth - width) / 2)
                         y: slide5.topPadding + (slide5.vertical ? slide5.visualPosition * (slide5.availableHeight - height) : (slide5.availableHeight - height) / 2)
-//                        implicitWidth: units.gu(3)
-//                        implicitHeight: units.gu(3)
                         width: units.gu(3)
                         height: units.gu(3)
                         radius: units.gu(1.5)
@@ -703,7 +680,6 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide6.availableHeight
                         radius: units.gu(0.25)
-//                        color: "#32517F"
                         border.width: 0
                         gradient: Gradient {
                             GradientStop { position: 0.0; color: "transparent" }
@@ -713,9 +689,7 @@ Rectangle {
                         }
 
                         Rectangle {
-//                            implicitWidth: parent.width
                             width: parent.width
-//                            implicitHeight: slide6.visualPosition * parent.height
                             height: slide6.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
@@ -726,8 +700,6 @@ Rectangle {
                         id: slide6hndl
                         x: slide6.leftPadding + (slide6.horizontal ? slide6.visualPosition * (slide6.availableWidth - width) : (slide6.availableWidth - width) / 2)
                         y: slide6.topPadding + (slide6.vertical ? slide6.visualPosition * (slide6.availableHeight - height) : (slide6.availableHeight - height) / 2)
-//                        implicitWidth: units.gu(3)
-//                        implicitHeight: units.gu(3)
                         width: units.gu(3)
                         height: units.gu(3)
                         radius: units.gu(1.5)
@@ -776,7 +748,6 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide7.availableHeight
                         radius: units.gu(0.25)
-//                        color: "#32517F"
                         border.width: 0
                         gradient: Gradient {
                             GradientStop { position: 0.0; color: "transparent" }
@@ -786,9 +757,7 @@ Rectangle {
                         }
 
                         Rectangle {
-//                            implicitWidth: parent.width
                             width: parent.width
-//                            implicitHeight: slide7.visualPosition * parent.height
                             height: slide7.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
@@ -799,8 +768,6 @@ Rectangle {
                         id: slide7hndl
                         x: slide7.leftPadding + (slide7.horizontal ? slide7.visualPosition * (slide7.availableWidth - width) : (slide7.availableWidth - width) / 2)
                         y: slide7.topPadding + (slide7.vertical ? slide7.visualPosition * (slide7.availableHeight - height) : (slide7.availableHeight - height) / 2)
-//                        implicitWidth: units.gu(3)
-//                        implicitHeight: units.gu(3)
                         width: units.gu(3)
                         height: units.gu(3)
                         radius: units.gu(1.5)
@@ -849,7 +816,6 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide8.availableHeight
                         radius: units.gu(0.25)
-//                        color: "#32517F"
                         border.width: 0
                         gradient: Gradient {
                             GradientStop { position: 0.0; color: "transparent" }
@@ -859,9 +825,7 @@ Rectangle {
                         }
 
                         Rectangle {
-//                            implicitWidth: parent.width
                             width: parent.width
-//                            implicitHeight: slide8.visualPosition * parent.height
                             height: slide8.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
@@ -872,8 +836,6 @@ Rectangle {
                         id: slide8hndl
                         x: slide8.leftPadding + (slide8.horizontal ? slide8.visualPosition * (slide8.availableWidth - width) : (slide8.availableWidth - width) / 2)
                         y: slide8.topPadding + (slide8.vertical ? slide8.visualPosition * (slide8.availableHeight - height) : (slide8.availableHeight - height) / 2)
-//                        implicitWidth: units.gu(3)
-//                        implicitHeight: units.gu(3)
                         width: units.gu(3)
                         height: units.gu(3)
                         radius: units.gu(1.5)
@@ -922,7 +884,6 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide9.availableHeight
                         radius: units.gu(0.25)
-//                        color: "#32517F"
                         border.width: 0
                         gradient: Gradient {
                             GradientStop { position: 0.0; color: "transparent" }
@@ -932,9 +893,7 @@ Rectangle {
                         }
 
                         Rectangle {
-//                            implicitWidth: parent.width
                             width: parent.width
-//                            implicitHeight: slide9.visualPosition * parent.height
                             height: slide9.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
@@ -945,8 +904,6 @@ Rectangle {
                         id: slide9hndl
                         x: slide9.leftPadding + (slide9.horizontal ? slide9.visualPosition * (slide9.availableWidth - width) : (slide9.availableWidth - width) / 2)
                         y: slide9.topPadding + (slide9.vertical ? slide9.visualPosition * (slide9.availableHeight - height) : (slide9.availableHeight - height) / 2)
-//                        implicitWidth: units.gu(3)
-//                        implicitHeight: units.gu(3)
                         width: units.gu(3)
                         height: units.gu(3)
                         radius: units.gu(1.5)
@@ -995,7 +952,6 @@ Rectangle {
                         width: units.gu(0.5)
                         height: slide10.availableHeight
                         radius: units.gu(0.25)
-//                        color: "#32517F"
                         border.width: 0
                         gradient: Gradient {
                             GradientStop { position: 0.0; color: "transparent" }
@@ -1005,9 +961,7 @@ Rectangle {
                         }
 
                         Rectangle {
-//                            implicitWidth: parent.width
                             width: parent.width
-//                            implicitHeight: slide10.visualPosition * parent.height
                             height: slide10.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
                             radius: units.gu(0.25)
@@ -1018,8 +972,6 @@ Rectangle {
                         id: slide10hndl
                         x: slide10.leftPadding + (slide10.horizontal ? slide10.visualPosition * (slide10.availableWidth - width) : (slide10.availableWidth - width) / 2)
                         y: slide10.topPadding + (slide10.vertical ? slide10.visualPosition * (slide10.availableHeight - height) : (slide10.availableHeight - height) / 2)
-//                        implicitWidth: units.gu(3)
-//                        implicitHeight: units.gu(3)
                         width: units.gu(3)
                         height: units.gu(3)
                         radius: units.gu(1.5)
@@ -1095,7 +1047,6 @@ Rectangle {
             id: itm1
             anchors.top: prgrssbr.bottom
             anchors.left: parent.left
-//            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 300)
             anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(14))
             anchors.topMargin: units.gu(1)
             Rectangle {
@@ -1248,7 +1199,6 @@ Rectangle {
             id: itm2
             anchors.top: prgrssbr.bottom
             anchors.right: parent.right
-//            anchors.rightMargin: ((((parent.width / 4) + (parent.width / 4)) - 300) + units.gu(4))
             anchors.rightMargin: ((((parent.width / 4) + (parent.width / 4)) - units.gu(14)) + units.gu(4))
             anchors.topMargin: units.gu(1)
             Rectangle {
@@ -2450,69 +2400,19 @@ Rectangle {
             maximumLineCount: 10
         }
 
-/*        Text {
-            id: txt7
-//            text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
-            text: i18n.tr("Made with ") + "<img width=\"47\" height=\"90\" src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
-            color: drkMd ? "#808080" : "black"
-            wrapMode: Text.WordWrap
-            width: flick1.width
-            lineHeight: 1.2
-            horizontalAlignment: Text.AlignHCenter
-            font.bold: false
-            anchors.bottom: txt3.top
-            bottomPadding: units.gu(2)
-        }*/
-
-/*        Text {
-            id: txt7
-            text: i18n.tr("Made with        by bbisw")
-            color: drkMd ? "#808080" : "black"
-            wrapMode: Text.WordWrap
-            width: flick1.width
-            lineHeight: 1.2
-            horizontalAlignment: Text.AlignHCenter
-            font.bold: false
-            anchors.bottom: txt3.top
-            bottomPadding: units.gu(2)
-        }*/
-
-/*        Icon {
-            id: hrticn
-            source: "../../assets/heart.png"
-            width: units.gu(4.5)
-            height: units.gu(4.5)
-            anchors.bottom: txt3.top
-            anchors.left: parent.left
-//            anchors.leftMargin: units.gu(2)
-            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(5))
-//            anchors.topMargin: units.gu(23)
-//            bottomPadding: units.gu(2)
-            anchors.bottomMargin: units.gu(2.8)
-//            keyColor: "red"
-//            color: "blue"
-        }*/
-
         Row {
             id: row2
             spacing: units.gu(0.4)
             anchors.horizontalCenter: parent.horizontalCenter
             bottomPadding: units.gu(2)
             anchors.bottom: txt3.top
-//            width: parent.width
 
             Text {
                 id: txt7
                 text: i18n.tr("Made with")
                 color: drkMd ? "#808080" : "black"
-//                wrapMode: Text.WordWrap
-//                width: parent.width
                 lineHeight: 1.2
-//                horizontalAlignment: Text.AlignHCenter
                 font.bold: false
-//                anchors.bottom: txt3.top
-//                bottomPadding: units.gu(2)
-//                anchors.verticalCenter: parent.verticalCenter
             }
 
             Image {
@@ -2520,32 +2420,16 @@ Rectangle {
                 source: "../../assets/heart3.png"
                 sourceSize.width: 47
                 sourceSize.height: 47
-//                verticalAlignment: Image.AlignTop
                 width: units.gu(2.3)
                 height: units.gu(2.3)
-//                anchors.bottom: txt3.top
-//                anchors.left: parent.left
-//                anchors.leftMargin: units.gu(2)
-//                anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(5))
-//                anchors.topMargin: units.gu(23)
-//                bottomPadding: units.gu(2)
-//                anchors.bottomMargin: units.gu(2.8)
-//                keyColor: "red"
-//                color: "blue"
             }
 
             Text {
                 id: txt12
                 text: i18n.tr("by bbisw")
                 color: drkMd ? "#808080" : "black"
-//                wrapMode: Text.WordWrap
-//                width: parent.width
                 lineHeight: 1.2
-//                horizontalAlignment: Text.AlignHCenter
                 font.bold: false
-//                anchors.bottom: txt3.top
-//                bottomPadding: units.gu(2)
-//                anchors.verticalCenter: parent.verticalCenter
             }
 
         }
