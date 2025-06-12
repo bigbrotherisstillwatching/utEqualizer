@@ -2495,7 +2495,7 @@ Rectangle {
 
         Row {
             id: row2
-            spacing: units.gu(1)
+            spacing: units.gu(0.5)
             anchors.horizontalCenter: parent.horizontalCenter
             bottomPadding: units.gu(2)
             anchors.bottom: txt3.top
@@ -2520,6 +2520,7 @@ Rectangle {
                 source: "../../assets/heart.png"
                 sourceSize.width: 47
                 sourceSize.height: 90
+                verticalAlignment: Image.AlignVCenter
 //                width: units.gu(4.5)
 //                height: units.gu(4.5)
 //                anchors.bottom: txt3.top
