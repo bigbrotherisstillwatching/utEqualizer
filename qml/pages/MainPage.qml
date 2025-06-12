@@ -2517,10 +2517,10 @@ Rectangle {
 
             Image {
                 id: img1
-                source: "../../assets/heart.png"
+                source: "../../assets/heart3.png"
                 sourceSize.width: 47
-                sourceSize.height: 90
-                verticalAlignment: Image.AlignTop
+                sourceSize.height: 47
+//                verticalAlignment: Image.AlignTop
 //                width: units.gu(4.5)
 //                height: units.gu(4.5)
 //                anchors.bottom: txt3.top
