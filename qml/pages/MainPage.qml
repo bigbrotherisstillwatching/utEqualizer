@@ -2499,24 +2499,27 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             bottomPadding: units.gu(2)
             anchors.bottom: txt3.top
-            width: parent.width
+//            width: parent.width
 
             Text {
                 id: txt7
                 text: i18n.tr("Made with")
                 color: drkMd ? "#808080" : "black"
-                wrapMode: Text.WordWrap
-                width: parent.width
+//                wrapMode: Text.WordWrap
+//                width: parent.width
                 lineHeight: 1.2
-                horizontalAlignment: Text.AlignHCenter
+//                horizontalAlignment: Text.AlignHCenter
                 font.bold: false
 //                anchors.bottom: txt3.top
 //                bottomPadding: units.gu(2)
+                anchors.verticalCenter: parent.verticalCenter
             }
 
-/*            Icon {
-                id: hrticn
+            Image {
+                id: img1
                 source: "../../assets/heart.png"
+                sourceSize.width: 47
+                sourceSize.height: 90
 //                width: units.gu(4.5)
 //                height: units.gu(4.5)
 //                anchors.bottom: txt3.top
@@ -2528,7 +2531,7 @@ Rectangle {
 //                anchors.bottomMargin: units.gu(2.8)
 //                keyColor: "red"
 //                color: "blue"
-            }*/
+            }
 
         }
 
