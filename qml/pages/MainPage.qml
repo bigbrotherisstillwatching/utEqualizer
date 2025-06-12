@@ -2450,7 +2450,7 @@ Rectangle {
             maximumLineCount: 10
         }
 
-        Text {
+/*        Text {
             id: txt7
 //            text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
             text: i18n.tr("Made with ") + "<img width=\"47\" height=\"90\" src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
@@ -2462,7 +2462,7 @@ Rectangle {
             font.bold: false
             anchors.bottom: txt3.top
             bottomPadding: units.gu(2)
-        }
+        }*/
 
 /*        Text {
             id: txt7
@@ -2492,6 +2492,29 @@ Rectangle {
 //            keyColor: "red"
 //            color: "blue"
         }*/
+
+        Row {
+            id: row2
+            spacing: units.gu(1)
+            anchors.horizontalCenter: parent.horizontalCenter
+            bottomPadding: units.gu(2)
+            anchors.bottom: txt3.top
+            width: parent.width
+
+            Text {
+                id: txt7
+                text: i18n.tr("Made with")
+                color: drkMd ? "#808080" : "black"
+                wrapMode: Text.WordWrap
+                width: parent.width
+                lineHeight: 1.2
+                horizontalAlignment: Text.AlignHCenter
+                font.bold: false
+//                anchors.bottom: txt3.top
+//                bottomPadding: units.gu(2)
+            }
+
+        }
 
         Text {
             id: txt3
