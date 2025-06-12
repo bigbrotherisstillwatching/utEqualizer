@@ -2521,8 +2521,8 @@ Rectangle {
                 sourceSize.width: 47
                 sourceSize.height: 47
 //                verticalAlignment: Image.AlignTop
-                width: units.gu(3)
-                height: units.gu(3)
+                width: units.gu(2.5)
+                height: units.gu(2.5)
 //                anchors.bottom: txt3.top
 //                anchors.left: parent.left
 //                anchors.leftMargin: units.gu(2)
