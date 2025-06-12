@@ -1363,7 +1363,8 @@ Rectangle {
                     cached: true
                 }
             }
-            onClicked: {
+//            onClicked: {
+            onToggled: {
                 drkMd = checked
             }
         }
