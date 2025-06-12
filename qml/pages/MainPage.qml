@@ -2501,7 +2501,7 @@ Rectangle {
             anchors.bottom: txt3.top
 //            width: parent.width
 
-/*            Text {
+            Text {
                 id: txt7
                 text: i18n.tr("Made with")
                 color: drkMd ? "#808080" : "black"
@@ -2512,7 +2512,7 @@ Rectangle {
                 font.bold: false
 //                anchors.bottom: txt3.top
 //                bottomPadding: units.gu(2)
-            }*/
+            }
 
             Icon {
                 id: hrticn
@@ -2526,8 +2526,8 @@ Rectangle {
 //                anchors.topMargin: units.gu(23)
 //                bottomPadding: units.gu(2)
 //                anchors.bottomMargin: units.gu(2.8)
-                keyColor: "red"
-                color: "blue"
+//                keyColor: "red"
+//                color: "blue"
             }
 
         }
