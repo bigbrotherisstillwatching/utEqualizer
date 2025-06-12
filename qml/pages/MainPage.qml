@@ -2495,7 +2495,7 @@ Rectangle {
 
         Row {
             id: row2
-            spacing: units.gu(1)
+            spacing: units.gu(0.1)
             anchors.horizontalCenter: parent.horizontalCenter
             bottomPadding: units.gu(2)
             anchors.bottom: txt3.top
@@ -2517,8 +2517,8 @@ Rectangle {
             Icon {
                 id: hrticn
                 source: "../../assets/heart.png"
-//                width: units.gu(4.5)
-//                height: units.gu(4.5)
+                width: units.gu(4.5)
+                height: units.gu(4.5)
 //                anchors.bottom: txt3.top
 //                anchors.left: parent.left
 //                anchors.leftMargin: units.gu(2)
@@ -2526,8 +2526,8 @@ Rectangle {
 //                anchors.topMargin: units.gu(23)
 //                bottomPadding: units.gu(2)
 //                anchors.bottomMargin: units.gu(2.8)
-//                keyColor: "red"
-//                color: "blue"
+                keyColor: "red"
+                color: "blue"
             }
 
         }
