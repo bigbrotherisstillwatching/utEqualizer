@@ -2514,7 +2514,7 @@ Rectangle {
 //                bottomPadding: units.gu(2)
             }
 
-            Icon {
+/*            Icon {
                 id: hrticn
                 source: "../../assets/heart.png"
 //                width: units.gu(4.5)
@@ -2528,7 +2528,7 @@ Rectangle {
 //                anchors.bottomMargin: units.gu(2.8)
 //                keyColor: "red"
 //                color: "blue"
-            }
+            }*/
 
         }
 
