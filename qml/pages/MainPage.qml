@@ -2512,7 +2512,7 @@ Rectangle {
                 font.bold: false
 //                anchors.bottom: txt3.top
 //                bottomPadding: units.gu(2)
-                anchors.verticalCenter: parent.verticalCenter
+//                anchors.verticalCenter: parent.verticalCenter
             }
 
             Image {
