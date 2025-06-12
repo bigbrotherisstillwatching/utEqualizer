@@ -2499,7 +2499,7 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             bottomPadding: units.gu(2)
             anchors.bottom: txt3.top
-            width: parent.width
+//            width: parent.width
 
 /*            Text {
                 id: txt7
