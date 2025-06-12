@@ -2495,7 +2495,7 @@ Rectangle {
 
         Row {
             id: row2
-            spacing: units.gu(0.5)
+            spacing: units.gu(0.4)
             anchors.horizontalCenter: parent.horizontalCenter
             bottomPadding: units.gu(2)
             anchors.bottom: txt3.top
@@ -2532,6 +2532,20 @@ Rectangle {
 //                anchors.bottomMargin: units.gu(2.8)
 //                keyColor: "red"
 //                color: "blue"
+            }
+
+            Text {
+                id: txt12
+                text: i18n.tr("by bbisw")
+                color: drkMd ? "#808080" : "black"
+//                wrapMode: Text.WordWrap
+//                width: parent.width
+                lineHeight: 1.2
+//                horizontalAlignment: Text.AlignHCenter
+                font.bold: false
+//                anchors.bottom: txt3.top
+//                bottomPadding: units.gu(2)
+//                anchors.verticalCenter: parent.verticalCenter
             }
 
         }
