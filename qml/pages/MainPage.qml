@@ -2520,7 +2520,7 @@ Rectangle {
                 source: "../../assets/heart.png"
                 sourceSize.width: 47
                 sourceSize.height: 90
-                verticalAlignment: Image.AlignVCenter
+                verticalAlignment: Image.AlignTop
 //                width: units.gu(4.5)
 //                height: units.gu(4.5)
 //                anchors.bottom: txt3.top
