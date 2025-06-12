@@ -2417,7 +2417,7 @@ Rectangle {
 
             Image {
                 id: img1
-                source: "../../assets/heart3.png"
+                source: "../../assets/heart.png"
                 sourceSize.width: 47
                 sourceSize.height: 47
                 width: units.gu(2.3)
