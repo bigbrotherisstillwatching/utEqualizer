@@ -2517,8 +2517,8 @@ Rectangle {
             Icon {
                 id: hrticn
                 source: "../../assets/heart.png"
-                width: units.gu(4.5)
-                height: units.gu(4.5)
+//                width: units.gu(4.5)
+//                height: units.gu(4.5)
 //                anchors.bottom: txt3.top
 //                anchors.left: parent.left
 //                anchors.leftMargin: units.gu(2)
