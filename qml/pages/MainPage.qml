@@ -1167,7 +1167,8 @@ Rectangle {
                     cached: true
                 }
             }
-            onClicked: {
+//            onClicked: {
+            onToggled: {
                 if (eqsts === true) {                    
                     process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/scripts/equalizer_stop.sh"])
                     eqsts = checked
