@@ -2450,22 +2450,10 @@ Rectangle {
             maximumLineCount: 10
         }
 
-/*        Text {
-            id: txt7
-            text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
-            color: drkMd ? "#808080" : "black"
-            wrapMode: Text.WordWrap
-            width: flick1.width
-            lineHeight: 1.2
-            horizontalAlignment: Text.AlignHCenter
-            font.bold: false
-            anchors.bottom: txt3.top
-            bottomPadding: units.gu(2)
-        }*/
-
         Text {
             id: txt7
-            text: i18n.tr("Made with        by bbisw")
+//            text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
+            text: i18n.tr("Made with ") + "<img width=\"47\" height=\"90\" src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
             color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
@@ -2476,7 +2464,20 @@ Rectangle {
             bottomPadding: units.gu(2)
         }
 
-        Icon {
+/*        Text {
+            id: txt7
+            text: i18n.tr("Made with        by bbisw")
+            color: drkMd ? "#808080" : "black"
+            wrapMode: Text.WordWrap
+            width: flick1.width
+            lineHeight: 1.2
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: false
+            anchors.bottom: txt3.top
+            bottomPadding: units.gu(2)
+        }*/
+
+/*        Icon {
             id: hrticn
             source: "../../assets/heart.png"
             width: units.gu(4.5)
@@ -2490,7 +2491,7 @@ Rectangle {
             anchors.bottomMargin: units.gu(2.8)
 //            keyColor: "red"
 //            color: "blue"
-        }
+        }*/
 
         Text {
             id: txt3
