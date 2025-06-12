@@ -2397,7 +2397,8 @@ Rectangle {
             horizontalAlignment: Text.AlignLeft
             lineHeight: 1.2
             wrapMode: Text.WordWrap
-            maximumLineCount: 10
+//            maximumLineCount: 10
+            maximumLineCount: 8
         }
 
         Row {
@@ -2450,6 +2451,7 @@ Rectangle {
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
             bottomPadding: units.gu(2)
+            maximumLineCount: 4
         }
 
         Text {
@@ -2468,6 +2470,7 @@ Rectangle {
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
             bottomPadding: units.gu(2)
+            maximumLineCount: 3
         }
     }
 }
