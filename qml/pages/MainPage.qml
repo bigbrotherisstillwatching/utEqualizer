@@ -2451,14 +2451,16 @@ Rectangle {
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
 //            anchors.bottom: txt8.top
-            anchors.bottom: parent.bottom
+//            anchors.bottom: parent.bottom
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
 //            bottomPadding: units.gu(2)
-            bottomPadding: units.gu(14)
+//            bottomPadding: units.gu(14)
             maximumLineCount: 4
+            anchors.top: lstitm1.bottom
+            anchors.topMargin: units.gu(46)
         }
 
         Text {
