@@ -2460,7 +2460,7 @@ Rectangle {
 //            bottomPadding: units.gu(14)
             maximumLineCount: 4
             anchors.top: lstitm1.bottom
-            anchors.topMargin: units.gu(46)
+            anchors.topMargin: units.gu(50)
         }
 
         Text {
