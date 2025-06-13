@@ -1266,7 +1266,9 @@ Rectangle {
             anchors.topMargin: units.gu(8)
             wrapMode: Text.WordWrap
             width: parent.width
-            lineHeight: 1.2
+//            lineHeight: 1.2
+            lineHeight: units.gu(2.5)
+            lineHeightMode: Text.FixedHeight
             horizontalAlignment: Text.AlignHCenter
             leftPadding: units.gu(3)
             rightPadding: units.gu(3)
@@ -2360,7 +2362,9 @@ Rectangle {
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(13)
             horizontalAlignment: Text.AlignLeft
-            lineHeight: 1.2
+//            lineHeight: 1.2
+            lineHeight: units.gu(2.5)
+            lineHeightMode: Text.FixedHeight
             wrapMode: Text.WordWrap
             maximumLineCount: 3
         }
@@ -2398,7 +2402,9 @@ Rectangle {
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(24)
             horizontalAlignment: Text.AlignLeft
-            lineHeight: 1.2
+//            lineHeight: 1.2
+            lineHeight: units.gu(2.5)
+            lineHeightMode: Text.FixedHeight
             wrapMode: Text.WordWrap
 //            maximumLineCount: 10
             maximumLineCount: 8
@@ -2419,7 +2425,9 @@ Rectangle {
                 id: txt7
                 text: i18n.tr("Made with")
                 color: drkMd ? "#808080" : "black"
-                lineHeight: 1.2
+//                lineHeight: 1.2
+                lineHeight: units.gu(2.5)
+                lineHeightMode: Text.FixedHeight
                 font.bold: false
             }
 
@@ -2436,7 +2444,9 @@ Rectangle {
                 id: txt12
                 text: i18n.tr("by bbisw")
                 color: drkMd ? "#808080" : "black"
-                lineHeight: 1.2
+//                lineHeight: 1.2
+                lineHeight: units.gu(2.5)
+                lineHeightMode: Text.FixedHeight
                 font.bold: false
             }
 
@@ -2448,7 +2458,9 @@ Rectangle {
             color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
-            lineHeight: 1.2
+//            lineHeight: 1.2
+            lineHeight: units.gu(2.5)
+            lineHeightMode: Text.FixedHeight
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
@@ -2472,7 +2484,9 @@ Rectangle {
             color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
-            lineHeight: 1.2
+//            lineHeight: 1.2
+            lineHeight: units.gu(2.5)
+            lineHeightMode: Text.FixedHeight
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
