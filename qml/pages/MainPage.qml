@@ -2473,14 +2473,16 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
-            anchors.bottom: parent.bottom
+//            anchors.bottom: parent.bottom
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
 //            bottomPadding: units.gu(2)
-            bottomPadding: units.gu(6)
+//            bottomPadding: units.gu(6)
             maximumLineCount: 3
+            anchors.top: lstitm1.bottom
+            anchors.topMargin: units.gu(68)
         }
     }
 }
