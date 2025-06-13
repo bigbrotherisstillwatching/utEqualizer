@@ -1272,6 +1272,7 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             leftPadding: units.gu(3)
             rightPadding: units.gu(3)
+            maximumLineCount: 3
         }
         Rectangle {
             id: plchldrrec
