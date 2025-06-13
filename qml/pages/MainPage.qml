@@ -2407,8 +2407,9 @@ Rectangle {
             spacing: units.gu(0.4)
             anchors.horizontalCenter: parent.horizontalCenter
 //            bottomPadding: units.gu(2)
-            bottomPadding: units.gu(4)
-            anchors.bottom: txt3.top
+            bottomPadding: units.gu(22)
+//            anchors.bottom: txt3.top
+            anchors.bottom: parent.bottom
 
             Text {
                 id: txt7
@@ -2447,13 +2448,14 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
-            anchors.bottom: txt8.top
+//            anchors.bottom: txt8.top
+            anchors.bottom: parent.bottom
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
 //            bottomPadding: units.gu(2)
-            bottomPadding: units.gu(4)
+            bottomPadding: units.gu(14)
             maximumLineCount: 4
         }
 
@@ -2472,7 +2474,8 @@ Rectangle {
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
-            bottomPadding: units.gu(2)
+//            bottomPadding: units.gu(2)
+            bottomPadding: units.gu(6)
             maximumLineCount: 3
         }
     }
