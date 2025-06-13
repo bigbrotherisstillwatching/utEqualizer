@@ -2407,9 +2407,11 @@ Rectangle {
             spacing: units.gu(0.4)
             anchors.horizontalCenter: parent.horizontalCenter
 //            bottomPadding: units.gu(2)
-            bottomPadding: units.gu(22)
+//            bottomPadding: units.gu(22)
 //            anchors.bottom: txt3.top
-            anchors.bottom: parent.bottom
+//            anchors.bottom: parent.bottom
+            anchors.top: lstitm1.bottom
+            anchors.topMargin: units.gu(35)
 
             Text {
                 id: txt7
