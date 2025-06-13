@@ -2461,6 +2461,7 @@ Rectangle {
             maximumLineCount: 4
             anchors.top: lstitm1.bottom
             anchors.topMargin: units.gu(51)
+            linkColor: "red"
         }
 
         Text {
