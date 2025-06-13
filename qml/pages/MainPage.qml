@@ -2332,7 +2332,8 @@ Rectangle {
             anchors.topMargin: units.gu(3)
             horizontalAlignment: Text.AlignLeft
 //            lineHeight: 1.2
-            lineHeight: units.gu(0.01)
+            lineHeight: units.gu(1)
+            lineHeightMode: Text.FixedHeight
             wrapMode: Text.WordWrap
             maximumLineCount: 3
         }
