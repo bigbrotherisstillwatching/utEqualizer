@@ -2411,7 +2411,7 @@ Rectangle {
 //            anchors.bottom: txt3.top
 //            anchors.bottom: parent.bottom
             anchors.top: lstitm1.bottom
-            anchors.topMargin: units.gu(41)
+            anchors.topMargin: units.gu(43)
 
             Text {
                 id: txt7
