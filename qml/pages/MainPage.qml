@@ -2482,7 +2482,7 @@ Rectangle {
 //            bottomPadding: units.gu(6)
             maximumLineCount: 3
             anchors.top: lstitm1.bottom
-            anchors.topMargin: units.gu(64)
+            anchors.topMargin: units.gu(63)
         }
     }
 }
