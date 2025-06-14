@@ -2293,7 +2293,8 @@ Rectangle {
             anchors.top: txtfld5.bottom
             anchors.left: parent.left
             anchors.right: parent.right
-            anchors.topMargin: units.gu(2)
+//            anchors.topMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
             width: flick1.width
 
             ListItemLayout {
