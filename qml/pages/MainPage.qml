@@ -2379,7 +2379,8 @@ Rectangle {
             anchors.top: lstitm1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
-            anchors.topMargin: units.gu(23)
+//            anchors.topMargin: units.gu(23)
+            anchors.topMargin: units.gu(22)
         }
 
         Icon {
@@ -2390,7 +2391,8 @@ Rectangle {
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn3.right
             anchors.leftMargin: units.gu(2)
-            anchors.topMargin: units.gu(23)
+//            anchors.topMargin: units.gu(23)
+            anchors.topMargin: units.gu(22)
         }
 
         Text {
@@ -2402,7 +2404,8 @@ Rectangle {
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(24)
+//            anchors.topMargin: units.gu(24)
+            anchors.topMargin: units.gu(23)
             horizontalAlignment: Text.AlignLeft
 //            lineHeight: 1.2
             lineHeight: units.gu(2.5)
