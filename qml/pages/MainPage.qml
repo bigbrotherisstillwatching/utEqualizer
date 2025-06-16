@@ -1266,7 +1266,6 @@ Rectangle {
             anchors.topMargin: units.gu(8)
             wrapMode: Text.WordWrap
             width: parent.width
-//            lineHeight: 1.2
             lineHeight: units.gu(2.5)
             lineHeightMode: Text.FixedHeight
             horizontalAlignment: Text.AlignHCenter
@@ -2293,7 +2292,6 @@ Rectangle {
             anchors.top: txtfld5.bottom
             anchors.left: parent.left
             anchors.right: parent.right
-//            anchors.topMargin: units.gu(2)
             anchors.topMargin: units.gu(1)
             width: flick1.width
 
@@ -2335,7 +2333,6 @@ Rectangle {
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
             horizontalAlignment: Text.AlignLeft
-//            lineHeight: 1.2
             lineHeight: units.gu(2.5)
             lineHeightMode: Text.FixedHeight
             wrapMode: Text.WordWrap
@@ -2364,7 +2361,6 @@ Rectangle {
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(13)
             horizontalAlignment: Text.AlignLeft
-//            lineHeight: 1.2
             lineHeight: units.gu(2.5)
             lineHeightMode: Text.FixedHeight
             wrapMode: Text.WordWrap
@@ -2379,7 +2375,6 @@ Rectangle {
             anchors.top: lstitm1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
-//            anchors.topMargin: units.gu(23)
             anchors.topMargin: units.gu(22)
         }
 
@@ -2391,7 +2386,6 @@ Rectangle {
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn3.right
             anchors.leftMargin: units.gu(2)
-//            anchors.topMargin: units.gu(23)
             anchors.topMargin: units.gu(22)
         }
 
@@ -2404,14 +2398,11 @@ Rectangle {
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
-//            anchors.topMargin: units.gu(24)
             anchors.topMargin: units.gu(23)
             horizontalAlignment: Text.AlignLeft
-//            lineHeight: 1.2
             lineHeight: units.gu(2.5)
             lineHeightMode: Text.FixedHeight
             wrapMode: Text.WordWrap
-//            maximumLineCount: 10
             maximumLineCount: 8
         }
 
@@ -2419,10 +2410,6 @@ Rectangle {
             id: row2
             spacing: units.gu(0.4)
             anchors.horizontalCenter: parent.horizontalCenter
-//            bottomPadding: units.gu(2)
-//            bottomPadding: units.gu(22)
-//            anchors.bottom: txt3.top
-//            anchors.bottom: parent.bottom
             anchors.top: lstitm1.bottom
             anchors.topMargin: units.gu(46)
 
@@ -2430,7 +2417,6 @@ Rectangle {
                 id: txt7
                 text: i18n.tr("Made with")
                 color: drkMd ? "#808080" : "black"
-//                lineHeight: 1.2
                 lineHeight: units.gu(2.5)
                 lineHeightMode: Text.FixedHeight
                 font.bold: false
@@ -2449,7 +2435,6 @@ Rectangle {
                 id: txt12
                 text: i18n.tr("by bbisw")
                 color: drkMd ? "#808080" : "black"
-//                lineHeight: 1.2
                 lineHeight: units.gu(2.5)
                 lineHeightMode: Text.FixedHeight
                 font.bold: false
@@ -2463,20 +2448,15 @@ Rectangle {
             color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
-//            lineHeight: 1.2
             lineHeight: units.gu(2.5)
             lineHeightMode: Text.FixedHeight
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
-//            anchors.bottom: txt8.top
-//            anchors.bottom: parent.bottom
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
-//            bottomPadding: units.gu(2)
-//            bottomPadding: units.gu(14)
             maximumLineCount: 4
             anchors.top: lstitm1.bottom
             anchors.topMargin: units.gu(51)
@@ -2489,19 +2469,15 @@ Rectangle {
             color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
-//            lineHeight: 1.2
             lineHeight: units.gu(2.5)
             lineHeightMode: Text.FixedHeight
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
-//            anchors.bottom: parent.bottom
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
-//            bottomPadding: units.gu(2)
-//            bottomPadding: units.gu(6)
             maximumLineCount: 3
             anchors.top: lstitm1.bottom
             anchors.topMargin: units.gu(63)
