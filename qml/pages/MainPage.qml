@@ -2411,7 +2411,8 @@ Rectangle {
             spacing: units.gu(0.4)
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: lstitm1.bottom
-            anchors.topMargin: units.gu(46)
+//            anchors.topMargin: units.gu(46)
+            anchors.topMargin: units.gu(45.5)
 
             Text {
                 id: txt7
@@ -2459,7 +2460,8 @@ Rectangle {
             anchors.rightMargin: units.gu(2)
             maximumLineCount: 4
             anchors.top: lstitm1.bottom
-            anchors.topMargin: units.gu(51)
+//            anchors.topMargin: units.gu(51)
+            anchors.topMargin: units.gu(50.5)
             linkColor: "red"
         }
 
