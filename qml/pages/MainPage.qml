@@ -31,11 +31,8 @@ Rectangle {
 
     color: drkMd ? "#121212" : "white"
 
-    property var padding: units.gu(1)
     property alias eqsts: settings.equalizerStatus
     property alias drkMd: settings.darkMode
-//    property alias prgrssbrvl: prgrssbr.value
-//    property alias prgrssbr: prgrssbr
 
     Timer {
         id: timer
@@ -168,7 +165,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
+        process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/scripts/equalizer_stop.sh"])
         eqswitch.checked = false
         eqsts = false
         prgrssbr.value = 0
@@ -203,7 +200,7 @@ Rectangle {
                     }
                 }
                 onClicked: {
-                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
+                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/scripts/equalizer_stop.sh"])
                     bttn3.enabled = true
                     eqswitch.checked = false
                     txt2.text = ""
@@ -212,16 +209,6 @@ Rectangle {
                     delay(500, function() {
                         prgrssbr.value = 0
                     })
-/*                    delay(500, function() {
-                        mainPage.prgrssbrvl = 0
-                    })*/
-/*                    delay(500, function() {
-                        mainPage.prgrssbr.value = 0.00
-                    })*/
-/*                    delay(250, function() {
-                        prgrssbr.value = 0.00
-                    })*/
-//                    prgrssbrvl = 0
                 }
                 StyleHints {
                     defaultColor: bttn2.pressed ? "#32517F" : "yellow"
@@ -266,7 +253,7 @@ Rectangle {
                 anchors.verticalCenter: hdrrec.verticalCenter
                 text: header.title
                 color: drkMd ? "#808080" : "black"
-                font.pointSize: 40
+                font.pointSize: units.gu(2)
             }
             Rectangle {
                 id: clsbttn
@@ -310,7 +297,7 @@ Rectangle {
     Flickable {
         id: flick1
         anchors.top: header.bottom
-        contentHeight: units.gu(175)
+        contentHeight: units.gu(177)
         contentWidth: mainPage.width
         width: mainPage.width
         height: mainPage.height - header.height
@@ -328,7 +315,7 @@ Rectangle {
 
         Row {
             id: row1
-            spacing: 1
+            spacing: units.gu(0.1)
             anchors.horizontalCenter: parent.horizontalCenter
             topPadding: units.gu(3)
             Column {
@@ -337,7 +324,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide1.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide1
@@ -350,18 +337,22 @@ Rectangle {
                     background: Rectangle {
                         x: (slide1.width  - width) / 2
                         y: (slide1.height - height) / 2
-                        implicitHeight: slide1.horizontal ? 1 : 200
-                        width: 4
+                        width: units.gu(0.5)
                         height: slide1.availableHeight
-                        radius: 2
-                        color: "#32517F"
+                        radius: units.gu(0.25)
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide1.visualPosition * parent.height
+                            width: parent.width
+                            height: slide1.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
-                            radius: 2
+                            radius: units.gu(0.25)
                             border.width: 0
                         }
                     }
@@ -369,9 +360,9 @@ Rectangle {
                         id: slide1hndl
                         x: slide1.leftPadding + (slide1.horizontal ? slide1.visualPosition * (slide1.availableWidth - width) : (slide1.availableWidth - width) / 2)
                         y: slide1.topPadding + (slide1.vertical ? slide1.visualPosition * (slide1.availableHeight - height) : (slide1.availableHeight - height) / 2)
-                        implicitWidth: 52
-                        implicitHeight: 52
-                        radius: 26
+                        width: units.gu(3)
+                        height: units.gu(3)
+                        radius: units.gu(1.5)
                         color: slide1.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
@@ -392,7 +383,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "31Hz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -401,7 +392,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide2.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide2
@@ -414,18 +405,22 @@ Rectangle {
                     background: Rectangle {
                         x: (slide2.width  - width) / 2
                         y: (slide2.height - height) / 2
-                        implicitHeight: slide2.horizontal ? 1 : 200
-                        width: 4
+                        width: units.gu(0.5)
                         height: slide2.availableHeight
-                        radius: 2
-                        color: "#32517F"
+                        radius: units.gu(0.25)
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide2.visualPosition * parent.height
+                            width: parent.width
+                            height: slide2.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
-                            radius: 2
+                            radius: units.gu(0.25)
                             border.width: 0
                         }
                     }
@@ -433,9 +428,9 @@ Rectangle {
                         id: slide2hndl
                         x: slide2.leftPadding + (slide2.horizontal ? slide2.visualPosition * (slide2.availableWidth - width) : (slide2.availableWidth - width) / 2)
                         y: slide2.topPadding + (slide2.vertical ? slide2.visualPosition * (slide2.availableHeight - height) : (slide2.availableHeight - height) / 2)
-                        implicitWidth: 52
-                        implicitHeight: 52
-                        radius: 26
+                        width: units.gu(3)
+                        height: units.gu(3)
+                        radius: units.gu(1.5)
                         color: slide2.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
@@ -456,7 +451,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "63Hz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -465,7 +460,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide3.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide3
@@ -478,18 +473,22 @@ Rectangle {
                     background: Rectangle {
                         x: (slide3.width  - width) / 2
                         y: (slide3.height - height) / 2
-                        implicitHeight: slide3.horizontal ? 1 : 200
-                        width: 4
+                        width: units.gu(0.5)
                         height: slide3.availableHeight
-                        radius: 2
-                        color: "#32517F"
+                        radius: units.gu(0.25)
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide3.visualPosition * parent.height
+                            width: parent.width
+                            height: slide3.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
-                            radius: 2
+                            radius: units.gu(0.25)
                             border.width: 0
                         }
                     }
@@ -497,9 +496,9 @@ Rectangle {
                         id: slide3hndl
                         x: slide3.leftPadding + (slide3.horizontal ? slide3.visualPosition * (slide3.availableWidth - width) : (slide3.availableWidth - width) / 2)
                         y: slide3.topPadding + (slide3.vertical ? slide3.visualPosition * (slide3.availableHeight - height) : (slide3.availableHeight - height) / 2)
-                        implicitWidth: 52
-                        implicitHeight: 52
-                        radius: 26
+                        width: units.gu(3)
+                        height: units.gu(3)
+                        radius: units.gu(1.5)
                         color: slide3.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
@@ -520,7 +519,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "125Hz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -529,7 +528,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide4.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide4
@@ -542,18 +541,22 @@ Rectangle {
                     background: Rectangle {
                         x: (slide4.width  - width) / 2
                         y: (slide4.height - height) / 2
-                        implicitHeight: slide4.horizontal ? 1 : 200
-                        width: 4
+                        width: units.gu(0.5)
                         height: slide4.availableHeight
-                        radius: 2
-                        color: "#32517F"
+                        radius: units.gu(0.25)
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide4.visualPosition * parent.height
+                            width: parent.width
+                            height: slide4.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
-                            radius: 2
+                            radius: units.gu(0.25)
                             border.width: 0
                         }
                     }
@@ -561,9 +564,9 @@ Rectangle {
                         id: slide4hndl
                         x: slide4.leftPadding + (slide4.horizontal ? slide4.visualPosition * (slide4.availableWidth - width) : (slide4.availableWidth - width) / 2)
                         y: slide4.topPadding + (slide4.vertical ? slide4.visualPosition * (slide4.availableHeight - height) : (slide4.availableHeight - height) / 2)
-                        implicitWidth: 52
-                        implicitHeight: 52
-                        radius: 26
+                        width: units.gu(3)
+                        height: units.gu(3)
+                        radius: units.gu(1.5)
                         color: slide4.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
@@ -584,7 +587,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "250Hz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -593,7 +596,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide5.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide5
@@ -606,18 +609,22 @@ Rectangle {
                     background: Rectangle {
                         x: (slide5.width  - width) / 2
                         y: (slide5.height - height) / 2
-                        implicitHeight: slide5.horizontal ? 1 : 200
-                        width: 4
+                        width: units.gu(0.5)
                         height: slide5.availableHeight
-                        radius: 2
-                        color: "#32517F"
+                        radius: units.gu(0.25)
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide5.visualPosition * parent.height
+                            width: parent.width
+                            height: slide5.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
-                            radius: 2
+                            radius: units.gu(0.25)
                             border.width: 0
                         }
                     }
@@ -625,9 +632,9 @@ Rectangle {
                         id: slide5hndl
                         x: slide5.leftPadding + (slide5.horizontal ? slide5.visualPosition * (slide5.availableWidth - width) : (slide5.availableWidth - width) / 2)
                         y: slide5.topPadding + (slide5.vertical ? slide5.visualPosition * (slide5.availableHeight - height) : (slide5.availableHeight - height) / 2)
-                        implicitWidth: 52
-                        implicitHeight: 52
-                        radius: 26
+                        width: units.gu(3)
+                        height: units.gu(3)
+                        radius: units.gu(1.5)
                         color: slide5.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
@@ -648,7 +655,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "500Hz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -657,7 +664,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide6.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide6
@@ -670,18 +677,22 @@ Rectangle {
                     background: Rectangle {
                         x: (slide6.width  - width) / 2
                         y: (slide6.height - height) / 2
-                        implicitHeight: slide6.horizontal ? 1 : 200
-                        width: 4
+                        width: units.gu(0.5)
                         height: slide6.availableHeight
-                        radius: 2
-                        color: "#32517F"
+                        radius: units.gu(0.25)
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide6.visualPosition * parent.height
+                            width: parent.width
+                            height: slide6.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
-                            radius: 2
+                            radius: units.gu(0.25)
                             border.width: 0
                         }
                     }
@@ -689,9 +700,9 @@ Rectangle {
                         id: slide6hndl
                         x: slide6.leftPadding + (slide6.horizontal ? slide6.visualPosition * (slide6.availableWidth - width) : (slide6.availableWidth - width) / 2)
                         y: slide6.topPadding + (slide6.vertical ? slide6.visualPosition * (slide6.availableHeight - height) : (slide6.availableHeight - height) / 2)
-                        implicitWidth: 52
-                        implicitHeight: 52
-                        radius: 26
+                        width: units.gu(3)
+                        height: units.gu(3)
+                        radius: units.gu(1.5)
                         color: slide6.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
@@ -712,7 +723,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "1kHz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -721,7 +732,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide7.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide7
@@ -734,18 +745,22 @@ Rectangle {
                     background: Rectangle {
                         x: (slide7.width  - width) / 2
                         y: (slide7.height - height) / 2
-                        implicitHeight: slide7.horizontal ? 1 : 200
-                        width: 4
+                        width: units.gu(0.5)
                         height: slide7.availableHeight
-                        radius: 2
-                        color: "#32517F"
+                        radius: units.gu(0.25)
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide7.visualPosition * parent.height
+                            width: parent.width
+                            height: slide7.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
-                            radius: 2
+                            radius: units.gu(0.25)
                             border.width: 0
                         }
                     }
@@ -753,9 +768,9 @@ Rectangle {
                         id: slide7hndl
                         x: slide7.leftPadding + (slide7.horizontal ? slide7.visualPosition * (slide7.availableWidth - width) : (slide7.availableWidth - width) / 2)
                         y: slide7.topPadding + (slide7.vertical ? slide7.visualPosition * (slide7.availableHeight - height) : (slide7.availableHeight - height) / 2)
-                        implicitWidth: 52
-                        implicitHeight: 52
-                        radius: 26
+                        width: units.gu(3)
+                        height: units.gu(3)
+                        radius: units.gu(1.5)
                         color: slide7.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
@@ -776,7 +791,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "2kHz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -785,7 +800,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide8.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide8
@@ -798,18 +813,22 @@ Rectangle {
                     background: Rectangle {
                         x: (slide8.width  - width) / 2
                         y: (slide8.height - height) / 2
-                        implicitHeight: slide8.horizontal ? 1 : 200
-                        width: 4
+                        width: units.gu(0.5)
                         height: slide8.availableHeight
-                        radius: 2
-                        color: "#32517F"
+                        radius: units.gu(0.25)
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide8.visualPosition * parent.height
+                            width: parent.width
+                            height: slide8.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
-                            radius: 2
+                            radius: units.gu(0.25)
                             border.width: 0
                         }
                     }
@@ -817,9 +836,9 @@ Rectangle {
                         id: slide8hndl
                         x: slide8.leftPadding + (slide8.horizontal ? slide8.visualPosition * (slide8.availableWidth - width) : (slide8.availableWidth - width) / 2)
                         y: slide8.topPadding + (slide8.vertical ? slide8.visualPosition * (slide8.availableHeight - height) : (slide8.availableHeight - height) / 2)
-                        implicitWidth: 52
-                        implicitHeight: 52
-                        radius: 26
+                        width: units.gu(3)
+                        height: units.gu(3)
+                        radius: units.gu(1.5)
                         color: slide8.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
@@ -840,7 +859,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "4kHz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -849,7 +868,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide9.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                  Qqc.Slider {
                     id: slide9
@@ -862,18 +881,22 @@ Rectangle {
                     background: Rectangle {
                         x: (slide9.width  - width) / 2
                         y: (slide9.height - height) / 2
-                        implicitHeight: slide9.horizontal ? 1 : 200
-                        width: 4
+                        width: units.gu(0.5)
                         height: slide9.availableHeight
-                        radius: 2
-                        color: "#32517F"
+                        radius: units.gu(0.25)
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide9.visualPosition * parent.height
+                            width: parent.width
+                            height: slide9.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
-                            radius: 2
+                            radius: units.gu(0.25)
                             border.width: 0
                         }
                     }
@@ -881,9 +904,9 @@ Rectangle {
                         id: slide9hndl
                         x: slide9.leftPadding + (slide9.horizontal ? slide9.visualPosition * (slide9.availableWidth - width) : (slide9.availableWidth - width) / 2)
                         y: slide9.topPadding + (slide9.vertical ? slide9.visualPosition * (slide9.availableHeight - height) : (slide9.availableHeight - height) / 2)
-                        implicitWidth: 52
-                        implicitHeight: 52
-                        radius: 26
+                        width: units.gu(3)
+                        height: units.gu(3)
+                        radius: units.gu(1.5)
                         color: slide9.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
@@ -904,7 +927,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "8kHz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
             Column {
@@ -913,7 +936,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: slide10.value
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
                 Qqc.Slider {
                     id: slide10
@@ -926,18 +949,22 @@ Rectangle {
                     background: Rectangle {
                         x: (slide10.width  - width) / 2
                         y: (slide10.height - height) / 2
-                        implicitHeight: slide10.horizontal ? 1 : 200
-                        width: 4
+                        width: units.gu(0.5)
                         height: slide10.availableHeight
-                        radius: 2
-                        color: "#32517F"
+                        radius: units.gu(0.25)
                         border.width: 0
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: "transparent" }
+                            GradientStop { position: 0.05; color: "transparent" }
+                            GradientStop { position: 0.05; color: "#32517F" } 
+                            GradientStop { position: 0.1; color: "#32517F" }
+                        }
 
                         Rectangle {
-                            implicitWidth: parent.width
-                            implicitHeight: slide10.visualPosition * parent.height
+                            width: parent.width
+                            height: slide10.visualPosition * parent.height
                             color: drkMd ? "#808080" : "#f1f1f1"
-                            radius: 2
+                            radius: units.gu(0.25)
                             border.width: 0
                         }
                     }
@@ -945,9 +972,9 @@ Rectangle {
                         id: slide10hndl
                         x: slide10.leftPadding + (slide10.horizontal ? slide10.visualPosition * (slide10.availableWidth - width) : (slide10.availableWidth - width) / 2)
                         y: slide10.topPadding + (slide10.vertical ? slide10.visualPosition * (slide10.availableHeight - height) : (slide10.availableHeight - height) / 2)
-                        implicitWidth: 52
-                        implicitHeight: 52
-                        radius: 26
+                        width: units.gu(3)
+                        height: units.gu(3)
+                        radius: units.gu(1.5)
                         color: slide10.pressed ? "#32517F" : (drkMd ? "#292929" : "white")
                         border.width: 0
                     }
@@ -968,7 +995,7 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     text: "16kHz"
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 20
+                    font.pointSize: units.gu(1)
                 }
             }
         }
@@ -992,17 +1019,16 @@ Rectangle {
             background: Rectangle {
                 x: (prgrssbr.width  - width) / 2
                 y: (prgrssbr.height - height) / 2
-                implicitWidth: 200
                 width: prgrssbr.availableWidth
-                height: 10
-                radius: 5
+                height: units.gu(0.5)
+                radius: units.gu(0.25)
                 color: drkMd ? "#808080" : "#f1f1f1"
 
                 Rectangle {
                     width: prgrssbr.visualPosition * parent.width
                     height: parent.height
                     color: "#32517F"
-                    radius: 2
+                    radius: units.gu(0.25)
                 }
             }
 
@@ -1021,7 +1047,7 @@ Rectangle {
             id: itm1
             anchors.top: prgrssbr.bottom
             anchors.left: parent.left
-            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 300)
+            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(14))
             anchors.topMargin: units.gu(1)
             Rectangle {
                 id: chngbttn
@@ -1053,7 +1079,7 @@ Rectangle {
                     settings.equalizerControls8 = slide8.value.toFixed(1)
                     settings.equalizerControls9 = slide9.value.toFixed(1)
                     settings.equalizerControls10 = slide10.value.toFixed(1)
-                    process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_change.sh"])
+                    process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/scripts/equalizer_change.sh"])
                 }
             }
             DropShadow {
@@ -1072,37 +1098,61 @@ Rectangle {
         Qqc.Switch {
             id: eqswitch
             anchors.left: parent.left
-            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - 70)
+            anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(3.5))
             anchors.top: prgrssbr.bottom
             anchors.topMargin: units.gu(1)
 
             indicator: Rectangle {
                 id: rec1
-                implicitWidth: 120
-                implicitHeight: 65
+                implicitWidth: units.gu(6)
+                implicitHeight: units.gu(3)
                 x: eqswitch.leftPadding
                 y: parent.height / 2 - height / 2
-                radius: 32.5
+                radius: units.gu(1.5)
                 color: drkMd ? (eqswitch.checked ? "#32517F" : "#808080") : (eqswitch.checked ? "#32517F" : "#f1f1f1")
-        
+
                 Text {
                     id: txt
                     color: drkMd ? (eqswitch.checked ? "#808080" : "#292929") : (eqswitch.checked ? "white" : "black")
-                    text: "I     O"
-                    anchors.top: rec1.top
-                    anchors.bottom: rec1.bottom
+                    text: "I"
+                    anchors.verticalCenter: rec5.verticalCenter
+                    anchors.horizontalCenter: rec5.horizontalCenter
+                }
+
+                Rectangle {
+                    id: rec5
+                    visible: false
+                    width: units.gu(3)
+                    height: units.gu(3)
                     anchors.left: rec1.left
+                    anchors.verticalCenter: rec1.verticalCenter
+                    radius: units.gu(1.5)
+                }
+
+                Text {
+                    id: txt10
+                    color: drkMd ? (eqswitch.checked ? "#808080" : "#292929") : (eqswitch.checked ? "white" : "black")
+                    text: "O"
+                    anchors.verticalCenter: rec6.verticalCenter
+                    anchors.horizontalCenter: rec6.horizontalCenter
+                }
+
+                Rectangle {
+                    id: rec6
+                    visible: false
+                    width: units.gu(3)
+                    height: units.gu(3)
                     anchors.right: rec1.right
-                    anchors.topMargin: 11
-                    anchors.leftMargin: 25
+                    anchors.verticalCenter: rec1.verticalCenter
+                    radius: units.gu(1.5)
                 }
 
                 Rectangle {
                     id: rec2
                     x: eqswitch.checked ? parent.width - width : 0
-                    width: 65
-                    height: 65
-                    radius: 32.5
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    radius: units.gu(1.5)
                     color: drkMd ? (eqswitch.down ? "#32517F" : "#292929") : (eqswitch.down ? "#32517F" : "white")
                 }
                 DropShadow {
@@ -1117,9 +1167,9 @@ Rectangle {
                     cached: true
                 }
             }
-            onClicked: {
+            onToggled: {
                 if (eqsts === true) {                    
-                    process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_stop.sh"])
+                    process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/scripts/equalizer_stop.sh"])
                     eqsts = checked
                     txt2.text = ""
                     process6.kill()
@@ -1137,10 +1187,10 @@ Rectangle {
                     settings.equalizerControls8 = slide8.value.toFixed(1)
                     settings.equalizerControls9 = slide9.value.toFixed(1)
                     settings.equalizerControls10 = slide10.value.toFixed(1)
-                    process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/scripts/equalizer_start.sh"])
+                    process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/scripts/equalizer_start.sh"])
                     eqsts = checked
                     txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
-                    process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.6/bin/pulse-vumeter"])
+                    process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.7/bin/pulse-vumeter"])
                 }
             }
         }
@@ -1149,7 +1199,7 @@ Rectangle {
             id: itm2
             anchors.top: prgrssbr.bottom
             anchors.right: parent.right
-            anchors.rightMargin: ((((parent.width / 4) + (parent.width / 4)) - 300) + units.gu(4))
+            anchors.rightMargin: ((((parent.width / 4) + (parent.width / 4)) - units.gu(14)) + units.gu(4))
             anchors.topMargin: units.gu(1)
             Rectangle {
                 id: rstbttn
@@ -1215,10 +1265,12 @@ Rectangle {
             anchors.topMargin: units.gu(8)
             wrapMode: Text.WordWrap
             width: parent.width
-            lineHeight: 1.2
+            lineHeight: units.gu(2.5)
+            lineHeightMode: Text.FixedHeight
             horizontalAlignment: Text.AlignHCenter
             leftPadding: units.gu(3)
             rightPadding: units.gu(3)
+            maximumLineCount: 3
         }
         Rectangle {
             id: plchldrrec
@@ -1249,31 +1301,55 @@ Rectangle {
 
             indicator: Rectangle {
                 id: rec3
-                implicitWidth: 120
-                implicitHeight: 65
-                x: eqswitch.leftPadding
+                implicitWidth: units.gu(6)
+                implicitHeight: units.gu(3)
+                x: drkmdswitch.leftPadding
                 y: parent.height / 2 - height / 2
-                radius: 32.5
+                radius: units.gu(1.5)
                 color: drkMd ? (drkmdswitch.checked ? "#32517F" : "#808080") : (drkmdswitch.checked ? "#32517F" : "#f1f1f1")
-        
+
                 Text {
                     id: txt9
                     color: drkMd ? (drkmdswitch.checked ? "#808080" : "#292929") : (drkmdswitch.checked ? "white" : "black")
-                    text: "I     O"
-                    anchors.top: rec3.top
-                    anchors.bottom: rec3.bottom
+                    text: "I"
+                    anchors.verticalCenter: rec7.verticalCenter
+                    anchors.horizontalCenter: rec7.horizontalCenter
+                }
+
+                Rectangle {
+                    id: rec7
+                    visible: false
+                    width: units.gu(3)
+                    height: units.gu(3)
                     anchors.left: rec3.left
+                    anchors.verticalCenter: rec3.verticalCenter
+                    radius: units.gu(1.5)
+                }
+
+                Text {
+                    id: txt11
+                    color: drkMd ? (drkmdswitch.checked ? "#808080" : "#292929") : (drkmdswitch.checked ? "white" : "black")
+                    text: "O"
+                    anchors.verticalCenter: rec8.verticalCenter
+                    anchors.horizontalCenter: rec8.horizontalCenter
+                }
+
+                Rectangle {
+                    id: rec8
+                    visible: false
+                    width: units.gu(3)
+                    height: units.gu(3)
                     anchors.right: rec3.right
-                    anchors.topMargin: 11
-                    anchors.leftMargin: 25
+                    anchors.verticalCenter: rec3.verticalCenter
+                    radius: units.gu(1.5)
                 }
 
                 Rectangle {
                     id: rec4
                     x: drkmdswitch.checked ? parent.width - width : 0
-                    width: 65
-                    height: 65
-                    radius: 32.5
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    radius: units.gu(1.5)
                     color: drkMd ? (drkmdswitch.down ? "#32517F" : "#292929") : (drkmdswitch.down ? "#32517F" : "white")
                 }
                 DropShadow {
@@ -1288,7 +1364,7 @@ Rectangle {
                     cached: true
                 }
             }
-            onClicked: {
+            onToggled: {
                 drkMd = checked
             }
         }
@@ -2215,7 +2291,7 @@ Rectangle {
             anchors.top: txtfld5.bottom
             anchors.left: parent.left
             anchors.right: parent.right
-            anchors.topMargin: units.gu(2)
+            anchors.topMargin: units.gu(1)
             width: flick1.width
 
             ListItemLayout {
@@ -2226,7 +2302,7 @@ Rectangle {
                     SlotsLayout.position: SlotsLayout.Leading
                     text: i18n.tr("Help")
                     color: drkMd ? "#808080" : "black"
-                    font.pointSize: 40
+                    font.pointSize: units.gu(2)
                     height: lstitm1.height
                     verticalAlignment: Text.AlignVCenter
                     bottomPadding: units.gu(2)
@@ -2256,7 +2332,8 @@ Rectangle {
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
             horizontalAlignment: Text.AlignLeft
-            lineHeight: 1.2
+            lineHeight: units.gu(2.5)
+            lineHeightMode: Text.FixedHeight
             wrapMode: Text.WordWrap
             maximumLineCount: 3
         }
@@ -2283,7 +2360,8 @@ Rectangle {
             anchors.rightMargin: units.gu(2)
             anchors.topMargin: units.gu(13)
             horizontalAlignment: Text.AlignLeft
-            lineHeight: 1.2
+            lineHeight: units.gu(2.5)
+            lineHeightMode: Text.FixedHeight
             wrapMode: Text.WordWrap
             maximumLineCount: 3
         }
@@ -2296,7 +2374,7 @@ Rectangle {
             anchors.top: lstitm1.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
-            anchors.topMargin: units.gu(23)
+            anchors.topMargin: units.gu(22)
         }
 
         Icon {
@@ -2307,7 +2385,7 @@ Rectangle {
             anchors.top: lstitm1.bottom
             anchors.left: hlpicn3.right
             anchors.leftMargin: units.gu(2)
-            anchors.topMargin: units.gu(23)
+            anchors.topMargin: units.gu(22)
         }
 
         Text {
@@ -2319,24 +2397,48 @@ Rectangle {
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
-            anchors.topMargin: units.gu(24)
+            anchors.topMargin: units.gu(23)
             horizontalAlignment: Text.AlignLeft
-            lineHeight: 1.2
+            lineHeight: units.gu(2.5)
+            lineHeightMode: Text.FixedHeight
             wrapMode: Text.WordWrap
-            maximumLineCount: 10
+            maximumLineCount: 8
         }
 
-        Text {
-            id: txt7
-            text: i18n.tr("Made with ") + "<img src=\"../../assets/heart.png\">" + i18n.tr(" by bbisw")
-            color: drkMd ? "#808080" : "black"
-            wrapMode: Text.WordWrap
-            width: flick1.width
-            lineHeight: 1.2
-            horizontalAlignment: Text.AlignHCenter
-            font.bold: false
-            anchors.bottom: txt3.top
-            bottomPadding: units.gu(2)
+        Row {
+            id: row2
+            spacing: units.gu(0.4)
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: lstitm1.bottom
+            anchors.topMargin: units.gu(45.5)
+
+            Text {
+                id: txt7
+                text: i18n.tr("Made with")
+                color: drkMd ? "#808080" : "black"
+                lineHeight: units.gu(2.5)
+                lineHeightMode: Text.FixedHeight
+                font.bold: false
+            }
+
+            Image {
+                id: img1
+                source: "../../assets/heart.png"
+                sourceSize.width: 47
+                sourceSize.height: 47
+                width: units.gu(2.3)
+                height: units.gu(2.3)
+            }
+
+            Text {
+                id: txt12
+                text: i18n.tr("by bbisw")
+                color: drkMd ? "#808080" : "black"
+                lineHeight: units.gu(2.5)
+                lineHeightMode: Text.FixedHeight
+                font.bold: false
+            }
+
         }
 
         Text {
@@ -2345,16 +2447,19 @@ Rectangle {
             color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
-            lineHeight: 1.2
+            lineHeight: units.gu(2.5)
+            lineHeightMode: Text.FixedHeight
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
-            anchors.bottom: txt8.top
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
-            bottomPadding: units.gu(2)
+            maximumLineCount: 4
+            anchors.top: lstitm1.bottom
+            anchors.topMargin: units.gu(50.5)
+            linkColor: "red"
         }
 
         Text {
@@ -2363,16 +2468,19 @@ Rectangle {
             color: drkMd ? "#808080" : "black"
             wrapMode: Text.WordWrap
             width: flick1.width
-            lineHeight: 1.2
+            lineHeight: units.gu(2.5)
+            lineHeightMode: Text.FixedHeight
             horizontalAlignment: Text.AlignHCenter
             font.bold: true
             onLinkActivated: Qt.openUrlExternally(link)
-            anchors.bottom: parent.bottom
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.leftMargin: units.gu(2)
             anchors.rightMargin: units.gu(2)
-            bottomPadding: units.gu(2)
+            maximumLineCount: 3
+            anchors.top: lstitm1.bottom
+            anchors.topMargin: units.gu(63)
+            linkColor: "red"
         }
     }
 }
