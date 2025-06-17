@@ -297,7 +297,6 @@ Rectangle {
     Flickable {
         id: flick1
         anchors.top: header.bottom
-//        contentHeight: units.gu(175)
         contentHeight: units.gu(177)
         contentWidth: mainPage.width
         width: mainPage.width
@@ -2411,7 +2410,6 @@ Rectangle {
             spacing: units.gu(0.4)
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: lstitm1.bottom
-//            anchors.topMargin: units.gu(46)
             anchors.topMargin: units.gu(45.5)
 
             Text {
@@ -2460,7 +2458,6 @@ Rectangle {
             anchors.rightMargin: units.gu(2)
             maximumLineCount: 4
             anchors.top: lstitm1.bottom
-//            anchors.topMargin: units.gu(51)
             anchors.topMargin: units.gu(50.5)
             linkColor: "red"
         }
