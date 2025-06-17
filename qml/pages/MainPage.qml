@@ -298,7 +298,7 @@ Rectangle {
         id: flick1
         anchors.top: header.bottom
 //        contentHeight: units.gu(175)
-        contentHeight: units.gu(176)
+        contentHeight: units.gu(177)
         contentWidth: mainPage.width
         width: mainPage.width
         height: mainPage.height - header.height
