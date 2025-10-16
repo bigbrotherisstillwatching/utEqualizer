@@ -2,11 +2,11 @@ name: Build Artifacts
 
 on:
   push:
-    branches: [ focal ]
+    branches: [ noble ]
 #  create: 
 #    tags: releases/[1-9]+.[0-9]+.[0-9]+
   pull_request:
-    branches: [ focal ]
+    branches: [ noble ]
   workflow_dispatch:
 
 jobs:
