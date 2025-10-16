@@ -25,6 +25,6 @@ this program. If not, see <http://www.gnu.org/licenses/>.
 ## Keep in mind that !!!
   
 -it is an unconfined app with full access to the system    
--only for arm64    
+-releases only for arm64    
 -you'll have to grant microphone permission for the volume bar to work    
 -only tested on Fairphone 4
