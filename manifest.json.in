@@ -1,6 +1,6 @@
 {
     "name": "utequalizer.bigbrotherisstillwatching",
-    "description": "An Equalizer for Ubuntu Touch Focal",
+    "description": "An Equalizer for Ubuntu Touch Noble",
     "architecture": "@CLICK_ARCH@",
     "title": "utEqualizer",
     "hooks": {
