@@ -14,8 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-//#include <QGuiApplication>
-#include <QCoreApplication>
+#include <QGuiApplication>
+//#include <QCoreApplication>
 #include <QUrl>
 #include <QString>
 #include <QQuickView>
