@@ -18,7 +18,7 @@
 //#include <QCoreApplication>
 //#include <QUrl>
 //#include <QString>
-#include <QQuickView>
+//#include <QQuickView>
 #include <QtQml>
 #include "process.h"
 
