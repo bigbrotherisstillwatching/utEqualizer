@@ -16,7 +16,7 @@
 
 #include <QGuiApplication>
 //#include <QCoreApplication>
-#include <QUrl>
+//#include <QUrl>
 #include <QString>
 #include <QQuickView>
 #include <QtQml>
