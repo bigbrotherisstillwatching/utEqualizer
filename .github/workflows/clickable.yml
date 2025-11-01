@@ -24,7 +24,7 @@ jobs:
 #          submodules: recursive
       - name: Install Dependencies
         run: |
-          pipx install clickable-ut && sudo rm -rf /var/lib/containers/{cache,storage}
+          pipx install clickable-ut && pipx upgrade clickable-ut
 #          sudo add-apt-repository -y ppa:bhdouglass/clickable && sudo apt update && sudo apt -y install clickable
 #          python3 -m pip install clickable-ut
 #        env:
