@@ -34,7 +34,7 @@ jobs:
 #        run: mkdir ~/uminimizer
       - name: Build
         run: |
-          clickable build --verbose --arch ${{ matrix.arch }}
+          CLICKABLE_FRAMEWORK=ubuntu-touch-24.04-1.x clickable build --verbose --arch ${{ matrix.arch }}
 #          CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable build --verbose --arch ${{ matrix.arch }}
 #        run:
 #         mkdir ~/utEqualizer && cd ~/utEqualizer && clickable create --non-interactive --template cmake --title utEqualizer --description "An Equalizer for Ubuntu Touch Focal" --name utequalizer --namespace bigbrotherisstillwatching --maintainer "bbisw" --mail 140657673+bigbrotherisstillwatching@users.noreply.github.com --license gpl3 --copyright-year 2024 --arch arm64
