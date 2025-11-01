@@ -1,0 +1,48 @@
+name: Build Artifacts
+
+on:
+  push:
+    branches: [ dev19 ]
+#  create: 
+#    tags: releases/[1-9]+.[0-9]+.[0-9]+
+  pull_request:
+    branches: [ dev19 ]
+  workflow_dispatch:
+
+jobs:
+  ubuntu-touch:
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [arm64]
+        build: [Release]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+#        with:
+#          submodules: recursive
+      - name: Install Dependencies
+        run: |
+          sudo apt -y install docker.io adb git python3 python3-pip python3-setuptools python3-venv && source ./.venv/bin/activate && pip install clickable-ut --upgrade
+#          python3 -m pip install clickable-ut
+#        env:
+#          BUILD_TYPE: ${{ (matrix.build == 'Debug') && '--debug' || '' }}
+#          CLICKABLE_FRAMEWORK: ubuntu-sdk-20.04
+#      - name: Create folder and change to it
+#        run: mkdir ~/uminimizer
+      - name: Build
+        run: |
+          CLICKABLE_FRAMEWORK=ubuntu-touch-24.04-1.x clickable build --verbose --arch ${{ matrix.arch }}
+#          CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 clickable build --verbose --arch ${{ matrix.arch }}
+#        run:
+#         mkdir ~/utEqualizer && cd ~/utEqualizer && clickable create --non-interactive --template cmake --title utEqualizer --description "An Equalizer for Ubuntu Touch Focal" --name utequalizer --namespace bigbrotherisstillwatching --maintainer "bbisw" --mail 140657673+bigbrotherisstillwatching@users.noreply.github.com --license gpl3 --copyright-year 2024 --arch arm64
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4.6.2
+        if: always()
+        with:
+          name: "utEqualizer-${{ matrix.arch }}--${{ matrix.build }}--click"
+#          name: "utEqualizer--click"
+          path: "build/*/app/*.click"
+          if-no-files-found: ignore
+#          retention-days: 20
