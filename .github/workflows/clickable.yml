@@ -24,10 +24,11 @@ jobs:
 #          submodules: recursive
       - name: Install Dependencies
         run: |
-          python3 -m pip install clickable-ut
-#          pipx install clickable-ut && pipx upgrade clickable-ut
+          sudo add-apt-repository -y ppa:bhdouglass/clickable && sudo apt update && sudo apt -y install clickable
+#          pipx install clickable-ut
 #          sudo add-apt-repository -y ppa:bhdouglass/clickable && sudo apt update && sudo apt -y install clickable
 #          python3 -m pip install clickable-ut
+#          python3 -m pip install clickable-ut --upgrade
 #        env:
 #          BUILD_TYPE: ${{ (matrix.build == 'Debug') && '--debug' || '' }}
 #          CLICKABLE_FRAMEWORK: ubuntu-sdk-20.04
