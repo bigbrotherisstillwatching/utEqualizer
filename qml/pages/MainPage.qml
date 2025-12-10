@@ -16,16 +16,13 @@
 
 import Lomiri.Components 1.3
 import Lomiri.Components.ListItems 1.3
-//import QtQuick 2.7
 import QtQuick 2.15
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
-//import QtQuick.Controls 2.7 as Qqc
 import QtQuick.Controls 2.15 as Qqc
 import Process 1.0
 import Lomiri.Components.Popups 1.3
 import Lomiri.Components.Styles 1.3
-//import QtGraphicalEffects 1.12
 import QtGraphicalEffects 1.15
 
 Rectangle {
