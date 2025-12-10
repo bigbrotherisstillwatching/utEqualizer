@@ -31,4 +31,4 @@ this program. If not, see <http://www.gnu.org/licenses/>.
 
 ## Issues
 
--playback pauses, when deactivating the equalizer -> you'll have to press play again in your musicplayer, etc. until i eventually find a solution for this 
+-playback pauses, when deactivating the equalizer -> you'll have to press play again in your musicplayer, etc. until i eventually find a solution for this (this does not happen when streaming over bluetooth) 
