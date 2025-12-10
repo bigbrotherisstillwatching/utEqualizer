@@ -28,7 +28,3 @@ this program. If not, see <http://www.gnu.org/licenses/>.
 -releases only for arm64    
 -you'll have to grant microphone permission for the volume bar to work    
 -only tested on Fairphone 4
-
-## Issues
-
--playback pauses, when deactivating the equalizer -> you'll have to press play again in your musicplayer, etc. until i eventually find a solution for this 
