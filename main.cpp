@@ -15,11 +15,7 @@
  */
 
 #include <QGuiApplication>
-//#include <QCoreApplication>
-//#include <QUrl>
-//#include <QString>
 #include <QQuickView>
-//#include <QtQml>
 #include "process.h"
 
 int main(int argc, char *argv[])
