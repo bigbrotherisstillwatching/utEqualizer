@@ -1069,7 +1069,7 @@ Rectangle {
                 anchors.fill: chngbttn
  
                 onClicked: {
-                    if (eqsts === true) {
+//                    if (eqsts === true) {
                         settings.equalizerControls1 = slide1.value.toFixed(1)
                         settings.equalizerControls2 = slide2.value.toFixed(1)
                         settings.equalizerControls3 = slide3.value.toFixed(1)
@@ -1081,9 +1081,9 @@ Rectangle {
                         settings.equalizerControls9 = slide9.value.toFixed(1)
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                         process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_change.sh"])
-                    } else if (eqsts === false) {
-                        //do nothing
-                    }
+//                    } else if (eqsts === false) {
+//                        //do nothing
+//                    }
                 }
             }
             DropShadow {
