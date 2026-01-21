@@ -6,7 +6,7 @@ sleep 0.5
 #then
 #pacmd set-default-sink $(head -1 /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.defaultsink.txt)
 kill $(pgrep -f utequalizer_start.sh)
-pgrep -f utequalizer_change.sh > /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.oldutequalizerchangescript.txt
+#pgrep -f utequalizer_change.sh > /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.oldutequalizerchangescript.txt
 kill $(head -1 /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.oldutequalizerchangescript.txt)
 pactl list short sink-inputs | awk '{print $1}' | xargs -I {} pacmd move-sink-input {} $(head -1 /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.defaultsink.txt)
 pacmd unload-module $(head -1 /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.utequalizermodule.txt)
@@ -15,6 +15,7 @@ pacmd list-modules | fgrep -B 2 /opt/click.ubuntu.com/utequalizer.bigbrotherisst
 #pacmd set-default-sink equalizer
 
 while true
+   pgrep -f utequalizer_change.sh > /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.oldutequalizerchangescript.txt
    do pactl list short sink-inputs | awk '{print $1}' | xargs -I {} pacmd move-sink-input {} utequalizer
    sleep 1
 done
