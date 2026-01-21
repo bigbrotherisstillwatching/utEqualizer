@@ -15,7 +15,7 @@ pacmd load-module module-ladspa-sink sink_name=utequalizer sink_master=$(head -1
 pacmd list-modules | fgrep -B 2 /opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/lib/caps.so | grep index | cut -c 12- > /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.utequalizermodule.txt
 #pacmd set-default-sink equalizer
 #pgrep -f utequalizer_change.sh > /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.oldutequalizerchangescript.txt
-exec /opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/move_sink_inputs_to_equalizer.sh
+exec /opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/move_sink_inputs_to_utequalizer.sh
 
 #while true
 #do
