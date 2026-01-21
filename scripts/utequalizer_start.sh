@@ -17,7 +17,8 @@ pacmd list-modules | fgrep -B 2 /opt/click.ubuntu.com/utequalizer.bigbrotherisst
 #pacmd set-default-sink equalizer
 
 while true
-   do pactl list short sink-inputs | awk '{print $1}' | xargs -I {} pacmd move-sink-input {} utequalizer
+do
+   pactl list short sink-inputs | awk '{print $1}' | xargs -I {} pacmd move-sink-input {} utequalizer
    sleep 1
 done
 #fi
