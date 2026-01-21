@@ -1,7 +1,7 @@
 #! /bin/bash
 
-var1=$(pgrep -f utequalizer_start.sh)
-var2=$(pgrep -f move_sink_inputs_to_utequalizer.sh)
+#var1=$(pgrep -f utequalizer_start.sh)
+#var2=$(pgrep -f move_sink_inputs_to_utequalizer.sh)
 
 
 sleep 0.5
@@ -10,15 +10,17 @@ sleep 0.5
 #then
 #pacmd set-default-sink $(head -1 /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.defaultsink.txt)
 #kill $(pgrep -f utequalizer_start.sh)
-if ! [ "x$var1" = "x"  ]; then
-    kill "$var1"
-fi
+#if ! [ "x$var1" = "x"  ]; then
+#    kill "$var1"
+#fi
+pgrep -f utequalizer_start.sh | xargs --no-run-if-empty kill
 #pgrep -f utequalizer_change.sh > /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.oldutequalizerchangescript.txt
 #kill $(head -1 /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.oldutequalizerchangescript.txt)
 #kill $(pgrep -f move_sink_inputs_to_utequalizer.sh)
-if ! [ "x$var2" = "x"  ]; then
-    kill "$var2"
-fi
+#if ! [ "x$var2" = "x"  ]; then
+#    kill "$var2"
+#fi
+pgrep -f move_sink_inputs_to_utequalizer.sh | xargs --no-run-if-empty kill
 pactl list short sink-inputs | awk '{print $1}' | xargs -I {} pacmd move-sink-input {} $(head -1 /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.defaultsink.txt)
 pacmd unload-module $(head -1 /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.utequalizermodule.txt)
 pacmd load-module module-ladspa-sink sink_name=utequalizer sink_master=$(head -1 /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.defaultsink.txt) plugin=/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/lib/caps.so label=Eq10X2 control=$(sed -n '3p' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf | sed 's/.*[=] *//'),$(sed -n '5p' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf | sed 's/.*[=] *//'),$(sed -n '6p' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf | sed 's/.*[=] *//'),$(sed -n '7p' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf | sed 's/.*[=] *//'),$(sed -n '8p' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf | sed 's/.*[=] *//'),$(sed -n '9p' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf | sed 's/.*[=] *//'),$(sed -n '10p' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf | sed 's/.*[=] *//'),$(sed -n '11p' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf | sed 's/.*[=] *//'),$(sed -n '12p' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf | sed 's/.*[=] *//'),$(sed -n '4p' /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.conf | sed 's/.*[=] *//')
