@@ -1081,7 +1081,10 @@ Rectangle {
                         settings.equalizerControls9 = slide9.value.toFixed(1)
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                         process3.kill()
-                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_change.sh"])
+                        delay(500, function() {
+                            process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_change.sh"])
+                        })
+//                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_change.sh"])
                     } else if (eqsts === false) {
                         //do nothing
                     }
