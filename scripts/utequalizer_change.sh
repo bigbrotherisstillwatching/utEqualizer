@@ -13,7 +13,7 @@ sleep 0.5
 #if ! [ "x$var1" = "x"  ]; then
 #    kill "$var1"
 #fi
-pgrep -f utequalizer_start.sh | xargs --no-run-if-empty kill
+#pgrep -f utequalizer_start.sh | xargs --no-run-if-empty kill
 #pgrep -f utequalizer_change.sh > /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.oldutequalizerchangescript.txt
 #kill $(head -1 /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.oldutequalizerchangescript.txt)
 #kill $(pgrep -f move_sink_inputs_to_utequalizer.sh)
