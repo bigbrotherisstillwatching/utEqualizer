@@ -15,7 +15,7 @@ sleep 0.5
 #if ! [ "x$var2" = "x"  ]; then
 #    kill "$var2"
 #fi
-pgrep -f utequalizer_start.sh | xargs --no-run-if-empty kill
+#pgrep -f utequalizer_start.sh | xargs --no-run-if-empty kill
 pgrep -f move_sink_inputs_to_utequalizer.sh | xargs --no-run-if-empty kill
 #pacmd set-default-sink $(head -1 /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.defaultsink.txt)
 pactl list short sink-inputs | awk '{print $1}' | xargs -I {} pacmd move-sink-input {} $(head -1 /home/phablet/.config/utequalizer.bigbrotherisstillwatching/utequalizer.bigbrotherisstillwatching.defaultsink.txt)
