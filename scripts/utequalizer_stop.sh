@@ -3,7 +3,7 @@
 #var1=$(pgrep -f utequalizer_start.sh)
 #var2=$(pgrep -f move_sink_inputs_to_utequalizer.sh)
 
-#sleep 0.5
+sleep 0.5
 
 #if [[ $(pacmd list-sinks | grep -A1 '* index:' | sed 's/.*<//; s/>.*//' | grep -v '* index:') == equalizer ]]
 #then
