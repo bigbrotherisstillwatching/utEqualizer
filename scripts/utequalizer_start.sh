@@ -2,7 +2,7 @@
 
 #default_sink=$(pacmd list-sinks | grep -A1 '* index:' | sed 's/.*<//; s/>.*//' | grep -v '* index:')
 
-#sleep 0.5
+sleep 0.5
 
 #if [[ $(pacmd list-sinks | grep -A1 '* index:' | sed 's/.*<//; s/>.*//' | grep -v '* index:') == equalizer ]]
 #then
