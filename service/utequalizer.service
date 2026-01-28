@@ -1,5 +1,5 @@
 [Unit]
-Description=Move all sink inputs to utEqualizer sink
+Description=Move all sink-inputs to utequalizer sink
 
 [Service]
 Type=simple
