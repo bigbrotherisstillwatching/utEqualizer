@@ -3,9 +3,6 @@
 sleep 0.5
 
 systemctl --user stop utequalizer.service
-
-sleep 0.5
-
 #systemctl --user disable utequalizer.service
 #rm -f /home/phablet/.config/systemd/user/utequalizer.service
 #systemctl --user daemon-reload
