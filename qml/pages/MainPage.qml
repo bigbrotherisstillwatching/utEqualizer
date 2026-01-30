@@ -31,8 +31,9 @@ Rectangle {
 
     color: drkMd ? "#121212" : "white"
 
-    property alias eqsts: settings.equalizerStatus
+    property alias eqSts: settings.equalizerStatus
     property alias drkMd: settings.darkMode
+    property alias srvcInstlld: settings.serviceInstalled
 
     Timer {
         id: timer
@@ -79,6 +80,14 @@ Rectangle {
             output = process6.readAll()
             prgrssbr.value = output
         }
+    }
+
+    Process {
+        id: process7
+    }
+
+    Process {
+        id: process8
     }
 
     Settings {
@@ -150,14 +159,15 @@ Rectangle {
         property string preset3name: ""
         property string preset4name: ""
         property string preset5name: ""
+        property bool serviceInstalled
     }
 
     Connections {
         target: Qt.application
         onAboutToQuit: {
-            if (eqsts === true) {
+            if (eqSts === true) {
                 console.log("EQ is still active");
-            } else if (eqsts === false) {
+            } else if (eqSts === false) {
                 console.log("EQ is inactive");
             }
             console.log("Goodbye!");
@@ -167,7 +177,7 @@ Rectangle {
     Component.onCompleted: {
         process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_stop.sh"])
         eqswitch.checked = false
-        eqsts = false
+        eqSts = false
         prgrssbr.value = 0
     }
 
@@ -193,9 +203,9 @@ Rectangle {
                 id: bttn2
                 text: bttn2.pressed ? i18n.tr("<font color=\"white\">Turn off equalizer</font>") : i18n.tr("<font color=\"black\">Turn off equalizer</font>")
                 enabled: {
-                    if (eqsts === true) {
+                    if (eqSts === true) {
                         true
-                    } else if (eqsts === false) {
+                    } else if (eqSts === false) {
                         false
                     }
                 }
@@ -204,7 +214,7 @@ Rectangle {
                     bttn3.enabled = true
                     eqswitch.checked = false
                     txt2.text = ""
-                    eqsts = false
+                    eqSts = false
                     process6.kill()
                     delay(500, function() {
                         prgrssbr.value = 0
@@ -217,9 +227,9 @@ Rectangle {
             Button {
                 id: bttn3
                 enabled: {
-                    if (eqsts === true) {
+                    if (eqSts === true) {
                         false
-                    } else if (eqsts === false) {
+                    } else if (eqSts === false) {
                         true
                     }
                 }
@@ -1069,7 +1079,7 @@ Rectangle {
                 anchors.fill: chngbttn
  
                 onClicked: {
-                    if (eqsts === true) {
+                    if (eqSts === true) {
                         settings.equalizerControls1 = slide1.value.toFixed(1)
                         settings.equalizerControls2 = slide2.value.toFixed(1)
                         settings.equalizerControls3 = slide3.value.toFixed(1)
@@ -1085,7 +1095,7 @@ Rectangle {
                             process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_change.sh"])
                         })
 //                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_change.sh"])
-                    } else if (eqsts === false) {
+                    } else if (eqSts === false) {
                         //do nothing
                     }
                 }
@@ -1176,15 +1186,15 @@ Rectangle {
                 }
             }
             onToggled: {
-                if (eqsts === true) {                    
+                if (eqSts === true) {                    
                     process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_stop.sh"])
-                    eqsts = checked
+                    eqSts = checked
                     txt2.text = ""
                     process6.kill()
                     delay(500, function() {
                         prgrssbr.value = 0
                     })
-                } else if (eqsts === false) {
+                } else if (eqSts === false) {
                     settings.equalizerControls1 = slide1.value.toFixed(1)
                     settings.equalizerControls2 = slide2.value.toFixed(1)
                     settings.equalizerControls3 = slide3.value.toFixed(1)
@@ -1196,7 +1206,7 @@ Rectangle {
                     settings.equalizerControls9 = slide9.value.toFixed(1)
                     settings.equalizerControls10 = slide10.value.toFixed(1)
                     process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_start.sh"])
-                    eqsts = checked
+                    eqSts = checked
                     txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
                     process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/bin/pulse-vumeter"])
                 }
@@ -1377,6 +1387,99 @@ Rectangle {
             }
         }
 
+        Text {
+            id: txt13
+            text: i18n.tr("Service installed?")
+            color: drkMd ? "#808080" : "black"
+            anchors.top: txt1.bottom
+            anchors.left: parent.left
+            anchors.leftMargin: units.gu(2)
+            anchors.topMargin: units.gu(3)
+        }
+
+        Qqc.Switch {
+            id: srvcinstlldswitch
+            checked: srvcInstlld
+            anchors.top: txt1.bottom
+            anchors.right: parent.right
+            anchors.topMargin: units.gu(2)
+
+            indicator: Rectangle {
+                id: rec9
+                implicitWidth: units.gu(6)
+                implicitHeight: units.gu(3)
+                x: srvcinstlldswitch.leftPadding
+                y: parent.height / 2 - height / 2
+                radius: units.gu(1.5)
+                color: drkMd ? (srvcinstlldswitch.checked ? "#32517F" : "#808080") : (srvcinstlldswitch.checked ? "#32517F" : "#f1f1f1")
+
+                Text {
+                    id: txt14
+                    color: drkMd ? (srvcinstlldswitch.checked ? "#808080" : "#292929") : (srvcinstlldswitch.checked ? "white" : "black")
+                    text: "I"
+                    anchors.verticalCenter: rec10.verticalCenter
+                    anchors.horizontalCenter: rec10.horizontalCenter
+                }
+
+                Rectangle {
+                    id: rec10
+                    visible: false
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    anchors.left: rec9.left
+                    anchors.verticalCenter: rec9.verticalCenter
+                    radius: units.gu(1.5)
+                }
+
+                Text {
+                    id: txt15
+                    color: drkMd ? (srvcinstlldswitch.checked ? "#808080" : "#292929") : (srvcinstlldswitch.checked ? "white" : "black")
+                    text: "O"
+                    anchors.verticalCenter: rec11.verticalCenter
+                    anchors.horizontalCenter: rec11.horizontalCenter
+                }
+
+                Rectangle {
+                    id: rec11
+                    visible: false
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    anchors.right: rec9.right
+                    anchors.verticalCenter: rec9.verticalCenter
+                    radius: units.gu(1.5)
+                }
+
+                Rectangle {
+                    id: rec12
+                    x: srvcinstlldswitch.checked ? parent.width - width : 0
+                    width: units.gu(3)
+                    height: units.gu(3)
+                    radius: units.gu(1.5)
+                    color: drkMd ? (srvcinstlldswitch.down ? "#32517F" : "#292929") : (srvcinstlldswitch.down ? "#32517F" : "white")
+                }
+                DropShadow {
+                    anchors.fill: rec12
+                    horizontalOffset: 1
+                    verticalOffset: 1
+                    radius: 6
+                    samples: 13
+                    color: "black"
+                    source: rec12
+                    spread: 0
+                    cached: true
+                }
+            }
+            onToggled: {
+                if (srvcInstlld === true) {
+                    process7.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_service_uninstall.sh"])
+                    srvcInstlld = checked
+                } else if (srvcInstlld === false) {
+                    process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_service_install.sh"])
+                    srvcInstlld = checked
+                }
+            }
+        }
+
         Qqc.TextField {
             id: txtfld1
             color: drkMd ? "#808080" : "black"
@@ -1384,7 +1487,7 @@ Rectangle {
             selectionColor: "#32517F"
             text: settings.preset1name
             placeholderText: i18n.tr("Preset 1")
-            anchors.top: txt1.bottom
+            anchors.top: txt13.bottom
             anchors.left: parent.left
             anchors.leftMargin: units.gu(2)
             anchors.topMargin: units.gu(3)
@@ -1458,7 +1561,7 @@ Rectangle {
 
         Item {
             id: itm3
-            anchors.top: txt1.bottom
+            anchors.top: txt13.bottom
             anchors.right: parent.right
             anchors.rightMargin: units.gu(6)
             anchors.topMargin: units.gu(3)
@@ -1509,7 +1612,7 @@ Rectangle {
 
         Item {
             id: itm4
-            anchors.top: txt1.bottom
+            anchors.top: txt13.bottom
             anchors.right: parent.right
             anchors.rightMargin: units.gu(12)
             anchors.topMargin: units.gu(3)
