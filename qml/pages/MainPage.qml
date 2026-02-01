@@ -307,7 +307,6 @@ Rectangle {
     Flickable {
         id: flick1
         anchors.top: header.bottom
-//        contentHeight: units.gu(177)
         contentHeight: units.gu(182)
         contentWidth: mainPage.width
         width: mainPage.width
@@ -1091,10 +1090,6 @@ Rectangle {
                         settings.equalizerControls8 = slide8.value.toFixed(1)
                         settings.equalizerControls9 = slide9.value.toFixed(1)
                         settings.equalizerControls10 = slide10.value.toFixed(1)
-//                        process3.kill()
-//                        delay(500, function() {
-//                            process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_change.sh"])
-//                        })
                         process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_change.sh"])
                     } else if (eqSts === false) {
                         //do nothing
