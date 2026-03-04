@@ -8,6 +8,4 @@ if grep -q $version $file
 then
 	sed -i "s/$version/$new_version/g" $file
 	systemctl --user daemon-reload
-else
-	:
 fi
