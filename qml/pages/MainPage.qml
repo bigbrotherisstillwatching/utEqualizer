@@ -183,9 +183,10 @@ Rectangle {
         if (eqSts === true) {
             process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/bin/pulse-vumeter"])
             txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
-        } else if (eqSts === false) {
-            //do nothing
         }
+//        } else if (eqSts === false) {
+//            //do nothing
+//        }
 //        eqswitch.checked = false
 //        eqSts = false
 //        prgrssbr.value = 0
@@ -1101,9 +1102,10 @@ Rectangle {
                         settings.equalizerControls9 = slide9.value.toFixed(1)
                         settings.equalizerControls10 = slide10.value.toFixed(1)
                         process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/utequalizer_change.sh"])
-                    } else if (eqSts === false) {
-                        //do nothing
                     }
+//                    } else if (eqSts === false) {
+//                        //do nothing
+//                    }
                 }
             }
             DropShadow {
