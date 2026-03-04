@@ -174,12 +174,12 @@ Rectangle {
         }
     }
 
-    Component.onCompleted: {
-        process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_stop.sh"])
+/*    Component.onCompleted: {
+        process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/utequalizer_stop.sh"])
         eqswitch.checked = false
         eqSts = false
         prgrssbr.value = 0
-    }
+    }*/
 
     Component {
         id: dialog
@@ -210,7 +210,7 @@ Rectangle {
                     }
                 }
                 onClicked: {
-                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_stop.sh"])
+                    process4.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/utequalizer_stop.sh"])
                     bttn3.enabled = true
                     eqswitch.checked = false
                     txt2.text = ""
@@ -1090,7 +1090,7 @@ Rectangle {
                         settings.equalizerControls8 = slide8.value.toFixed(1)
                         settings.equalizerControls9 = slide9.value.toFixed(1)
                         settings.equalizerControls10 = slide10.value.toFixed(1)
-                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_change.sh"])
+                        process3.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/utequalizer_change.sh"])
                     } else if (eqSts === false) {
                         //do nothing
                     }
@@ -1111,6 +1111,7 @@ Rectangle {
 
         Qqc.Switch {
             id: eqswitch
+            checked: eqSts
             anchors.left: parent.left
             anchors.leftMargin: (((parent.width / 4) + (parent.width / 4)) - units.gu(3.5))
             anchors.top: prgrssbr.bottom
@@ -1183,7 +1184,7 @@ Rectangle {
             }
             onToggled: {
                 if (eqSts === true) {                    
-                    process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_stop.sh"])
+                    process2.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/utequalizer_stop.sh"])
                     eqSts = checked
                     txt2.text = ""
                     process6.kill()
@@ -1201,10 +1202,10 @@ Rectangle {
                     settings.equalizerControls8 = slide8.value.toFixed(1)
                     settings.equalizerControls9 = slide9.value.toFixed(1)
                     settings.equalizerControls10 = slide10.value.toFixed(1)
-                    process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_start.sh"])
+                    process.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/utequalizer_start.sh"])
                     eqSts = checked
                     txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
-                    process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/bin/pulse-vumeter"])
+                    process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/bin/pulse-vumeter"])
                 }
             }
         }
@@ -1467,10 +1468,10 @@ Rectangle {
             }
             onToggled: {
                 if (srvcInstlld === true) {
-                    process7.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_service_uninstall.sh"])
+                    process7.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/utequalizer_service_uninstall.sh"])
                     srvcInstlld = checked
                 } else if (srvcInstlld === false) {
-                    process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.0.9/scripts/utequalizer_service_install.sh"])
+                    process8.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/utequalizer_service_install.sh"])
                     srvcInstlld = checked
                 }
             }
