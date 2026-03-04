@@ -174,12 +174,12 @@ Rectangle {
         }
     }
 
-/*    Component.onCompleted: {
-        process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/utequalizer_stop.sh"])
-        eqswitch.checked = false
-        eqSts = false
-        prgrssbr.value = 0
-    }*/
+    Component.onCompleted: {
+        process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/check_service_version.sh"])
+//        eqswitch.checked = false
+//        eqSts = false
+//        prgrssbr.value = 0
+    }
 
     Component {
         id: dialog
