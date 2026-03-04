@@ -90,6 +90,10 @@ Rectangle {
         id: process8
     }
 
+    Process {
+        id: process9
+    }
+
     Settings {
         id: settings
         property bool darkMode
@@ -176,6 +180,11 @@ Rectangle {
 
     Component.onCompleted: {
         process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/check_service_version.sh"])
+        if (eqSts === true) {
+            process9.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/bin/pulse-vumeter"])
+        } else if (eqSts === false) {
+            //do nothing
+        }
 //        eqswitch.checked = false
 //        eqSts = false
 //        prgrssbr.value = 0
