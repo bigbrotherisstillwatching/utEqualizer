@@ -7,6 +7,5 @@ new_version=1.1.0
 if grep -q $version $file
 then
 	  sed -i "s/$version/$new_version/g" $file
-	  sleep 1
 	  systemctl --user daemon-reload
 fi
