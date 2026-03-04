@@ -5,4 +5,4 @@ Icon=assets/logo.svg
 Terminal=false
 Type=Application
 X-Lomiri-Touch=true
-X-Lomiri-Supported-Orientations=portrait
+X-Lomiri-Supported-Orientations=portrait,inverted-portrait,landscape,inverted-landscape
