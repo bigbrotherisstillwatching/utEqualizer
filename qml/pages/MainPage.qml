@@ -90,9 +90,9 @@ Rectangle {
         id: process8
     }
 
-    Process {
+/*    Process {
         id: process9
-    }
+    }*/
 
     Settings {
         id: settings
@@ -181,7 +181,7 @@ Rectangle {
     Component.onCompleted: {
         process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/check_service_version.sh"])
         if (eqSts === true) {
-            process9.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/bin/pulse-vumeter"])
+            process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/bin/pulse-vumeter"])
         } else if (eqSts === false) {
             //do nothing
         }
