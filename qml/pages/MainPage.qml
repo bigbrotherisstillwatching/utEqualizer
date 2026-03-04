@@ -182,6 +182,7 @@ Rectangle {
         process5.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/check_service_version.sh"])
         if (eqSts === true) {
             process6.start("/bin/bash",["-c", "/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/bin/pulse-vumeter"])
+            txt2.text = i18n.tr("Please turn the equalizer off and on again after changing audio output.")
         } else if (eqSts === false) {
             //do nothing
         }
