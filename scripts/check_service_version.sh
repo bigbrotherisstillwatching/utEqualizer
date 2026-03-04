@@ -1,6 +1,6 @@
 #! /bin/bash
 
-file=/home/chroot/Schreibtisch/utequalizer.service
+file=/home/phablet/.config/systemd/user/utequalizer.service
 version=1.0.9
 new_version=1.1.0
 
