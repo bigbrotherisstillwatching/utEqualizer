@@ -1,3 +1,5 @@
+# Not to be continued, because I can't test this anymore!!!
+
 # utEqualizer
 
 An equalizer for Ubuntu Touch Focal
