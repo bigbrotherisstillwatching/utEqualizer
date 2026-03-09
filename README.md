@@ -1,6 +1,6 @@
 # utEqualizer
 
-An equalizer for Ubuntu Touch
+An equalizer for Ubuntu Touch Noble
 
 ## License
 
