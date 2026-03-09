@@ -5,6 +5,3 @@ Description=Move all sink-inputs to utequalizer sink
 Type=simple
 ExecStart=/opt/click.ubuntu.com/utequalizer.bigbrotherisstillwatching/1.1.0/scripts/move_sink_inputs_to_utequalizer.sh
 PIDFile=/tmp/move_sink_inputs_to_utequalizer.sh.pid
-
-[Install]
-WantedBy=default.target
